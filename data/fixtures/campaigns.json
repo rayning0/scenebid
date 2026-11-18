@@ -1,1 +1,39 @@
-
+{
+  "schema_version": "1.0",
+  "campaigns": [
+    {
+      "id": "campaign-pet-store",
+      "name": "Fictional Neighborhood Pet Store",
+      "advertiser": "Neighborhood Pet Store",
+      "target_categories": [
+        "pets",
+        "pet_food"
+      ],
+      "excluded_adjacent_brands": [],
+      "bid_cpm_usd": 7.10,
+      "creative": {
+        "format": "overlay",
+        "asset_type": "image",
+        "asset_path": "/creatives/pet-store.png",
+        "headline": "Everything your cat needs"
+      }
+    },
+    {
+      "id": "campaign-camera",
+      "name": "Fictional Camera Shop",
+      "advertiser": "City Camera Shop",
+      "target_categories": [
+        "photography",
+        "cameras"
+      ],
+      "excluded_adjacent_brands": [],
+      "bid_cpm_usd": 5.50,
+      "creative": {
+        "format": "overlay",
+        "asset_type": "image",
+        "asset_path": "/creatives/camera-shop.png",
+        "headline": "Capture your next great moment"
+      }
+    }
+  ]
+}

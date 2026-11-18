@@ -8,6 +8,7 @@
 *.so
 *.dylib
 __pycache__/
+frames/
 
 # Test binary, built with `go test -c`
 *.test
@@ -36,3 +37,4 @@ go.work.sum
 
 .DS_Store
 TV_Commercials_1977.mp4
+.venv/

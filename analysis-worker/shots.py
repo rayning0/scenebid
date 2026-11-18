@@ -1,27 +1,26 @@
 import os
 from typing import Optional
 
-from scenedetect import SceneManager, VideoManager
+from scenedetect import SceneManager, open_video
 from scenedetect.detectors import ContentDetector
 
 
 def detect_shots(video_path: str, threshold: float = 27.0,
                  start: Optional[float] = None, end: Optional[float] = None):
     """Detect content cuts in the requested portion of the actual video."""
-    manager = VideoManager([video_path])
-    if start is not None or end is not None:
-        manager.set_duration(start_time=start or 0, end_time=end)
+    video = open_video(video_path)
     detector = SceneManager()
     detector.add_detector(ContentDetector(threshold=threshold))
-    manager.set_downscale_factor()
-    manager.start()
     try:
-        detector.detect_scenes(frame_source=manager)
+        if start is not None:
+            video.seek(start)
+        detector.detect_scenes(frame_source=video, end_time=end)
         scenes = detector.get_scene_list()
     finally:
-        manager.release()
-    return [{"start_sec": float(s.get_seconds()),
-             "end_sec": float(e.get_seconds())} for s, e in scenes]
+        video.close()
+    return [{"id": f"shot-{i+1:05d}", "start_sec": float(s.get_seconds()),
+             "end_sec": float(e.get_seconds()), "boundary_source": "shot_detector"}
+            for i, (s, e) in enumerate(scenes)]
 
 
 def extract_frames(video_path, shots, output_dir, frames_per_shot=3):
@@ -45,7 +44,7 @@ def extract_frames(video_path, shots, output_dir, frames_per_shot=3):
                 raise RuntimeError(f"frame extraction failed at {timestamp:.3f}s: {exc}") from exc
             if not os.path.isfile(path) or os.path.getsize(path) == 0:
                 raise RuntimeError(f"ffmpeg produced an empty frame at {timestamp:.3f}s")
-            result.append({"path": path, "timestamp_sec": timestamp,
-                           "shot_index": index})
+            result.append({"path": os.path.relpath(path, output_dir + "/.."),
+                           "time_sec": timestamp, "shot_index": index})
     return result
 
