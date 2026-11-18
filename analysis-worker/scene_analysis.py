@@ -31,7 +31,9 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             transcript_excerpt(transcript["segments"], shot["start_sec"], shot["end_sec"])
         )
         if provider == "ollama":
-            payload = {"model": model, "stream": False,
+            payload = {"model": model, "stream": False, "think": False,
+                       "options": {"num_ctx": 4096, "num_predict": 384,
+                                   "temperature": 0},
                        "format": "json", "messages": [{"role": "user", "content": prompt,
                        "images": [item["image_url"]["url"].split(",", 1)[1] for item in images]}]}
         else:
