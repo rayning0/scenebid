@@ -1,9 +1,9 @@
 import argparse
 import json
 import os
-import shutil
 import subprocess
 import sys
+import time
 
 from schema import SCHEMA_VERSION, TIMELINE_UNIT, group_shots
 from shots import detect_shots, extract_frames
@@ -28,6 +28,10 @@ def main():
                         help="optional development limit; default is the complete video")
     parser.add_argument("--shot-threshold", type=float, default=27)
     parser.add_argument("--frames-per-shot", type=int, default=3)
+    parser.add_argument("--vision-max-tokens", type=int, default=512,
+                        help="maximum tokens per vision response")
+    parser.add_argument("--vision-mode", choices=("window", "shot"), default="window")
+    parser.add_argument("--window-sec", type=float, default=15.0)
     parser.add_argument("--whisper-model",
                         default=os.getenv("WHISPER_MODEL", "base"))
     parser.add_argument("--vision-provider",
@@ -48,25 +52,53 @@ def main():
         parser.error("--end must be after --start")
     os.makedirs(args.output_dir, exist_ok=True)
     try:
-        frames_dir = os.path.join(args.output_dir, "frames")
-        shutil.rmtree(frames_dir, ignore_errors=True)
+        stage_started = time.monotonic()
         shots = detect_shots(args.video, args.shot_threshold, args.start, args.end)
         if not shots:
             raise RuntimeError("no shots detected in the requested range")
+        print(f"shot detection completed: {len(shots)} shots in "
+              f"{time.monotonic() - stage_started:.1f}s", flush=True)
+        stage_started = time.monotonic()
         frames = extract_frames(args.video, shots, os.path.join(args.output_dir, "frames"),
                                 args.frames_per_shot)
+        print(f"frame extraction completed: {len(frames)} frames in "
+              f"{time.monotonic() - stage_started:.1f}s", flush=True)
+        stage_started = time.monotonic()
         transcript = transcribe(args.video, args.whisper_model, start=args.start, end=args.end)
-        scenes = analyze_frames(frames, shots, transcript, args.vision_provider,
-                                args.vision_model, args.vision_endpoint, args.api_key)
+        print(f"transcription completed: {len(transcript['segments'])} segments in "
+              f"{time.monotonic() - stage_started:.1f}s", flush=True)
+        vision_units = shots
+        if args.vision_mode == "window":
+            duration_start = shots[0]["start_sec"]
+            duration_end = shots[-1]["end_sec"]
+            vision_units = []
+            cursor = duration_start
+            while cursor < duration_end:
+                finish = min(duration_end, cursor + args.window_sec)
+                vision_units.append({
+                    "id": f"window-{len(vision_units)+1:05d}",
+                    "start_sec": cursor, "end_sec": finish,
+                    "boundary_source": "fixed_time_window"
+                })
+                cursor = finish
+            for frame in frames:
+                frame["shot_index"] = min(
+                    int((frame["time_sec"] - duration_start) // args.window_sec),
+                    len(vision_units) - 1)
+        scenes = analyze_frames(frames, vision_units, transcript, args.vision_provider,
+                                args.vision_model, args.vision_endpoint, args.api_key,
+                                args.vision_max_tokens)
         for shot in shots:
             shot["sampled_frames"] = [
                 {"time_sec": f["time_sec"],
                  "path": os.path.relpath(f["path"], args.output_dir)}
                 for f in frames if f["shot_index"] == shots.index(shot)]
-        segments = group_shots(shots, scenes, transcript)
+        segments = group_shots(vision_units, scenes, transcript)
         for segment in segments:
-            source_shots = [s for s in shots if s["id"] in segment["shot_ids"]]
-            annotations = [scenes[shots.index(s)] for s in source_shots]
+            source_shots = [s for s in shots
+                            if s["start_sec"] < segment["end_sec"] and
+                            segment["start_sec"] < s["end_sec"]]
+            annotations = [scenes[vision_units.index(segment)]]
             transcript_ids = [f"speech-{i+1:05d}" for i, t in enumerate(transcript["segments"])
                               if any(t["start_sec"] < s["end_sec"] and s["start_sec"] < t["end_sec"]
                                      for s in source_shots)]

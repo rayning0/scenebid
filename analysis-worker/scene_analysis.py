@@ -2,6 +2,7 @@ import base64
 import json
 import os
 import urllib.request
+import time
 
 
 def transcript_excerpt(segments, start, end):
@@ -10,14 +11,18 @@ def transcript_excerpt(segments, start, end):
 
 
 def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
-                   api_key=None):
+                   api_key=None, max_tokens=512):
     if provider not in ("openai_compatible", "ollama"):
         raise ValueError("VISION_PROVIDER must be openai_compatible or ollama; a vision model is required")
     if not endpoint:
         endpoint = "http://localhost:11434/api/chat" if provider == "ollama" else "https://api.openai.com/v1/chat/completions"
     scenes = []
+    started = time.monotonic()
+    total = len(shots)
     for index, shot in enumerate(shots):
         evidence = [f for f in frames if f["shot_index"] == index]
+        if shot["id"].startswith("window-"):
+            evidence = evidence[:2]
         images = []
         for item in evidence:
             with open(item["path"], "rb") as image:
@@ -35,7 +40,7 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
         )
         if provider == "ollama":
             payload = {"model": model, "stream": False, "think": False,
-                       "options": {"num_ctx": 4096, "num_predict": 1024,
+                       "options": {"num_ctx": 4096, "num_predict": max_tokens,
                                    "temperature": 0},
                        "format": "json", "messages": [{"role": "user", "content": prompt,
                        "images": [item["image_url"]["url"].split(",", 1)[1] for item in images]}]}
@@ -64,6 +69,8 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                     timeout=180) as response:
                     retry_body = json.loads(response.read())
                 content = retry_body["message"]["content"]
+            if not content.strip():
+                raise ValueError("vision provider returned empty content")
             annotation = json.loads(content)
         except Exception as exc:
             raise RuntimeError(f"vision provider failed for shot {index}: {exc}") from exc
@@ -74,5 +81,11 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             "model": model, "provider": provider,
         })
         scenes.append(annotation)
+        elapsed = time.monotonic() - started
+        average = elapsed / (index + 1)
+        remaining = average * (total - index - 1)
+        print(f"vision {index + 1}/{total} {shot['start_sec']:.2f}-{shot['end_sec']:.2f}s "
+              f"elapsed={elapsed:.1f}s avg={average:.1f}s eta={remaining:.1f}s",
+              flush=True)
     return scenes
 
