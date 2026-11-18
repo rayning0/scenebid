@@ -28,7 +28,7 @@ def main():
     parser.add_argument("--end", type=float, default=None,
                         help="optional development limit; default is the complete video")
     parser.add_argument("--shot-threshold", type=float, default=27)
-    parser.add_argument("--frames-per-shot", type=int, default=3)
+    parser.add_argument("--frames-per-shot", type=int, default=2)
     parser.add_argument("--vision-max-tokens", type=int, default=512,
                         help="maximum tokens per vision response")
     parser.add_argument("--vision-mode", choices=("window", "shot"), default="window")

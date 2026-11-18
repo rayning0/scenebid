@@ -77,6 +77,8 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
         annotation.update({
             "id": f"scene-{index:05d}", "start_sec": shot["start_sec"],
             "end_sec": shot["end_sec"], "frame_evidence": evidence,
+            "frame_count_sent": len(evidence),
+            "frame_ids_sent": [f.get("path") for f in evidence],
             "transcript_excerpt": transcript_excerpt(transcript["segments"], shot["start_sec"], shot["end_sec"]),
             "model": model, "provider": provider,
         })

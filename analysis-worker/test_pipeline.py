@@ -1,9 +1,29 @@
 import unittest
+from types import SimpleNamespace
+import tempfile
+import json
 
-from pipeline import annotation_ids_for_segment, window_index_for_time
+from pipeline import annotation_ids_for_segment, window_index_for_time, _cache_key
 
 
 class PipelineMappingTests(unittest.TestCase):
+    def test_range_is_part_of_checkpoint_key(self):
+        with tempfile.NamedTemporaryFile() as video:
+            common = dict(vision_provider="ollama", vision_endpoint="http://x",
+                          vision_model="model", vision_mode="window",
+                          window_sec=15, shot_threshold=27, frames_per_shot=2,
+                          start=0, end=60, whisper_model="base",
+                          vision_max_tokens=512, vision_timeout=180,
+                          api_key=None)
+            one_minute = _cache_key(video.name, SimpleNamespace(**common))
+            common["end"] = None
+            full_video = _cache_key(video.name, SimpleNamespace(**common))
+            self.assertNotEqual(one_minute, full_video)
+
+    def test_checkpoint_settings_exclude_api_key(self):
+        settings = {"vision_model": "model", "api_key_configured": True}
+        self.assertNotIn('"api_key":', json.dumps(settings))
+
     def test_window_mapping_preserves_boundaries(self):
         self.assertEqual(window_index_for_time(0, 0, 15, 4), 0)
         self.assertEqual(window_index_for_time(14.99, 0, 15, 4), 0)

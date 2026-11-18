@@ -4,6 +4,7 @@ import json
 import os
 import tempfile
 import time
+import subprocess
 
 from schema import SCHEMA_VERSION, TIMELINE_UNIT
 from shots import detect_shots, extract_frames
@@ -50,12 +51,22 @@ def _cache_key(video, args):
     stat = os.stat(video)
     identity = f"{os.path.abspath(video)}:{stat.st_size}:{stat.st_mtime_ns}"
     settings = {
-        "schema": SCHEMA_VERSION, "provider": args.vision_provider,
+        "schema": SCHEMA_VERSION, "prompt": "compact-v2",
+        "provider": args.vision_provider, "endpoint": args.vision_endpoint,
         "model": args.vision_model, "mode": args.vision_mode,
         "window_sec": args.window_sec, "threshold": args.shot_threshold,
-        "frames": args.frames_per_shot, "prompt": "compact-v2",
+        "frames": args.frames_per_shot, "start": args.start, "end": args.end,
+        "whisper_model": args.whisper_model,
+        "vision_max_tokens": args.vision_max_tokens,
+        "vision_timeout": args.vision_timeout,
+        "api_key_configured": bool(args.api_key),
     }
     return hashlib.sha256((identity + json.dumps(settings, sort_keys=True)).encode()).hexdigest()[:16]
+
+def _source_duration(video):
+    command = ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+               "-of", "default=noprint_wrappers=1:nokey=1", video]
+    return float(subprocess.check_output(command, text=True).strip())
 
 
 def run(args):
@@ -64,8 +75,11 @@ def run(args):
     run_dir = os.path.join(args.output_dir, "runs", key)
     checkpoint = os.path.join(run_dir, "checkpoint.json")
     os.makedirs(run_dir, exist_ok=True)
+    settings = {name: value for name, value in vars(args).items()
+                if name != "api_key"}
+    settings["api_key_configured"] = bool(args.api_key)
     state = {"cache_key": key, "status": "partial", "errors": [],
-             "settings": vars(args), "run_id": f"run-{int(time.time())}"}
+             "settings": settings, "run_id": f"run-{int(time.time())}"}
     if args.resume and os.path.exists(checkpoint):
         with open(checkpoint) as source:
             state = json.load(source)
@@ -148,9 +162,13 @@ def run(args):
     result = {"schema_version": SCHEMA_VERSION,
               "video": {"id": os.path.splitext(os.path.basename(args.video))[0],
                         "source_file": os.path.abspath(args.video),
-                        "duration_sec": end, "timeline_unit": TIMELINE_UNIT},
+                        "duration_sec": _source_duration(args.video),
+                        "analyzed_range": {"start_sec": args.start or 0.0,
+                                           "end_sec": args.end or _source_duration(args.video)},
+                        "timeline_unit": TIMELINE_UNIT},
               "analysis": {"run_id": state["run_id"], "status": "completed",
                            "vision_mode": "window", "cache_key": key,
+                           "effective_settings": settings,
                            "models": {"speech": {"provider": "faster-whisper", "model": args.whisper_model},
                                       "vision": {"provider": args.vision_provider, "model": args.vision_model}}},
               "shots": shots, "transcript": state["transcript"],
