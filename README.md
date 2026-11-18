@@ -1,65 +1,144 @@
-# SceneBid: Contextual Video Intelligence and Ad Decisions
+# SceneBid: AI Video Intelligence and Contextual Ad Decisioning
 ### by Raymond Gan
 
-SceneBid is a project to explore how timestamped video intelligence can inform a contextual ad decision. Its target is a local VOD file, `TV_Commercials_1977.mp4`, with a compilation of TV ads from 1977. Any ads selected against this video are a simulated contextual-placement exercise.
+SceneBid is a local proof of concept that analyzes video and audio to find
+timestamped contextual advertising opportunities. It uses a compilation of
+1977 television commercials as a sample video.
+
+The project combines real AI-generated video intelligence with fictional
+advertiser campaigns and simulated bids. A Go decisioning service selects
+eligible ads using the generated annotations and explains each decision.
+The planned browser demo displays the selected ad as an overlay during video
+playback.
 
 ## Problem
 
-A streaming publisher wants to understand video at the moment level, determine whether a placement is appropriate, and match available ad demand to that context. Relevant concerns include scene timing, suitability, direct and programmatic demand, decision latency, playback and measurement. SceneBid starts small and makes its assumptions visible.
+Streaming publishers need to understand what is happening at a particular
+moment in a video, determine whether an ad is suitable, and choose among
+advertisers interested in that context.
+
+SceneBid explores the connection between:
+
+- Multimodal video and audio understanding.
+- Timestamped scene-level metadata.
+- Contextual targeting and brand separation.
+- Ad eligibility and auction decisions.
+- Video playback and contextual ad presentation.
+
+## Project Status
+
+The initial Go starter currently probes a video with ffprobe, extracts a
+single frame with FFmpeg, and selects from fictional bids against manually
+supplied scene fixtures.
+
+The real AI analysis worker, HLS player, contextual overlay, and mock
+OpenRTB exchange are planned features. Update this section as each feature
+is implemented and verified.
 
 ## MVP Scope
 
-The current starter provides two separate flows:
+### Real analysis
 
-1. **Real media processing:** `analyze` uses `ffprobe` to record video metadata and `ffmpeg` to extract one frame at a specified timestamp. It does not interpret the image or transcribe speech.
-2. **Simulated decisioning:** `decide` reads manually supplied scene labels and fictional bids, rejects scenes not marked safe, filters by matching category and floor, and selects the highest eligible simulated CPM. Results contain candidates and a decision reason.
+- Read the local `TV_Commercials_1977.mp4` file.
+- Detect visual shot boundaries and extract timestamped frames.
+- Transcribe speech with faster-whisper.
+- Analyze frames and transcript excerpts with AI models.
+- Produce timestamped scene annotations containing visual and audio
+  evidence, categories, and model metadata.
+- Identify likely advertisers or products when supported by the available
+  evidence; retain unknown values when uncertain.
+- Optionally index embeddings for visual and transcript search.
 
-The fixtures are simulated, not model predictions. The supplied commercial times are approximate; the Chevrolet end time is illustrative and should be checked against the actual file. The sample `unknown-scene` is a synthetic no-fill example and does not describe the video.
+### Simulated demand
+
+- Load fictional campaigns and bids from local JSON fixtures.
+- Evaluate campaign categories, bid floors, and configured separation rules.
+- Return the winning eligible bid or a no-fill reason.
+- Optionally exchange mock OpenRTB-style requests and responses between
+  simulated SSP and DSP components.
+
+### Real playback and presentation
+
+- Package the source MP4 into an HLS playlist and media segments.
+- Play the video in a browser.
+- Use playback time and generated annotations to request an ad decision.
+- Display the selected fictional campaign as a contextual overlay.
 
 ## Architecture
 
 ```mermaid
 flowchart TD
-    A[Local MP4] --> B[ffprobe and FFmpeg]
-    B --> C[Metadata and frame]
-    D[Simulated scene annotations] --> F[Eligibility and auction]
-    E[Simulated campaign bids] --> F
-    F --> G[Decision trace JSON]
+    V["Local MP4"] --> A["Python analysis worker"]
+    A --> S["Timestamped annotations"]
+    V --> H["FFmpeg HLS packaging"]
+    S --> G["Go decisioning API"]
+    B["Fictional bids and campaigns"] --> G
+    G --> D["Ad decision and explanation"]
+    H --> P["Browser player"]
+    D --> P
+    P --> O["Contextual overlay"]
 ```
-
-Future: a separate analysis worker may emit timestamped observations using CLIP and Whisper from In-Video Search. CLIP creates embeddings; FAISS can index and search vectors; Whisper transcribes audio. These models and dependencies are not included in this starter. Go remains responsible for orchestration, APIs and decisioning.
 
 ## Process Flow
 
-1. Put the MP4 at `data/input/TV_Commercials_1977.mp4`.
-2. Run `analyze` to generate `probe.json` and a sample JPEG in `data/output/TV_Commercials_1977/`.
-3. Run `decide` to evaluate the separate synthetic scene and demand fixtures and write `decisions.json`.
-4. Inspect both outputs. The simulated decisions are not linked automatically to the extracted frame or inferred from the video.
+1. Place the source MP4 under `data/input/`.
+2. Analyze its audio and video to produce timestamped model-generated
+   annotations.
+3. Package the video into an HLS playlist and media segments.
+4. Start the Go API and browser player.
+5. During playback, look up the current video time in the annotations.
+6. Evaluate fictional campaign bids against the current context and rules.
+7. Display the winning overlay and the reason it was selected, or show a
+   no-fill explanation.
+
+Analysis happens before playback. Ad selection and overlay presentation
+happen during playback.
 
 ## Priorities
 
-- **P0:** Reproducible local startup; actual FFmpeg probe/frame extraction; clearly labeled simulated scene data, safety rules, demand and decisions.
-- **P1:** Process multiple timestamped windows; integrate real frame and transcript analysis behind a provider interface; preserve evidence and model versions; validate results against approximate chapter labels.
-- **P2:** Mock OpenRTB request/response over HTTP between simulated SSP and DSP, timeouts and floor handling; integrate direct demand; render a contextual overlay in a browser.
-- **P3:** VMAP/VAST output with an explicitly supported player; tracking and frequency caps; optional SSAI/HLS integration using the existing SSAI project.
+### P0: End-to-end demonstration
+
+- Real speech transcription and frame analysis on a short sample.
+- Timestamped annotations with evidence.
+- HLS playback in a browser.
+- Fictional campaign selection using real generated annotations.
+- Visible overlay and decision explanation.
+
+### P1: Better analysis and decisioning
+
+- Process the full video.
+- Improve shot grouping and brand identification.
+- Add configurable brand and competitor separation.
+- Add basic safety handling and clear unknown/no-fill behavior.
+- Evaluate selected predictions against manually verified examples.
+
+### P2: Ad-tech integration
+
+- Simulate SSP/DSP communication with mock OpenRTB-style requests and
+  responses.
+- Add request deadlines, no-bid behavior, and decision traces.
+- Add simple playback and overlay event logging.
+
+### P3: Search and future extensions
+
+- Add CLIP/FAISS semantic search using ideas from In-Video Search.
+- Explore linear video ads, VAST, and HLS-based SSAI separately.
+- Explore live streaming analysis and low-latency updates.
 
 ## Repository Layout
 
-```text
-cmd/scenebid/       CLI entry point
-internal/analysis/  FFmpeg/ffprobe integration
-internal/auction/   Simulated eligibility and selection
-internal/model/     Shared data types
-internal/store/     JSON input and output
-data/input/         Put TV_Commercials_1977.mp4 here; ignored by git
-data/output/        Generated metadata, frames, decisions; ignored by git
-data/fixtures/      Committed fictional scenes and bids
-docs/               Future design notes
-```
+- `cmd/scenebid/`: Go application entry point.
+- `internal/`: Go analysis orchestration, decisioning, models, and storage.
+- `analysis-worker/`: planned Python analysis worker.
+- `web/`: planned browser player and overlay UI.
+- `data/input/`: local source video and creative assets.
+- `data/fixtures/`: fictional campaigns and bids.
+- `data/output/`: generated media, analysis, and decision traces.
+- `docs/`: design notes.
 
 ## Run and Verify
 
-Requires Go 1.22+ and FFmpeg with `ffprobe` on your PATH. From the project root:
+The current starter can be run with:
 
 ```bash
 go test ./...
@@ -67,27 +146,36 @@ go run ./cmd/scenebid analyze -video data/input/TV_Commercials_1977.mp4 -at 5
 go run ./cmd/scenebid decide
 ```
 
-Inspect `data/output/TV_Commercials_1977/probe.json`, `frames/sample.jpg`, and `decisions.json`. The `decide` command can run without any video. To use a different frame timestamp or location, run `go run ./cmd/scenebid analyze -h`; `go run ./cmd/scenebid decide -h` shows decision options. Re-running overwrites these outputs.
+These commands currently probe the video, extract one frame, and run
+decisioning against manually supplied scene fixtures. They do not yet run
+AI analysis or display an ad.
+
+Add setup, analysis, HLS, server, and browser commands here as those
+features are implemented and verified.
 
 ## MVP Limitations
 
-- No AI inference, transcript, automatic shot detection, video search, ad playback, VMAP/VAST, OpenRTB, SSAI, frequency caps or real DSPs are implemented yet.
-- The sample auction is synchronous in-process filtering over fictional bids; no network calls, pacing, budgets or timeout behavior.
-- Scene safety is a fixture. It is not a production safety classifier, and unknown means no fill.
-- Times are illustrative; correct chapter and cut offsets against your own MP4.
-- The video is a compilation of ads. Matching fictional campaigns to it does not demonstrate actual publisher inventory or licensed ad delivery.
-- This is a local learning project, not a production system or a claim of protocol compliance. Keep video and generated media out of git; verify source rights before redistribution.
+- Model outputs can be inaccurate; detected objects, brands, and safety
+  assessments require validation.
+- The input is a compilation of commercials, not a normal TV episode.
+- Campaigns, bids, and demand-side participants are fictional.
+- An overlay is rendered by the browser; this does not itself demonstrate
+  server-side ad insertion.
+- The project is not a production ad server or a claim of OpenRTB
+  compliance.
+- Source video and generated media should stay out of the repository.
+- Verify usage and redistribution rights for video and creative assets.
 
 ## Ad Tech Terms
 
-- **Publisher / supply:** The party offering an ad opportunity.
-- **Advertiser / demand:** A buyer seeking to show a campaign.
-- **SSP:** A platform that helps publishers offer inventory to buyers.
-- **DSP:** A platform that evaluates and bids for advertisers.
-- **CPM:** Price per 1,000 impressions; the starter's CPM values are fictional.
-- **Floor:** Minimum qualifying bid in the simulated auction.
-- **OpenRTB:** A standard protocol for bid requests and responses; not implemented here.
-- **VAST:** A standard describing video ad assets and tracking; not implemented here.
-- **VMAP:** A format for describing scheduled ad breaks; not implemented here.
-- **SSAI:** Server-side ad insertion, often through manifest manipulation; not implemented here.
-- **Impression:** A measurement event under applicable rules, not merely an ad being selected.
+- **Publisher / supply:** The party providing an advertising opportunity.
+- **Advertiser / demand:** The buyer seeking to show an advertisement.
+- **SSP:** A platform representing or enabling publisher-side supply.
+- **DSP:** A platform that evaluates opportunities for advertisers.
+- **CPM:** The price per 1,000 impressions.
+- **Bid floor:** The minimum eligible bid for an opportunity.
+- **OpenRTB:** A protocol used to exchange programmatic bid requests and
+  responses.
+- **VAST:** A standard for describing video ad creatives and tracking.
+- **SSAI:** Server-side ad insertion.
+- **Impression:** A measured ad-display event, distinct from selecting an ad.
