@@ -1,1 +1,4 @@
-
+faster-whisper
+scenedetect
+sentence-transformers
+pillow

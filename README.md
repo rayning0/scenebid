@@ -138,17 +138,27 @@ happen during playback.
 
 ## Run and Verify
 
-The current starter can be run with:
+The first end-to-end worker can be run with (the default is a 30-second
+development range):
 
 ```bash
 go test ./...
-go run ./cmd/scenebid analyze -video data/input/TV_Commercials_1977.mp4 -at 5
+VISION_PROVIDER=openai_compatible VISION_MODEL=gpt-4o-mini VISION_API_KEY=... \
+  go run ./cmd/scenebid analyze -video data/input/TV_Commercials_1977.mp4 -at 5
 go run ./cmd/scenebid decide
 ```
 
-These commands currently probe the video, extract one frame, and run
-decisioning against manually supplied scene fixtures. They do not yet run
-AI analysis or display an ad.
+`analyze` runs `analysis-worker/main.py`, which detects shots and extracts
+frames from the actual MP4, transcribes with faster-whisper, embeds samples
+with CLIP, and sends each shot's frames and transcript excerpt to the
+configured vision provider. Use `-end -1` for the full video, or invoke the
+worker directly for all options. A provider/model failure exits nonzero; no
+fixture annotations are substituted.
+
+Install Python dependencies from `analysis-worker/requirements.txt` and ensure
+`ffmpeg` is on PATH. The OpenAI-compatible provider accepts `VISION_ENDPOINT`
+and `VISION_API_KEY`; Ollama uses `VISION_PROVIDER=ollama`,
+`VISION_ENDPOINT=http://localhost:11434/api/chat`, and a vision model.
 
 Add setup, analysis, HLS, server, and browser commands here as those
 features are implemented and verified.

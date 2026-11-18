@@ -9,7 +9,9 @@ import (
 	"github.com/rayning0/scenebid/internal/store"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"strconv"
 )
 
 func main() {
@@ -22,6 +24,9 @@ func main() {
 		video := f.String("video", "data/input/TV_Commercials_1977.mp4", "local input video")
 		out := f.String("out", "data/output/TV_Commercials_1977", "output directory")
 		at := f.Float64("at", 5, "frame timestamp in seconds")
+		worker := f.String("worker", "analysis-worker/main.py", "Python analysis worker")
+		start := f.Float64("start", 0, "analysis start time in seconds")
+		end := f.Float64("end", 30, "analysis end time; use -1 for the full video")
 		_ = f.Parse(os.Args[2:])
 		if *at < 0 {
 			log.Fatal("frame timestamp must be nonnegative")
@@ -32,8 +37,16 @@ func main() {
 		if err := analysis.Frame(*video, filepath.Join(*out, "frames", "sample.jpg"), *at); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("Extracted video metadata and a frame at %.3fs into %s\n", *at, *out)
-		fmt.Println("No AI classification was performed. Use the simulated fixtures for the auction demo.")
+		args := []string{*worker, *video, *out, "--start", strconv.FormatFloat(*start, 'f', -1, 64)}
+		if *end >= 0 {
+			args = append(args, "--end", strconv.FormatFloat(*end, 'f', -1, 64))
+		}
+		cmd := exec.Command("python3", args...)
+		cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
+		if err := cmd.Run(); err != nil {
+			log.Fatalf("AI analysis worker failed: %v", err)
+		}
+		fmt.Printf("Analyzed video and wrote real AI annotations into %s\n", *out)
 	case "decide":
 		f := flag.NewFlagSet("decide", flag.ExitOnError)
 		scenes := f.String("scenes", "data/fixtures/scenes.json", "simulated scene annotations")
