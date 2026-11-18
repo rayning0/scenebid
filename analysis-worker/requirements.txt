@@ -1,3 +1,4 @@
 faster-whisper
+huggingface-hub<1.0
 scenedetect
 pillow

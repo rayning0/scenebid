@@ -38,3 +38,4 @@ go.work.sum
 .DS_Store
 TV_Commercials_1977.mp4
 .venv/
+analysis-worker/models/
