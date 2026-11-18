@@ -1,0 +1,5 @@
+[
+  {"campaign":"Fictional Kitchen Co","source":"simulated-direct","cpm":5.25,"category":"food"},
+  {"campaign":"Fictional Pet Shop","source":"simulated-dsp","cpm":7.10,"category":"pets"},
+  {"campaign":"Fictional Auto Parts","source":"simulated-dsp","cpm":6.50,"category":"automotive"}
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "scene_id": "oscar-mayer-bologna",
+    "winner": {
+      "campaign": "Fictional Kitchen Co",
+      "source": "simulated-direct",
+      "cpm": 5.25,
+      "category": "food"
+    },
+    "reason": "highest eligible simulated bid meeting floor and matching scene category",
+    "candidates": [
+      {
+        "campaign": "Fictional Kitchen Co",
+        "source": "simulated-direct",
+        "cpm": 5.25,
+        "category": "food"
+      },
+      {
+        "campaign": "Fictional Pet Shop",
+        "source": "simulated-dsp",
+        "cpm": 7.1,
+        "category": "pets"
+      },
+      {
+        "campaign": "Fictional Auto Parts",
+        "source": "simulated-dsp",
+        "cpm": 6.5,
+        "category": "automotive"
+      }
+    ]
+  },
+  {
+    "scene_id": "purina-cat-chow",
+    "winner": {
+      "campaign": "Fictional Pet Shop",
+      "source": "simulated-dsp",
+      "cpm": 7.1,
+      "category": "pets"
+    },
+    "reason": "highest eligible simulated bid meeting floor and matching scene category",
+    "candidates": [
+      {
+        "campaign": "Fictional Kitchen Co",
+        "source": "simulated-direct",
+        "cpm": 5.25,
+        "category": "food"
+      },
+      {
+        "campaign": "Fictional Pet Shop",
+        "source": "simulated-dsp",
+        "cpm": 7.1,
+        "category": "pets"
+      },
+      {
+        "campaign": "Fictional Auto Parts",
+        "source": "simulated-dsp",
+        "cpm": 6.5,
+        "category": "automotive"
+      }
+    ]
+  },
+  {
+    "scene_id": "chevrolet",
+    "winner": {
+      "campaign": "Fictional Auto Parts",
+      "source": "simulated-dsp",
+      "cpm": 6.5,
+      "category": "automotive"
+    },
+    "reason": "highest eligible simulated bid meeting floor and matching scene category",
+    "candidates": [
+      {
+        "campaign": "Fictional Kitchen Co",
+        "source": "simulated-direct",
+        "cpm": 5.25,
+        "category": "food"
+      },
+      {
+        "campaign": "Fictional Pet Shop",
+        "source": "simulated-dsp",
+        "cpm": 7.1,
+        "category": "pets"
+      },
+      {
+        "campaign": "Fictional Auto Parts",
+        "source": "simulated-dsp",
+        "cpm": 6.5,
+        "category": "automotive"
+      }
+    ]
+  },
+  {
+    "scene_id": "unknown-scene",
+    "reason": "scene not explicitly marked safe",
+    "candidates": [
+      {
+        "campaign": "Fictional Kitchen Co",
+        "source": "simulated-direct",
+        "cpm": 5.25,
+        "category": "food"
+      },
+      {
+        "campaign": "Fictional Pet Shop",
+        "source": "simulated-dsp",
+        "cpm": 7.1,
+        "category": "pets"
+      },
+      {
+        "campaign": "Fictional Auto Parts",
+        "source": "simulated-dsp",
+        "cpm": 6.5,
+        "category": "automotive"
+      }
+    ]
+  }
+]

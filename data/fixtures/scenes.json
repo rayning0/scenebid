@@ -1,0 +1,6 @@
+[
+  {"id":"oscar-mayer-bologna","start_sec":0,"end_sec":32,"description":"Simulated label from supplied chapter list; not inferred from video.","categories":["food"],"safety":"safe","source":"manual_simulation"},
+  {"id":"purina-cat-chow","start_sec":445,"end_sec":476,"description":"Simulated label from supplied chapter list; not inferred from video.","categories":["pets"],"safety":"safe","source":"manual_simulation"},
+  {"id":"chevrolet","start_sec":826,"end_sec":856,"description":"Approximate simulated interval; verify end time against the actual file.","categories":["automotive"],"safety":"safe","source":"manual_simulation"},
+  {"id":"unknown-scene","start_sec":100,"end_sec":110,"description":"Synthetic safety example, not a claim about the video.","categories":["food"],"safety":"unknown","source":"synthetic"}
+]
