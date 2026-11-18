@@ -32,7 +32,7 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
         )
         if provider == "ollama":
             payload = {"model": model, "stream": False, "think": False,
-                       "options": {"num_ctx": 4096, "num_predict": 384,
+                       "options": {"num_ctx": 4096, "num_predict": 1024,
                                    "temperature": 0},
                        "format": "json", "messages": [{"role": "user", "content": prompt,
                        "images": [item["image_url"]["url"].split(",", 1)[1] for item in images]}]}
@@ -47,6 +47,20 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             with urllib.request.urlopen(request, timeout=180) as response:
                 body = json.loads(response.read())
             content = body["message"]["content"] if provider == "ollama" else body["choices"][0]["message"]["content"]
+            if provider == "ollama" and not content.strip():
+                # Some Qwen builds spend the first response entirely in the
+                # hidden reasoning channel for a long prompt. Retry compactly.
+                payload["messages"][0]["content"] = (
+                    "Return one compact JSON object only with keys "
+                    "description, categories, advertiser, products, safety, "
+                    "confidence, unknowns. Use null or [] when unknown."
+                )
+                with urllib.request.urlopen(
+                    urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
+                                            headers={"Content-Type": "application/json"}),
+                    timeout=180) as response:
+                    retry_body = json.loads(response.read())
+                content = retry_body["message"]["content"]
             annotation = json.loads(content)
         except Exception as exc:
             raise RuntimeError(f"vision provider failed for shot {index}: {exc}") from exc

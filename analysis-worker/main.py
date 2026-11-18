@@ -57,7 +57,8 @@ def main():
                                 args.vision_model, args.vision_endpoint, args.api_key)
         for shot in shots:
             shot["sampled_frames"] = [
-                {"time_sec": f["time_sec"], "path": f["path"]}
+                {"time_sec": f["time_sec"],
+                 "path": os.path.relpath(f["path"], args.output_dir)}
                 for f in frames if f["shot_index"] == shots.index(shot)]
         segments = group_shots(shots, scenes, transcript)
         for segment in segments:

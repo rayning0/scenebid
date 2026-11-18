@@ -44,7 +44,7 @@ def extract_frames(video_path, shots, output_dir, frames_per_shot=3):
                 raise RuntimeError(f"frame extraction failed at {timestamp:.3f}s: {exc}") from exc
             if not os.path.isfile(path) or os.path.getsize(path) == 0:
                 raise RuntimeError(f"ffmpeg produced an empty frame at {timestamp:.3f}s")
-            result.append({"path": os.path.relpath(path, output_dir + "/.."),
+            result.append({"path": os.path.abspath(path),
                            "time_sec": timestamp, "shot_index": index})
     return result
 
