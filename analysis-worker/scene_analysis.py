@@ -11,7 +11,7 @@ def transcript_excerpt(segments, start, end):
 
 
 def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
-                   api_key=None, max_tokens=512):
+                   api_key=None, max_tokens=512, timeout=180, on_result=None):
     if provider not in ("openai_compatible", "ollama"):
         raise ValueError("VISION_PROVIDER must be openai_compatible or ollama; a vision model is required")
     if not endpoint:
@@ -52,7 +52,7 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                                          headers={"Content-Type": "application/json",
                                                   **({"Authorization": f"Bearer {api_key}"} if api_key else {})})
         try:
-            with urllib.request.urlopen(request, timeout=180) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 body = json.loads(response.read())
             content = body["message"]["content"] if provider == "ollama" else body["choices"][0]["message"]["content"]
             if provider == "ollama" and not content.strip():
@@ -66,7 +66,7 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                 with urllib.request.urlopen(
                     urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
                                             headers={"Content-Type": "application/json"}),
-                    timeout=180) as response:
+                    timeout=timeout) as response:
                     retry_body = json.loads(response.read())
                 content = retry_body["message"]["content"]
             if not content.strip():
@@ -81,6 +81,8 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             "model": model, "provider": provider,
         })
         scenes.append(annotation)
+        if on_result:
+            on_result(index, shot, annotation)
         elapsed = time.monotonic() - started
         average = elapsed / (index + 1)
         remaining = average * (total - index - 1)

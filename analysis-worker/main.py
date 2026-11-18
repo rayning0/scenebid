@@ -9,6 +9,7 @@ from schema import SCHEMA_VERSION, TIMELINE_UNIT, group_shots
 from shots import detect_shots, extract_frames
 from transcription import transcribe
 from scene_analysis import analyze_frames
+from pipeline import run as run_checkpointed
 
 def probe_duration(video):
     command = ["ffprobe", "-v", "error", "-show_entries", "format=duration",
@@ -32,6 +33,10 @@ def main():
                         help="maximum tokens per vision response")
     parser.add_argument("--vision-mode", choices=("window", "shot"), default="window")
     parser.add_argument("--window-sec", type=float, default=15.0)
+    parser.add_argument("--vision-timeout", type=float, default=180.0,
+                        help="per-request client timeout in seconds")
+    parser.add_argument("--resume", action="store_true",
+                        help="resume a compatible checkpoint")
     parser.add_argument("--whisper-model",
                         default=os.getenv("WHISPER_MODEL", "base"))
     parser.add_argument("--vision-provider",
@@ -50,6 +55,8 @@ def main():
         parser.error("--start must be nonnegative")
     if args.end is not None and (args.end <= (args.start or 0)):
         parser.error("--end must be after --start")
+    if args.vision_mode == "window":
+        return run_checkpointed(args)
     os.makedirs(args.output_dir, exist_ok=True)
     try:
         stage_started = time.monotonic()
@@ -94,11 +101,15 @@ def main():
                  "path": os.path.relpath(f["path"], args.output_dir)}
                 for f in frames if f["shot_index"] == shots.index(shot)]
         segments = group_shots(vision_units, scenes, transcript)
-        for segment in segments:
+        annotation_by_unit = {unit["id"]: scenes[index]
+                              for index, unit in enumerate(vision_units)}
+        for segment_index, segment in enumerate(segments):
             source_shots = [s for s in shots
                             if s["start_sec"] < segment["end_sec"] and
                             segment["start_sec"] < s["end_sec"]]
-            annotations = [scenes[vision_units.index(segment)]]
+            annotations = [annotation_by_unit[unit_id]
+                           for unit_id in segment["shot_ids"]
+                           if unit_id in annotation_by_unit]
             transcript_ids = [f"speech-{i+1:05d}" for i, t in enumerate(transcript["segments"])
                               if any(t["start_sec"] < s["end_sec"] and s["start_sec"] < t["end_sec"]
                                      for s in source_shots)]
@@ -120,7 +131,7 @@ def main():
                                      "reasons": merged.get("unknowns", [])},
                 },
                 "ad_opportunities": [{
-                    "id": f"opportunity-{len(segments):05d}",
+                    "id": f"opportunity-{segment_index + 1:05d}",
                     "format": "overlay",
                     "start_sec": segment["start_sec"] + (segment["end_sec"]-segment["start_sec"])/2,
                     "end_sec": min(segment["end_sec"], segment["start_sec"] +

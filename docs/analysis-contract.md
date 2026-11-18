@@ -18,3 +18,10 @@ Unknown or unsafe `brand_safety` must produce no fill.
 The worker never reads campaigns, answer keys, chapter lists, or existing
 annotations. Evaluation belongs in a separate post-inference command/module.
 The Go service reads this contract and independently reads fictional campaigns.
+
+Window mode labels segments `analysis_window`; a fixed window is not a
+verified commercial boundary and may contain multiple commercials. Per-shot
+mode remains available for refinement. Runs store compatible checkpoints under
+`output/runs/<cache-key>/`; `--resume` only reuses a matching input identity,
+model, sampling, prompt, and schema configuration. Partial checkpoints are
+never presented as completed final output.
