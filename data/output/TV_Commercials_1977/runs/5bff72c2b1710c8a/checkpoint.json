@@ -1,0 +1,3470 @@
+{
+  "cache_key": "5bff72c2b1710c8a",
+  "status": "partial",
+  "errors": [],
+  "settings": {
+    "video": "data/input/TV_Commercials_1977.mp4",
+    "output_dir": "data/output/TV_Commercials_1977",
+    "start": 0.0,
+    "end": 360.0,
+    "shot_threshold": 27.0,
+    "frames_per_shot": 2,
+    "vision_max_tokens": 512,
+    "vision_mode": "window",
+    "window_sec": 15.0,
+    "vision_timeout": 180.0,
+    "resume": true,
+    "whisper_model": "analysis-worker/models/faster-whisper-base",
+    "vision_provider": "ollama",
+    "vision_model": "qwen2.5vl:3b",
+    "vision_endpoint": "http://localhost:11434/api/chat",
+    "api_key_configured": false
+  },
+  "run_id": "run-1795041500",
+  "shots": [
+    {
+      "id": "shot-00001",
+      "start_sec": 0.0,
+      "end_sec": 26.059367,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00002",
+      "start_sec": 26.059367,
+      "end_sec": 28.6286,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00003",
+      "start_sec": 28.6286,
+      "end_sec": 61.7617,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00004",
+      "start_sec": 61.7617,
+      "end_sec": 66.533133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00005",
+      "start_sec": 66.533133,
+      "end_sec": 67.500767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00006",
+      "start_sec": 67.500767,
+      "end_sec": 90.657233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00007",
+      "start_sec": 90.657233,
+      "end_sec": 96.9969,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00008",
+      "start_sec": 96.9969,
+      "end_sec": 98.098,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00009",
+      "start_sec": 98.098,
+      "end_sec": 99.032267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00010",
+      "start_sec": 99.032267,
+      "end_sec": 100.366933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00011",
+      "start_sec": 100.366933,
+      "end_sec": 101.067633,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00012",
+      "start_sec": 101.067633,
+      "end_sec": 102.7026,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00013",
+      "start_sec": 102.7026,
+      "end_sec": 103.269833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00014",
+      "start_sec": 103.269833,
+      "end_sec": 104.104,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00015",
+      "start_sec": 104.104,
+      "end_sec": 105.2051,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00016",
+      "start_sec": 105.2051,
+      "end_sec": 106.3062,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00017",
+      "start_sec": 106.3062,
+      "end_sec": 106.940167,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00018",
+      "start_sec": 106.940167,
+      "end_sec": 111.0109,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00019",
+      "start_sec": 111.0109,
+      "end_sec": 114.2141,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00020",
+      "start_sec": 114.2141,
+      "end_sec": 115.2151,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00021",
+      "start_sec": 115.2151,
+      "end_sec": 116.883433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00022",
+      "start_sec": 116.883433,
+      "end_sec": 119.285833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00023",
+      "start_sec": 119.285833,
+      "end_sec": 121.121,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00024",
+      "start_sec": 121.121,
+      "end_sec": 122.7226,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00025",
+      "start_sec": 122.7226,
+      "end_sec": 128.294833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00026",
+      "start_sec": 128.294833,
+      "end_sec": 128.862067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00027",
+      "start_sec": 128.862067,
+      "end_sec": 129.4293,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00028",
+      "start_sec": 129.4293,
+      "end_sec": 130.463667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00029",
+      "start_sec": 130.463667,
+      "end_sec": 132.699233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00030",
+      "start_sec": 132.699233,
+      "end_sec": 133.5334,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00031",
+      "start_sec": 133.5334,
+      "end_sec": 135.768967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00032",
+      "start_sec": 135.768967,
+      "end_sec": 138.972167,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00033",
+      "start_sec": 138.972167,
+      "end_sec": 140.073267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00034",
+      "start_sec": 140.073267,
+      "end_sec": 142.909433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00035",
+      "start_sec": 142.909433,
+      "end_sec": 143.5434,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00036",
+      "start_sec": 143.5434,
+      "end_sec": 144.277467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00037",
+      "start_sec": 144.277467,
+      "end_sec": 145.311833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00038",
+      "start_sec": 145.311833,
+      "end_sec": 146.579767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00039",
+      "start_sec": 146.579767,
+      "end_sec": 148.381567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00040",
+      "start_sec": 148.381567,
+      "end_sec": 152.418933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00041",
+      "start_sec": 152.418933,
+      "end_sec": 153.319833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00042",
+      "start_sec": 153.319833,
+      "end_sec": 154.320833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00043",
+      "start_sec": 154.320833,
+      "end_sec": 154.9548,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00044",
+      "start_sec": 154.9548,
+      "end_sec": 157.0569,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00045",
+      "start_sec": 157.0569,
+      "end_sec": 158.291467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00046",
+      "start_sec": 158.291467,
+      "end_sec": 159.192367,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00047",
+      "start_sec": 159.192367,
+      "end_sec": 159.893067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00048",
+      "start_sec": 159.893067,
+      "end_sec": 160.6605,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00049",
+      "start_sec": 160.6605,
+      "end_sec": 161.694867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00050",
+      "start_sec": 161.694867,
+      "end_sec": 162.629133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00051",
+      "start_sec": 162.629133,
+      "end_sec": 164.197367,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00052",
+      "start_sec": 164.197367,
+      "end_sec": 166.533033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00053",
+      "start_sec": 166.533033,
+      "end_sec": 168.535033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00054",
+      "start_sec": 168.535033,
+      "end_sec": 170.537033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00055",
+      "start_sec": 170.537033,
+      "end_sec": 171.638133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00056",
+      "start_sec": 171.638133,
+      "end_sec": 172.605767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00057",
+      "start_sec": 172.605767,
+      "end_sec": 174.040533,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00058",
+      "start_sec": 174.040533,
+      "end_sec": 176.543033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00059",
+      "start_sec": 176.543033,
+      "end_sec": 179.112267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00060",
+      "start_sec": 179.112267,
+      "end_sec": 180.914067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00061",
+      "start_sec": 180.914067,
+      "end_sec": 184.5844,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00062",
+      "start_sec": 184.5844,
+      "end_sec": 185.7856,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00063",
+      "start_sec": 185.7856,
+      "end_sec": 187.654133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00064",
+      "start_sec": 187.654133,
+      "end_sec": 192.659133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00065",
+      "start_sec": 192.659133,
+      "end_sec": 193.8937,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00066",
+      "start_sec": 193.8937,
+      "end_sec": 194.928067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00067",
+      "start_sec": 194.928067,
+      "end_sec": 200.733867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00068",
+      "start_sec": 200.733867,
+      "end_sec": 204.5043,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00069",
+      "start_sec": 204.5043,
+      "end_sec": 205.8056,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00070",
+      "start_sec": 205.8056,
+      "end_sec": 210.276733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00071",
+      "start_sec": 210.276733,
+      "end_sec": 212.845967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00072",
+      "start_sec": 212.845967,
+      "end_sec": 215.5153,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00073",
+      "start_sec": 215.5153,
+      "end_sec": 216.1159,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00074",
+      "start_sec": 216.1159,
+      "end_sec": 217.984433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00075",
+      "start_sec": 217.984433,
+      "end_sec": 218.551667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00076",
+      "start_sec": 218.551667,
+      "end_sec": 220.653767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00077",
+      "start_sec": 220.653767,
+      "end_sec": 233.299733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00078",
+      "start_sec": 233.299733,
+      "end_sec": 240.5403,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00079",
+      "start_sec": 240.5403,
+      "end_sec": 245.4452,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00080",
+      "start_sec": 245.4452,
+      "end_sec": 246.679767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00081",
+      "start_sec": 246.679767,
+      "end_sec": 247.981067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00082",
+      "start_sec": 247.981067,
+      "end_sec": 248.982067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00083",
+      "start_sec": 248.982067,
+      "end_sec": 249.983067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00084",
+      "start_sec": 249.983067,
+      "end_sec": 251.484567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00085",
+      "start_sec": 251.484567,
+      "end_sec": 254.420833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00086",
+      "start_sec": 254.420833,
+      "end_sec": 256.422833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00087",
+      "start_sec": 256.422833,
+      "end_sec": 263.029433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00088",
+      "start_sec": 263.029433,
+      "end_sec": 264.597667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00089",
+      "start_sec": 264.597667,
+      "end_sec": 267.333733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00090",
+      "start_sec": 267.333733,
+      "end_sec": 268.901967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00091",
+      "start_sec": 268.901967,
+      "end_sec": 269.5693,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00092",
+      "start_sec": 269.5693,
+      "end_sec": 271.8716,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00093",
+      "start_sec": 271.8716,
+      "end_sec": 273.806867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00094",
+      "start_sec": 273.806867,
+      "end_sec": 275.908967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00095",
+      "start_sec": 275.908967,
+      "end_sec": 277.9777,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00096",
+      "start_sec": 277.9777,
+      "end_sec": 280.013067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00097",
+      "start_sec": 280.013067,
+      "end_sec": 281.047433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00098",
+      "start_sec": 281.047433,
+      "end_sec": 282.0818,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00099",
+      "start_sec": 282.0818,
+      "end_sec": 283.1829,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00100",
+      "start_sec": 283.1829,
+      "end_sec": 283.916967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00101",
+      "start_sec": 283.916967,
+      "end_sec": 289.422467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00102",
+      "start_sec": 289.422467,
+      "end_sec": 291.524567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00103",
+      "start_sec": 291.524567,
+      "end_sec": 293.960333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00104",
+      "start_sec": 293.960333,
+      "end_sec": 295.662033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00105",
+      "start_sec": 295.662033,
+      "end_sec": 305.5052,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00106",
+      "start_sec": 305.5052,
+      "end_sec": 309.475833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00107",
+      "start_sec": 309.475833,
+      "end_sec": 311.577933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00108",
+      "start_sec": 311.577933,
+      "end_sec": 313.980333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00109",
+      "start_sec": 313.980333,
+      "end_sec": 317.984333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00110",
+      "start_sec": 317.984333,
+      "end_sec": 324.5242,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00111",
+      "start_sec": 324.5242,
+      "end_sec": 331.998333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00112",
+      "start_sec": 331.998333,
+      "end_sec": 334.667667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00113",
+      "start_sec": 334.667667,
+      "end_sec": 345.878867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00114",
+      "start_sec": 345.878867,
+      "end_sec": 347.714033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00115",
+      "start_sec": 347.714033,
+      "end_sec": 348.348,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00116",
+      "start_sec": 348.348,
+      "end_sec": 349.215533,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00117",
+      "start_sec": 349.215533,
+      "end_sec": 349.882867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00118",
+      "start_sec": 349.882867,
+      "end_sec": 352.118433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00119",
+      "start_sec": 352.118433,
+      "end_sec": 353.720033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00120",
+      "start_sec": 353.720033,
+      "end_sec": 354.921233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00121",
+      "start_sec": 354.921233,
+      "end_sec": 355.722033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00122",
+      "start_sec": 355.722033,
+      "end_sec": 356.889867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00123",
+      "start_sec": 356.889867,
+      "end_sec": 358.358,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00124",
+      "start_sec": 358.358,
+      "end_sec": 359.5592,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00125",
+      "start_sec": 359.5592,
+      "end_sec": 359.992967,
+      "boundary_source": "shot_detector"
+    }
+  ],
+  "frames": [
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+      "time_sec": 8.686455666666667,
+      "shot_index": 0,
+      "shot_id": "shot-00001",
+      "window_index": 0
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+      "time_sec": 17.372911333333334,
+      "shot_index": 0,
+      "shot_id": "shot-00001",
+      "window_index": 1
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+      "time_sec": 26.915778,
+      "shot_index": 1,
+      "shot_id": "shot-00002",
+      "window_index": 1
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00001-01.jpg",
+      "time_sec": 27.772189,
+      "shot_index": 1,
+      "shot_id": "shot-00002",
+      "window_index": 1
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+      "time_sec": 39.67296666666667,
+      "shot_index": 2,
+      "shot_id": "shot-00003",
+      "window_index": 2
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+      "time_sec": 50.71733333333333,
+      "shot_index": 2,
+      "shot_id": "shot-00003",
+      "window_index": 3
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+      "time_sec": 63.35217766666667,
+      "shot_index": 3,
+      "shot_id": "shot-00004",
+      "window_index": 4
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+      "time_sec": 64.94265533333333,
+      "shot_index": 3,
+      "shot_id": "shot-00004",
+      "window_index": 4
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00004-00.jpg",
+      "time_sec": 66.85567766666667,
+      "shot_index": 4,
+      "shot_id": "shot-00005",
+      "window_index": 4
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00004-01.jpg",
+      "time_sec": 67.17822233333334,
+      "shot_index": 4,
+      "shot_id": "shot-00005",
+      "window_index": 4
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+      "time_sec": 75.219589,
+      "shot_index": 5,
+      "shot_id": "shot-00006",
+      "window_index": 5
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+      "time_sec": 82.938411,
+      "shot_index": 5,
+      "shot_id": "shot-00006",
+      "window_index": 5
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+      "time_sec": 92.77045533333333,
+      "shot_index": 6,
+      "shot_id": "shot-00007",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+      "time_sec": 94.88367766666667,
+      "shot_index": 6,
+      "shot_id": "shot-00007",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00007-00.jpg",
+      "time_sec": 97.36393333333334,
+      "shot_index": 7,
+      "shot_id": "shot-00008",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00007-01.jpg",
+      "time_sec": 97.73096666666666,
+      "shot_index": 7,
+      "shot_id": "shot-00008",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00008-00.jpg",
+      "time_sec": 98.40942233333334,
+      "shot_index": 8,
+      "shot_id": "shot-00009",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00008-01.jpg",
+      "time_sec": 98.72084466666666,
+      "shot_index": 8,
+      "shot_id": "shot-00009",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00009-00.jpg",
+      "time_sec": 99.47715566666668,
+      "shot_index": 9,
+      "shot_id": "shot-00010",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00009-01.jpg",
+      "time_sec": 99.92204433333333,
+      "shot_index": 9,
+      "shot_id": "shot-00010",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00010-00.jpg",
+      "time_sec": 100.60049966666666,
+      "shot_index": 10,
+      "shot_id": "shot-00011",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00010-01.jpg",
+      "time_sec": 100.83406633333334,
+      "shot_index": 10,
+      "shot_id": "shot-00011",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00011-00.jpg",
+      "time_sec": 101.612622,
+      "shot_index": 11,
+      "shot_id": "shot-00012",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00011-01.jpg",
+      "time_sec": 102.157611,
+      "shot_index": 11,
+      "shot_id": "shot-00012",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00012-00.jpg",
+      "time_sec": 102.89167766666667,
+      "shot_index": 12,
+      "shot_id": "shot-00013",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00012-01.jpg",
+      "time_sec": 103.08075533333334,
+      "shot_index": 12,
+      "shot_id": "shot-00013",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00013-00.jpg",
+      "time_sec": 103.54788866666667,
+      "shot_index": 13,
+      "shot_id": "shot-00014",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00013-01.jpg",
+      "time_sec": 103.82594433333334,
+      "shot_index": 13,
+      "shot_id": "shot-00014",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00014-00.jpg",
+      "time_sec": 104.47103333333334,
+      "shot_index": 14,
+      "shot_id": "shot-00015",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00014-01.jpg",
+      "time_sec": 104.83806666666666,
+      "shot_index": 14,
+      "shot_id": "shot-00015",
+      "window_index": 6
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+      "time_sec": 105.57213333333334,
+      "shot_index": 15,
+      "shot_id": "shot-00016",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+      "time_sec": 105.93916666666667,
+      "shot_index": 15,
+      "shot_id": "shot-00016",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00016-00.jpg",
+      "time_sec": 106.51752233333333,
+      "shot_index": 16,
+      "shot_id": "shot-00017",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00016-01.jpg",
+      "time_sec": 106.72884466666667,
+      "shot_index": 16,
+      "shot_id": "shot-00017",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00017-00.jpg",
+      "time_sec": 108.297078,
+      "shot_index": 17,
+      "shot_id": "shot-00018",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00017-01.jpg",
+      "time_sec": 109.65398900000001,
+      "shot_index": 17,
+      "shot_id": "shot-00018",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00018-00.jpg",
+      "time_sec": 112.07863333333334,
+      "shot_index": 18,
+      "shot_id": "shot-00019",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00018-01.jpg",
+      "time_sec": 113.14636666666667,
+      "shot_index": 18,
+      "shot_id": "shot-00019",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00019-00.jpg",
+      "time_sec": 114.54776666666667,
+      "shot_index": 19,
+      "shot_id": "shot-00020",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00019-01.jpg",
+      "time_sec": 114.88143333333333,
+      "shot_index": 19,
+      "shot_id": "shot-00020",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00020-00.jpg",
+      "time_sec": 115.77121100000001,
+      "shot_index": 20,
+      "shot_id": "shot-00021",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00020-01.jpg",
+      "time_sec": 116.327322,
+      "shot_index": 20,
+      "shot_id": "shot-00021",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00021-00.jpg",
+      "time_sec": 117.68423299999999,
+      "shot_index": 21,
+      "shot_id": "shot-00022",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00021-01.jpg",
+      "time_sec": 118.485033,
+      "shot_index": 21,
+      "shot_id": "shot-00022",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00022-00.jpg",
+      "time_sec": 119.89755533333333,
+      "shot_index": 22,
+      "shot_id": "shot-00023",
+      "window_index": 7
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+      "time_sec": 120.50927766666666,
+      "shot_index": 22,
+      "shot_id": "shot-00023",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg",
+      "time_sec": 121.65486666666666,
+      "shot_index": 23,
+      "shot_id": "shot-00024",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00023-01.jpg",
+      "time_sec": 122.18873333333333,
+      "shot_index": 23,
+      "shot_id": "shot-00024",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00024-00.jpg",
+      "time_sec": 124.580011,
+      "shot_index": 24,
+      "shot_id": "shot-00025",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00024-01.jpg",
+      "time_sec": 126.43742200000001,
+      "shot_index": 24,
+      "shot_id": "shot-00025",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00025-00.jpg",
+      "time_sec": 128.483911,
+      "shot_index": 25,
+      "shot_id": "shot-00026",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00025-01.jpg",
+      "time_sec": 128.672989,
+      "shot_index": 25,
+      "shot_id": "shot-00026",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00026-00.jpg",
+      "time_sec": 129.05114466666666,
+      "shot_index": 26,
+      "shot_id": "shot-00027",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00026-01.jpg",
+      "time_sec": 129.24022233333335,
+      "shot_index": 26,
+      "shot_id": "shot-00027",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00027-00.jpg",
+      "time_sec": 129.774089,
+      "shot_index": 27,
+      "shot_id": "shot-00028",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00027-01.jpg",
+      "time_sec": 130.118878,
+      "shot_index": 27,
+      "shot_id": "shot-00028",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00028-00.jpg",
+      "time_sec": 131.20885566666666,
+      "shot_index": 28,
+      "shot_id": "shot-00029",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00028-01.jpg",
+      "time_sec": 131.95404433333331,
+      "shot_index": 28,
+      "shot_id": "shot-00029",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00029-00.jpg",
+      "time_sec": 132.97728866666665,
+      "shot_index": 29,
+      "shot_id": "shot-00030",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00029-01.jpg",
+      "time_sec": 133.25534433333334,
+      "shot_index": 29,
+      "shot_id": "shot-00030",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00030-00.jpg",
+      "time_sec": 134.278589,
+      "shot_index": 30,
+      "shot_id": "shot-00031",
+      "window_index": 8
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+      "time_sec": 135.023778,
+      "shot_index": 30,
+      "shot_id": "shot-00031",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+      "time_sec": 136.83670033333334,
+      "shot_index": 31,
+      "shot_id": "shot-00032",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00031-01.jpg",
+      "time_sec": 137.90443366666668,
+      "shot_index": 31,
+      "shot_id": "shot-00032",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00032-00.jpg",
+      "time_sec": 139.33920033333334,
+      "shot_index": 32,
+      "shot_id": "shot-00033",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00032-01.jpg",
+      "time_sec": 139.70623366666666,
+      "shot_index": 32,
+      "shot_id": "shot-00033",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00033-00.jpg",
+      "time_sec": 141.01865566666666,
+      "shot_index": 33,
+      "shot_id": "shot-00034",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00033-01.jpg",
+      "time_sec": 141.96404433333333,
+      "shot_index": 33,
+      "shot_id": "shot-00034",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00034-00.jpg",
+      "time_sec": 143.12075533333334,
+      "shot_index": 34,
+      "shot_id": "shot-00035",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00034-01.jpg",
+      "time_sec": 143.33207766666666,
+      "shot_index": 34,
+      "shot_id": "shot-00035",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00035-00.jpg",
+      "time_sec": 143.78808899999999,
+      "shot_index": 35,
+      "shot_id": "shot-00036",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00035-01.jpg",
+      "time_sec": 144.032778,
+      "shot_index": 35,
+      "shot_id": "shot-00036",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00036-00.jpg",
+      "time_sec": 144.62225566666666,
+      "shot_index": 36,
+      "shot_id": "shot-00037",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00036-01.jpg",
+      "time_sec": 144.96704433333335,
+      "shot_index": 36,
+      "shot_id": "shot-00037",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00037-00.jpg",
+      "time_sec": 145.73447766666666,
+      "shot_index": 37,
+      "shot_id": "shot-00038",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00037-01.jpg",
+      "time_sec": 146.15712233333335,
+      "shot_index": 37,
+      "shot_id": "shot-00038",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00038-00.jpg",
+      "time_sec": 147.180367,
+      "shot_index": 38,
+      "shot_id": "shot-00039",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00038-01.jpg",
+      "time_sec": 147.780967,
+      "shot_index": 38,
+      "shot_id": "shot-00039",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00039-00.jpg",
+      "time_sec": 149.72735566666665,
+      "shot_index": 39,
+      "shot_id": "shot-00040",
+      "window_index": 9
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+      "time_sec": 151.07314433333335,
+      "shot_index": 39,
+      "shot_id": "shot-00040",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg",
+      "time_sec": 152.719233,
+      "shot_index": 40,
+      "shot_id": "shot-00041",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00040-01.jpg",
+      "time_sec": 153.019533,
+      "shot_index": 40,
+      "shot_id": "shot-00041",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00041-00.jpg",
+      "time_sec": 153.65349966666665,
+      "shot_index": 41,
+      "shot_id": "shot-00042",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00041-01.jpg",
+      "time_sec": 153.98716633333333,
+      "shot_index": 41,
+      "shot_id": "shot-00042",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00042-00.jpg",
+      "time_sec": 154.53215533333332,
+      "shot_index": 42,
+      "shot_id": "shot-00043",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00042-01.jpg",
+      "time_sec": 154.74347766666668,
+      "shot_index": 42,
+      "shot_id": "shot-00043",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00043-00.jpg",
+      "time_sec": 155.65550000000002,
+      "shot_index": 43,
+      "shot_id": "shot-00044",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00043-01.jpg",
+      "time_sec": 156.3562,
+      "shot_index": 43,
+      "shot_id": "shot-00044",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00044-00.jpg",
+      "time_sec": 157.46842233333334,
+      "shot_index": 44,
+      "shot_id": "shot-00045",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00044-01.jpg",
+      "time_sec": 157.8799446666667,
+      "shot_index": 44,
+      "shot_id": "shot-00045",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00045-00.jpg",
+      "time_sec": 158.591767,
+      "shot_index": 45,
+      "shot_id": "shot-00046",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00045-01.jpg",
+      "time_sec": 158.892067,
+      "shot_index": 45,
+      "shot_id": "shot-00046",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00046-00.jpg",
+      "time_sec": 159.42593366666665,
+      "shot_index": 46,
+      "shot_id": "shot-00047",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00046-01.jpg",
+      "time_sec": 159.65950033333334,
+      "shot_index": 46,
+      "shot_id": "shot-00047",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00047-00.jpg",
+      "time_sec": 160.148878,
+      "shot_index": 47,
+      "shot_id": "shot-00048",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00047-01.jpg",
+      "time_sec": 160.40468900000002,
+      "shot_index": 47,
+      "shot_id": "shot-00048",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00048-00.jpg",
+      "time_sec": 161.005289,
+      "shot_index": 48,
+      "shot_id": "shot-00049",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00048-01.jpg",
+      "time_sec": 161.350078,
+      "shot_index": 48,
+      "shot_id": "shot-00049",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00049-00.jpg",
+      "time_sec": 162.00628899999998,
+      "shot_index": 49,
+      "shot_id": "shot-00050",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00049-01.jpg",
+      "time_sec": 162.317711,
+      "shot_index": 49,
+      "shot_id": "shot-00050",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00050-00.jpg",
+      "time_sec": 163.15187766666668,
+      "shot_index": 50,
+      "shot_id": "shot-00051",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00050-01.jpg",
+      "time_sec": 163.67462233333333,
+      "shot_index": 50,
+      "shot_id": "shot-00051",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00051-00.jpg",
+      "time_sec": 164.97592233333333,
+      "shot_index": 51,
+      "shot_id": "shot-00052",
+      "window_index": 10
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+      "time_sec": 165.75447766666667,
+      "shot_index": 51,
+      "shot_id": "shot-00052",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg",
+      "time_sec": 167.20036633333333,
+      "shot_index": 52,
+      "shot_id": "shot-00053",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00052-01.jpg",
+      "time_sec": 167.86769966666665,
+      "shot_index": 52,
+      "shot_id": "shot-00053",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00053-00.jpg",
+      "time_sec": 169.20236633333334,
+      "shot_index": 53,
+      "shot_id": "shot-00054",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00053-01.jpg",
+      "time_sec": 169.86969966666666,
+      "shot_index": 53,
+      "shot_id": "shot-00054",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00054-00.jpg",
+      "time_sec": 170.90406633333333,
+      "shot_index": 54,
+      "shot_id": "shot-00055",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00054-01.jpg",
+      "time_sec": 171.2710996666667,
+      "shot_index": 54,
+      "shot_id": "shot-00055",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00055-00.jpg",
+      "time_sec": 171.96067766666667,
+      "shot_index": 55,
+      "shot_id": "shot-00056",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00055-01.jpg",
+      "time_sec": 172.28322233333333,
+      "shot_index": 55,
+      "shot_id": "shot-00056",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00056-00.jpg",
+      "time_sec": 173.08402233333334,
+      "shot_index": 56,
+      "shot_id": "shot-00057",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00056-01.jpg",
+      "time_sec": 173.56227766666666,
+      "shot_index": 56,
+      "shot_id": "shot-00057",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00057-00.jpg",
+      "time_sec": 174.8746996666667,
+      "shot_index": 57,
+      "shot_id": "shot-00058",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00057-01.jpg",
+      "time_sec": 175.70886633333333,
+      "shot_index": 57,
+      "shot_id": "shot-00058",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00058-00.jpg",
+      "time_sec": 177.39944433333335,
+      "shot_index": 58,
+      "shot_id": "shot-00059",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00058-01.jpg",
+      "time_sec": 178.25585566666666,
+      "shot_index": 58,
+      "shot_id": "shot-00059",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00059-00.jpg",
+      "time_sec": 179.712867,
+      "shot_index": 59,
+      "shot_id": "shot-00060",
+      "window_index": 11
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+      "time_sec": 180.313467,
+      "shot_index": 59,
+      "shot_id": "shot-00060",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+      "time_sec": 182.13751133333332,
+      "shot_index": 60,
+      "shot_id": "shot-00061",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00060-01.jpg",
+      "time_sec": 183.36095566666665,
+      "shot_index": 60,
+      "shot_id": "shot-00061",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00061-00.jpg",
+      "time_sec": 184.98479999999998,
+      "shot_index": 61,
+      "shot_id": "shot-00062",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00061-01.jpg",
+      "time_sec": 185.3852,
+      "shot_index": 61,
+      "shot_id": "shot-00062",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00062-00.jpg",
+      "time_sec": 186.40844433333334,
+      "shot_index": 62,
+      "shot_id": "shot-00063",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00062-01.jpg",
+      "time_sec": 187.03128866666665,
+      "shot_index": 62,
+      "shot_id": "shot-00063",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00063-00.jpg",
+      "time_sec": 189.32246633333332,
+      "shot_index": 63,
+      "shot_id": "shot-00064",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00063-01.jpg",
+      "time_sec": 190.99079966666667,
+      "shot_index": 63,
+      "shot_id": "shot-00064",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00064-00.jpg",
+      "time_sec": 193.07065533333332,
+      "shot_index": 64,
+      "shot_id": "shot-00065",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00064-01.jpg",
+      "time_sec": 193.48217766666667,
+      "shot_index": 64,
+      "shot_id": "shot-00065",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00065-00.jpg",
+      "time_sec": 194.238489,
+      "shot_index": 65,
+      "shot_id": "shot-00066",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00065-01.jpg",
+      "time_sec": 194.583278,
+      "shot_index": 65,
+      "shot_id": "shot-00066",
+      "window_index": 12
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+      "time_sec": 196.86333366666668,
+      "shot_index": 66,
+      "shot_id": "shot-00067",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+      "time_sec": 198.79860033333333,
+      "shot_index": 66,
+      "shot_id": "shot-00067",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00067-00.jpg",
+      "time_sec": 201.990678,
+      "shot_index": 67,
+      "shot_id": "shot-00068",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00067-01.jpg",
+      "time_sec": 203.247489,
+      "shot_index": 67,
+      "shot_id": "shot-00068",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00068-00.jpg",
+      "time_sec": 204.93806666666666,
+      "shot_index": 68,
+      "shot_id": "shot-00069",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00068-01.jpg",
+      "time_sec": 205.37183333333334,
+      "shot_index": 68,
+      "shot_id": "shot-00069",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00069-00.jpg",
+      "time_sec": 207.29597766666666,
+      "shot_index": 69,
+      "shot_id": "shot-00070",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00069-01.jpg",
+      "time_sec": 208.78635533333335,
+      "shot_index": 69,
+      "shot_id": "shot-00070",
+      "window_index": 13
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+      "time_sec": 211.13314433333335,
+      "shot_index": 70,
+      "shot_id": "shot-00071",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+      "time_sec": 211.98955566666666,
+      "shot_index": 70,
+      "shot_id": "shot-00071",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00071-00.jpg",
+      "time_sec": 213.73574466666668,
+      "shot_index": 71,
+      "shot_id": "shot-00072",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00071-01.jpg",
+      "time_sec": 214.62552233333332,
+      "shot_index": 71,
+      "shot_id": "shot-00072",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00072-00.jpg",
+      "time_sec": 215.7155,
+      "shot_index": 72,
+      "shot_id": "shot-00073",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00072-01.jpg",
+      "time_sec": 215.91570000000002,
+      "shot_index": 72,
+      "shot_id": "shot-00073",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00073-00.jpg",
+      "time_sec": 216.73874433333333,
+      "shot_index": 73,
+      "shot_id": "shot-00074",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00073-01.jpg",
+      "time_sec": 217.36158866666668,
+      "shot_index": 73,
+      "shot_id": "shot-00074",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00074-00.jpg",
+      "time_sec": 218.173511,
+      "shot_index": 74,
+      "shot_id": "shot-00075",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00074-01.jpg",
+      "time_sec": 218.362589,
+      "shot_index": 74,
+      "shot_id": "shot-00075",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00075-00.jpg",
+      "time_sec": 219.252367,
+      "shot_index": 75,
+      "shot_id": "shot-00076",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00075-01.jpg",
+      "time_sec": 219.953067,
+      "shot_index": 75,
+      "shot_id": "shot-00076",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00076-00.jpg",
+      "time_sec": 224.869089,
+      "shot_index": 76,
+      "shot_id": "shot-00077",
+      "window_index": 14
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+      "time_sec": 229.084411,
+      "shot_index": 76,
+      "shot_id": "shot-00077",
+      "window_index": 15
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+      "time_sec": 235.71325533333334,
+      "shot_index": 77,
+      "shot_id": "shot-00078",
+      "window_index": 15
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00077-01.jpg",
+      "time_sec": 238.12677766666667,
+      "shot_index": 77,
+      "shot_id": "shot-00078",
+      "window_index": 15
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+      "time_sec": 242.17526666666666,
+      "shot_index": 78,
+      "shot_id": "shot-00079",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg",
+      "time_sec": 243.81023333333334,
+      "shot_index": 78,
+      "shot_id": "shot-00079",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00079-00.jpg",
+      "time_sec": 245.85672233333332,
+      "shot_index": 79,
+      "shot_id": "shot-00080",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00079-01.jpg",
+      "time_sec": 246.26824466666667,
+      "shot_index": 79,
+      "shot_id": "shot-00080",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00080-00.jpg",
+      "time_sec": 247.11353366666665,
+      "shot_index": 80,
+      "shot_id": "shot-00081",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00080-01.jpg",
+      "time_sec": 247.54730033333334,
+      "shot_index": 80,
+      "shot_id": "shot-00081",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00081-00.jpg",
+      "time_sec": 248.31473366666665,
+      "shot_index": 81,
+      "shot_id": "shot-00082",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00081-01.jpg",
+      "time_sec": 248.64840033333334,
+      "shot_index": 81,
+      "shot_id": "shot-00082",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00082-00.jpg",
+      "time_sec": 249.31573366666666,
+      "shot_index": 82,
+      "shot_id": "shot-00083",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00082-01.jpg",
+      "time_sec": 249.64940033333335,
+      "shot_index": 82,
+      "shot_id": "shot-00083",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00083-00.jpg",
+      "time_sec": 250.483567,
+      "shot_index": 83,
+      "shot_id": "shot-00084",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00083-01.jpg",
+      "time_sec": 250.984067,
+      "shot_index": 83,
+      "shot_id": "shot-00084",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00084-00.jpg",
+      "time_sec": 252.46332233333334,
+      "shot_index": 84,
+      "shot_id": "shot-00085",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00084-01.jpg",
+      "time_sec": 253.44207766666665,
+      "shot_index": 84,
+      "shot_id": "shot-00085",
+      "window_index": 16
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+      "time_sec": 255.08816633333333,
+      "shot_index": 85,
+      "shot_id": "shot-00086",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+      "time_sec": 255.75549966666668,
+      "shot_index": 85,
+      "shot_id": "shot-00086",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00086-00.jpg",
+      "time_sec": 258.62503300000003,
+      "shot_index": 86,
+      "shot_id": "shot-00087",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00086-01.jpg",
+      "time_sec": 260.827233,
+      "shot_index": 86,
+      "shot_id": "shot-00087",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00087-00.jpg",
+      "time_sec": 263.55217766666664,
+      "shot_index": 87,
+      "shot_id": "shot-00088",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00087-01.jpg",
+      "time_sec": 264.07492233333335,
+      "shot_index": 87,
+      "shot_id": "shot-00088",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00088-00.jpg",
+      "time_sec": 265.509689,
+      "shot_index": 88,
+      "shot_id": "shot-00089",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00088-01.jpg",
+      "time_sec": 266.421711,
+      "shot_index": 88,
+      "shot_id": "shot-00089",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00089-00.jpg",
+      "time_sec": 267.85647766666665,
+      "shot_index": 89,
+      "shot_id": "shot-00090",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00089-01.jpg",
+      "time_sec": 268.37922233333336,
+      "shot_index": 89,
+      "shot_id": "shot-00090",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00090-00.jpg",
+      "time_sec": 269.12441133333334,
+      "shot_index": 90,
+      "shot_id": "shot-00091",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00090-01.jpg",
+      "time_sec": 269.34685566666667,
+      "shot_index": 90,
+      "shot_id": "shot-00091",
+      "window_index": 17
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+      "time_sec": 270.3367333333333,
+      "shot_index": 91,
+      "shot_id": "shot-00092",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+      "time_sec": 271.1041666666667,
+      "shot_index": 91,
+      "shot_id": "shot-00092",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00092-00.jpg",
+      "time_sec": 272.516689,
+      "shot_index": 92,
+      "shot_id": "shot-00093",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00092-01.jpg",
+      "time_sec": 273.161778,
+      "shot_index": 92,
+      "shot_id": "shot-00093",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00093-00.jpg",
+      "time_sec": 274.507567,
+      "shot_index": 93,
+      "shot_id": "shot-00094",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00093-01.jpg",
+      "time_sec": 275.20826700000003,
+      "shot_index": 93,
+      "shot_id": "shot-00094",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00094-00.jpg",
+      "time_sec": 276.59854466666667,
+      "shot_index": 94,
+      "shot_id": "shot-00095",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00094-01.jpg",
+      "time_sec": 277.2881223333334,
+      "shot_index": 94,
+      "shot_id": "shot-00095",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00095-00.jpg",
+      "time_sec": 278.6561556666667,
+      "shot_index": 95,
+      "shot_id": "shot-00096",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00095-01.jpg",
+      "time_sec": 279.3346113333333,
+      "shot_index": 95,
+      "shot_id": "shot-00096",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00096-00.jpg",
+      "time_sec": 280.35785566666664,
+      "shot_index": 96,
+      "shot_id": "shot-00097",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00096-01.jpg",
+      "time_sec": 280.70264433333335,
+      "shot_index": 96,
+      "shot_id": "shot-00097",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00097-00.jpg",
+      "time_sec": 281.392222,
+      "shot_index": 97,
+      "shot_id": "shot-00098",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00097-01.jpg",
+      "time_sec": 281.737011,
+      "shot_index": 97,
+      "shot_id": "shot-00098",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00098-00.jpg",
+      "time_sec": 282.4488333333333,
+      "shot_index": 98,
+      "shot_id": "shot-00099",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00098-01.jpg",
+      "time_sec": 282.8158666666667,
+      "shot_index": 98,
+      "shot_id": "shot-00099",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00099-00.jpg",
+      "time_sec": 283.427589,
+      "shot_index": 99,
+      "shot_id": "shot-00100",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00099-01.jpg",
+      "time_sec": 283.672278,
+      "shot_index": 99,
+      "shot_id": "shot-00100",
+      "window_index": 18
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+      "time_sec": 285.7521336666667,
+      "shot_index": 100,
+      "shot_id": "shot-00101",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+      "time_sec": 287.5873003333333,
+      "shot_index": 100,
+      "shot_id": "shot-00101",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00101-00.jpg",
+      "time_sec": 290.12316699999997,
+      "shot_index": 101,
+      "shot_id": "shot-00102",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00101-01.jpg",
+      "time_sec": 290.823867,
+      "shot_index": 101,
+      "shot_id": "shot-00102",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00102-00.jpg",
+      "time_sec": 292.336489,
+      "shot_index": 102,
+      "shot_id": "shot-00103",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00102-01.jpg",
+      "time_sec": 293.148411,
+      "shot_index": 102,
+      "shot_id": "shot-00103",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00103-00.jpg",
+      "time_sec": 294.5275663333333,
+      "shot_index": 103,
+      "shot_id": "shot-00104",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00103-01.jpg",
+      "time_sec": 295.0947996666667,
+      "shot_index": 103,
+      "shot_id": "shot-00104",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00104-00.jpg",
+      "time_sec": 298.94308866666665,
+      "shot_index": 104,
+      "shot_id": "shot-00105",
+      "window_index": 19
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+      "time_sec": 302.22414433333336,
+      "shot_index": 104,
+      "shot_id": "shot-00105",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+      "time_sec": 306.82874433333336,
+      "shot_index": 105,
+      "shot_id": "shot-00106",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00105-01.jpg",
+      "time_sec": 308.15228866666666,
+      "shot_index": 105,
+      "shot_id": "shot-00106",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00106-00.jpg",
+      "time_sec": 310.176533,
+      "shot_index": 106,
+      "shot_id": "shot-00107",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00106-01.jpg",
+      "time_sec": 310.877233,
+      "shot_index": 106,
+      "shot_id": "shot-00107",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00107-00.jpg",
+      "time_sec": 312.37873299999995,
+      "shot_index": 107,
+      "shot_id": "shot-00108",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00107-01.jpg",
+      "time_sec": 313.179533,
+      "shot_index": 107,
+      "shot_id": "shot-00108",
+      "window_index": 20
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+      "time_sec": 315.31499966666667,
+      "shot_index": 108,
+      "shot_id": "shot-00109",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+      "time_sec": 316.6496663333333,
+      "shot_index": 108,
+      "shot_id": "shot-00109",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00109-00.jpg",
+      "time_sec": 320.16428866666666,
+      "shot_index": 109,
+      "shot_id": "shot-00110",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00109-01.jpg",
+      "time_sec": 322.34424433333334,
+      "shot_index": 109,
+      "shot_id": "shot-00110",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00110-00.jpg",
+      "time_sec": 327.0155776666667,
+      "shot_index": 110,
+      "shot_id": "shot-00111",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00110-01.jpg",
+      "time_sec": 329.50695533333334,
+      "shot_index": 110,
+      "shot_id": "shot-00111",
+      "window_index": 21
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+      "time_sec": 332.888111,
+      "shot_index": 111,
+      "shot_id": "shot-00112",
+      "window_index": 22
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg",
+      "time_sec": 333.777889,
+      "shot_index": 111,
+      "shot_id": "shot-00112",
+      "window_index": 22
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00112-00.jpg",
+      "time_sec": 338.4047336666667,
+      "shot_index": 112,
+      "shot_id": "shot-00113",
+      "window_index": 22
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00112-01.jpg",
+      "time_sec": 342.1418003333333,
+      "shot_index": 112,
+      "shot_id": "shot-00113",
+      "window_index": 22
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+      "time_sec": 346.490589,
+      "shot_index": 113,
+      "shot_id": "shot-00114",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg",
+      "time_sec": 347.102311,
+      "shot_index": 113,
+      "shot_id": "shot-00114",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00114-00.jpg",
+      "time_sec": 347.9253553333333,
+      "shot_index": 114,
+      "shot_id": "shot-00115",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00114-01.jpg",
+      "time_sec": 348.1366776666667,
+      "shot_index": 114,
+      "shot_id": "shot-00115",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00115-00.jpg",
+      "time_sec": 348.6371776666667,
+      "shot_index": 115,
+      "shot_id": "shot-00116",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00115-01.jpg",
+      "time_sec": 348.92635533333333,
+      "shot_index": 115,
+      "shot_id": "shot-00116",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00116-00.jpg",
+      "time_sec": 349.43797766666665,
+      "shot_index": 116,
+      "shot_id": "shot-00117",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00116-01.jpg",
+      "time_sec": 349.6604223333333,
+      "shot_index": 116,
+      "shot_id": "shot-00117",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00117-00.jpg",
+      "time_sec": 350.6280556666666,
+      "shot_index": 117,
+      "shot_id": "shot-00118",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00117-01.jpg",
+      "time_sec": 351.37324433333333,
+      "shot_index": 117,
+      "shot_id": "shot-00118",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00118-00.jpg",
+      "time_sec": 352.65229966666664,
+      "shot_index": 118,
+      "shot_id": "shot-00119",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00118-01.jpg",
+      "time_sec": 353.18616633333335,
+      "shot_index": 118,
+      "shot_id": "shot-00119",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00119-00.jpg",
+      "time_sec": 354.120433,
+      "shot_index": 119,
+      "shot_id": "shot-00120",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00119-01.jpg",
+      "time_sec": 354.520833,
+      "shot_index": 119,
+      "shot_id": "shot-00120",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00120-00.jpg",
+      "time_sec": 355.1881663333333,
+      "shot_index": 120,
+      "shot_id": "shot-00121",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00120-01.jpg",
+      "time_sec": 355.4550996666667,
+      "shot_index": 120,
+      "shot_id": "shot-00121",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00121-00.jpg",
+      "time_sec": 356.111311,
+      "shot_index": 121,
+      "shot_id": "shot-00122",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00121-01.jpg",
+      "time_sec": 356.500589,
+      "shot_index": 121,
+      "shot_id": "shot-00122",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00122-00.jpg",
+      "time_sec": 357.37924466666664,
+      "shot_index": 122,
+      "shot_id": "shot-00123",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00122-01.jpg",
+      "time_sec": 357.86862233333335,
+      "shot_index": 122,
+      "shot_id": "shot-00123",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00123-00.jpg",
+      "time_sec": 358.7584,
+      "shot_index": 123,
+      "shot_id": "shot-00124",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00123-01.jpg",
+      "time_sec": 359.1588,
+      "shot_index": 123,
+      "shot_id": "shot-00124",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00124-00.jpg",
+      "time_sec": 359.703789,
+      "shot_index": 124,
+      "shot_id": "shot-00125",
+      "window_index": 23
+    },
+    {
+      "path": "runs/5bff72c2b1710c8a/frames/shot-00124-01.jpg",
+      "time_sec": 359.848378,
+      "shot_index": 124,
+      "shot_id": "shot-00125",
+      "window_index": 23
+    }
+  ],
+  "transcript": [
+    {
+      "start_sec": 2.26,
+      "end_sec": 8.57,
+      "text": "My first name is O-S-C-A-R."
+    },
+    {
+      "start_sec": 8.57,
+      "end_sec": 13.73,
+      "text": "My baloney has a second name, it's an A-Y-E-R."
+    },
+    {
+      "start_sec": 13.73,
+      "end_sec": 26.18,
+      "text": "I love to read it every day, if you allow G and A."
+    },
+    {
+      "start_sec": 26.18,
+      "end_sec": 28.98,
+      "text": "Oscar Meyer, the first name in balona."
+    },
+    {
+      "start_sec": 28.98,
+      "end_sec": 29.98,
+      "text": "How's that?"
+    },
+    {
+      "start_sec": 29.98,
+      "end_sec": 36.12,
+      "text": "What's behind the brand of hot dogs you buy?"
+    },
+    {
+      "start_sec": 36.12,
+      "end_sec": 39.08,
+      "text": "You know you're getting solid value with Oscar Meyer"
+    },
+    {
+      "start_sec": 39.08,
+      "end_sec": 41.96,
+      "text": "and quality trusted for generations."
+    },
+    {
+      "start_sec": 41.96,
+      "end_sec": 45.52,
+      "text": "There's wholesome meat protein from solid cuts of meat."
+    },
+    {
+      "start_sec": 45.52,
+      "end_sec": 47.92,
+      "text": "They only meet Oscar Meyer uses."
+    },
+    {
+      "start_sec": 47.92,
+      "end_sec": 49.72,
+      "text": "US government inspectors."
+    },
+    {
+      "start_sec": 49.72,
+      "end_sec": 53.64,
+      "text": "Oscar Meyer selected Oscar Meyer winners of beef flanks"
+    },
+    {
+      "start_sec": 53.64,
+      "end_sec": 55.16,
+      "text": "in handy twin bags."
+    },
+    {
+      "start_sec": 55.16,
+      "end_sec": 58.36,
+      "text": "The flavors as good as the good meat itself."
+    },
+    {
+      "start_sec": 58.36,
+      "end_sec": 61.36,
+      "text": "Oscar Meyer, America's number one."
+    },
+    {
+      "start_sec": 61.36,
+      "end_sec": 70.38,
+      "text": "There is a corn lover and there's nothing more gratifying"
+    },
+    {
+      "start_sec": 70.38,
+      "end_sec": 72.86,
+      "text": "to a corn lover than to know that her mother is giving her"
+    },
+    {
+      "start_sec": 72.86,
+      "end_sec": 75.06,
+      "text": "delicious Del Monte family style corn."
+    },
+    {
+      "start_sec": 75.06,
+      "end_sec": 77.54,
+      "text": "More people eat than any other corn like it."
+    },
+    {
+      "start_sec": 77.54,
+      "end_sec": 80.5,
+      "text": "This is a special strain developed to be sweet and tender."
+    },
+    {
+      "start_sec": 80.5,
+      "end_sec": 82.74,
+      "text": "And when a corn lover is eating Del Monte corn,"
+    },
+    {
+      "start_sec": 82.74,
+      "end_sec": 85.58,
+      "text": "she probably doesn't need to hear me talking about how good it is,"
+    },
+    {
+      "start_sec": 85.58,
+      "end_sec": 86.1,
+      "text": "right?"
+    },
+    {
+      "start_sec": 86.1,
+      "end_sec": 88.5,
+      "text": "Well, then I'm just going to go into the living room"
+    },
+    {
+      "start_sec": 88.5,
+      "end_sec": 90.7,
+      "text": "and talk about corn to the sofa."
+    },
+    {
+      "start_sec": 90.7,
+      "end_sec": 98.93,
+      "text": "Time's new, good."
+    },
+    {
+      "start_sec": 98.93,
+      "end_sec": 100.97,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 100.97,
+      "end_sec": 105.17,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 105.17,
+      "end_sec": 106.93,
+      "text": "Mounds don't."
+    },
+    {
+      "start_sec": 106.93,
+      "end_sec": 108.97,
+      "text": "How many toys got built up chocolate?"
+    },
+    {
+      "start_sec": 108.97,
+      "end_sec": 110.85,
+      "text": "Coconut and munching it's too old."
+    },
+    {
+      "start_sec": 110.85,
+      "end_sec": 114.77,
+      "text": "Mounds got deep down chocolate and chewing coconut."
+    },
+    {
+      "start_sec": 114.77,
+      "end_sec": 116.73,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 116.73,
+      "end_sec": 118.69,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 118.69,
+      "end_sec": 120.76,
+      "text": "Beautiful."
+    },
+    {
+      "start_sec": 120.76,
+      "end_sec": 121.16,
+      "text": "Beautiful."
+    },
+    {
+      "start_sec": 121.16,
+      "end_sec": 121.92,
+      "text": "Mounds don't."
+    },
+    {
+      "start_sec": 121.92,
+      "end_sec": 122.6,
+      "text": "Cool."
+    },
+    {
+      "start_sec": 122.6,
+      "end_sec": 124.52,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 124.52,
+      "end_sec": 130.64,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 130.64,
+      "end_sec": 132.96,
+      "text": "Then he sounds like he accidentally invented a thermal chemical"
+    },
+    {
+      "start_sec": 132.96,
+      "end_sec": 133.72,
+      "text": "energy source."
+    },
+    {
+      "start_sec": 133.72,
+      "end_sec": 136.68,
+      "text": "The scientific wonder becomes a nightmare."
+    },
+    {
+      "start_sec": 136.68,
+      "end_sec": 139.24,
+      "text": "There's enough explosive to turn the city into a pancake."
+    },
+    {
+      "start_sec": 139.24,
+      "end_sec": 149.92,
+      "text": "A power that could mark the beginning of the end for the $6 million man."
+    },
+    {
+      "start_sec": 149.92,
+      "end_sec": 152.52,
+      "text": "America's classic thrillers come to life."
+    },
+    {
+      "start_sec": 152.52,
+      "end_sec": 155.4,
+      "text": "The hardy boy is Nancy Drew Mysteries."
+    },
+    {
+      "start_sec": 155.4,
+      "end_sec": 157.2,
+      "text": "An adventure into suspense."
+    },
+    {
+      "start_sec": 157.2,
+      "end_sec": 160.79,
+      "text": "It's got to be a way out of here."
+    },
+    {
+      "start_sec": 160.79,
+      "end_sec": 162.15,
+      "text": "Who's to go with her?"
+    },
+    {
+      "start_sec": 162.15,
+      "end_sec": 164.35,
+      "text": "Forget that."
+    },
+    {
+      "start_sec": 164.35,
+      "end_sec": 167.19,
+      "text": "A professor to go sleep with Prince."
+    },
+    {
+      "start_sec": 167.19,
+      "end_sec": 170.87,
+      "text": "The adventures of America's favorite young detectives come to television."
+    },
+    {
+      "start_sec": 170.87,
+      "end_sec": 171.91,
+      "text": "Follow that ghost."
+    },
+    {
+      "start_sec": 171.91,
+      "end_sec": 181.14,
+      "text": "The hardy boy is Nancy Drew Mysteries."
+    },
+    {
+      "start_sec": 181.14,
+      "end_sec": 184.7,
+      "text": "It's happening all around the house right about now."
+    },
+    {
+      "start_sec": 184.7,
+      "end_sec": 186.18,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 186.18,
+      "end_sec": 187.74,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 187.74,
+      "end_sec": 189.66,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 189.66,
+      "end_sec": 190.9,
+      "text": "I know my family."
+    },
+    {
+      "start_sec": 190.9,
+      "end_sec": 192.42,
+      "text": "And when they'd like a snack,"
+    },
+    {
+      "start_sec": 192.42,
+      "end_sec": 194.06,
+      "text": "they'd like a trisket wafer."
+    },
+    {
+      "start_sec": 194.06,
+      "end_sec": 195.18,
+      "text": "Break with cheese."
+    },
+    {
+      "start_sec": 195.18,
+      "end_sec": 196.14,
+      "text": "Or with a dip."
+    },
+    {
+      "start_sec": 196.14,
+      "end_sec": 197.34,
+      "text": "Neat with jam."
+    },
+    {
+      "start_sec": 197.34,
+      "end_sec": 199.66,
+      "text": "Or just by themselves."
+    },
+    {
+      "start_sec": 199.66,
+      "end_sec": 201.02,
+      "text": "They really are good."
+    },
+    {
+      "start_sec": 201.02,
+      "end_sec": 201.98,
+      "text": "Trisket wafers."
+    },
+    {
+      "start_sec": 201.98,
+      "end_sec": 204.7,
+      "text": "They're made from 100% natural whole wheat."
+    },
+    {
+      "start_sec": 204.7,
+      "end_sec": 205.78,
+      "text": "And that's good, too."
+    },
+    {
+      "start_sec": 205.78,
+      "end_sec": 207.82,
+      "text": "A trisket, a trisket,"
+    },
+    {
+      "start_sec": 207.82,
+      "end_sec": 210.22,
+      "text": "baked only by the biscoe."
+    },
+    {
+      "start_sec": 210.22,
+      "end_sec": 219.55,
+      "text": "That peat would just as soon eat every day of his life."
+    },
+    {
+      "start_sec": 219.55,
+      "end_sec": 222.59,
+      "text": "He really goes for those noodles."
+    },
+    {
+      "start_sec": 222.59,
+      "end_sec": 225.51,
+      "text": "So I give him the gamble life."
+    },
+    {
+      "start_sec": 225.51,
+      "end_sec": 227.63,
+      "text": "Pete's idea of the perfect lunch"
+    },
+    {
+      "start_sec": 227.63,
+      "end_sec": 230.59,
+      "text": "is any lunch with Campbell's chicken noodle lo soup."
+    },
+    {
+      "start_sec": 230.59,
+      "end_sec": 232.99,
+      "text": "There's lots of chickeny flavor and little round noodles"
+    },
+    {
+      "start_sec": 232.99,
+      "end_sec": 235.23,
+      "text": "for him, but not a lot of work for me."
+    },
+    {
+      "start_sec": 235.23,
+      "end_sec": 236.83,
+      "text": "That's noodle, OK."
+    },
+    {
+      "start_sec": 236.83,
+      "end_sec": 240.95,
+      "text": "Give me the gamble life."
+    },
+    {
+      "start_sec": 240.95,
+      "end_sec": 242.87,
+      "text": "It's the first show of the new year"
+    },
+    {
+      "start_sec": 242.87,
+      "end_sec": 245.15,
+      "text": "and the Captain Antonyl do it right,"
+    },
+    {
+      "start_sec": 245.15,
+      "end_sec": 248.07,
+      "text": "with their guest Marilyn McCoo and Billy Davis Jr."
+    },
+    {
+      "start_sec": 248.07,
+      "end_sec": 251.67,
+      "text": "John Biner, Muhammad Ali, and Joe Namer."
+    },
+    {
+      "start_sec": 251.67,
+      "end_sec": 255.35,
+      "text": "It's the new 1977 Captain Antonyl."
+    },
+    {
+      "start_sec": 255.35,
+      "end_sec": 267.48,
+      "text": "You want it?"
+    },
+    {
+      "start_sec": 267.48,
+      "end_sec": 269.08,
+      "text": "It's going to be a golden day."
+    },
+    {
+      "start_sec": 269.08,
+      "end_sec": 270.04,
+      "text": "Let's eat."
+    },
+    {
+      "start_sec": 270.04,
+      "end_sec": 272.04,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 272.04,
+      "end_sec": 273.84,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 273.84,
+      "end_sec": 275.32,
+      "text": "Crispy crunchy crayons."
+    },
+    {
+      "start_sec": 275.32,
+      "end_sec": 278.32,
+      "text": "Serial family breakfast treat."
+    },
+    {
+      "start_sec": 278.32,
+      "end_sec": 280.4,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 280.4,
+      "end_sec": 282.16,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 282.16,
+      "end_sec": 285.38,
+      "text": "Golden honey."
+    },
+    {
+      "start_sec": 285.38,
+      "end_sec": 288.42,
+      "text": "It's a great tasting part of a complete breakfast"
+    },
+    {
+      "start_sec": 288.42,
+      "end_sec": 289.74,
+      "text": "for the old family."
+    },
+    {
+      "start_sec": 289.74,
+      "end_sec": 295.78,
+      "text": "Try those golden crayons and have a golden day."
+    },
+    {
+      "start_sec": 295.78,
+      "end_sec": 299.86,
+      "text": "Introducing the Kodak instant camera with a twist."
+    },
+    {
+      "start_sec": 299.86,
+      "end_sec": 301.46,
+      "text": "Meet the crank."
+    },
+    {
+      "start_sec": 301.46,
+      "end_sec": 304.9,
+      "text": "Can you feel a brand new day?"
+    },
+    {
+      "start_sec": 304.9,
+      "end_sec": 310.3,
+      "text": "Imagine instant pictures with color, color, color by Kodak."
+    },
+    {
+      "start_sec": 310.3,
+      "end_sec": 312.86,
+      "text": "Just crank, crank, crank."
+    },
+    {
+      "start_sec": 312.86,
+      "end_sec": 316.18,
+      "text": "And in minutes, you get bright colorful instant pictures"
+    },
+    {
+      "start_sec": 316.18,
+      "end_sec": 318.38,
+      "text": "with a textured sack and locks finish."
+    },
+    {
+      "start_sec": 318.38,
+      "end_sec": 321.7,
+      "text": "See your photo dealer and shake hands with the crank,"
+    },
+    {
+      "start_sec": 321.7,
+      "end_sec": 327.32,
+      "text": "a Kodak instant camera with a twist."
+    },
+    {
+      "start_sec": 327.32,
+      "end_sec": 330.2,
+      "text": "What you're about to see is the world's most revolutionary"
+    },
+    {
+      "start_sec": 330.2,
+      "end_sec": 332.24,
+      "text": "telephone switching invention."
+    },
+    {
+      "start_sec": 332.24,
+      "end_sec": 334.52,
+      "text": "We call it super switcher."
+    },
+    {
+      "start_sec": 334.52,
+      "end_sec": 336.28,
+      "text": "It has almost no moving parts."
+    },
+    {
+      "start_sec": 336.28,
+      "end_sec": 339.64,
+      "text": "Yet handles four times more calls than its predecessor."
+    },
+    {
+      "start_sec": 339.64,
+      "end_sec": 342.72,
+      "text": "It required an investment of $400 million,"
+    },
+    {
+      "start_sec": 342.72,
+      "end_sec": 345.72,
+      "text": "but should ultimately save a billion dollars a year."
+    },
+    {
+      "start_sec": 345.72,
+      "end_sec": 348.92,
+      "text": "And soon every major American area will have one."
+    },
+    {
+      "start_sec": 348.92,
+      "end_sec": 352.51,
+      "text": "Looks deli."
+    },
+    {
+      "start_sec": 352.51,
+      "end_sec": 358.59,
+      "text": "Imagine that each of these cars is a long distance call."
+    },
+    {
+      "start_sec": 358.59,
+      "end_sec": 361.79,
+      "text": "This new invention can handle a lot of things."
+    }
+  ],
+  "annotations": {
+    "window-00001": {
+      "description": "child holding a toy and talking",
+      "categories": [
+        "child",
+        "toy",
+        "speech"
+      ],
+      "advertiser": null,
+      "products": [
+        "toy"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "toy name",
+        "child's name",
+        "child's age"
+      ],
+      "id": "scene-00000",
+      "start_sec": 0.0,
+      "end_sec": 15.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+          "time_sec": 8.686455666666667,
+          "shot_index": 0,
+          "shot_id": "shot-00001",
+          "window_index": 0
+        }
+      ],
+      "frame_count_sent": 1,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg"
+      ],
+      "transcript_excerpt": "My first name is O-S-C-A-R. My baloney has a second name, it's an A-Y-E-R. I love to read it every day, if you allow G and A.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00002": {
+      "description": "child holding Oscar Meyer Bologna",
+      "categories": [
+        "food",
+        "product",
+        "advertising"
+      ],
+      "advertiser": "Oscar Meyer",
+      "products": [
+        "Oscar Meyer Bologna"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "child's name",
+        "brand of hot dogs",
+        "advertising slogan"
+      ],
+      "id": "scene-00001",
+      "start_sec": 15.0,
+      "end_sec": 30.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+          "time_sec": 17.372911333333334,
+          "shot_index": 1,
+          "shot_id": "shot-00001",
+          "window_index": 1
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+          "time_sec": 26.915778,
+          "shot_index": 1,
+          "shot_id": "shot-00002",
+          "window_index": 1
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg"
+      ],
+      "transcript_excerpt": "I love to read it every day, if you allow G and A. Oscar Meyer, the first name in balona. How's that? What's behind the brand of hot dogs you buy?",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00003": {
+      "description": "Oscar Mayer Wiener nutrition information",
+      "categories": [
+        "food",
+        "advertising",
+        "product"
+      ],
+      "advertiser": "Oscar Mayer",
+      "products": [
+        "Oscar Mayer Wiener"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "nutrition information",
+        "solid cuts of meat"
+      ],
+      "id": "scene-00002",
+      "start_sec": 30.0,
+      "end_sec": 45.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+          "time_sec": 39.67296666666667,
+          "shot_index": 2,
+          "shot_id": "shot-00003",
+          "window_index": 2
+        }
+      ],
+      "frame_count_sent": 1,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg"
+      ],
+      "transcript_excerpt": "What's behind the brand of hot dogs you buy? You know you're getting solid value with Oscar Meyer and quality trusted for generations. There's wholesome meat protein from solid cuts of meat.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00004": {
+      "description": "Oscar Meyer beef flanks in handy twin bags.",
+      "categories": [
+        "meat",
+        "beef",
+        "flanks",
+        "Oscar Meyer"
+      ],
+      "advertiser": "Oscar Meyer",
+      "products": [
+        "beef flanks"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "US government inspectors",
+        "Oscar Meyer selected",
+        "Oscar Meyer winners"
+      ],
+      "id": "scene-00003",
+      "start_sec": 45.0,
+      "end_sec": 60.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+          "time_sec": 50.71733333333333,
+          "shot_index": 3,
+          "shot_id": "shot-00003",
+          "window_index": 3
+        }
+      ],
+      "frame_count_sent": 1,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg"
+      ],
+      "transcript_excerpt": "There's wholesome meat protein from solid cuts of meat. They only meet Oscar Meyer uses. US government inspectors. Oscar Meyer selected Oscar Meyer winners of beef flanks in handy twin bags. The flavors as good as the good meat itself. Oscar Meyer, America's number one.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00005": {
+      "description": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+      "categories": [
+        "food",
+        "advertising",
+        "product"
+      ],
+      "advertiser": "Oscar Meyer",
+      "products": [
+        "Del Monte family style corn"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [],
+      "id": "scene-00004",
+      "start_sec": 60.0,
+      "end_sec": 75.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+          "time_sec": 63.35217766666667,
+          "shot_index": 4,
+          "shot_id": "shot-00004",
+          "window_index": 4
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+          "time_sec": 64.94265533333333,
+          "shot_index": 4,
+          "shot_id": "shot-00004",
+          "window_index": 4
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg"
+      ],
+      "transcript_excerpt": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00006": {
+      "description": "child eating dinner",
+      "categories": [
+        "food",
+        "dinner",
+        "child"
+      ],
+      "advertiser": "Del Monte",
+      "products": [
+        "corn"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "living room",
+        "sofa",
+        "child's name"
+      ],
+      "id": "scene-00005",
+      "start_sec": 75.0,
+      "end_sec": 90.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+          "time_sec": 75.219589,
+          "shot_index": 5,
+          "shot_id": "shot-00006",
+          "window_index": 5
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+          "time_sec": 82.938411,
+          "shot_index": 5,
+          "shot_id": "shot-00006",
+          "window_index": 5
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg"
+      ],
+      "transcript_excerpt": "delicious Del Monte family style corn. More people eat than any other corn like it. This is a special strain developed to be sweet and tender. And when a corn lover is eating Del Monte corn, she probably doesn't need to hear me talking about how good it is, right? Well, then I'm just going to go into the living room and talk about corn to the sofa.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00007": {
+      "description": "A can of Del Monte Whole Kernel Corn next to a bowl of steaming corn.",
+      "categories": [
+        "food",
+        "canned food",
+        "corn"
+      ],
+      "advertiser": "Del Monte",
+      "products": [
+        "Del Monte Whole Kernel Corn"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "corn",
+        "Del Monte",
+        "nothing's too good for daddy and me"
+      ],
+      "id": "scene-00006",
+      "start_sec": 90.0,
+      "end_sec": 105.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+          "time_sec": 92.77045533333333,
+          "shot_index": 6,
+          "shot_id": "shot-00007",
+          "window_index": 6
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+          "time_sec": 94.88367766666667,
+          "shot_index": 6,
+          "shot_id": "shot-00007",
+          "window_index": 6
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg"
+      ],
+      "transcript_excerpt": "and talk about corn to the sofa. Time's new, good. Sometimes you feel like a nut. Sometimes you don't.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    },
+    "window-00008": {
+      "description": "A puppet character is eating a chocolate bar.",
+      "categories": [
+        "food",
+        "puppets",
+        "chocolate",
+        "eating",
+        "mounds"
+      ],
+      "advertiser": null,
+      "products": [
+        "chocolate",
+        "mounds"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "puppets",
+        "eating",
+        "chocolate"
+      ],
+      "id": "scene-00007",
+      "start_sec": 105.0,
+      "end_sec": 120.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+          "time_sec": 105.57213333333334,
+          "shot_index": 7,
+          "shot_id": "shot-00016",
+          "window_index": 7
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+          "time_sec": 105.93916666666667,
+          "shot_index": 7,
+          "shot_id": "shot-00016",
+          "window_index": 7
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg"
+      ],
+      "transcript_excerpt": "Sometimes you don't. Mounds don't. How many toys got built up chocolate? Coconut and munching it's too old. Mounds got deep down chocolate and chewing coconut. Sometimes you feel like a nut. Sometimes you don't. Beautiful.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama"
+    }
+  }
+}
