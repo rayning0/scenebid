@@ -149,11 +149,11 @@ go run ./cmd/scenebid decide
 ```
 
 `analyze` runs `analysis-worker/main.py`, which detects shots and extracts
-frames from the actual MP4, transcribes with faster-whisper, embeds samples
-with CLIP, and sends each shot's frames and transcript excerpt to the
-configured vision provider. Use `-end -1` for the full video, or invoke the
-worker directly for all options. A provider/model failure exits nonzero; no
-fixture annotations are substituted.
+frames from the actual MP4, transcribes with faster-whisper, and sends each
+shot's frames and transcript excerpt to the configured vision-language
+provider. Use `-end -1` for the full video, or invoke the worker directly for
+all options. A provider/model failure exits nonzero; no fixture annotations are
+substituted.
 
 Install Python dependencies from `analysis-worker/requirements.txt` and ensure
 `ffmpeg` is on PATH. The OpenAI-compatible provider accepts `VISION_ENDPOINT`

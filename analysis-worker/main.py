@@ -27,8 +27,6 @@ def main():
                         help="optional development limit; default is the complete video")
     parser.add_argument("--shot-threshold", type=float, default=27)
     parser.add_argument("--frames-per-shot", type=int, default=3)
-    parser.add_argument("--clip-model",
-                        default=os.getenv("CLIP_MODEL", "clip-ViT-B-32"))
     parser.add_argument("--whisper-model",
                         default=os.getenv("WHISPER_MODEL", "base"))
     parser.add_argument("--vision-provider",
