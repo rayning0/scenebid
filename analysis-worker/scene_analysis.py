@@ -24,9 +24,12 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                 images.append({"type": "image_url", "image_url": {
                     "url": "data:image/jpeg;base64," + base64.b64encode(image.read()).decode()}})
         prompt = (
-            "Analyze only the supplied video-frame evidence and transcript. Return JSON with "
-            "description (string), categories (array of short strings), advertiser (string or null), "
-            "products (array), safety (safe|unknown|unsafe), confidence (0..1), unknowns (array). "
+            "Analyze only the supplied video-frame evidence and transcript. Return ONLY one compact "
+            "JSON object; do not provide reasoning, chain-of-thought, markdown, or explanations. "
+            "Use at most 12 words for description, 5 categories, 5 products, and 3 unknowns. "
+            "Return keys description (string), categories (array of short strings), advertiser "
+            "(string or null), products (array), safety (safe|unknown|unsafe), confidence (number "
+            "0..1), and unknowns (array). Use null or [] when unknown. "
             "Do not infer details not supported by evidence. Transcript: " +
             transcript_excerpt(transcript["segments"], shot["start_sec"], shot["end_sec"])
         )

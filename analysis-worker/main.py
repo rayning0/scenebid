@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 
@@ -47,6 +48,8 @@ def main():
         parser.error("--end must be after --start")
     os.makedirs(args.output_dir, exist_ok=True)
     try:
+        frames_dir = os.path.join(args.output_dir, "frames")
+        shutil.rmtree(frames_dir, ignore_errors=True)
         shots = detect_shots(args.video, args.shot_threshold, args.start, args.end)
         if not shots:
             raise RuntimeError("no shots detected in the requested range")
