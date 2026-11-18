@@ -1,7 +1,9 @@
 import base64
 import json
 import os
+import sys
 import urllib.request
+import urllib.error
 import time
 
 
@@ -72,8 +74,18 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             if not content.strip():
                 raise ValueError("vision provider returned empty content")
             annotation = json.loads(content)
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            print(f"vision HTTP error window={shot.get('id')} "
+                  f"range={shot['start_sec']:.3f}-{shot['end_sec']:.3f}s "
+                  f"status={exc.code} body={body}", file=sys.stderr, flush=True)
+            raise RuntimeError(
+                f"vision provider failed for {shot.get('id')} "
+                f"{shot['start_sec']:.3f}-{shot['end_sec']:.3f}s: HTTP {exc.code}"
+            ) from exc
         except Exception as exc:
-            raise RuntimeError(f"vision provider failed for shot {index}: {exc}") from exc
+            raise RuntimeError(f"vision provider failed for {shot.get('id')} "
+                               f"{shot['start_sec']:.3f}-{shot['end_sec']:.3f}s: {exc}") from exc
         annotation.update({
             "id": f"scene-{index:05d}", "start_sec": shot["start_sec"],
             "end_sec": shot["end_sec"], "frame_evidence": evidence,
