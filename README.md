@@ -8,8 +8,8 @@ timestamped contextual advertising opportunities. It uses a compilation of
 The project combines real AI-generated video intelligence with fictional
 advertiser campaigns and simulated bids. A Go decisioning service selects
 eligible ads using the generated annotations and explains each decision.
-The planned browser demo displays the selected ad as an overlay during video
-playback.
+The browser demo plays the video and displays contextual overlays,
+timestamped dialogue, scene summaries, and active ad information.
 
 ## Problem
 
@@ -27,13 +27,13 @@ SceneBid explores the connection between:
 
 ## Project Status
 
-The initial Go starter currently probes a video with ffprobe, extracts a
-single frame with FFmpeg, and selects from fictional bids against manually
-supplied scene fixtures.
+The end-to-end local demo is implemented for the sample video. The analysis
+worker produces timestamped transcript and scene annotations, the Go service
+generates simulated decisions and serves playback APIs, and the browser
+renders synchronized contextual information and overlay ads.
 
-The real AI analysis worker, HLS player, contextual overlay, and mock
-OpenRTB exchange are planned features. Update this section as each feature
-is implemented and verified.
+Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids
+are still fictional.
 
 ## MVP Scope
 
@@ -62,7 +62,10 @@ is implemented and verified.
 - Package the source MP4 into an HLS playlist and media segments.
 - Play the video in a browser.
 - Use playback time and generated annotations to request an ad decision.
-- Display the selected fictional campaign as a contextual overlay.
+- Display the selected fictional campaign as a bottom banner overlay.
+- Show a campaign logo from each campaign's `logo_url` fixture field.
+- Synchronize transcript dialogue and scene summaries in the live context panel.
+- Mark ad opportunities on the playback timeline.
 
 ## Architecture
 
@@ -88,8 +91,10 @@ flowchart TD
 4. Start the Go API and browser player.
 5. During playback, look up the current video time in the annotations.
 6. Evaluate fictional campaign bids against the current context and rules.
-7. Display the winning overlay and the reason it was selected, or show a
+7. Display the winning overlay, campaign logo, and decision reason, or show a
    no-fill explanation.
+8. Update the dialogue, scene summary, and active-ad panel as playback time
+   advances.
 
 Analysis happens before playback. Ad selection and overlay presentation
 happen during playback.
@@ -129,8 +134,8 @@ happen during playback.
 
 - `cmd/scenebid/`: Go application entry point.
 - `internal/`: Go analysis orchestration, decisioning, models, and storage.
-- `analysis-worker/`: planned Python analysis worker.
-- `web/`: planned browser player and overlay UI.
+- `analysis-worker/`: Python analysis worker for shots, transcription, and scene intelligence.
+- `web/`: browser player, live context panel, timeline markers, and overlay UI.
 - `data/input/`: local source video and creative assets.
 - `data/fixtures/`: fictional campaigns and bids.
 - `data/output/`: generated media, analysis, and decision traces.
@@ -143,9 +148,40 @@ development range):
 
 ```bash
 go test ./...
-VISION_PROVIDER=openai_compatible VISION_MODEL=gpt-4o-mini VISION_API_KEY=... \
-  go run ./cmd/scenebid analyze -video data/input/TV_Commercials_1977.mp4 -at 5
+go run ./cmd/scenebid analyze \
+  -video data/input/TV_Commercials_1977.mp4 \
+  -at 5
 go run ./cmd/scenebid decide
+```
+
+The analysis worker defaults to local Ollama:
+
+- `VISION_PROVIDER=ollama`
+- `VISION_MODEL=qwen3-vl:8b`
+- `VISION_ENDPOINT=http://localhost:11434/api/chat`
+- `VISION_API_KEY` is optional for Ollama.
+
+For an OpenAI-compatible vision service, set the provider, model, endpoint,
+and API key explicitly. The worker also supports:
+
+- `WHISPER_MODEL`, default `base`, for faster-whisper transcription.
+- `VISION_MAX_TOKENS` is not an environment variable; use
+  `--vision-max-tokens` when invoking the worker.
+- `VISION_ENDPOINT` defaults to the Ollama endpoint above and can point to
+  another OpenAI-compatible chat endpoint.
+
+The Go `analyze` command invokes the worker with the selected video and
+analysis range. Worker configuration is read from the environment or uses
+the defaults above. For example:
+
+```bash
+VISION_PROVIDER=openai_compatible \
+VISION_MODEL=gpt-4o-mini \
+VISION_ENDPOINT=https://api.openai.com/v1/chat/completions \
+VISION_API_KEY=... \
+go run ./cmd/scenebid analyze \
+  -video data/input/TV_Commercials_1977.mp4 \
+  -at 5
 ```
 
 To run the completed six-minute analysis in the browser without re-running
@@ -169,9 +205,20 @@ ffmpeg -i data/input/TV_Commercials_1977.mp4 \
   data/output/TV_Commercials_1977/hls/index.m3u8
 ```
 
-The overlay is rendered client-side from playback-time Go decisions. Campaigns,
-bids, and destination links are fictional; this is not SSAI, OpenRTB, or a
-production auction.
+The overlay and live context panel are rendered client-side. Playback-time Go
+APIs provide ad decisions and combined transcript/analysis context. Campaigns,
+bids, logo URLs, and destination links are fictional; this is not SSAI,
+OpenRTB, or a production auction.
+
+Campaign fixtures support these key fields:
+
+- `target_categories`: categories eligible for contextual matching.
+- `bid_cpm_usd`: simulated CPM bid.
+- `destination_url`: fictional click-through destination.
+- `logo_url`: image displayed to the left of the active overlay ad.
+
+The server also exposes `/api/opportunities`, `/api/decision?time=...`, and
+`/api/context` for the browser demo.
 
 `analyze` runs `analysis-worker/main.py`, which detects shots and extracts
 frames from the actual MP4, transcribes with faster-whisper, and sends each
