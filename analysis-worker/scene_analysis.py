@@ -11,6 +11,25 @@ def transcript_excerpt(segments, start, end):
     return " ".join(s["text"] for s in segments
                     if s["end_sec"] >= start and s["start_sec"] <= end).strip()
 
+def _request_json(payload, endpoint, api_key, timeout):
+    request = urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
+                                      headers={"Content-Type": "application/json",
+                                               **({"Authorization": f"Bearer {api_key}"} if api_key else {})})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            raw = response.read()
+            body = json.loads(raw)
+        content = body["message"]["content"] if "message" in body else body["choices"][0]["message"]["content"]
+        meta = {"http_status": 200, "done_reason": body.get("done_reason"),
+                "output_tokens": body.get("eval_count")}
+        if not content or not content.strip():
+            raise ValueError("empty model content")
+        return json.loads(content), meta
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        print(f"vision HTTP error status={exc.code} body={body}", file=sys.stderr, flush=True)
+        raise RuntimeError(f"HTTP {exc.code}: {body}") from exc
+
 
 def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                    api_key=None, max_tokens=512, timeout=180, on_result=None):
@@ -50,42 +69,34 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             payload = {"model": model, "temperature": 0,
                        "response_format": {"type": "json_object"},
                        "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}] + images}]}
-        request = urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
-                                         headers={"Content-Type": "application/json",
-                                                  **({"Authorization": f"Bearer {api_key}"} if api_key else {})})
-        try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
-                body = json.loads(response.read())
-            content = body["message"]["content"] if provider == "ollama" else body["choices"][0]["message"]["content"]
-            if provider == "ollama" and not content.strip():
-                # Some Qwen builds spend the first response entirely in the
-                # hidden reasoning channel for a long prompt. Retry compactly.
-                payload["messages"][0]["content"] = (
-                    "Return one compact JSON object only with keys "
-                    "description, categories, advertiser, products, safety, "
-                    "confidence, unknowns. Use null or [] when unknown."
-                )
-                with urllib.request.urlopen(
-                    urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
-                                            headers={"Content-Type": "application/json"}),
-                    timeout=timeout) as response:
-                    retry_body = json.loads(response.read())
-                content = retry_body["message"]["content"]
-            if not content.strip():
-                raise ValueError("vision provider returned empty content")
-            annotation = json.loads(content)
-        except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", errors="replace")
-            print(f"vision HTTP error window={shot.get('id')} "
-                  f"range={shot['start_sec']:.3f}-{shot['end_sec']:.3f}s "
-                  f"status={exc.code} body={body}", file=sys.stderr, flush=True)
-            raise RuntimeError(
-                f"vision provider failed for {shot.get('id')} "
-                f"{shot['start_sec']:.3f}-{shot['end_sec']:.3f}s: HTTP {exc.code}"
-            ) from exc
-        except Exception as exc:
-            raise RuntimeError(f"vision provider failed for {shot.get('id')} "
-                               f"{shot['start_sec']:.3f}-{shot['end_sec']:.3f}s: {exc}") from exc
+        attempts = []
+        request_payloads = [payload]
+        if provider == "ollama":
+            compact = dict(payload)
+            compact["messages"] = [dict(payload["messages"][0])]
+            compact["messages"][0]["content"] = (
+                "Return compact JSON only: description, categories, advertiser, "
+                "products, safety, confidence, unknowns. Use null or [] when unknown."
+            )
+            request_payloads.append(compact)
+        annotation = None
+        for attempt, request_payload in enumerate(request_payloads, 1):
+            try:
+                annotation, meta = _request_json(request_payload, endpoint, api_key, timeout)
+                attempts.append({"attempt": attempt, "settings": {"max_tokens": max_tokens},
+                                 "outcome": "success", **meta})
+                break
+            except Exception as exc:
+                attempts.append({"attempt": attempt, "settings": {"max_tokens": max_tokens},
+                                 "outcome": "failed", "error": str(exc)})
+                print(f"vision attempt failed window={shot.get('id')} "
+                      f"range={shot['start_sec']:.3f}-{shot['end_sec']:.3f}s: {exc}",
+                      file=sys.stderr, flush=True)
+        if annotation is None:
+            annotation = {"description": None, "categories": [], "advertiser": None,
+                          "products": [], "safety": "unknown", "confidence": None,
+                          "unknowns": ["all vision attempts failed"],
+                          "analysis_status": "failed", "recovery_attempts": attempts}
         annotation.update({
             "id": f"scene-{index:05d}", "start_sec": shot["start_sec"],
             "end_sec": shot["end_sec"], "frame_evidence": evidence,
@@ -93,6 +104,7 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             "frame_ids_sent": [f.get("path") for f in evidence],
             "transcript_excerpt": transcript_excerpt(transcript["segments"], shot["start_sec"], shot["end_sec"]),
             "model": model, "provider": provider,
+            "recovery_attempts": attempts,
         })
         scenes.append(annotation)
         if on_result:

@@ -1,6 +1,6 @@
 {
   "cache_key": "5bff72c2b1710c8a",
-  "status": "partial",
+  "status": "completed",
   "errors": [],
   "settings": {
     "video": "data/input/TV_Commercials_1977.mp4",
@@ -3465,6 +3465,926 @@
       "transcript_excerpt": "Sometimes you don't. Mounds don't. How many toys got built up chocolate? Coconut and munching it's too old. Mounds got deep down chocolate and chewing coconut. Sometimes you feel like a nut. Sometimes you don't. Beautiful.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
+    },
+    "window-00009": {
+      "description": "A group of people are eating M&M's candy, with one person in the foreground holding a tube of M&M's and another person in the background also holding a tube. The scene is set outdoors, possibly at a park or event, with people in the background also holding M&M's tubes.",
+      "categories": [
+        "candy",
+        "advertising"
+      ],
+      "advertiser": "M&M's",
+      "products": [
+        "M&M's"
+      ],
+      "safety": "Unknown",
+      "confidence": "High",
+      "unknowns": [
+        "Unknown"
+      ],
+      "id": "scene-00000",
+      "start_sec": 120.0,
+      "end_sec": 135.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+          "time_sec": 120.50927766666666,
+          "shot_index": 0,
+          "shot_id": "shot-00023",
+          "window_index": 8
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg",
+          "time_sec": 121.65486666666666,
+          "shot_index": 0,
+          "shot_id": "shot-00024",
+          "window_index": 8
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg"
+      ],
+      "transcript_excerpt": "Beautiful. Beautiful. Mounds don't. Cool. Sometimes you feel like a nut. Sometimes you don't. Then he sounds like he accidentally invented a thermal chemical energy source. The scientific wonder becomes a nightmare.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "failed",
+          "error": "HTTP 500: {\"error\":\"prediction aborted, token repeat limit reached\"}"
+        },
+        {
+          "attempt": 2,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 122
+        }
+      ]
+    },
+    "window-00010": {
+      "description": "A man is talking on a phone in a cluttered room.",
+      "categories": [
+        "man",
+        "phone",
+        "room"
+      ],
+      "advertiser": "null",
+      "products": [
+        "phone",
+        "bottle"
+      ],
+      "safety": "unknown",
+      "confidence": 0.3,
+      "unknowns": [
+        "cluttered room",
+        "man talking",
+        "phone in use"
+      ],
+      "id": "scene-00001",
+      "start_sec": 135.0,
+      "end_sec": 150.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+          "time_sec": 135.023778,
+          "shot_index": 1,
+          "shot_id": "shot-00031",
+          "window_index": 9
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+          "time_sec": 136.83670033333334,
+          "shot_index": 1,
+          "shot_id": "shot-00032",
+          "window_index": 9
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg"
+      ],
+      "transcript_excerpt": "The scientific wonder becomes a nightmare. There's enough explosive to turn the city into a pancake. A power that could mark the beginning of the end for the $6 million man. America's classic thrillers come to life.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 90
+        }
+      ]
+    },
+    "window-00011": {
+      "description": "A woman in a white dress holding a gun, with a man in a suit standing next to her.",
+      "categories": [
+        "adventure",
+        "mystery",
+        "thriller"
+      ],
+      "advertiser": "Nancy Drew Mysteries",
+      "products": [],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [],
+      "id": "scene-00002",
+      "start_sec": 150.0,
+      "end_sec": 165.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+          "time_sec": 151.07314433333335,
+          "shot_index": 2,
+          "shot_id": "shot-00040",
+          "window_index": 10
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg",
+          "time_sec": 152.719233,
+          "shot_index": 2,
+          "shot_id": "shot-00041",
+          "window_index": 10
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg"
+      ],
+      "transcript_excerpt": "America's classic thrillers come to life. The hardy boy is Nancy Drew Mysteries. An adventure into suspense. It's got to be a way out of here. Who's to go with her? Forget that. A professor to go sleep with Prince.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 85
+        }
+      ]
+    },
+    "window-00012": {
+      "description": "A woman in a car, a man in a suit standing in a dark room.",
+      "categories": [
+        "car",
+        "man",
+        "dark room"
+      ],
+      "advertiser": null,
+      "products": [],
+      "safety": "unknown",
+      "confidence": 0.3,
+      "unknowns": [
+        "woman",
+        "car interior",
+        "man's attire"
+      ],
+      "id": "scene-00003",
+      "start_sec": 165.0,
+      "end_sec": 180.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+          "time_sec": 165.75447766666667,
+          "shot_index": 3,
+          "shot_id": "shot-00052",
+          "window_index": 11
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg",
+          "time_sec": 167.20036633333333,
+          "shot_index": 3,
+          "shot_id": "shot-00053",
+          "window_index": 11
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg"
+      ],
+      "transcript_excerpt": "A professor to go sleep with Prince. The adventures of America's favorite young detectives come to television. Follow that ghost. The hardy boy is Nancy Drew Mysteries.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 85
+        }
+      ]
+    },
+    "window-00013": {
+      "description": "A woman is talking about her family and their love for trisket wafers.",
+      "categories": [
+        "food",
+        "family",
+        "snacks"
+      ],
+      "advertiser": null,
+      "products": [
+        "trisket wafers",
+        "cheese"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "family members",
+        "specific trisket recipe",
+        "location"
+      ],
+      "id": "scene-00004",
+      "start_sec": 180.0,
+      "end_sec": 195.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+          "time_sec": 180.313467,
+          "shot_index": 4,
+          "shot_id": "shot-00060",
+          "window_index": 12
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+          "time_sec": 182.13751133333332,
+          "shot_index": 4,
+          "shot_id": "shot-00061",
+          "window_index": 12
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg"
+      ],
+      "transcript_excerpt": "The hardy boy is Nancy Drew Mysteries. It's happening all around the house right about now. I'd like a trisket. I'd like a trisket. I'd like a trisket. I know my family. And when they'd like a snack, they'd like a trisket wafer. Break with cheese.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 99
+        }
+      ]
+    },
+    "window-00014": {
+      "description": "child eating a trisket wafer",
+      "categories": [
+        "food",
+        "childhood",
+        "advertising"
+      ],
+      "advertiser": "Trisket",
+      "products": [
+        "trisket wafers",
+        "natural whole wheat"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "biscoe",
+        "natural whole wheat",
+        "advertising"
+      ],
+      "id": "scene-00005",
+      "start_sec": 195.0,
+      "end_sec": 210.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+          "time_sec": 196.86333366666668,
+          "shot_index": 5,
+          "shot_id": "shot-00067",
+          "window_index": 13
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+          "time_sec": 198.79860033333333,
+          "shot_index": 5,
+          "shot_id": "shot-00067",
+          "window_index": 13
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg"
+      ],
+      "transcript_excerpt": "Break with cheese. Or with a dip. Neat with jam. Or just by themselves. They really are good. Trisket wafers. They're made from 100% natural whole wheat. And that's good, too. A trisket, a trisket, baked only by the biscoe.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 95
+        }
+      ]
+    },
+    "window-00015": {
+      "description": "man in orange shirt and hat walking on sidewalk",
+      "categories": [
+        "man",
+        "orange shirt",
+        "hat",
+        "sidewalk",
+        "trees"
+      ],
+      "advertiser": "biscoe",
+      "products": [
+        "noodles"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "man's name",
+        "location",
+        "time"
+      ],
+      "id": "scene-00006",
+      "start_sec": 210.0,
+      "end_sec": 225.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+          "time_sec": 211.13314433333335,
+          "shot_index": 6,
+          "shot_id": "shot-00071",
+          "window_index": 14
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+          "time_sec": 211.98955566666666,
+          "shot_index": 6,
+          "shot_id": "shot-00071",
+          "window_index": 14
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg"
+      ],
+      "transcript_excerpt": "baked only by the biscoe. That peat would just as soon eat every day of his life. He really goes for those noodles. So I give him the gamble life.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 91
+        }
+      ]
+    },
+    "window-00016": {
+      "description": "A person is holding a can of Campbell's Chicken Noodle Soup.",
+      "categories": [
+        "food",
+        "soup",
+        "Campbell's"
+      ],
+      "advertiser": "Campbell's",
+      "products": [
+        "Campbell's Chicken Noodle Soup"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "lunch",
+        "person holding soup"
+      ],
+      "id": "scene-00007",
+      "start_sec": 225.0,
+      "end_sec": 240.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+          "time_sec": 229.084411,
+          "shot_index": 7,
+          "shot_id": "shot-00077",
+          "window_index": 15
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+          "time_sec": 235.71325533333334,
+          "shot_index": 7,
+          "shot_id": "shot-00078",
+          "window_index": 15
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg"
+      ],
+      "transcript_excerpt": "So I give him the gamble life. Pete's idea of the perfect lunch is any lunch with Campbell's chicken noodle lo soup. There's lots of chickeny flavor and little round noodles for him, but not a lot of work for me. That's noodle, OK. Give me the gamble life.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 91
+        }
+      ]
+    },
+    "window-00017": {
+      "description": "woman singing in front of piano",
+      "categories": [
+        "music",
+        "entertainment",
+        "performance"
+      ],
+      "advertiser": "Captain Antonyl",
+      "products": [],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [],
+      "id": "scene-00008",
+      "start_sec": 240.0,
+      "end_sec": 255.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+          "time_sec": 242.17526666666666,
+          "shot_index": 8,
+          "shot_id": "shot-00079",
+          "window_index": 16
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg",
+          "time_sec": 243.81023333333334,
+          "shot_index": 8,
+          "shot_id": "shot-00079",
+          "window_index": 16
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg"
+      ],
+      "transcript_excerpt": "Give me the gamble life. It's the first show of the new year and the Captain Antonyl do it right, with their guest Marilyn McCoo and Billy Davis Jr. John Biner, Muhammad Ali, and Joe Namer. It's the new 1977 Captain Antonyl.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 67
+        }
+      ]
+    },
+    "window-00018": {
+      "description": "man in uniform standing in front of a piano",
+      "categories": [
+        "music",
+        "entertainment",
+        "entertainment"
+      ],
+      "advertiser": "ABC",
+      "products": [
+        "piano",
+        "uniform"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "man's identity",
+        "time of day",
+        "location"
+      ],
+      "id": "scene-00009",
+      "start_sec": 255.0,
+      "end_sec": 270.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+          "time_sec": 255.08816633333333,
+          "shot_index": 9,
+          "shot_id": "shot-00086",
+          "window_index": 17
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+          "time_sec": 255.75549966666668,
+          "shot_index": 9,
+          "shot_id": "shot-00086",
+          "window_index": 17
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg"
+      ],
+      "transcript_excerpt": "It's the new 1977 Captain Antonyl. You want it? It's going to be a golden day. Let's eat.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 87
+        }
+      ]
+    },
+    "window-00019": {
+      "description": "A person holding a box of Golden Grahams cereal.",
+      "categories": [
+        "food",
+        "cereal",
+        "breakfast"
+      ],
+      "advertiser": "Golden Grahams",
+      "products": [
+        "Golden Grahams cereal"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "person holding the cereal box"
+      ],
+      "id": "scene-00010",
+      "start_sec": 270.0,
+      "end_sec": 285.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+          "time_sec": 270.3367333333333,
+          "shot_index": 10,
+          "shot_id": "shot-00092",
+          "window_index": 18
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+          "time_sec": 271.1041666666667,
+          "shot_index": 10,
+          "shot_id": "shot-00092",
+          "window_index": 18
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg"
+      ],
+      "transcript_excerpt": "Let's eat. Oh, those golden crayons. Oh, those golden crayons. Crispy crunchy crayons. Serial family breakfast treat. Oh, those golden crayons. Oh, those golden crayons. Golden honey.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 86
+        }
+      ]
+    },
+    "window-00020": {
+      "description": "A bowl of cereal with a spoon, a glass of milk, and a bottle of syrup on a table.",
+      "categories": [
+        "breakfast",
+        "cereal",
+        "milk",
+        "syrup"
+      ],
+      "advertiser": "Golden Grahams",
+      "products": [
+        "Golden Grahams cereal",
+        "milk",
+        "syrup"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "breakfast",
+        "cereal",
+        "milk",
+        "syrup"
+      ],
+      "id": "scene-00011",
+      "start_sec": 285.0,
+      "end_sec": 300.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+          "time_sec": 285.7521336666667,
+          "shot_index": 11,
+          "shot_id": "shot-00101",
+          "window_index": 19
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+          "time_sec": 287.5873003333333,
+          "shot_index": 11,
+          "shot_id": "shot-00101",
+          "window_index": 19
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg"
+      ],
+      "transcript_excerpt": "Golden honey. It's a great tasting part of a complete breakfast for the old family. Try those golden crayons and have a golden day. Introducing the Kodak instant camera with a twist. Meet the crank.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 121
+        }
+      ]
+    },
+    "window-00021": {
+      "description": "A vintage advertisement for Kodak instant cameras.",
+      "categories": [
+        "vintage",
+        "photography",
+        "advertising"
+      ],
+      "advertiser": "Kodak",
+      "products": [
+        "instant cameras"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "brand",
+        "year",
+        "location"
+      ],
+      "id": "scene-00012",
+      "start_sec": 300.0,
+      "end_sec": 315.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+          "time_sec": 302.22414433333336,
+          "shot_index": 12,
+          "shot_id": "shot-00105",
+          "window_index": 20
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+          "time_sec": 306.82874433333336,
+          "shot_index": 12,
+          "shot_id": "shot-00106",
+          "window_index": 20
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg"
+      ],
+      "transcript_excerpt": "Meet the crank. Can you feel a brand new day? Imagine instant pictures with color, color, color by Kodak. Just crank, crank, crank. And in minutes, you get bright colorful instant pictures",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 82
+        }
+      ]
+    },
+    "window-00022": {
+      "description": "A person is holding a Kodak instant camera and taking a picture of a colorful scene.",
+      "categories": [
+        "photography",
+        "instant camera",
+        "colorful scene"
+      ],
+      "advertiser": "Kodak",
+      "products": [
+        "Kodak instant camera"
+      ],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "photography equipment",
+        "colorful scene",
+        "person holding camera"
+      ],
+      "id": "scene-00013",
+      "start_sec": 315.0,
+      "end_sec": 330.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+          "time_sec": 315.31499966666667,
+          "shot_index": 13,
+          "shot_id": "shot-00109",
+          "window_index": 21
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+          "time_sec": 316.6496663333333,
+          "shot_index": 13,
+          "shot_id": "shot-00109",
+          "window_index": 21
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg"
+      ],
+      "transcript_excerpt": "And in minutes, you get bright colorful instant pictures with a textured sack and locks finish. See your photo dealer and shake hands with the crank, a Kodak instant camera with a twist. What you're about to see is the world's most revolutionary",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 101
+        }
+      ]
+    },
+    "window-00023": {
+      "description": "A long, empty hallway with a blue and white circular sign.",
+      "categories": [
+        "corridor",
+        "hallway",
+        "empty"
+      ],
+      "advertiser": null,
+      "products": [],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "blue and white circular sign"
+      ],
+      "id": "scene-00014",
+      "start_sec": 330.0,
+      "end_sec": 345.0,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+          "time_sec": 332.888111,
+          "shot_index": 14,
+          "shot_id": "shot-00112",
+          "window_index": 22
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg",
+          "time_sec": 333.777889,
+          "shot_index": 14,
+          "shot_id": "shot-00112",
+          "window_index": 22
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg"
+      ],
+      "transcript_excerpt": "What you're about to see is the world's most revolutionary telephone switching invention. We call it super switcher. It has almost no moving parts. Yet handles four times more calls than its predecessor. It required an investment of $400 million, but should ultimately save a billion dollars a year.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 77
+        }
+      ]
+    },
+    "window-00024": {
+      "description": "a close-up of a futuristic control panel with buttons and lights",
+      "categories": [
+        "technology",
+        "science fiction",
+        "innovation"
+      ],
+      "advertiser": null,
+      "products": [],
+      "safety": "unknown",
+      "confidence": 0.8,
+      "unknowns": [
+        "control panel",
+        "futuristic",
+        "innovation"
+      ],
+      "id": "scene-00015",
+      "start_sec": 345.0,
+      "end_sec": 359.992967,
+      "frame_evidence": [
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+          "time_sec": 346.490589,
+          "shot_index": 15,
+          "shot_id": "shot-00114",
+          "window_index": 23
+        },
+        {
+          "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg",
+          "time_sec": 347.102311,
+          "shot_index": 15,
+          "shot_id": "shot-00114",
+          "window_index": 23
+        }
+      ],
+      "frame_count_sent": 2,
+      "frame_ids_sent": [
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+        "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg"
+      ],
+      "transcript_excerpt": "but should ultimately save a billion dollars a year. And soon every major American area will have one. Looks deli. Imagine that each of these cars is a long distance call. This new invention can handle a lot of things.",
+      "model": "qwen2.5vl:3b",
+      "provider": "ollama",
+      "recovery_attempts": [
+        {
+          "attempt": 1,
+          "settings": {
+            "max_tokens": 512
+          },
+          "outcome": "success",
+          "http_status": 200,
+          "done_reason": "stop",
+          "output_tokens": 83
+        }
+      ]
     }
   }
 }

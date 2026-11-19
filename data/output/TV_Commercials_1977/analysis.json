@@ -4,11 +4,35 @@
     "id": "TV_Commercials_1977",
     "source_file": "/Users/rgan/scenebid/data/input/TV_Commercials_1977.mp4",
     "duration_sec": 856.889367,
+    "analyzed_range": {
+      "start_sec": 0.0,
+      "end_sec": 360.0
+    },
     "timeline_unit": "seconds"
   },
   "analysis": {
-    "run_id": "run-1795003046",
+    "run_id": "run-1795041500",
     "status": "completed",
+    "vision_mode": "window",
+    "cache_key": "5bff72c2b1710c8a",
+    "effective_settings": {
+      "video": "data/input/TV_Commercials_1977.mp4",
+      "output_dir": "data/output/TV_Commercials_1977",
+      "start": 0.0,
+      "end": 360.0,
+      "shot_threshold": 27.0,
+      "frames_per_shot": 2,
+      "vision_max_tokens": 512,
+      "vision_mode": "window",
+      "window_sec": 15.0,
+      "vision_timeout": 180.0,
+      "resume": true,
+      "whisper_model": "analysis-worker/models/faster-whisper-base",
+      "vision_provider": "ollama",
+      "vision_model": "qwen2.5vl:3b",
+      "vision_endpoint": "http://localhost:11434/api/chat",
+      "api_key_configured": false
+    },
     "models": {
       "speech": {
         "provider": "faster-whisper",
@@ -25,148 +49,1406 @@
       "id": "shot-00001",
       "start_sec": 0.0,
       "end_sec": 26.059367,
-      "boundary_source": "shot_detector",
-      "sampled_frames": [
-        {
-          "time_sec": 13.0296835,
-          "path": "frames/shot-00000-00.jpg"
-        }
-      ]
+      "boundary_source": "shot_detector"
     },
     {
       "id": "shot-00002",
       "start_sec": 26.059367,
       "end_sec": 28.6286,
-      "boundary_source": "shot_detector",
-      "sampled_frames": [
-        {
-          "time_sec": 27.3439835,
-          "path": "frames/shot-00001-00.jpg"
-        }
-      ]
+      "boundary_source": "shot_detector"
     },
     {
       "id": "shot-00003",
       "start_sec": 28.6286,
-      "end_sec": 59.993267,
-      "boundary_source": "shot_detector",
-      "sampled_frames": [
-        {
-          "time_sec": 44.310933500000004,
-          "path": "frames/shot-00002-00.jpg"
-        }
-      ]
+      "end_sec": 61.7617,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00004",
+      "start_sec": 61.7617,
+      "end_sec": 66.533133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00005",
+      "start_sec": 66.533133,
+      "end_sec": 67.500767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00006",
+      "start_sec": 67.500767,
+      "end_sec": 90.657233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00007",
+      "start_sec": 90.657233,
+      "end_sec": 96.9969,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00008",
+      "start_sec": 96.9969,
+      "end_sec": 98.098,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00009",
+      "start_sec": 98.098,
+      "end_sec": 99.032267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00010",
+      "start_sec": 99.032267,
+      "end_sec": 100.366933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00011",
+      "start_sec": 100.366933,
+      "end_sec": 101.067633,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00012",
+      "start_sec": 101.067633,
+      "end_sec": 102.7026,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00013",
+      "start_sec": 102.7026,
+      "end_sec": 103.269833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00014",
+      "start_sec": 103.269833,
+      "end_sec": 104.104,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00015",
+      "start_sec": 104.104,
+      "end_sec": 105.2051,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00016",
+      "start_sec": 105.2051,
+      "end_sec": 106.3062,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00017",
+      "start_sec": 106.3062,
+      "end_sec": 106.940167,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00018",
+      "start_sec": 106.940167,
+      "end_sec": 111.0109,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00019",
+      "start_sec": 111.0109,
+      "end_sec": 114.2141,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00020",
+      "start_sec": 114.2141,
+      "end_sec": 115.2151,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00021",
+      "start_sec": 115.2151,
+      "end_sec": 116.883433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00022",
+      "start_sec": 116.883433,
+      "end_sec": 119.285833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00023",
+      "start_sec": 119.285833,
+      "end_sec": 121.121,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00024",
+      "start_sec": 121.121,
+      "end_sec": 122.7226,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00025",
+      "start_sec": 122.7226,
+      "end_sec": 128.294833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00026",
+      "start_sec": 128.294833,
+      "end_sec": 128.862067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00027",
+      "start_sec": 128.862067,
+      "end_sec": 129.4293,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00028",
+      "start_sec": 129.4293,
+      "end_sec": 130.463667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00029",
+      "start_sec": 130.463667,
+      "end_sec": 132.699233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00030",
+      "start_sec": 132.699233,
+      "end_sec": 133.5334,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00031",
+      "start_sec": 133.5334,
+      "end_sec": 135.768967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00032",
+      "start_sec": 135.768967,
+      "end_sec": 138.972167,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00033",
+      "start_sec": 138.972167,
+      "end_sec": 140.073267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00034",
+      "start_sec": 140.073267,
+      "end_sec": 142.909433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00035",
+      "start_sec": 142.909433,
+      "end_sec": 143.5434,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00036",
+      "start_sec": 143.5434,
+      "end_sec": 144.277467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00037",
+      "start_sec": 144.277467,
+      "end_sec": 145.311833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00038",
+      "start_sec": 145.311833,
+      "end_sec": 146.579767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00039",
+      "start_sec": 146.579767,
+      "end_sec": 148.381567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00040",
+      "start_sec": 148.381567,
+      "end_sec": 152.418933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00041",
+      "start_sec": 152.418933,
+      "end_sec": 153.319833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00042",
+      "start_sec": 153.319833,
+      "end_sec": 154.320833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00043",
+      "start_sec": 154.320833,
+      "end_sec": 154.9548,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00044",
+      "start_sec": 154.9548,
+      "end_sec": 157.0569,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00045",
+      "start_sec": 157.0569,
+      "end_sec": 158.291467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00046",
+      "start_sec": 158.291467,
+      "end_sec": 159.192367,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00047",
+      "start_sec": 159.192367,
+      "end_sec": 159.893067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00048",
+      "start_sec": 159.893067,
+      "end_sec": 160.6605,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00049",
+      "start_sec": 160.6605,
+      "end_sec": 161.694867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00050",
+      "start_sec": 161.694867,
+      "end_sec": 162.629133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00051",
+      "start_sec": 162.629133,
+      "end_sec": 164.197367,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00052",
+      "start_sec": 164.197367,
+      "end_sec": 166.533033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00053",
+      "start_sec": 166.533033,
+      "end_sec": 168.535033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00054",
+      "start_sec": 168.535033,
+      "end_sec": 170.537033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00055",
+      "start_sec": 170.537033,
+      "end_sec": 171.638133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00056",
+      "start_sec": 171.638133,
+      "end_sec": 172.605767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00057",
+      "start_sec": 172.605767,
+      "end_sec": 174.040533,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00058",
+      "start_sec": 174.040533,
+      "end_sec": 176.543033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00059",
+      "start_sec": 176.543033,
+      "end_sec": 179.112267,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00060",
+      "start_sec": 179.112267,
+      "end_sec": 180.914067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00061",
+      "start_sec": 180.914067,
+      "end_sec": 184.5844,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00062",
+      "start_sec": 184.5844,
+      "end_sec": 185.7856,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00063",
+      "start_sec": 185.7856,
+      "end_sec": 187.654133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00064",
+      "start_sec": 187.654133,
+      "end_sec": 192.659133,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00065",
+      "start_sec": 192.659133,
+      "end_sec": 193.8937,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00066",
+      "start_sec": 193.8937,
+      "end_sec": 194.928067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00067",
+      "start_sec": 194.928067,
+      "end_sec": 200.733867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00068",
+      "start_sec": 200.733867,
+      "end_sec": 204.5043,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00069",
+      "start_sec": 204.5043,
+      "end_sec": 205.8056,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00070",
+      "start_sec": 205.8056,
+      "end_sec": 210.276733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00071",
+      "start_sec": 210.276733,
+      "end_sec": 212.845967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00072",
+      "start_sec": 212.845967,
+      "end_sec": 215.5153,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00073",
+      "start_sec": 215.5153,
+      "end_sec": 216.1159,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00074",
+      "start_sec": 216.1159,
+      "end_sec": 217.984433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00075",
+      "start_sec": 217.984433,
+      "end_sec": 218.551667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00076",
+      "start_sec": 218.551667,
+      "end_sec": 220.653767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00077",
+      "start_sec": 220.653767,
+      "end_sec": 233.299733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00078",
+      "start_sec": 233.299733,
+      "end_sec": 240.5403,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00079",
+      "start_sec": 240.5403,
+      "end_sec": 245.4452,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00080",
+      "start_sec": 245.4452,
+      "end_sec": 246.679767,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00081",
+      "start_sec": 246.679767,
+      "end_sec": 247.981067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00082",
+      "start_sec": 247.981067,
+      "end_sec": 248.982067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00083",
+      "start_sec": 248.982067,
+      "end_sec": 249.983067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00084",
+      "start_sec": 249.983067,
+      "end_sec": 251.484567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00085",
+      "start_sec": 251.484567,
+      "end_sec": 254.420833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00086",
+      "start_sec": 254.420833,
+      "end_sec": 256.422833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00087",
+      "start_sec": 256.422833,
+      "end_sec": 263.029433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00088",
+      "start_sec": 263.029433,
+      "end_sec": 264.597667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00089",
+      "start_sec": 264.597667,
+      "end_sec": 267.333733,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00090",
+      "start_sec": 267.333733,
+      "end_sec": 268.901967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00091",
+      "start_sec": 268.901967,
+      "end_sec": 269.5693,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00092",
+      "start_sec": 269.5693,
+      "end_sec": 271.8716,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00093",
+      "start_sec": 271.8716,
+      "end_sec": 273.806867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00094",
+      "start_sec": 273.806867,
+      "end_sec": 275.908967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00095",
+      "start_sec": 275.908967,
+      "end_sec": 277.9777,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00096",
+      "start_sec": 277.9777,
+      "end_sec": 280.013067,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00097",
+      "start_sec": 280.013067,
+      "end_sec": 281.047433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00098",
+      "start_sec": 281.047433,
+      "end_sec": 282.0818,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00099",
+      "start_sec": 282.0818,
+      "end_sec": 283.1829,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00100",
+      "start_sec": 283.1829,
+      "end_sec": 283.916967,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00101",
+      "start_sec": 283.916967,
+      "end_sec": 289.422467,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00102",
+      "start_sec": 289.422467,
+      "end_sec": 291.524567,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00103",
+      "start_sec": 291.524567,
+      "end_sec": 293.960333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00104",
+      "start_sec": 293.960333,
+      "end_sec": 295.662033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00105",
+      "start_sec": 295.662033,
+      "end_sec": 305.5052,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00106",
+      "start_sec": 305.5052,
+      "end_sec": 309.475833,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00107",
+      "start_sec": 309.475833,
+      "end_sec": 311.577933,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00108",
+      "start_sec": 311.577933,
+      "end_sec": 313.980333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00109",
+      "start_sec": 313.980333,
+      "end_sec": 317.984333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00110",
+      "start_sec": 317.984333,
+      "end_sec": 324.5242,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00111",
+      "start_sec": 324.5242,
+      "end_sec": 331.998333,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00112",
+      "start_sec": 331.998333,
+      "end_sec": 334.667667,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00113",
+      "start_sec": 334.667667,
+      "end_sec": 345.878867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00114",
+      "start_sec": 345.878867,
+      "end_sec": 347.714033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00115",
+      "start_sec": 347.714033,
+      "end_sec": 348.348,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00116",
+      "start_sec": 348.348,
+      "end_sec": 349.215533,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00117",
+      "start_sec": 349.215533,
+      "end_sec": 349.882867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00118",
+      "start_sec": 349.882867,
+      "end_sec": 352.118433,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00119",
+      "start_sec": 352.118433,
+      "end_sec": 353.720033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00120",
+      "start_sec": 353.720033,
+      "end_sec": 354.921233,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00121",
+      "start_sec": 354.921233,
+      "end_sec": 355.722033,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00122",
+      "start_sec": 355.722033,
+      "end_sec": 356.889867,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00123",
+      "start_sec": 356.889867,
+      "end_sec": 358.358,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00124",
+      "start_sec": 358.358,
+      "end_sec": 359.5592,
+      "boundary_source": "shot_detector"
+    },
+    {
+      "id": "shot-00125",
+      "start_sec": 359.5592,
+      "end_sec": 359.992967,
+      "boundary_source": "shot_detector"
     }
   ],
   "transcript": [
     {
-      "id": "speech-00001",
       "start_sec": 2.26,
+      "end_sec": 8.57,
+      "text": "My first name is O-S-C-A-R."
+    },
+    {
+      "start_sec": 8.57,
       "end_sec": 13.73,
-      "text": "My first name is O-S-C-A-R. My baloney has a second name, it's N-A-Y-E-R."
+      "text": "My baloney has a second name, it's an A-Y-E-R."
     },
     {
-      "id": "speech-00002",
       "start_sec": 13.73,
-      "end_sec": 26.26,
-      "text": "I love to read it every day, and if you allow G and A."
+      "end_sec": 26.18,
+      "text": "I love to read it every day, if you allow G and A."
     },
     {
-      "id": "speech-00003",
-      "start_sec": 26.26,
-      "end_sec": 29.26,
+      "start_sec": 26.18,
+      "end_sec": 28.98,
       "text": "Oscar Meyer, the first name in balona."
     },
     {
-      "id": "speech-00004",
-      "start_sec": 29.26,
-      "end_sec": 35.56,
+      "start_sec": 28.98,
+      "end_sec": 29.98,
+      "text": "How's that?"
+    },
+    {
+      "start_sec": 29.98,
+      "end_sec": 36.12,
       "text": "What's behind the brand of hot dogs you buy?"
     },
     {
-      "id": "speech-00005",
-      "start_sec": 35.56,
-      "end_sec": 41.56,
-      "text": "You know you're getting solid value with Oscar Meyer and quality trusted for generations."
+      "start_sec": 36.12,
+      "end_sec": 39.08,
+      "text": "You know you're getting solid value with Oscar Meyer"
     },
     {
-      "id": "speech-00006",
-      "start_sec": 41.56,
-      "end_sec": 45.56,
-      "text": "There's holds of meat protein from solid cuts of meat."
+      "start_sec": 39.08,
+      "end_sec": 41.96,
+      "text": "and quality trusted for generations."
     },
     {
-      "id": "speech-00007",
-      "start_sec": 45.56,
-      "end_sec": 47.56,
+      "start_sec": 41.96,
+      "end_sec": 45.52,
+      "text": "There's wholesome meat protein from solid cuts of meat."
+    },
+    {
+      "start_sec": 45.52,
+      "end_sec": 47.92,
       "text": "They only meet Oscar Meyer uses."
     },
     {
-      "id": "speech-00008",
-      "start_sec": 47.56,
-      "end_sec": 49.56,
-      "text": "U.S. government-inspective."
+      "start_sec": 47.92,
+      "end_sec": 49.72,
+      "text": "US government inspectors."
     },
     {
-      "id": "speech-00009",
-      "start_sec": 49.56,
-      "end_sec": 51.56,
-      "text": "Oscar Meyer selected."
+      "start_sec": 49.72,
+      "end_sec": 53.64,
+      "text": "Oscar Meyer selected Oscar Meyer winners of beef flanks"
     },
     {
-      "id": "speech-00010",
-      "start_sec": 51.56,
-      "end_sec": 54.56,
-      "text": "Oscar Meyer winners in beef ranks in handy twin bags."
+      "start_sec": 53.64,
+      "end_sec": 55.16,
+      "text": "in handy twin bags."
     },
     {
-      "id": "speech-00011",
-      "start_sec": 54.56,
-      "end_sec": 57.56,
+      "start_sec": 55.16,
+      "end_sec": 58.36,
       "text": "The flavors as good as the good meat itself."
     },
     {
-      "id": "speech-00012",
-      "start_sec": 57.56,
-      "end_sec": 59.56,
-      "text": "Oscar Meyer, America."
+      "start_sec": 58.36,
+      "end_sec": 61.36,
+      "text": "Oscar Meyer, America's number one."
+    },
+    {
+      "start_sec": 61.36,
+      "end_sec": 70.38,
+      "text": "There is a corn lover and there's nothing more gratifying"
+    },
+    {
+      "start_sec": 70.38,
+      "end_sec": 72.86,
+      "text": "to a corn lover than to know that her mother is giving her"
+    },
+    {
+      "start_sec": 72.86,
+      "end_sec": 75.06,
+      "text": "delicious Del Monte family style corn."
+    },
+    {
+      "start_sec": 75.06,
+      "end_sec": 77.54,
+      "text": "More people eat than any other corn like it."
+    },
+    {
+      "start_sec": 77.54,
+      "end_sec": 80.5,
+      "text": "This is a special strain developed to be sweet and tender."
+    },
+    {
+      "start_sec": 80.5,
+      "end_sec": 82.74,
+      "text": "And when a corn lover is eating Del Monte corn,"
+    },
+    {
+      "start_sec": 82.74,
+      "end_sec": 85.58,
+      "text": "she probably doesn't need to hear me talking about how good it is,"
+    },
+    {
+      "start_sec": 85.58,
+      "end_sec": 86.1,
+      "text": "right?"
+    },
+    {
+      "start_sec": 86.1,
+      "end_sec": 88.5,
+      "text": "Well, then I'm just going to go into the living room"
+    },
+    {
+      "start_sec": 88.5,
+      "end_sec": 90.7,
+      "text": "and talk about corn to the sofa."
+    },
+    {
+      "start_sec": 90.7,
+      "end_sec": 98.93,
+      "text": "Time's new, good."
+    },
+    {
+      "start_sec": 98.93,
+      "end_sec": 100.97,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 100.97,
+      "end_sec": 105.17,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 105.17,
+      "end_sec": 106.93,
+      "text": "Mounds don't."
+    },
+    {
+      "start_sec": 106.93,
+      "end_sec": 108.97,
+      "text": "How many toys got built up chocolate?"
+    },
+    {
+      "start_sec": 108.97,
+      "end_sec": 110.85,
+      "text": "Coconut and munching it's too old."
+    },
+    {
+      "start_sec": 110.85,
+      "end_sec": 114.77,
+      "text": "Mounds got deep down chocolate and chewing coconut."
+    },
+    {
+      "start_sec": 114.77,
+      "end_sec": 116.73,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 116.73,
+      "end_sec": 118.69,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 118.69,
+      "end_sec": 120.76,
+      "text": "Beautiful."
+    },
+    {
+      "start_sec": 120.76,
+      "end_sec": 121.16,
+      "text": "Beautiful."
+    },
+    {
+      "start_sec": 121.16,
+      "end_sec": 121.92,
+      "text": "Mounds don't."
+    },
+    {
+      "start_sec": 121.92,
+      "end_sec": 122.6,
+      "text": "Cool."
+    },
+    {
+      "start_sec": 122.6,
+      "end_sec": 124.52,
+      "text": "Sometimes you feel like a nut."
+    },
+    {
+      "start_sec": 124.52,
+      "end_sec": 130.64,
+      "text": "Sometimes you don't."
+    },
+    {
+      "start_sec": 130.64,
+      "end_sec": 132.96,
+      "text": "Then he sounds like he accidentally invented a thermal chemical"
+    },
+    {
+      "start_sec": 132.96,
+      "end_sec": 133.72,
+      "text": "energy source."
+    },
+    {
+      "start_sec": 133.72,
+      "end_sec": 136.68,
+      "text": "The scientific wonder becomes a nightmare."
+    },
+    {
+      "start_sec": 136.68,
+      "end_sec": 139.24,
+      "text": "There's enough explosive to turn the city into a pancake."
+    },
+    {
+      "start_sec": 139.24,
+      "end_sec": 149.92,
+      "text": "A power that could mark the beginning of the end for the $6 million man."
+    },
+    {
+      "start_sec": 149.92,
+      "end_sec": 152.52,
+      "text": "America's classic thrillers come to life."
+    },
+    {
+      "start_sec": 152.52,
+      "end_sec": 155.4,
+      "text": "The hardy boy is Nancy Drew Mysteries."
+    },
+    {
+      "start_sec": 155.4,
+      "end_sec": 157.2,
+      "text": "An adventure into suspense."
+    },
+    {
+      "start_sec": 157.2,
+      "end_sec": 160.79,
+      "text": "It's got to be a way out of here."
+    },
+    {
+      "start_sec": 160.79,
+      "end_sec": 162.15,
+      "text": "Who's to go with her?"
+    },
+    {
+      "start_sec": 162.15,
+      "end_sec": 164.35,
+      "text": "Forget that."
+    },
+    {
+      "start_sec": 164.35,
+      "end_sec": 167.19,
+      "text": "A professor to go sleep with Prince."
+    },
+    {
+      "start_sec": 167.19,
+      "end_sec": 170.87,
+      "text": "The adventures of America's favorite young detectives come to television."
+    },
+    {
+      "start_sec": 170.87,
+      "end_sec": 171.91,
+      "text": "Follow that ghost."
+    },
+    {
+      "start_sec": 171.91,
+      "end_sec": 181.14,
+      "text": "The hardy boy is Nancy Drew Mysteries."
+    },
+    {
+      "start_sec": 181.14,
+      "end_sec": 184.7,
+      "text": "It's happening all around the house right about now."
+    },
+    {
+      "start_sec": 184.7,
+      "end_sec": 186.18,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 186.18,
+      "end_sec": 187.74,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 187.74,
+      "end_sec": 189.66,
+      "text": "I'd like a trisket."
+    },
+    {
+      "start_sec": 189.66,
+      "end_sec": 190.9,
+      "text": "I know my family."
+    },
+    {
+      "start_sec": 190.9,
+      "end_sec": 192.42,
+      "text": "And when they'd like a snack,"
+    },
+    {
+      "start_sec": 192.42,
+      "end_sec": 194.06,
+      "text": "they'd like a trisket wafer."
+    },
+    {
+      "start_sec": 194.06,
+      "end_sec": 195.18,
+      "text": "Break with cheese."
+    },
+    {
+      "start_sec": 195.18,
+      "end_sec": 196.14,
+      "text": "Or with a dip."
+    },
+    {
+      "start_sec": 196.14,
+      "end_sec": 197.34,
+      "text": "Neat with jam."
+    },
+    {
+      "start_sec": 197.34,
+      "end_sec": 199.66,
+      "text": "Or just by themselves."
+    },
+    {
+      "start_sec": 199.66,
+      "end_sec": 201.02,
+      "text": "They really are good."
+    },
+    {
+      "start_sec": 201.02,
+      "end_sec": 201.98,
+      "text": "Trisket wafers."
+    },
+    {
+      "start_sec": 201.98,
+      "end_sec": 204.7,
+      "text": "They're made from 100% natural whole wheat."
+    },
+    {
+      "start_sec": 204.7,
+      "end_sec": 205.78,
+      "text": "And that's good, too."
+    },
+    {
+      "start_sec": 205.78,
+      "end_sec": 207.82,
+      "text": "A trisket, a trisket,"
+    },
+    {
+      "start_sec": 207.82,
+      "end_sec": 210.22,
+      "text": "baked only by the biscoe."
+    },
+    {
+      "start_sec": 210.22,
+      "end_sec": 219.55,
+      "text": "That peat would just as soon eat every day of his life."
+    },
+    {
+      "start_sec": 219.55,
+      "end_sec": 222.59,
+      "text": "He really goes for those noodles."
+    },
+    {
+      "start_sec": 222.59,
+      "end_sec": 225.51,
+      "text": "So I give him the gamble life."
+    },
+    {
+      "start_sec": 225.51,
+      "end_sec": 227.63,
+      "text": "Pete's idea of the perfect lunch"
+    },
+    {
+      "start_sec": 227.63,
+      "end_sec": 230.59,
+      "text": "is any lunch with Campbell's chicken noodle lo soup."
+    },
+    {
+      "start_sec": 230.59,
+      "end_sec": 232.99,
+      "text": "There's lots of chickeny flavor and little round noodles"
+    },
+    {
+      "start_sec": 232.99,
+      "end_sec": 235.23,
+      "text": "for him, but not a lot of work for me."
+    },
+    {
+      "start_sec": 235.23,
+      "end_sec": 236.83,
+      "text": "That's noodle, OK."
+    },
+    {
+      "start_sec": 236.83,
+      "end_sec": 240.95,
+      "text": "Give me the gamble life."
+    },
+    {
+      "start_sec": 240.95,
+      "end_sec": 242.87,
+      "text": "It's the first show of the new year"
+    },
+    {
+      "start_sec": 242.87,
+      "end_sec": 245.15,
+      "text": "and the Captain Antonyl do it right,"
+    },
+    {
+      "start_sec": 245.15,
+      "end_sec": 248.07,
+      "text": "with their guest Marilyn McCoo and Billy Davis Jr."
+    },
+    {
+      "start_sec": 248.07,
+      "end_sec": 251.67,
+      "text": "John Biner, Muhammad Ali, and Joe Namer."
+    },
+    {
+      "start_sec": 251.67,
+      "end_sec": 255.35,
+      "text": "It's the new 1977 Captain Antonyl."
+    },
+    {
+      "start_sec": 255.35,
+      "end_sec": 267.48,
+      "text": "You want it?"
+    },
+    {
+      "start_sec": 267.48,
+      "end_sec": 269.08,
+      "text": "It's going to be a golden day."
+    },
+    {
+      "start_sec": 269.08,
+      "end_sec": 270.04,
+      "text": "Let's eat."
+    },
+    {
+      "start_sec": 270.04,
+      "end_sec": 272.04,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 272.04,
+      "end_sec": 273.84,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 273.84,
+      "end_sec": 275.32,
+      "text": "Crispy crunchy crayons."
+    },
+    {
+      "start_sec": 275.32,
+      "end_sec": 278.32,
+      "text": "Serial family breakfast treat."
+    },
+    {
+      "start_sec": 278.32,
+      "end_sec": 280.4,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 280.4,
+      "end_sec": 282.16,
+      "text": "Oh, those golden crayons."
+    },
+    {
+      "start_sec": 282.16,
+      "end_sec": 285.38,
+      "text": "Golden honey."
+    },
+    {
+      "start_sec": 285.38,
+      "end_sec": 288.42,
+      "text": "It's a great tasting part of a complete breakfast"
+    },
+    {
+      "start_sec": 288.42,
+      "end_sec": 289.74,
+      "text": "for the old family."
+    },
+    {
+      "start_sec": 289.74,
+      "end_sec": 295.78,
+      "text": "Try those golden crayons and have a golden day."
+    },
+    {
+      "start_sec": 295.78,
+      "end_sec": 299.86,
+      "text": "Introducing the Kodak instant camera with a twist."
+    },
+    {
+      "start_sec": 299.86,
+      "end_sec": 301.46,
+      "text": "Meet the crank."
+    },
+    {
+      "start_sec": 301.46,
+      "end_sec": 304.9,
+      "text": "Can you feel a brand new day?"
+    },
+    {
+      "start_sec": 304.9,
+      "end_sec": 310.3,
+      "text": "Imagine instant pictures with color, color, color by Kodak."
+    },
+    {
+      "start_sec": 310.3,
+      "end_sec": 312.86,
+      "text": "Just crank, crank, crank."
+    },
+    {
+      "start_sec": 312.86,
+      "end_sec": 316.18,
+      "text": "And in minutes, you get bright colorful instant pictures"
+    },
+    {
+      "start_sec": 316.18,
+      "end_sec": 318.38,
+      "text": "with a textured sack and locks finish."
+    },
+    {
+      "start_sec": 318.38,
+      "end_sec": 321.7,
+      "text": "See your photo dealer and shake hands with the crank,"
+    },
+    {
+      "start_sec": 321.7,
+      "end_sec": 327.32,
+      "text": "a Kodak instant camera with a twist."
+    },
+    {
+      "start_sec": 327.32,
+      "end_sec": 330.2,
+      "text": "What you're about to see is the world's most revolutionary"
+    },
+    {
+      "start_sec": 330.2,
+      "end_sec": 332.24,
+      "text": "telephone switching invention."
+    },
+    {
+      "start_sec": 332.24,
+      "end_sec": 334.52,
+      "text": "We call it super switcher."
+    },
+    {
+      "start_sec": 334.52,
+      "end_sec": 336.28,
+      "text": "It has almost no moving parts."
+    },
+    {
+      "start_sec": 336.28,
+      "end_sec": 339.64,
+      "text": "Yet handles four times more calls than its predecessor."
+    },
+    {
+      "start_sec": 339.64,
+      "end_sec": 342.72,
+      "text": "It required an investment of $400 million,"
+    },
+    {
+      "start_sec": 342.72,
+      "end_sec": 345.72,
+      "text": "but should ultimately save a billion dollars a year."
+    },
+    {
+      "start_sec": 345.72,
+      "end_sec": 348.92,
+      "text": "And soon every major American area will have one."
+    },
+    {
+      "start_sec": 348.92,
+      "end_sec": 352.51,
+      "text": "Looks deli."
+    },
+    {
+      "start_sec": 352.51,
+      "end_sec": 358.59,
+      "text": "Imagine that each of these cars is a long distance call."
+    },
+    {
+      "start_sec": 358.59,
+      "end_sec": 361.79,
+      "text": "This new invention can handle a lot of things."
     }
   ],
   "segments": [
     {
       "id": "segment-00001",
-      "kind": "predicted_commercial",
+      "kind": "analysis_window",
       "start_sec": 0.0,
-      "end_sec": 26.059367,
-      "boundary_source": "automatic_grouping",
+      "end_sec": 15.0,
+      "boundary_source": "fixed_time_window",
       "boundary_evidence": [
-        "Shot-level fallback; insufficient grouping evidence."
+        "Fixed analysis window; may cross a commercial boundary."
       ],
       "shot_ids": [
         "shot-00001"
       ],
-      "transcript_ids": [
-        "speech-00001",
-        "speech-00002"
-      ],
       "analysis_status": "completed",
+      "window_id": "window-00001",
       "intelligence": {
-        "summary": "child in overalls holding a toy.",
+        "summary": "child holding a toy and talking",
         "categories": [
           {
             "id": "child",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+                "time_sec": 8.686455666666667,
+                "shot_index": 0,
+                "shot_id": "shot-00001",
+                "window_index": 0
+              }
+            ]
           },
           {
             "id": "toy",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+                "time_sec": 8.686455666666667,
+                "shot_index": 0,
+                "shot_id": "shot-00001",
+                "window_index": 0
+              }
+            ]
           },
           {
-            "id": "overalls",
+            "id": "speech",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+                "time_sec": 8.686455666666667,
+                "shot_index": 0,
+                "shot_id": "shot-00001",
+                "window_index": 0
+              }
+            ]
           }
         ],
         "entities": [
@@ -174,7 +1456,15 @@
             "type": "product",
             "name": "toy",
             "source": "vision_model",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-00.jpg",
+                "time_sec": 8.686455666666667,
+                "shot_index": 0,
+                "shot_id": "shot-00001",
+                "window_index": 0
+              }
+            ]
           }
         ],
         "primary_advertiser": {
@@ -186,88 +1476,115 @@
           "status": "unknown",
           "method": "vision_model",
           "reasons": [
+            "toy name",
             "child's name",
-            "toy's name",
-            "toy's brand"
+            "child's age"
           ]
         }
       },
-      "ad_opportunities": [
-        {
-          "id": "opportunity-00002",
-          "format": "overlay",
-          "start_sec": 13.0296835,
-          "end_sec": 18.0296835,
-          "placement_source": "timing_rule",
-          "status": "candidate",
-          "reason": "middle-of-segment rule; candidate only"
-        }
-      ]
+      "ad_opportunities": []
     },
     {
       "id": "segment-00002",
-      "kind": "predicted_commercial",
-      "start_sec": 26.059367,
-      "end_sec": 59.993267,
-      "boundary_source": "automatic_grouping",
+      "kind": "analysis_window",
+      "start_sec": 15.0,
+      "end_sec": 30.0,
+      "boundary_source": "fixed_time_window",
       "boundary_evidence": [
-        "Shot-level fallback; insufficient grouping evidence."
+        "Fixed analysis window; may cross a commercial boundary."
       ],
       "shot_ids": [
+        "shot-00001",
         "shot-00002",
         "shot-00003"
       ],
-      "transcript_ids": [
-        "speech-00002",
-        "speech-00003",
-        "speech-00004",
-        "speech-00005",
-        "speech-00006",
-        "speech-00007",
-        "speech-00008",
-        "speech-00009",
-        "speech-00010",
-        "speech-00011",
-        "speech-00012"
-      ],
       "analysis_status": "completed",
+      "window_id": "window-00002",
       "intelligence": {
-        "summary": "a close-up of a package of bologna next to grapes and an apple",
+        "summary": "child holding Oscar Meyer Bologna",
         "categories": [
           {
             "id": "food",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+                "time_sec": 17.372911333333334,
+                "shot_index": 1,
+                "shot_id": "shot-00001",
+                "window_index": 1
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+                "time_sec": 26.915778,
+                "shot_index": 1,
+                "shot_id": "shot-00002",
+                "window_index": 1
+              }
+            ]
           },
           {
-            "id": "fruit",
+            "id": "product",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+                "time_sec": 17.372911333333334,
+                "shot_index": 1,
+                "shot_id": "shot-00001",
+                "window_index": 1
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+                "time_sec": 26.915778,
+                "shot_index": 1,
+                "shot_id": "shot-00002",
+                "window_index": 1
+              }
+            ]
           },
           {
-            "id": "package",
+            "id": "advertising",
             "source": "vision_and_transcript",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+                "time_sec": 17.372911333333334,
+                "shot_index": 1,
+                "shot_id": "shot-00001",
+                "window_index": 1
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+                "time_sec": 26.915778,
+                "shot_index": 1,
+                "shot_id": "shot-00002",
+                "window_index": 1
+              }
+            ]
           }
         ],
         "entities": [
           {
             "type": "product",
-            "name": "bologna",
+            "name": "Oscar Meyer Bologna",
             "source": "vision_model",
-            "evidence": []
-          },
-          {
-            "type": "product",
-            "name": "grapes",
-            "source": "vision_model",
-            "evidence": []
-          },
-          {
-            "type": "product",
-            "name": "apple",
-            "source": "vision_model",
-            "evidence": []
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
+                "time_sec": 17.372911333333334,
+                "shot_index": 1,
+                "shot_id": "shot-00001",
+                "window_index": 1
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg",
+                "time_sec": 26.915778,
+                "shot_index": 1,
+                "shot_id": "shot-00002",
+                "window_index": 1
+              }
+            ]
           }
         ],
         "primary_advertiser": {
@@ -279,22 +1596,2786 @@
           "status": "unknown",
           "method": "vision_model",
           "reasons": [
-            "G and A",
-            "balona"
+            "child's name",
+            "brand of hot dogs",
+            "advertising slogan"
           ]
         }
       },
-      "ad_opportunities": [
-        {
-          "id": "opportunity-00002",
-          "format": "overlay",
-          "start_sec": 43.026317000000006,
-          "end_sec": 48.026317000000006,
-          "placement_source": "timing_rule",
-          "status": "candidate",
-          "reason": "middle-of-segment rule; candidate only"
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00003",
+      "kind": "analysis_window",
+      "start_sec": 30.0,
+      "end_sec": 45.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00003"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00003",
+      "intelligence": {
+        "summary": "Oscar Mayer Wiener nutrition information",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+                "time_sec": 39.67296666666667,
+                "shot_index": 2,
+                "shot_id": "shot-00003",
+                "window_index": 2
+              }
+            ]
+          },
+          {
+            "id": "advertising",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+                "time_sec": 39.67296666666667,
+                "shot_index": 2,
+                "shot_id": "shot-00003",
+                "window_index": 2
+              }
+            ]
+          },
+          {
+            "id": "product",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+                "time_sec": 39.67296666666667,
+                "shot_index": 2,
+                "shot_id": "shot-00003",
+                "window_index": 2
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Oscar Mayer Wiener",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg",
+                "time_sec": 39.67296666666667,
+                "shot_index": 2,
+                "shot_id": "shot-00003",
+                "window_index": 2
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Oscar Mayer",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "nutrition information",
+            "solid cuts of meat"
+          ]
         }
-      ]
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00004",
+      "kind": "analysis_window",
+      "start_sec": 45.0,
+      "end_sec": 60.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00003"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00004",
+      "intelligence": {
+        "summary": "Oscar Meyer beef flanks in handy twin bags.",
+        "categories": [
+          {
+            "id": "meat",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+                "time_sec": 50.71733333333333,
+                "shot_index": 3,
+                "shot_id": "shot-00003",
+                "window_index": 3
+              }
+            ]
+          },
+          {
+            "id": "beef",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+                "time_sec": 50.71733333333333,
+                "shot_index": 3,
+                "shot_id": "shot-00003",
+                "window_index": 3
+              }
+            ]
+          },
+          {
+            "id": "flanks",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+                "time_sec": 50.71733333333333,
+                "shot_index": 3,
+                "shot_id": "shot-00003",
+                "window_index": 3
+              }
+            ]
+          },
+          {
+            "id": "Oscar Meyer",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+                "time_sec": 50.71733333333333,
+                "shot_index": 3,
+                "shot_id": "shot-00003",
+                "window_index": 3
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "beef flanks",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg",
+                "time_sec": 50.71733333333333,
+                "shot_index": 3,
+                "shot_id": "shot-00003",
+                "window_index": 3
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Oscar Meyer",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "US government inspectors",
+            "Oscar Meyer selected",
+            "Oscar Meyer winners"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00005",
+      "kind": "analysis_window",
+      "start_sec": 60.0,
+      "end_sec": 75.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00003",
+        "shot-00004",
+        "shot-00005",
+        "shot-00006"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00005",
+      "intelligence": {
+        "summary": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+                "time_sec": 63.35217766666667,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+                "time_sec": 64.94265533333333,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              }
+            ]
+          },
+          {
+            "id": "advertising",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+                "time_sec": 63.35217766666667,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+                "time_sec": 64.94265533333333,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              }
+            ]
+          },
+          {
+            "id": "product",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+                "time_sec": 63.35217766666667,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+                "time_sec": 64.94265533333333,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Del Monte family style corn",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
+                "time_sec": 63.35217766666667,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg",
+                "time_sec": 64.94265533333333,
+                "shot_index": 4,
+                "shot_id": "shot-00004",
+                "window_index": 4
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Oscar Meyer",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": []
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00006",
+      "kind": "analysis_window",
+      "start_sec": 75.0,
+      "end_sec": 90.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00006"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00006",
+      "intelligence": {
+        "summary": "child eating dinner",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+                "time_sec": 75.219589,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+                "time_sec": 82.938411,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              }
+            ]
+          },
+          {
+            "id": "dinner",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+                "time_sec": 75.219589,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+                "time_sec": 82.938411,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              }
+            ]
+          },
+          {
+            "id": "child",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+                "time_sec": 75.219589,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+                "time_sec": 82.938411,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "corn",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-00.jpg",
+                "time_sec": 75.219589,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00005-01.jpg",
+                "time_sec": 82.938411,
+                "shot_index": 5,
+                "shot_id": "shot-00006",
+                "window_index": 5
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Del Monte",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "living room",
+            "sofa",
+            "child's name"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00007",
+      "kind": "analysis_window",
+      "start_sec": 90.0,
+      "end_sec": 105.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00006",
+        "shot-00007",
+        "shot-00008",
+        "shot-00009",
+        "shot-00010",
+        "shot-00011",
+        "shot-00012",
+        "shot-00013",
+        "shot-00014",
+        "shot-00015"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00007",
+      "intelligence": {
+        "summary": "A can of Del Monte Whole Kernel Corn next to a bowl of steaming corn.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+                "time_sec": 92.77045533333333,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+                "time_sec": 94.88367766666667,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              }
+            ]
+          },
+          {
+            "id": "canned food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+                "time_sec": 92.77045533333333,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+                "time_sec": 94.88367766666667,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              }
+            ]
+          },
+          {
+            "id": "corn",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+                "time_sec": 92.77045533333333,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+                "time_sec": 94.88367766666667,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Del Monte Whole Kernel Corn",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-00.jpg",
+                "time_sec": 92.77045533333333,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00006-01.jpg",
+                "time_sec": 94.88367766666667,
+                "shot_index": 6,
+                "shot_id": "shot-00007",
+                "window_index": 6
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Del Monte",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "corn",
+            "Del Monte",
+            "nothing's too good for daddy and me"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00008",
+      "kind": "analysis_window",
+      "start_sec": 105.0,
+      "end_sec": 120.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00015",
+        "shot-00016",
+        "shot-00017",
+        "shot-00018",
+        "shot-00019",
+        "shot-00020",
+        "shot-00021",
+        "shot-00022",
+        "shot-00023"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00008",
+      "intelligence": {
+        "summary": "A puppet character is eating a chocolate bar.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          },
+          {
+            "id": "puppets",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          },
+          {
+            "id": "chocolate",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          },
+          {
+            "id": "eating",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          },
+          {
+            "id": "mounds",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "chocolate",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "mounds",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-00.jpg",
+                "time_sec": 105.57213333333334,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00015-01.jpg",
+                "time_sec": 105.93916666666667,
+                "shot_index": 7,
+                "shot_id": "shot-00016",
+                "window_index": 7
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": null,
+          "status": "unknown",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "puppets",
+            "eating",
+            "chocolate"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00009",
+      "kind": "analysis_window",
+      "start_sec": 120.0,
+      "end_sec": 135.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00023",
+        "shot-00024",
+        "shot-00025",
+        "shot-00026",
+        "shot-00027",
+        "shot-00028",
+        "shot-00029",
+        "shot-00030",
+        "shot-00031"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00009",
+      "intelligence": {
+        "summary": "A group of people are eating M&M's candy, with one person in the foreground holding a tube of M&M's and another person in the background also holding a tube. The scene is set outdoors, possibly at a park or event, with people in the background also holding M&M's tubes.",
+        "categories": [
+          {
+            "id": "candy",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+                "time_sec": 120.50927766666666,
+                "shot_index": 0,
+                "shot_id": "shot-00023",
+                "window_index": 8
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg",
+                "time_sec": 121.65486666666666,
+                "shot_index": 0,
+                "shot_id": "shot-00024",
+                "window_index": 8
+              }
+            ]
+          },
+          {
+            "id": "advertising",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+                "time_sec": 120.50927766666666,
+                "shot_index": 0,
+                "shot_id": "shot-00023",
+                "window_index": 8
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg",
+                "time_sec": 121.65486666666666,
+                "shot_index": 0,
+                "shot_id": "shot-00024",
+                "window_index": 8
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "M&M's",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00022-01.jpg",
+                "time_sec": 120.50927766666666,
+                "shot_index": 0,
+                "shot_id": "shot-00023",
+                "window_index": 8
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00023-00.jpg",
+                "time_sec": 121.65486666666666,
+                "shot_index": 0,
+                "shot_id": "shot-00024",
+                "window_index": 8
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "M&M's",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "Unknown",
+          "method": "vision_model",
+          "reasons": [
+            "Unknown"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00010",
+      "kind": "analysis_window",
+      "start_sec": 135.0,
+      "end_sec": 150.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00031",
+        "shot-00032",
+        "shot-00033",
+        "shot-00034",
+        "shot-00035",
+        "shot-00036",
+        "shot-00037",
+        "shot-00038",
+        "shot-00039",
+        "shot-00040"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00010",
+      "intelligence": {
+        "summary": "A man is talking on a phone in a cluttered room.",
+        "categories": [
+          {
+            "id": "man",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+                "time_sec": 135.023778,
+                "shot_index": 1,
+                "shot_id": "shot-00031",
+                "window_index": 9
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+                "time_sec": 136.83670033333334,
+                "shot_index": 1,
+                "shot_id": "shot-00032",
+                "window_index": 9
+              }
+            ]
+          },
+          {
+            "id": "phone",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+                "time_sec": 135.023778,
+                "shot_index": 1,
+                "shot_id": "shot-00031",
+                "window_index": 9
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+                "time_sec": 136.83670033333334,
+                "shot_index": 1,
+                "shot_id": "shot-00032",
+                "window_index": 9
+              }
+            ]
+          },
+          {
+            "id": "room",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+                "time_sec": 135.023778,
+                "shot_index": 1,
+                "shot_id": "shot-00031",
+                "window_index": 9
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+                "time_sec": 136.83670033333334,
+                "shot_index": 1,
+                "shot_id": "shot-00032",
+                "window_index": 9
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "phone",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+                "time_sec": 135.023778,
+                "shot_index": 1,
+                "shot_id": "shot-00031",
+                "window_index": 9
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+                "time_sec": 136.83670033333334,
+                "shot_index": 1,
+                "shot_id": "shot-00032",
+                "window_index": 9
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "bottle",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00030-01.jpg",
+                "time_sec": 135.023778,
+                "shot_index": 1,
+                "shot_id": "shot-00031",
+                "window_index": 9
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00031-00.jpg",
+                "time_sec": 136.83670033333334,
+                "shot_index": 1,
+                "shot_id": "shot-00032",
+                "window_index": 9
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "null",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "cluttered room",
+            "man talking",
+            "phone in use"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00011",
+      "kind": "analysis_window",
+      "start_sec": 150.0,
+      "end_sec": 165.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00040",
+        "shot-00041",
+        "shot-00042",
+        "shot-00043",
+        "shot-00044",
+        "shot-00045",
+        "shot-00046",
+        "shot-00047",
+        "shot-00048",
+        "shot-00049",
+        "shot-00050",
+        "shot-00051",
+        "shot-00052"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00011",
+      "intelligence": {
+        "summary": "A woman in a white dress holding a gun, with a man in a suit standing next to her.",
+        "categories": [
+          {
+            "id": "adventure",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+                "time_sec": 151.07314433333335,
+                "shot_index": 2,
+                "shot_id": "shot-00040",
+                "window_index": 10
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg",
+                "time_sec": 152.719233,
+                "shot_index": 2,
+                "shot_id": "shot-00041",
+                "window_index": 10
+              }
+            ]
+          },
+          {
+            "id": "mystery",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+                "time_sec": 151.07314433333335,
+                "shot_index": 2,
+                "shot_id": "shot-00040",
+                "window_index": 10
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg",
+                "time_sec": 152.719233,
+                "shot_index": 2,
+                "shot_id": "shot-00041",
+                "window_index": 10
+              }
+            ]
+          },
+          {
+            "id": "thriller",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00039-01.jpg",
+                "time_sec": 151.07314433333335,
+                "shot_index": 2,
+                "shot_id": "shot-00040",
+                "window_index": 10
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00040-00.jpg",
+                "time_sec": 152.719233,
+                "shot_index": 2,
+                "shot_id": "shot-00041",
+                "window_index": 10
+              }
+            ]
+          }
+        ],
+        "entities": [],
+        "primary_advertiser": {
+          "name": "Nancy Drew Mysteries",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": []
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00012",
+      "kind": "analysis_window",
+      "start_sec": 165.0,
+      "end_sec": 180.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00052",
+        "shot-00053",
+        "shot-00054",
+        "shot-00055",
+        "shot-00056",
+        "shot-00057",
+        "shot-00058",
+        "shot-00059",
+        "shot-00060"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00012",
+      "intelligence": {
+        "summary": "A woman in a car, a man in a suit standing in a dark room.",
+        "categories": [
+          {
+            "id": "car",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+                "time_sec": 165.75447766666667,
+                "shot_index": 3,
+                "shot_id": "shot-00052",
+                "window_index": 11
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg",
+                "time_sec": 167.20036633333333,
+                "shot_index": 3,
+                "shot_id": "shot-00053",
+                "window_index": 11
+              }
+            ]
+          },
+          {
+            "id": "man",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+                "time_sec": 165.75447766666667,
+                "shot_index": 3,
+                "shot_id": "shot-00052",
+                "window_index": 11
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg",
+                "time_sec": 167.20036633333333,
+                "shot_index": 3,
+                "shot_id": "shot-00053",
+                "window_index": 11
+              }
+            ]
+          },
+          {
+            "id": "dark room",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00051-01.jpg",
+                "time_sec": 165.75447766666667,
+                "shot_index": 3,
+                "shot_id": "shot-00052",
+                "window_index": 11
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00052-00.jpg",
+                "time_sec": 167.20036633333333,
+                "shot_index": 3,
+                "shot_id": "shot-00053",
+                "window_index": 11
+              }
+            ]
+          }
+        ],
+        "entities": [],
+        "primary_advertiser": {
+          "name": null,
+          "status": "unknown",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "woman",
+            "car interior",
+            "man's attire"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00013",
+      "kind": "analysis_window",
+      "start_sec": 180.0,
+      "end_sec": 195.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00060",
+        "shot-00061",
+        "shot-00062",
+        "shot-00063",
+        "shot-00064",
+        "shot-00065",
+        "shot-00066",
+        "shot-00067"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00013",
+      "intelligence": {
+        "summary": "A woman is talking about her family and their love for trisket wafers.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+                "time_sec": 180.313467,
+                "shot_index": 4,
+                "shot_id": "shot-00060",
+                "window_index": 12
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+                "time_sec": 182.13751133333332,
+                "shot_index": 4,
+                "shot_id": "shot-00061",
+                "window_index": 12
+              }
+            ]
+          },
+          {
+            "id": "family",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+                "time_sec": 180.313467,
+                "shot_index": 4,
+                "shot_id": "shot-00060",
+                "window_index": 12
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+                "time_sec": 182.13751133333332,
+                "shot_index": 4,
+                "shot_id": "shot-00061",
+                "window_index": 12
+              }
+            ]
+          },
+          {
+            "id": "snacks",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+                "time_sec": 180.313467,
+                "shot_index": 4,
+                "shot_id": "shot-00060",
+                "window_index": 12
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+                "time_sec": 182.13751133333332,
+                "shot_index": 4,
+                "shot_id": "shot-00061",
+                "window_index": 12
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "trisket wafers",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+                "time_sec": 180.313467,
+                "shot_index": 4,
+                "shot_id": "shot-00060",
+                "window_index": 12
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+                "time_sec": 182.13751133333332,
+                "shot_index": 4,
+                "shot_id": "shot-00061",
+                "window_index": 12
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "cheese",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
+                "time_sec": 180.313467,
+                "shot_index": 4,
+                "shot_id": "shot-00060",
+                "window_index": 12
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg",
+                "time_sec": 182.13751133333332,
+                "shot_index": 4,
+                "shot_id": "shot-00061",
+                "window_index": 12
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": null,
+          "status": "unknown",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "family members",
+            "specific trisket recipe",
+            "location"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00014",
+      "kind": "analysis_window",
+      "start_sec": 195.0,
+      "end_sec": 210.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00067",
+        "shot-00068",
+        "shot-00069",
+        "shot-00070"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00014",
+      "intelligence": {
+        "summary": "child eating a trisket wafer",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+                "time_sec": 196.86333366666668,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+                "time_sec": 198.79860033333333,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              }
+            ]
+          },
+          {
+            "id": "childhood",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+                "time_sec": 196.86333366666668,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+                "time_sec": 198.79860033333333,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              }
+            ]
+          },
+          {
+            "id": "advertising",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+                "time_sec": 196.86333366666668,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+                "time_sec": 198.79860033333333,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "trisket wafers",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+                "time_sec": 196.86333366666668,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+                "time_sec": 198.79860033333333,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "natural whole wheat",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
+                "time_sec": 196.86333366666668,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg",
+                "time_sec": 198.79860033333333,
+                "shot_index": 5,
+                "shot_id": "shot-00067",
+                "window_index": 13
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Trisket",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "biscoe",
+            "natural whole wheat",
+            "advertising"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00015",
+      "kind": "analysis_window",
+      "start_sec": 210.0,
+      "end_sec": 225.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00070",
+        "shot-00071",
+        "shot-00072",
+        "shot-00073",
+        "shot-00074",
+        "shot-00075",
+        "shot-00076",
+        "shot-00077"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00015",
+      "intelligence": {
+        "summary": "man in orange shirt and hat walking on sidewalk",
+        "categories": [
+          {
+            "id": "man",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          },
+          {
+            "id": "orange shirt",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          },
+          {
+            "id": "hat",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          },
+          {
+            "id": "sidewalk",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          },
+          {
+            "id": "trees",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "noodles",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-00.jpg",
+                "time_sec": 211.13314433333335,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00070-01.jpg",
+                "time_sec": 211.98955566666666,
+                "shot_index": 6,
+                "shot_id": "shot-00071",
+                "window_index": 14
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "biscoe",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "man's name",
+            "location",
+            "time"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00016",
+      "kind": "analysis_window",
+      "start_sec": 225.0,
+      "end_sec": 240.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00077",
+        "shot-00078"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00016",
+      "intelligence": {
+        "summary": "A person is holding a can of Campbell's Chicken Noodle Soup.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+                "time_sec": 229.084411,
+                "shot_index": 7,
+                "shot_id": "shot-00077",
+                "window_index": 15
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+                "time_sec": 235.71325533333334,
+                "shot_index": 7,
+                "shot_id": "shot-00078",
+                "window_index": 15
+              }
+            ]
+          },
+          {
+            "id": "soup",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+                "time_sec": 229.084411,
+                "shot_index": 7,
+                "shot_id": "shot-00077",
+                "window_index": 15
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+                "time_sec": 235.71325533333334,
+                "shot_index": 7,
+                "shot_id": "shot-00078",
+                "window_index": 15
+              }
+            ]
+          },
+          {
+            "id": "Campbell's",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+                "time_sec": 229.084411,
+                "shot_index": 7,
+                "shot_id": "shot-00077",
+                "window_index": 15
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+                "time_sec": 235.71325533333334,
+                "shot_index": 7,
+                "shot_id": "shot-00078",
+                "window_index": 15
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Campbell's Chicken Noodle Soup",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00076-01.jpg",
+                "time_sec": 229.084411,
+                "shot_index": 7,
+                "shot_id": "shot-00077",
+                "window_index": 15
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00077-00.jpg",
+                "time_sec": 235.71325533333334,
+                "shot_index": 7,
+                "shot_id": "shot-00078",
+                "window_index": 15
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Campbell's",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "lunch",
+            "person holding soup"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00017",
+      "kind": "analysis_window",
+      "start_sec": 240.0,
+      "end_sec": 255.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00078",
+        "shot-00079",
+        "shot-00080",
+        "shot-00081",
+        "shot-00082",
+        "shot-00083",
+        "shot-00084",
+        "shot-00085",
+        "shot-00086"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00017",
+      "intelligence": {
+        "summary": "woman singing in front of piano",
+        "categories": [
+          {
+            "id": "music",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+                "time_sec": 242.17526666666666,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg",
+                "time_sec": 243.81023333333334,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              }
+            ]
+          },
+          {
+            "id": "entertainment",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+                "time_sec": 242.17526666666666,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg",
+                "time_sec": 243.81023333333334,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              }
+            ]
+          },
+          {
+            "id": "performance",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-00.jpg",
+                "time_sec": 242.17526666666666,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00078-01.jpg",
+                "time_sec": 243.81023333333334,
+                "shot_index": 8,
+                "shot_id": "shot-00079",
+                "window_index": 16
+              }
+            ]
+          }
+        ],
+        "entities": [],
+        "primary_advertiser": {
+          "name": "Captain Antonyl",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": []
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00018",
+      "kind": "analysis_window",
+      "start_sec": 255.0,
+      "end_sec": 270.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00086",
+        "shot-00087",
+        "shot-00088",
+        "shot-00089",
+        "shot-00090",
+        "shot-00091",
+        "shot-00092"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00018",
+      "intelligence": {
+        "summary": "man in uniform standing in front of a piano",
+        "categories": [
+          {
+            "id": "music",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+                "time_sec": 255.08816633333333,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+                "time_sec": 255.75549966666668,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              }
+            ]
+          },
+          {
+            "id": "entertainment",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+                "time_sec": 255.08816633333333,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+                "time_sec": 255.75549966666668,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              }
+            ]
+          },
+          {
+            "id": "entertainment",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+                "time_sec": 255.08816633333333,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+                "time_sec": 255.75549966666668,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "piano",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+                "time_sec": 255.08816633333333,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+                "time_sec": 255.75549966666668,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "uniform",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-00.jpg",
+                "time_sec": 255.08816633333333,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00085-01.jpg",
+                "time_sec": 255.75549966666668,
+                "shot_index": 9,
+                "shot_id": "shot-00086",
+                "window_index": 17
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "ABC",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "man's identity",
+            "time of day",
+            "location"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00019",
+      "kind": "analysis_window",
+      "start_sec": 270.0,
+      "end_sec": 285.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00092",
+        "shot-00093",
+        "shot-00094",
+        "shot-00095",
+        "shot-00096",
+        "shot-00097",
+        "shot-00098",
+        "shot-00099",
+        "shot-00100",
+        "shot-00101"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00019",
+      "intelligence": {
+        "summary": "A person holding a box of Golden Grahams cereal.",
+        "categories": [
+          {
+            "id": "food",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+                "time_sec": 270.3367333333333,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+                "time_sec": 271.1041666666667,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              }
+            ]
+          },
+          {
+            "id": "cereal",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+                "time_sec": 270.3367333333333,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+                "time_sec": 271.1041666666667,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              }
+            ]
+          },
+          {
+            "id": "breakfast",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+                "time_sec": 270.3367333333333,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+                "time_sec": 271.1041666666667,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Golden Grahams cereal",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-00.jpg",
+                "time_sec": 270.3367333333333,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00091-01.jpg",
+                "time_sec": 271.1041666666667,
+                "shot_index": 10,
+                "shot_id": "shot-00092",
+                "window_index": 18
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Golden Grahams",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "person holding the cereal box"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00020",
+      "kind": "analysis_window",
+      "start_sec": 285.0,
+      "end_sec": 300.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00101",
+        "shot-00102",
+        "shot-00103",
+        "shot-00104",
+        "shot-00105"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00020",
+      "intelligence": {
+        "summary": "A bowl of cereal with a spoon, a glass of milk, and a bottle of syrup on a table.",
+        "categories": [
+          {
+            "id": "breakfast",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          },
+          {
+            "id": "cereal",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          },
+          {
+            "id": "milk",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          },
+          {
+            "id": "syrup",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Golden Grahams cereal",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "milk",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          },
+          {
+            "type": "product",
+            "name": "syrup",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-00.jpg",
+                "time_sec": 285.7521336666667,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00100-01.jpg",
+                "time_sec": 287.5873003333333,
+                "shot_index": 11,
+                "shot_id": "shot-00101",
+                "window_index": 19
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Golden Grahams",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "breakfast",
+            "cereal",
+            "milk",
+            "syrup"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00021",
+      "kind": "analysis_window",
+      "start_sec": 300.0,
+      "end_sec": 315.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00105",
+        "shot-00106",
+        "shot-00107",
+        "shot-00108",
+        "shot-00109"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00021",
+      "intelligence": {
+        "summary": "A vintage advertisement for Kodak instant cameras.",
+        "categories": [
+          {
+            "id": "vintage",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+                "time_sec": 302.22414433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00105",
+                "window_index": 20
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+                "time_sec": 306.82874433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00106",
+                "window_index": 20
+              }
+            ]
+          },
+          {
+            "id": "photography",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+                "time_sec": 302.22414433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00105",
+                "window_index": 20
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+                "time_sec": 306.82874433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00106",
+                "window_index": 20
+              }
+            ]
+          },
+          {
+            "id": "advertising",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+                "time_sec": 302.22414433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00105",
+                "window_index": 20
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+                "time_sec": 306.82874433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00106",
+                "window_index": 20
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "instant cameras",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00104-01.jpg",
+                "time_sec": 302.22414433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00105",
+                "window_index": 20
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00105-00.jpg",
+                "time_sec": 306.82874433333336,
+                "shot_index": 12,
+                "shot_id": "shot-00106",
+                "window_index": 20
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Kodak",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "brand",
+            "year",
+            "location"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00022",
+      "kind": "analysis_window",
+      "start_sec": 315.0,
+      "end_sec": 330.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00109",
+        "shot-00110",
+        "shot-00111"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00022",
+      "intelligence": {
+        "summary": "A person is holding a Kodak instant camera and taking a picture of a colorful scene.",
+        "categories": [
+          {
+            "id": "photography",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+                "time_sec": 315.31499966666667,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+                "time_sec": 316.6496663333333,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              }
+            ]
+          },
+          {
+            "id": "instant camera",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+                "time_sec": 315.31499966666667,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+                "time_sec": 316.6496663333333,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              }
+            ]
+          },
+          {
+            "id": "colorful scene",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+                "time_sec": 315.31499966666667,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+                "time_sec": 316.6496663333333,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              }
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "type": "product",
+            "name": "Kodak instant camera",
+            "source": "vision_model",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-00.jpg",
+                "time_sec": 315.31499966666667,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00108-01.jpg",
+                "time_sec": 316.6496663333333,
+                "shot_index": 13,
+                "shot_id": "shot-00109",
+                "window_index": 21
+              }
+            ]
+          }
+        ],
+        "primary_advertiser": {
+          "name": "Kodak",
+          "status": "identified",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "photography equipment",
+            "colorful scene",
+            "person holding camera"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00023",
+      "kind": "analysis_window",
+      "start_sec": 330.0,
+      "end_sec": 345.0,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00111",
+        "shot-00112",
+        "shot-00113"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00023",
+      "intelligence": {
+        "summary": "A long, empty hallway with a blue and white circular sign.",
+        "categories": [
+          {
+            "id": "corridor",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+                "time_sec": 332.888111,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg",
+                "time_sec": 333.777889,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              }
+            ]
+          },
+          {
+            "id": "hallway",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+                "time_sec": 332.888111,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg",
+                "time_sec": 333.777889,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              }
+            ]
+          },
+          {
+            "id": "empty",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-00.jpg",
+                "time_sec": 332.888111,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00111-01.jpg",
+                "time_sec": 333.777889,
+                "shot_index": 14,
+                "shot_id": "shot-00112",
+                "window_index": 22
+              }
+            ]
+          }
+        ],
+        "entities": [],
+        "primary_advertiser": {
+          "name": null,
+          "status": "unknown",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "blue and white circular sign"
+          ]
+        }
+      },
+      "ad_opportunities": []
+    },
+    {
+      "id": "segment-00024",
+      "kind": "analysis_window",
+      "start_sec": 345.0,
+      "end_sec": 359.992967,
+      "boundary_source": "fixed_time_window",
+      "boundary_evidence": [
+        "Fixed analysis window; may cross a commercial boundary."
+      ],
+      "shot_ids": [
+        "shot-00113",
+        "shot-00114",
+        "shot-00115",
+        "shot-00116",
+        "shot-00117",
+        "shot-00118",
+        "shot-00119",
+        "shot-00120",
+        "shot-00121",
+        "shot-00122",
+        "shot-00123",
+        "shot-00124",
+        "shot-00125"
+      ],
+      "analysis_status": "completed",
+      "window_id": "window-00024",
+      "intelligence": {
+        "summary": "a close-up of a futuristic control panel with buttons and lights",
+        "categories": [
+          {
+            "id": "technology",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+                "time_sec": 346.490589,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg",
+                "time_sec": 347.102311,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              }
+            ]
+          },
+          {
+            "id": "science fiction",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+                "time_sec": 346.490589,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg",
+                "time_sec": 347.102311,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              }
+            ]
+          },
+          {
+            "id": "innovation",
+            "source": "vision_and_transcript",
+            "evidence": [
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-00.jpg",
+                "time_sec": 346.490589,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              },
+              {
+                "path": "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00113-01.jpg",
+                "time_sec": 347.102311,
+                "shot_index": 15,
+                "shot_id": "shot-00114",
+                "window_index": 23
+              }
+            ]
+          }
+        ],
+        "entities": [],
+        "primary_advertiser": {
+          "name": null,
+          "status": "unknown",
+          "evidence": []
+        },
+        "brand_safety": {
+          "status": "unknown",
+          "method": "vision_model",
+          "reasons": [
+            "control panel",
+            "futuristic",
+            "innovation"
+          ]
+        }
+      },
+      "ad_opportunities": []
     }
   ],
   "errors": []

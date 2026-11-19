@@ -1,74 +1,597 @@
 [
   {
-    "id": "speech-00001",
     "start_sec": 2.26,
+    "end_sec": 8.57,
+    "text": "My first name is O-S-C-A-R."
+  },
+  {
+    "start_sec": 8.57,
     "end_sec": 13.73,
-    "text": "My first name is O-S-C-A-R. My baloney has a second name, it's N-A-Y-E-R."
+    "text": "My baloney has a second name, it's an A-Y-E-R."
   },
   {
-    "id": "speech-00002",
     "start_sec": 13.73,
-    "end_sec": 26.26,
-    "text": "I love to read it every day, and if you allow G and A."
+    "end_sec": 26.18,
+    "text": "I love to read it every day, if you allow G and A."
   },
   {
-    "id": "speech-00003",
-    "start_sec": 26.26,
-    "end_sec": 29.26,
+    "start_sec": 26.18,
+    "end_sec": 28.98,
     "text": "Oscar Meyer, the first name in balona."
   },
   {
-    "id": "speech-00004",
-    "start_sec": 29.26,
-    "end_sec": 35.56,
+    "start_sec": 28.98,
+    "end_sec": 29.98,
+    "text": "How's that?"
+  },
+  {
+    "start_sec": 29.98,
+    "end_sec": 36.12,
     "text": "What's behind the brand of hot dogs you buy?"
   },
   {
-    "id": "speech-00005",
-    "start_sec": 35.56,
-    "end_sec": 41.56,
-    "text": "You know you're getting solid value with Oscar Meyer and quality trusted for generations."
+    "start_sec": 36.12,
+    "end_sec": 39.08,
+    "text": "You know you're getting solid value with Oscar Meyer"
   },
   {
-    "id": "speech-00006",
-    "start_sec": 41.56,
-    "end_sec": 45.56,
-    "text": "There's holds of meat protein from solid cuts of meat."
+    "start_sec": 39.08,
+    "end_sec": 41.96,
+    "text": "and quality trusted for generations."
   },
   {
-    "id": "speech-00007",
-    "start_sec": 45.56,
-    "end_sec": 47.56,
+    "start_sec": 41.96,
+    "end_sec": 45.52,
+    "text": "There's wholesome meat protein from solid cuts of meat."
+  },
+  {
+    "start_sec": 45.52,
+    "end_sec": 47.92,
     "text": "They only meet Oscar Meyer uses."
   },
   {
-    "id": "speech-00008",
-    "start_sec": 47.56,
-    "end_sec": 49.56,
-    "text": "U.S. government-inspective."
+    "start_sec": 47.92,
+    "end_sec": 49.72,
+    "text": "US government inspectors."
   },
   {
-    "id": "speech-00009",
-    "start_sec": 49.56,
-    "end_sec": 51.56,
-    "text": "Oscar Meyer selected."
+    "start_sec": 49.72,
+    "end_sec": 53.64,
+    "text": "Oscar Meyer selected Oscar Meyer winners of beef flanks"
   },
   {
-    "id": "speech-00010",
-    "start_sec": 51.56,
-    "end_sec": 54.56,
-    "text": "Oscar Meyer winners in beef ranks in handy twin bags."
+    "start_sec": 53.64,
+    "end_sec": 55.16,
+    "text": "in handy twin bags."
   },
   {
-    "id": "speech-00011",
-    "start_sec": 54.56,
-    "end_sec": 57.56,
+    "start_sec": 55.16,
+    "end_sec": 58.36,
     "text": "The flavors as good as the good meat itself."
   },
   {
-    "id": "speech-00012",
-    "start_sec": 57.56,
-    "end_sec": 59.56,
-    "text": "Oscar Meyer, America."
+    "start_sec": 58.36,
+    "end_sec": 61.36,
+    "text": "Oscar Meyer, America's number one."
+  },
+  {
+    "start_sec": 61.36,
+    "end_sec": 70.38,
+    "text": "There is a corn lover and there's nothing more gratifying"
+  },
+  {
+    "start_sec": 70.38,
+    "end_sec": 72.86,
+    "text": "to a corn lover than to know that her mother is giving her"
+  },
+  {
+    "start_sec": 72.86,
+    "end_sec": 75.06,
+    "text": "delicious Del Monte family style corn."
+  },
+  {
+    "start_sec": 75.06,
+    "end_sec": 77.54,
+    "text": "More people eat than any other corn like it."
+  },
+  {
+    "start_sec": 77.54,
+    "end_sec": 80.5,
+    "text": "This is a special strain developed to be sweet and tender."
+  },
+  {
+    "start_sec": 80.5,
+    "end_sec": 82.74,
+    "text": "And when a corn lover is eating Del Monte corn,"
+  },
+  {
+    "start_sec": 82.74,
+    "end_sec": 85.58,
+    "text": "she probably doesn't need to hear me talking about how good it is,"
+  },
+  {
+    "start_sec": 85.58,
+    "end_sec": 86.1,
+    "text": "right?"
+  },
+  {
+    "start_sec": 86.1,
+    "end_sec": 88.5,
+    "text": "Well, then I'm just going to go into the living room"
+  },
+  {
+    "start_sec": 88.5,
+    "end_sec": 90.7,
+    "text": "and talk about corn to the sofa."
+  },
+  {
+    "start_sec": 90.7,
+    "end_sec": 98.93,
+    "text": "Time's new, good."
+  },
+  {
+    "start_sec": 98.93,
+    "end_sec": 100.97,
+    "text": "Sometimes you feel like a nut."
+  },
+  {
+    "start_sec": 100.97,
+    "end_sec": 105.17,
+    "text": "Sometimes you don't."
+  },
+  {
+    "start_sec": 105.17,
+    "end_sec": 106.93,
+    "text": "Mounds don't."
+  },
+  {
+    "start_sec": 106.93,
+    "end_sec": 108.97,
+    "text": "How many toys got built up chocolate?"
+  },
+  {
+    "start_sec": 108.97,
+    "end_sec": 110.85,
+    "text": "Coconut and munching it's too old."
+  },
+  {
+    "start_sec": 110.85,
+    "end_sec": 114.77,
+    "text": "Mounds got deep down chocolate and chewing coconut."
+  },
+  {
+    "start_sec": 114.77,
+    "end_sec": 116.73,
+    "text": "Sometimes you feel like a nut."
+  },
+  {
+    "start_sec": 116.73,
+    "end_sec": 118.69,
+    "text": "Sometimes you don't."
+  },
+  {
+    "start_sec": 118.69,
+    "end_sec": 120.76,
+    "text": "Beautiful."
+  },
+  {
+    "start_sec": 120.76,
+    "end_sec": 121.16,
+    "text": "Beautiful."
+  },
+  {
+    "start_sec": 121.16,
+    "end_sec": 121.92,
+    "text": "Mounds don't."
+  },
+  {
+    "start_sec": 121.92,
+    "end_sec": 122.6,
+    "text": "Cool."
+  },
+  {
+    "start_sec": 122.6,
+    "end_sec": 124.52,
+    "text": "Sometimes you feel like a nut."
+  },
+  {
+    "start_sec": 124.52,
+    "end_sec": 130.64,
+    "text": "Sometimes you don't."
+  },
+  {
+    "start_sec": 130.64,
+    "end_sec": 132.96,
+    "text": "Then he sounds like he accidentally invented a thermal chemical"
+  },
+  {
+    "start_sec": 132.96,
+    "end_sec": 133.72,
+    "text": "energy source."
+  },
+  {
+    "start_sec": 133.72,
+    "end_sec": 136.68,
+    "text": "The scientific wonder becomes a nightmare."
+  },
+  {
+    "start_sec": 136.68,
+    "end_sec": 139.24,
+    "text": "There's enough explosive to turn the city into a pancake."
+  },
+  {
+    "start_sec": 139.24,
+    "end_sec": 149.92,
+    "text": "A power that could mark the beginning of the end for the $6 million man."
+  },
+  {
+    "start_sec": 149.92,
+    "end_sec": 152.52,
+    "text": "America's classic thrillers come to life."
+  },
+  {
+    "start_sec": 152.52,
+    "end_sec": 155.4,
+    "text": "The hardy boy is Nancy Drew Mysteries."
+  },
+  {
+    "start_sec": 155.4,
+    "end_sec": 157.2,
+    "text": "An adventure into suspense."
+  },
+  {
+    "start_sec": 157.2,
+    "end_sec": 160.79,
+    "text": "It's got to be a way out of here."
+  },
+  {
+    "start_sec": 160.79,
+    "end_sec": 162.15,
+    "text": "Who's to go with her?"
+  },
+  {
+    "start_sec": 162.15,
+    "end_sec": 164.35,
+    "text": "Forget that."
+  },
+  {
+    "start_sec": 164.35,
+    "end_sec": 167.19,
+    "text": "A professor to go sleep with Prince."
+  },
+  {
+    "start_sec": 167.19,
+    "end_sec": 170.87,
+    "text": "The adventures of America's favorite young detectives come to television."
+  },
+  {
+    "start_sec": 170.87,
+    "end_sec": 171.91,
+    "text": "Follow that ghost."
+  },
+  {
+    "start_sec": 171.91,
+    "end_sec": 181.14,
+    "text": "The hardy boy is Nancy Drew Mysteries."
+  },
+  {
+    "start_sec": 181.14,
+    "end_sec": 184.7,
+    "text": "It's happening all around the house right about now."
+  },
+  {
+    "start_sec": 184.7,
+    "end_sec": 186.18,
+    "text": "I'd like a trisket."
+  },
+  {
+    "start_sec": 186.18,
+    "end_sec": 187.74,
+    "text": "I'd like a trisket."
+  },
+  {
+    "start_sec": 187.74,
+    "end_sec": 189.66,
+    "text": "I'd like a trisket."
+  },
+  {
+    "start_sec": 189.66,
+    "end_sec": 190.9,
+    "text": "I know my family."
+  },
+  {
+    "start_sec": 190.9,
+    "end_sec": 192.42,
+    "text": "And when they'd like a snack,"
+  },
+  {
+    "start_sec": 192.42,
+    "end_sec": 194.06,
+    "text": "they'd like a trisket wafer."
+  },
+  {
+    "start_sec": 194.06,
+    "end_sec": 195.18,
+    "text": "Break with cheese."
+  },
+  {
+    "start_sec": 195.18,
+    "end_sec": 196.14,
+    "text": "Or with a dip."
+  },
+  {
+    "start_sec": 196.14,
+    "end_sec": 197.34,
+    "text": "Neat with jam."
+  },
+  {
+    "start_sec": 197.34,
+    "end_sec": 199.66,
+    "text": "Or just by themselves."
+  },
+  {
+    "start_sec": 199.66,
+    "end_sec": 201.02,
+    "text": "They really are good."
+  },
+  {
+    "start_sec": 201.02,
+    "end_sec": 201.98,
+    "text": "Trisket wafers."
+  },
+  {
+    "start_sec": 201.98,
+    "end_sec": 204.7,
+    "text": "They're made from 100% natural whole wheat."
+  },
+  {
+    "start_sec": 204.7,
+    "end_sec": 205.78,
+    "text": "And that's good, too."
+  },
+  {
+    "start_sec": 205.78,
+    "end_sec": 207.82,
+    "text": "A trisket, a trisket,"
+  },
+  {
+    "start_sec": 207.82,
+    "end_sec": 210.22,
+    "text": "baked only by the biscoe."
+  },
+  {
+    "start_sec": 210.22,
+    "end_sec": 219.55,
+    "text": "That peat would just as soon eat every day of his life."
+  },
+  {
+    "start_sec": 219.55,
+    "end_sec": 222.59,
+    "text": "He really goes for those noodles."
+  },
+  {
+    "start_sec": 222.59,
+    "end_sec": 225.51,
+    "text": "So I give him the gamble life."
+  },
+  {
+    "start_sec": 225.51,
+    "end_sec": 227.63,
+    "text": "Pete's idea of the perfect lunch"
+  },
+  {
+    "start_sec": 227.63,
+    "end_sec": 230.59,
+    "text": "is any lunch with Campbell's chicken noodle lo soup."
+  },
+  {
+    "start_sec": 230.59,
+    "end_sec": 232.99,
+    "text": "There's lots of chickeny flavor and little round noodles"
+  },
+  {
+    "start_sec": 232.99,
+    "end_sec": 235.23,
+    "text": "for him, but not a lot of work for me."
+  },
+  {
+    "start_sec": 235.23,
+    "end_sec": 236.83,
+    "text": "That's noodle, OK."
+  },
+  {
+    "start_sec": 236.83,
+    "end_sec": 240.95,
+    "text": "Give me the gamble life."
+  },
+  {
+    "start_sec": 240.95,
+    "end_sec": 242.87,
+    "text": "It's the first show of the new year"
+  },
+  {
+    "start_sec": 242.87,
+    "end_sec": 245.15,
+    "text": "and the Captain Antonyl do it right,"
+  },
+  {
+    "start_sec": 245.15,
+    "end_sec": 248.07,
+    "text": "with their guest Marilyn McCoo and Billy Davis Jr."
+  },
+  {
+    "start_sec": 248.07,
+    "end_sec": 251.67,
+    "text": "John Biner, Muhammad Ali, and Joe Namer."
+  },
+  {
+    "start_sec": 251.67,
+    "end_sec": 255.35,
+    "text": "It's the new 1977 Captain Antonyl."
+  },
+  {
+    "start_sec": 255.35,
+    "end_sec": 267.48,
+    "text": "You want it?"
+  },
+  {
+    "start_sec": 267.48,
+    "end_sec": 269.08,
+    "text": "It's going to be a golden day."
+  },
+  {
+    "start_sec": 269.08,
+    "end_sec": 270.04,
+    "text": "Let's eat."
+  },
+  {
+    "start_sec": 270.04,
+    "end_sec": 272.04,
+    "text": "Oh, those golden crayons."
+  },
+  {
+    "start_sec": 272.04,
+    "end_sec": 273.84,
+    "text": "Oh, those golden crayons."
+  },
+  {
+    "start_sec": 273.84,
+    "end_sec": 275.32,
+    "text": "Crispy crunchy crayons."
+  },
+  {
+    "start_sec": 275.32,
+    "end_sec": 278.32,
+    "text": "Serial family breakfast treat."
+  },
+  {
+    "start_sec": 278.32,
+    "end_sec": 280.4,
+    "text": "Oh, those golden crayons."
+  },
+  {
+    "start_sec": 280.4,
+    "end_sec": 282.16,
+    "text": "Oh, those golden crayons."
+  },
+  {
+    "start_sec": 282.16,
+    "end_sec": 285.38,
+    "text": "Golden honey."
+  },
+  {
+    "start_sec": 285.38,
+    "end_sec": 288.42,
+    "text": "It's a great tasting part of a complete breakfast"
+  },
+  {
+    "start_sec": 288.42,
+    "end_sec": 289.74,
+    "text": "for the old family."
+  },
+  {
+    "start_sec": 289.74,
+    "end_sec": 295.78,
+    "text": "Try those golden crayons and have a golden day."
+  },
+  {
+    "start_sec": 295.78,
+    "end_sec": 299.86,
+    "text": "Introducing the Kodak instant camera with a twist."
+  },
+  {
+    "start_sec": 299.86,
+    "end_sec": 301.46,
+    "text": "Meet the crank."
+  },
+  {
+    "start_sec": 301.46,
+    "end_sec": 304.9,
+    "text": "Can you feel a brand new day?"
+  },
+  {
+    "start_sec": 304.9,
+    "end_sec": 310.3,
+    "text": "Imagine instant pictures with color, color, color by Kodak."
+  },
+  {
+    "start_sec": 310.3,
+    "end_sec": 312.86,
+    "text": "Just crank, crank, crank."
+  },
+  {
+    "start_sec": 312.86,
+    "end_sec": 316.18,
+    "text": "And in minutes, you get bright colorful instant pictures"
+  },
+  {
+    "start_sec": 316.18,
+    "end_sec": 318.38,
+    "text": "with a textured sack and locks finish."
+  },
+  {
+    "start_sec": 318.38,
+    "end_sec": 321.7,
+    "text": "See your photo dealer and shake hands with the crank,"
+  },
+  {
+    "start_sec": 321.7,
+    "end_sec": 327.32,
+    "text": "a Kodak instant camera with a twist."
+  },
+  {
+    "start_sec": 327.32,
+    "end_sec": 330.2,
+    "text": "What you're about to see is the world's most revolutionary"
+  },
+  {
+    "start_sec": 330.2,
+    "end_sec": 332.24,
+    "text": "telephone switching invention."
+  },
+  {
+    "start_sec": 332.24,
+    "end_sec": 334.52,
+    "text": "We call it super switcher."
+  },
+  {
+    "start_sec": 334.52,
+    "end_sec": 336.28,
+    "text": "It has almost no moving parts."
+  },
+  {
+    "start_sec": 336.28,
+    "end_sec": 339.64,
+    "text": "Yet handles four times more calls than its predecessor."
+  },
+  {
+    "start_sec": 339.64,
+    "end_sec": 342.72,
+    "text": "It required an investment of $400 million,"
+  },
+  {
+    "start_sec": 342.72,
+    "end_sec": 345.72,
+    "text": "but should ultimately save a billion dollars a year."
+  },
+  {
+    "start_sec": 345.72,
+    "end_sec": 348.92,
+    "text": "And soon every major American area will have one."
+  },
+  {
+    "start_sec": 348.92,
+    "end_sec": 352.51,
+    "text": "Looks deli."
+  },
+  {
+    "start_sec": 352.51,
+    "end_sec": 358.59,
+    "text": "Imagine that each of these cars is a long distance call."
+  },
+  {
+    "start_sec": 358.59,
+    "end_sec": 361.79,
+    "text": "This new invention can handle a lot of things."
   }
 ]
