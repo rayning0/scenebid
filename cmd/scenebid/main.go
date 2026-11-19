@@ -124,7 +124,8 @@ func main() {
 			log.Fatal(err)
 		}
 		http.Handle("/", http.FileServer(http.Dir("web")))
-		http.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir("data/input"))))
+		http.Handle("/media/TV_Commercials_1977.mp4", http.StripPrefix("/media/", http.FileServer(http.Dir("data/input"))))
+		http.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir("data/output/TV_Commercials_1977/hls"))))
 		http.HandleFunc("/api/decision", func(w http.ResponseWriter, r *http.Request) {
 			t, _ := strconv.ParseFloat(r.URL.Query().Get("time"), 64)
 			for _, s := range a.Segments {

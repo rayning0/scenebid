@@ -31,7 +31,7 @@ Run without re-analysis:
 go test ./...
 go run ./cmd/scenebid decide
 go run ./cmd/scenebid serve
-# open http://localhost:8080
+open http://localhost:8080
 ```
 
 The server serves `/media/TV_Commercials_1977.m3u8` if an HLS playlist exists

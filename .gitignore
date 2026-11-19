@@ -39,3 +39,4 @@ go.work.sum
 TV_Commercials_1977.mp4
 .venv/
 analysis-worker/models/
+hls/

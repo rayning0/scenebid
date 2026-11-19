@@ -1,5 +1,5 @@
 const video=document.querySelector("#player"), overlay=document.querySelector("#overlay"), status=document.querySelector("#status");
-const src="/media/TV_Commercials_1977.m3u8"; let shown=new Set(), active=null;
+const src="/media/index.m3u8"; let shown=new Set(), active=null;
 if(video.canPlayType("application/vnd.apple.mpegurl")) video.src=src;
 else if(window.Hls&&Hls.isSupported()){const h=new Hls();h.loadSource(src);h.attachMedia(video);}
 else {video.src="/media/TV_Commercials_1977.mp4";status.textContent="HLS unavailable; using local MP4 fallback.";}

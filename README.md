@@ -148,6 +148,31 @@ VISION_PROVIDER=openai_compatible VISION_MODEL=gpt-4o-mini VISION_API_KEY=... \
 go run ./cmd/scenebid decide
 ```
 
+To run the completed six-minute analysis in the browser without re-running
+AI analysis:
+
+```bash
+go test ./...
+go run ./cmd/scenebid decide
+go run ./cmd/scenebid serve
+open http://localhost:8080
+```
+
+The demo serves the locally generated HLS playlist when
+`data/output/TV_Commercials_1977/hls/index.m3u8` exists. Generate it from the
+local MP4 when needed:
+
+```bash
+ffmpeg -i data/input/TV_Commercials_1977.mp4 \
+  -c:v copy -c:a aac -f hls -hls_time 6 -hls_playlist_type vod \
+  -hls_segment_filename data/output/TV_Commercials_1977/hls/segment_%05d.ts \
+  data/output/TV_Commercials_1977/hls/index.m3u8
+```
+
+The overlay is rendered client-side from playback-time Go decisions. Campaigns,
+bids, and destination links are fictional; this is not SSAI, OpenRTB, or a
+production auction.
+
 `analyze` runs `analysis-worker/main.py`, which detects shots and extracts
 frames from the actual MP4, transcribes with faster-whisper, and sends each
 shot's frames and transcript excerpt to the configured vision-language
@@ -159,9 +184,6 @@ Install Python dependencies from `analysis-worker/requirements.txt` and ensure
 `ffmpeg` is on PATH. The OpenAI-compatible provider accepts `VISION_ENDPOINT`
 and `VISION_API_KEY`; Ollama uses `VISION_PROVIDER=ollama`,
 `VISION_ENDPOINT=http://localhost:11434/api/chat`, and a vision model.
-
-Add setup, analysis, HLS, server, and browser commands here as those
-features are implemented and verified.
 
 ## MVP Limitations
 
