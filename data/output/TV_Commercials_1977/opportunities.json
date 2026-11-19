@@ -1,0 +1,416 @@
+[
+  {
+    "categories": [
+      "child",
+      "toy",
+      "speech"
+    ],
+    "end_sec": 5,
+    "id": "opportunity-segment-00001",
+    "products": [
+      {
+        "name": "toy"
+      }
+    ],
+    "segment_id": "segment-00001",
+    "start_sec": 0,
+    "summary": "child holding bologna and talking"
+  },
+  {
+    "categories": [
+      "food",
+      "product",
+      "advertising"
+    ],
+    "end_sec": 20,
+    "id": "opportunity-segment-00002",
+    "products": [
+      {
+        "name": "Oscar Mayer Bologna"
+      }
+    ],
+    "segment_id": "segment-00002",
+    "start_sec": 15,
+    "summary": "child holding Oscar Mayer Bologna"
+  },
+  {
+    "categories": [
+      "food",
+      "advertising",
+      "product"
+    ],
+    "end_sec": 35,
+    "id": "opportunity-segment-00003",
+    "products": [
+      {
+        "name": "Oscar Mayer Wiener"
+      }
+    ],
+    "segment_id": "segment-00003",
+    "start_sec": 30,
+    "summary": "Oscar Mayer Wiener nutrition information"
+  },
+  {
+    "categories": [
+      "meat",
+      "beef",
+      "flanks",
+      "Oscar Mayer"
+    ],
+    "end_sec": 50,
+    "id": "opportunity-segment-00004",
+    "products": [
+      {
+        "name": "beef flanks"
+      }
+    ],
+    "segment_id": "segment-00004",
+    "start_sec": 45,
+    "summary": "Oscar Mayer beef flanks in handy twin bags."
+  },
+  {
+    "categories": [
+      "food",
+      "advertising",
+      "product"
+    ],
+    "end_sec": 65,
+    "id": "opportunity-segment-00005",
+    "products": [
+      {
+        "name": "Del Monte family style corn"
+      }
+    ],
+    "segment_id": "segment-00005",
+    "start_sec": 60,
+    "summary": "Oscar Mayer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn."
+  },
+  {
+    "categories": [
+      "food",
+      "dinner",
+      "child"
+    ],
+    "end_sec": 80,
+    "id": "opportunity-segment-00006",
+    "products": [
+      {
+        "name": "corn"
+      }
+    ],
+    "segment_id": "segment-00006",
+    "start_sec": 75,
+    "summary": "child eating dinner"
+  },
+  {
+    "categories": [
+      "food",
+      "canned food",
+      "corn"
+    ],
+    "end_sec": 95,
+    "id": "opportunity-segment-00007",
+    "products": [
+      {
+        "name": "Del Monte Whole Kernel Corn"
+      }
+    ],
+    "segment_id": "segment-00007",
+    "start_sec": 90,
+    "summary": "A can of Del Monte Whole Kernel Corn next to a bowl of steaming corn."
+  },
+  {
+    "categories": [
+      "food",
+      "puppets",
+      "chocolate",
+      "eating",
+      "mounds"
+    ],
+    "end_sec": 110,
+    "id": "opportunity-segment-00008",
+    "products": [
+      {
+        "name": "chocolate"
+      },
+      {
+        "name": "mounds"
+      }
+    ],
+    "segment_id": "segment-00008",
+    "start_sec": 105,
+    "summary": "A puppet character is eating a chocolate bar."
+  },
+  {
+    "categories": [
+      "candy",
+      "advertising"
+    ],
+    "end_sec": 125,
+    "id": "opportunity-segment-00009",
+    "products": [
+      {
+        "name": "Almond Joy"
+      }
+    ],
+    "segment_id": "segment-00009",
+    "start_sec": 120,
+    "summary": "A group of people are eating Almond Joy candy, with one person in the foreground holding a tube of Almond Joy and another person in the background also holding a tube. The scene is set outdoors, possibly at a park or event, with people in the background also holding Almond Joy's candy bars."
+  },
+  {
+    "categories": [
+      "man",
+      "phone",
+      "room"
+    ],
+    "end_sec": 140,
+    "id": "opportunity-segment-00010",
+    "products": [
+      {
+        "name": "phone"
+      },
+      {
+        "name": "bottle"
+      }
+    ],
+    "segment_id": "segment-00010",
+    "start_sec": 135,
+    "summary": "A man is talking on a phone in a cluttered room."
+  },
+  {
+    "categories": [
+      "adventure",
+      "mystery",
+      "thriller"
+    ],
+    "end_sec": 155,
+    "id": "opportunity-segment-00011",
+    "products": [],
+    "segment_id": "segment-00011",
+    "start_sec": 150,
+    "summary": "A woman in a white dress holding a gun, with a man in a suit standing next to her."
+  },
+  {
+    "categories": [
+      "car",
+      "man",
+      "dark room"
+    ],
+    "end_sec": 170,
+    "id": "opportunity-segment-00012",
+    "products": [],
+    "segment_id": "segment-00012",
+    "start_sec": 165,
+    "summary": "A woman in a car, a man in a suit standing in a dark room."
+  },
+  {
+    "categories": [
+      "food",
+      "family",
+      "snacks"
+    ],
+    "end_sec": 185,
+    "id": "opportunity-segment-00013",
+    "products": [
+      {
+        "name": "trisket wafers"
+      },
+      {
+        "name": "cheese"
+      }
+    ],
+    "segment_id": "segment-00013",
+    "start_sec": 180,
+    "summary": "A woman is talking about her family and their love for trisket wafers."
+  },
+  {
+    "categories": [
+      "food",
+      "childhood",
+      "advertising"
+    ],
+    "end_sec": 200,
+    "id": "opportunity-segment-00014",
+    "products": [
+      {
+        "name": "Triscuit wafers"
+      },
+      {
+        "name": "natural whole wheat"
+      }
+    ],
+    "segment_id": "segment-00014",
+    "start_sec": 195,
+    "summary": "child eating a Triscuit wafer"
+  },
+  {
+    "categories": [
+      "man",
+      "orange shirt",
+      "hat",
+      "sidewalk",
+      "trees"
+    ],
+    "end_sec": 215,
+    "id": "opportunity-segment-00015",
+    "products": [
+      {
+        "name": "noodles"
+      }
+    ],
+    "segment_id": "segment-00015",
+    "start_sec": 210,
+    "summary": "man in orange shirt and hat walking on sidewalk"
+  },
+  {
+    "categories": [
+      "food",
+      "soup",
+      "Campbell's"
+    ],
+    "end_sec": 230,
+    "id": "opportunity-segment-00016",
+    "products": [
+      {
+        "name": "Campbell's Chicken Noodle Soup"
+      }
+    ],
+    "segment_id": "segment-00016",
+    "start_sec": 225,
+    "summary": "A person is holding a can of Campbell's Chicken Noodle Soup."
+  },
+  {
+    "categories": [
+      "music",
+      "entertainment",
+      "performance"
+    ],
+    "end_sec": 245,
+    "id": "opportunity-segment-00017",
+    "products": [],
+    "segment_id": "segment-00017",
+    "start_sec": 240,
+    "summary": "woman singing in front of piano"
+  },
+  {
+    "categories": [
+      "music",
+      "entertainment",
+      "entertainment"
+    ],
+    "end_sec": 260,
+    "id": "opportunity-segment-00018",
+    "products": [
+      {
+        "name": "piano"
+      },
+      {
+        "name": "uniform"
+      }
+    ],
+    "segment_id": "segment-00018",
+    "start_sec": 255,
+    "summary": "man in uniform standing in front of a piano"
+  },
+  {
+    "categories": [
+      "food",
+      "cereal",
+      "breakfast"
+    ],
+    "end_sec": 275,
+    "id": "opportunity-segment-00019",
+    "products": [
+      {
+        "name": "Golden Grahams cereal"
+      }
+    ],
+    "segment_id": "segment-00019",
+    "start_sec": 270,
+    "summary": "A person holding a box of Golden Grahams cereal."
+  },
+  {
+    "categories": [
+      "breakfast",
+      "cereal",
+      "milk",
+      "syrup"
+    ],
+    "end_sec": 290,
+    "id": "opportunity-segment-00020",
+    "products": [
+      {
+        "name": "Golden Grahams cereal"
+      },
+      {
+        "name": "milk"
+      },
+      {
+        "name": "syrup"
+      }
+    ],
+    "segment_id": "segment-00020",
+    "start_sec": 285,
+    "summary": "A bowl of cereal with a spoon, a glass of milk, and a bottle of syrup on a table."
+  },
+  {
+    "categories": [
+      "vintage",
+      "photography",
+      "advertising"
+    ],
+    "end_sec": 305,
+    "id": "opportunity-segment-00021",
+    "products": [
+      {
+        "name": "instant cameras"
+      }
+    ],
+    "segment_id": "segment-00021",
+    "start_sec": 300,
+    "summary": "A vintage advertisement for Kodak instant cameras."
+  },
+  {
+    "categories": [
+      "photography",
+      "instant camera",
+      "colorful scene"
+    ],
+    "end_sec": 320,
+    "id": "opportunity-segment-00022",
+    "products": [
+      {
+        "name": "Kodak instant camera"
+      }
+    ],
+    "segment_id": "segment-00022",
+    "start_sec": 315,
+    "summary": "A person is holding a Kodak instant camera and taking a picture of a colorful scene."
+  },
+  {
+    "categories": [
+      "corridor",
+      "hallway",
+      "empty"
+    ],
+    "end_sec": 335,
+    "id": "opportunity-segment-00023",
+    "products": [],
+    "segment_id": "segment-00023",
+    "start_sec": 330,
+    "summary": "A long, empty hallway with a blue and white circular sign."
+  },
+  {
+    "categories": [
+      "technology",
+      "science fiction",
+      "innovation"
+    ],
+    "end_sec": 350,
+    "id": "opportunity-segment-00024",
+    "products": [],
+    "segment_id": "segment-00024",
+    "start_sec": 345,
+    "summary": "a close-up of a futuristic control panel with buttons and lights"
+  }
+]

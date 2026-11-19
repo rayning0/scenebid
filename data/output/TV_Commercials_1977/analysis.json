@@ -815,7 +815,7 @@
     {
       "start_sec": 26.18,
       "end_sec": 28.98,
-      "text": "Oscar Meyer, the first name in balona."
+      "text": "Oscar Mayer, the first name in bologna."
     },
     {
       "start_sec": 28.98,
@@ -830,7 +830,7 @@
     {
       "start_sec": 36.12,
       "end_sec": 39.08,
-      "text": "You know you're getting solid value with Oscar Meyer"
+      "text": "You know you're getting solid value with Oscar Mayer"
     },
     {
       "start_sec": 39.08,
@@ -845,7 +845,7 @@
     {
       "start_sec": 45.52,
       "end_sec": 47.92,
-      "text": "They only meet Oscar Meyer uses."
+      "text": "They only meet Oscar Mayer uses."
     },
     {
       "start_sec": 47.92,
@@ -855,7 +855,7 @@
     {
       "start_sec": 49.72,
       "end_sec": 53.64,
-      "text": "Oscar Meyer selected Oscar Meyer winners of beef flanks"
+      "text": "Oscar Mayer selected Oscar Mayer winners of beef flanks"
     },
     {
       "start_sec": 53.64,
@@ -870,7 +870,7 @@
     {
       "start_sec": 58.36,
       "end_sec": 61.36,
-      "text": "Oscar Meyer, America's number one."
+      "text": "Oscar Mayer, America's number one."
     },
     {
       "start_sec": 61.36,
@@ -940,22 +940,22 @@
     {
       "start_sec": 105.17,
       "end_sec": 106.93,
-      "text": "Mounds don't."
+      "text": "Almond Joy's got nuts. Mounds don't."
     },
     {
       "start_sec": 106.93,
       "end_sec": 108.97,
-      "text": "How many toys got built up chocolate?"
+      "text": "Almond Joy's got rich milk chocolate"
     },
     {
       "start_sec": 108.97,
       "end_sec": 110.85,
-      "text": "Coconut and munching it's too old."
+      "text": "Coconut and honey nuts too"
     },
     {
       "start_sec": 110.85,
       "end_sec": 114.77,
-      "text": "Mounds got deep down chocolate and chewing coconut."
+      "text": "Mounds got deep dark chocolate, chewy coconut ooh."
     },
     {
       "start_sec": 114.77,
@@ -975,7 +975,7 @@
     {
       "start_sec": 120.76,
       "end_sec": 121.16,
-      "text": "Beautiful."
+      "text": "Almond Joy's got nuts."
     },
     {
       "start_sec": 121.16,
@@ -1030,7 +1030,7 @@
     {
       "start_sec": 152.52,
       "end_sec": 155.4,
-      "text": "The hardy boy is Nancy Drew Mysteries."
+      "text": "The Hardy Boy and Nancy Drew Mysteries."
     },
     {
       "start_sec": 155.4,
@@ -1070,7 +1070,7 @@
     {
       "start_sec": 171.91,
       "end_sec": 181.14,
-      "text": "The hardy boy is Nancy Drew Mysteries."
+      "text": "The Hardy Boy and Nancy Drew Mysteries."
     },
     {
       "start_sec": 181.14,
@@ -1080,17 +1080,17 @@
     {
       "start_sec": 184.7,
       "end_sec": 186.18,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 186.18,
       "end_sec": 187.74,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 187.74,
       "end_sec": 189.66,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 189.66,
@@ -1105,7 +1105,7 @@
     {
       "start_sec": 192.42,
       "end_sec": 194.06,
-      "text": "they'd like a trisket wafer."
+      "text": "they'd like a Triscuit wafer."
     },
     {
       "start_sec": 194.06,
@@ -1135,7 +1135,7 @@
     {
       "start_sec": 201.02,
       "end_sec": 201.98,
-      "text": "Trisket wafers."
+      "text": "Triscuit wafers."
     },
     {
       "start_sec": 201.98,
@@ -1150,12 +1150,12 @@
     {
       "start_sec": 205.78,
       "end_sec": 207.82,
-      "text": "A trisket, a trisket,"
+      "text": "A Triscuit, a Triscuit,"
     },
     {
       "start_sec": 207.82,
       "end_sec": 210.22,
-      "text": "baked only by the biscoe."
+      "text": "baked only by Nabisco."
     },
     {
       "start_sec": 210.22,
@@ -1180,7 +1180,7 @@
     {
       "start_sec": 227.63,
       "end_sec": 230.59,
-      "text": "is any lunch with Campbell's chicken noodle lo soup."
+      "text": "is any lunch with Chicken Noodle Soup."
     },
     {
       "start_sec": 230.59,
@@ -1501,7 +1501,7 @@
       "analysis_status": "completed",
       "window_id": "window-00002",
       "intelligence": {
-        "summary": "child holding Oscar Meyer Bologna",
+        "summary": "child holding Oscar Mayer Bologna",
         "categories": [
           {
             "id": "food",
@@ -1567,7 +1567,7 @@
         "entities": [
           {
             "type": "product",
-            "name": "Oscar Meyer Bologna",
+            "name": "Oscar Mayer Bologna",
             "source": "vision_model",
             "evidence": [
               {
@@ -1588,7 +1588,7 @@
           }
         ],
         "primary_advertiser": {
-          "name": "Oscar Meyer",
+          "name": "Oscar Mayer",
           "status": "identified",
           "evidence": []
         },
@@ -1708,7 +1708,7 @@
       "analysis_status": "completed",
       "window_id": "window-00004",
       "intelligence": {
-        "summary": "Oscar Meyer beef flanks in handy twin bags.",
+        "summary": "Oscar Mayer beef flanks in handy twin bags.",
         "categories": [
           {
             "id": "meat",
@@ -1750,7 +1750,7 @@
             ]
           },
           {
-            "id": "Oscar Meyer",
+            "id": "Oscar Mayer",
             "source": "vision_and_transcript",
             "evidence": [
               {
@@ -1780,7 +1780,7 @@
           }
         ],
         "primary_advertiser": {
-          "name": "Oscar Meyer",
+          "name": "Oscar Mayer",
           "status": "identified",
           "evidence": []
         },
@@ -1789,8 +1789,8 @@
           "method": "vision_model",
           "reasons": [
             "US government inspectors",
-            "Oscar Meyer selected",
-            "Oscar Meyer winners"
+            "Oscar Mayer selected",
+            "Oscar Mayer winners"
           ]
         }
       },
@@ -1814,7 +1814,7 @@
       "analysis_status": "completed",
       "window_id": "window-00005",
       "intelligence": {
-        "summary": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+        "summary": "Oscar Mayer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
         "categories": [
           {
             "id": "food",
@@ -1901,7 +1901,7 @@
           }
         ],
         "primary_advertiser": {
-          "name": "Oscar Meyer",
+          "name": "Oscar Mayer",
           "status": "identified",
           "evidence": []
         },

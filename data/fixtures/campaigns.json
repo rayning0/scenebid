@@ -2,37 +2,121 @@
   "schema_version": "1.0",
   "campaigns": [
     {
-      "id": "campaign-pet-store",
-      "name": "Fictional Neighborhood Pet Store",
-      "advertiser": "Neighborhood Pet Store",
+      "id": "campaign-food",
+      "name": "Harvest Kitchen",
+      "advertiser": "Harvest Kitchen",
       "target_categories": [
-        "pets",
-        "pet_food"
+        "food",
+        "foods"
       ],
-      "excluded_adjacent_brands": [],
-      "bid_cpm_usd": 7.10,
+      "bid_cpm_usd": 6.25,
+      "headline": "Make tonight delicious",
+      "destination_url": "https://example.invalid/scenebid/harvest-kitchen",
       "creative": {
-        "format": "overlay",
-        "asset_type": "image",
-        "asset_path": "/creatives/pet-store.png",
-        "headline": "Everything your cat needs"
+        "format": "overlay"
       }
     },
     {
-      "id": "campaign-camera",
-      "name": "Fictional Camera Shop",
-      "advertiser": "City Camera Shop",
+      "id": "campaign-oscar-mayer-bologna",
+      "name": "Oscar Mayer Bologna Campaign",
+      "advertiser": "Oscar Mayer",
       "target_categories": [
-        "photography",
-        "cameras"
+        "Oscar Mayer",
+        "Oscar Mayer Bologna",
+        "bologna"
       ],
-      "excluded_adjacent_brands": [],
-      "bid_cpm_usd": 5.50,
+      "bid_cpm_usd": 8.40,
+      "headline": "Bring home the taste everyone knows",
+      "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat",
       "creative": {
-        "format": "overlay",
-        "asset_type": "image",
-        "asset_path": "/creatives/camera-shop.png",
-        "headline": "Capture your next great moment"
+        "format": "overlay"
+      }
+    },
+    {
+      "id": "campaign-almond-joy",
+      "name": "Almond Joy Campaign",
+      "advertiser": "Almond Joy",
+      "target_categories": [
+        "Almond Joy",
+        "candy",
+        "chocolate"
+      ],
+      "bid_cpm_usd": 7.85,
+      "headline": "Make snack time a little more joyful",
+      "destination_url": "https://www.hersheyland.com/almond-joy-mounds",
+      "creative": {
+        "format": "overlay"
+      }
+    },
+    {
+      "id": "campaign-hard-y-nancy-drew",
+      "name": "Hardy Boys and Nancy Drew Mysteries Campaign",
+      "advertiser": "Mystery Classics",
+      "target_categories": [
+        "Hardy Boys",
+        "Hardy Boy",
+        "Nancy Drew",
+        "Nancy Drew Mysteries",
+        "mystery",
+        "television"
+      ],
+      "bid_cpm_usd": 6.90,
+      "headline": "Every mystery starts with a clue",
+      "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67",
+      "creative": {
+        "format": "overlay"
+      }
+    },
+    {
+      "id": "campaign-triscuit",
+      "name": "Triscuit Campaign",
+      "advertiser": "Triscuit",
+      "target_categories": [
+        "Triscuit",
+        "Triscuit wafers",
+        "crackers",
+        "snacks"
+      ],
+      "bid_cpm_usd": 7.35,
+      "headline": "Put a little crunch in the moment",
+      "destination_url": "https://www.snackworks.com/brands/triscuit/",
+      "creative": {
+        "format": "overlay"
+      }
+    },
+    {
+      "id": "campaign-campbells-chicken-noodle",
+      "name": "Campbell's Chicken Noodle Soup Campaign",
+      "advertiser": "Campbell's",
+      "target_categories": [
+        "Campbell's",
+        "Campbell's Chicken Noodle Soup",
+        "Chicken Noodle Soup",
+        "soup"
+      ],
+      "bid_cpm_usd": 8.10,
+      "headline": "Comfort in every spoonful",
+      "destination_url": "https://www.campbells.com/chicken-noodle-soup/",
+      "creative": {
+        "format": "overlay"
+      }
+    },
+    {
+      "id": "campaign-kodak-instant-camera",
+      "name": "Kodak Instant Camera Campaign",
+      "advertiser": "Kodak",
+      "target_categories": [
+        "Kodak",
+        "instant camera",
+        "instant photography",
+        "cameras",
+        "photography"
+      ],
+      "bid_cpm_usd": 9.15,
+      "headline": "Make the moment last instantly",
+      "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q",
+      "creative": {
+        "format": "overlay"
       }
     }
   ]
