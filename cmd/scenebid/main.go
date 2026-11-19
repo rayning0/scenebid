@@ -1,17 +1,19 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
 	"github.com/rayning0/scenebid/internal/analysis"
+	"github.com/rayning0/scenebid/internal/auction"
 	"github.com/rayning0/scenebid/internal/model"
 	"github.com/rayning0/scenebid/internal/store"
 	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -59,11 +61,7 @@ func main() {
 		}
 		var a model.Contract
 		var campaigns struct {
-			Campaigns []struct {
-				ID         string   `json:"id"`
-				Categories []string `json:"target_categories"`
-				CPM        float64  `json:"bid_cpm_usd"`
-			} `json:"campaigns"`
+			Campaigns []campaign `json:"campaigns"`
 		}
 		if err := store.Read(*analysisPath, &a); err != nil {
 			log.Fatal(err)
@@ -72,35 +70,113 @@ func main() {
 			log.Fatal(err)
 		}
 		ds := make([]model.Decision, 0)
+		opportunities := make([]map[string]interface{}, 0)
 		for _, s := range a.Segments {
-			for _, op := range s.AdOpportunities {
+			ops := s.AdOpportunities
+			if len(ops) == 0 { // derived from every analyzed window; never mutates analysis.json
+				ops = []model.ContractOpportunity{{ID: "opportunity-" + s.ID, Format: "overlay", StartSec: s.StartSec, EndSec: min(s.EndSec, s.StartSec+5), Status: "candidate"}}
+			}
+			for _, op := range ops {
 				d := model.Decision{DecisionID: "decision-" + op.ID, VideoID: a.Video.ID,
 					ContentTimeSec: op.StartSec, SegmentID: s.ID, OpportunityID: op.ID,
-					Status: "no_fill", Reason: "Brand-safety status is unknown."}
-				if s.Intelligence.BrandSafety.Status == "safe" {
-					for _, c := range campaigns.Campaigns {
-						for _, cat := range s.Intelligence.Categories {
-							matches := false
-							for _, target := range c.Categories {
-								matches = matches || strings.EqualFold(cat.ID, target)
-							}
-							if matches && c.CPM >= *floor {
-								d.Status, d.Reason = "filled", "highest eligible campaign bid"
-								d.Winner = &model.Bid{Campaign: c.ID, CPM: c.CPM, Category: cat.ID}
-							}
-						}
+					Status: "no_fill"}
+				scene := model.Scene{ID: s.ID, Safety: s.Intelligence.BrandSafety.Status}
+				for _, cat := range s.Intelligence.Categories {
+					scene.Categories = append(scene.Categories, cat.ID)
+				}
+				var bids []model.Bid
+				for _, c := range campaigns.Campaigns {
+					for _, cat := range c.TargetCategories {
+						bids = append(bids, model.Bid{Campaign: c.ID, CPM: c.CPM, Category: cat, Advertiser: c.Advertiser, Headline: c.Headline, URL: c.URL})
 					}
 				}
+				d = auction.DecideDemo(scene, bids, *floor)
+				d.DecisionID = "decision-" + op.ID
+				d.VideoID = a.Video.ID
+				d.ContentTimeSec = op.StartSec
+				d.OpportunityEndSec = op.EndSec
+				d.SegmentID = s.ID
+				d.OpportunityID = op.ID
+				d.ModelSafety = s.Intelligence.BrandSafety.Status
 				ds = append(ds, d)
+				opportunities = append(opportunities, map[string]interface{}{"id": op.ID, "segment_id": s.ID, "start_sec": op.StartSec, "end_sec": op.EndSec, "categories": scene.Categories, "summary": s.Intelligence.Summary, "products": s.Intelligence.Entities})
 			}
 		}
 		if err := store.Write(*out, ds); err != nil {
 			log.Fatal(err)
 		}
+		_ = store.Write(filepath.Join(filepath.Dir(*out), "opportunities.json"), opportunities)
 		fmt.Printf("Wrote %d simulated decisions to %s\n", len(ds), *out)
+	case "serve":
+		f := flag.NewFlagSet("serve", flag.ExitOnError)
+		analysisPath := f.String("analysis", "data/output/TV_Commercials_1977/analysis.json", "analysis")
+		campaignsPath := f.String("campaigns", "data/fixtures/campaigns.json", "campaigns")
+		addr := f.String("addr", ":8080", "listen address")
+		_ = f.Parse(os.Args[2:])
+		var a model.Contract
+		var c struct {
+			Campaigns []campaign `json:"campaigns"`
+		}
+		if err := store.Read(*analysisPath, &a); err != nil {
+			log.Fatal(err)
+		}
+		if err := store.Read(*campaignsPath, &c); err != nil {
+			log.Fatal(err)
+		}
+		http.Handle("/", http.FileServer(http.Dir("web")))
+		http.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir("data/input"))))
+		http.HandleFunc("/api/decision", func(w http.ResponseWriter, r *http.Request) {
+			t, _ := strconv.ParseFloat(r.URL.Query().Get("time"), 64)
+			for _, s := range a.Segments {
+				if t >= s.StartSec && t < s.EndSec {
+					op := model.ContractOpportunity{ID: "opportunity-" + s.ID, StartSec: s.StartSec, EndSec: min(s.EndSec, s.StartSec+5)}
+					for _, x := range s.AdOpportunities {
+						if t >= x.StartSec && t < x.EndSec {
+							op = x
+						}
+					}
+					if t >= op.StartSec && t < op.EndSec {
+						scene := model.Scene{ID: s.ID, Safety: s.Intelligence.BrandSafety.Status}
+						for _, x := range s.Intelligence.Categories {
+							scene.Categories = append(scene.Categories, x.ID)
+						}
+						var bids []model.Bid
+						for _, x := range c.Campaigns {
+							for _, cat := range x.TargetCategories {
+								bids = append(bids, model.Bid{Campaign: x.ID, CPM: x.CPM, Category: cat, Advertiser: x.Advertiser, Headline: x.Headline, URL: x.URL})
+							}
+						}
+						d := auction.DecideDemo(scene, bids, 0)
+						d.OpportunityEndSec = op.EndSec
+						json.NewEncoder(w).Encode(d)
+						return
+					}
+				}
+			}
+			json.NewEncoder(w).Encode(model.Decision{Status: "no_fill", Reason: "no opportunity at playback time", DemoMode: true})
+		})
+		log.Printf("SceneBid demo at http://localhost%s", *addr)
+		log.Fatal(http.ListenAndServe(*addr, nil))
 	default:
 		usage()
 	}
+}
+
+type campaign struct {
+	ID               string   `json:"id"`
+	Name             string   `json:"name"`
+	Advertiser       string   `json:"advertiser"`
+	TargetCategories []string `json:"target_categories"`
+	CPM              float64  `json:"bid_cpm_usd"`
+	Headline         string   `json:"headline"`
+	URL              string   `json:"destination_url"`
+}
+
+func min(a, b float64) float64 {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 func usage() { fmt.Fprintln(os.Stderr, "usage: scenebid {analyze|decide} [options]"); os.Exit(2) }

@@ -18,3 +18,19 @@ func TestDecide(t *testing.T) {
 		t.Fatalf("unknown safety must produce no fill: %+v", got)
 	}
 }
+
+func TestDemoAliasesAndSafetyTrace(t *testing.T) {
+	got := DecideDemo(model.Scene{ID: "w", Safety: "unknown", Categories: []string{"camera"}},
+		[]model.Bid{{Campaign: "camera", Category: "cameras", CPM: 5}}, 2)
+	if got.Winner == nil || got.Winner.Campaign != "camera" || !got.DemoMode || got.ModelSafety != "unknown" {
+		t.Fatalf("demo decision did not preserve safety or alias-match: %+v", got)
+	}
+}
+
+func TestNoFillBelowFloor(t *testing.T) {
+	got := DecideDemo(model.Scene{ID: "w", Safety: "safe", Categories: []string{"food"}},
+		[]model.Bid{{Campaign: "cheap", Category: "food", CPM: 1}}, 2)
+	if got.Winner != nil || got.Status != "no_fill" {
+		t.Fatalf("expected no fill at floor boundary: %+v", got)
+	}
+}

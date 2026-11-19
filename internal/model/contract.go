@@ -18,9 +18,13 @@ type ContractSegment struct {
 	EndSec         float64 `json:"end_sec"`
 	AnalysisStatus string  `json:"analysis_status"`
 	Intelligence   struct {
+		Summary    string `json:"summary"`
 		Categories []struct {
 			ID string `json:"id"`
 		} `json:"categories"`
+		Entities []struct {
+			Name string `json:"name"`
+		} `json:"entities"`
 		BrandSafety struct {
 			Status string `json:"status"`
 		} `json:"brand_safety"`
