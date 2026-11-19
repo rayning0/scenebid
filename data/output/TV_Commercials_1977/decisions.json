@@ -1,11 +1,12 @@
 [
   {
     "scene_id": "segment-00001",
-    "decision_id": "decision-opportunity-segment-00001",
+    "decision_id": "decision-opportunity-window-00001",
     "video_id": "TV_Commercials_1977",
-    "opportunity_end_sec": 5,
+    "content_time_sec": 7.5,
+    "opportunity_end_sec": 12.5,
     "segment_id": "segment-00001",
-    "opportunity_id": "opportunity-segment-00001",
+    "opportunity_id": "opportunity-window-00001",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -64,11 +65,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -77,7 +114,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -86,7 +123,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -95,7 +132,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -104,7 +141,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -113,7 +150,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -240,14 +277,23 @@
   },
   {
     "scene_id": "segment-00002",
-    "decision_id": "decision-opportunity-segment-00002",
+    "decision_id": "decision-opportunity-window-00002",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 15,
-    "opportunity_end_sec": 20,
+    "content_time_sec": 22.5,
+    "opportunity_end_sec": 27.5,
     "segment_id": "segment-00002",
-    "opportunity_id": "opportunity-segment-00002",
-    "status": "no_fill",
-    "reason": "DEMO MODE: model safety ignored; no eligible bid",
+    "opportunity_id": "opportunity-window-00002",
+    "status": "filled",
+    "winner": {
+      "campaign": "campaign-oscar-mayer-bologna",
+      "source": "",
+      "cpm": 8.4,
+      "category": "Oscar Mayer Bologna",
+      "advertiser": "Oscar Mayer",
+      "headline": "Bring home the taste everyone knows",
+      "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
+    },
+    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
         "campaign": "campaign-oscar-mayer-bologna",
@@ -304,11 +350,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -317,7 +399,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -326,7 +408,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -335,7 +417,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -344,7 +426,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -353,7 +435,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -480,12 +562,12 @@
   },
   {
     "scene_id": "segment-00003",
-    "decision_id": "decision-opportunity-segment-00003",
+    "decision_id": "decision-opportunity-window-00003",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 30,
-    "opportunity_end_sec": 35,
+    "content_time_sec": 37.5,
+    "opportunity_end_sec": 42.5,
     "segment_id": "segment-00003",
-    "opportunity_id": "opportunity-segment-00003",
+    "opportunity_id": "opportunity-window-00003",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -544,11 +626,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -557,7 +675,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -566,7 +684,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -575,7 +693,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -584,7 +702,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -593,7 +711,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -720,12 +838,12 @@
   },
   {
     "scene_id": "segment-00004",
-    "decision_id": "decision-opportunity-segment-00004",
+    "decision_id": "decision-opportunity-window-00004",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 45,
-    "opportunity_end_sec": 50,
+    "content_time_sec": 52.5,
+    "opportunity_end_sec": 57.5,
     "segment_id": "segment-00004",
-    "opportunity_id": "opportunity-segment-00004",
+    "opportunity_id": "opportunity-window-00004",
     "status": "filled",
     "winner": {
       "campaign": "campaign-oscar-mayer-bologna",
@@ -793,11 +911,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -806,7 +960,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -815,7 +969,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -824,7 +978,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -833,7 +987,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -842,7 +996,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -969,14 +1123,23 @@
   },
   {
     "scene_id": "segment-00005",
-    "decision_id": "decision-opportunity-segment-00005",
+    "decision_id": "decision-opportunity-window-00005",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 60,
-    "opportunity_end_sec": 65,
+    "content_time_sec": 67.5,
+    "opportunity_end_sec": 72.5,
     "segment_id": "segment-00005",
-    "opportunity_id": "opportunity-segment-00005",
-    "status": "no_fill",
-    "reason": "DEMO MODE: model safety ignored; no eligible bid",
+    "opportunity_id": "opportunity-window-00005",
+    "status": "filled",
+    "winner": {
+      "campaign": "campaign-del-monte-corn",
+      "source": "",
+      "cpm": 7.6,
+      "category": "Del Monte family style corn",
+      "advertiser": "Del Monte",
+      "headline": "Bring home family-style goodness",
+      "destination_url": "https://www.delmonte.com/products/vegetables"
+    },
+    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
         "campaign": "campaign-oscar-mayer-bologna",
@@ -1033,11 +1196,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1046,7 +1245,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1055,7 +1254,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1064,7 +1263,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1073,7 +1272,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1082,487 +1281,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit wafers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "crackers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "snacks",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "Kodak",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant camera",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "cameras",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      }
-    ],
-    "demo_mode": true,
-    "model_safety": "unknown"
-  },
-  {
-    "scene_id": "segment-00006",
-    "decision_id": "decision-opportunity-segment-00006",
-    "video_id": "TV_Commercials_1977",
-    "content_time_sec": 75,
-    "opportunity_end_sec": 80,
-    "segment_id": "segment-00006",
-    "opportunity_id": "opportunity-segment-00006",
-    "status": "no_fill",
-    "reason": "DEMO MODE: model safety ignored; no eligible bid",
-    "candidates": [
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer Bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "Almond Joy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "candy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "chocolate",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "mystery",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "television",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit wafers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "crackers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "snacks",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "Kodak",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant camera",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "cameras",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      }
-    ],
-    "demo_mode": true,
-    "model_safety": "unknown"
-  },
-  {
-    "scene_id": "segment-00007",
-    "decision_id": "decision-opportunity-segment-00007",
-    "video_id": "TV_Commercials_1977",
-    "content_time_sec": 90,
-    "opportunity_end_sec": 95,
-    "segment_id": "segment-00007",
-    "opportunity_id": "opportunity-segment-00007",
-    "status": "no_fill",
-    "reason": "DEMO MODE: model safety ignored; no eligible bid",
-    "candidates": [
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer Bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "Almond Joy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "candy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "chocolate",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "mystery",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1689,12 +1408,12 @@
   },
   {
     "scene_id": "segment-00008",
-    "decision_id": "decision-opportunity-segment-00008",
+    "decision_id": "decision-opportunity-window-00008",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 105,
-    "opportunity_end_sec": 110,
+    "content_time_sec": 112.5,
+    "opportunity_end_sec": 117.5,
     "segment_id": "segment-00008",
-    "opportunity_id": "opportunity-segment-00008",
+    "opportunity_id": "opportunity-window-00008",
     "status": "filled",
     "winner": {
       "campaign": "campaign-almond-joy",
@@ -1762,11 +1481,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1775,7 +1530,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1784,7 +1539,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1793,7 +1548,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1802,7 +1557,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1811,7 +1566,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -1937,262 +1692,13 @@
     "model_safety": "unknown"
   },
   {
-    "scene_id": "segment-00009",
-    "decision_id": "decision-opportunity-segment-00009",
-    "video_id": "TV_Commercials_1977",
-    "content_time_sec": 120,
-    "opportunity_end_sec": 125,
-    "segment_id": "segment-00009",
-    "opportunity_id": "opportunity-segment-00009",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-almond-joy",
-      "source": "",
-      "cpm": 7.85,
-      "category": "candy",
-      "advertiser": "Almond Joy",
-      "headline": "Make snack time a little more joyful",
-      "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
-    "candidates": [
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "Oscar Mayer Bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-oscar-mayer-bologna",
-        "source": "",
-        "cpm": 8.4,
-        "category": "bologna",
-        "advertiser": "Oscar Mayer",
-        "headline": "Bring home the taste everyone knows",
-        "destination_url": "https://www.oscarmayer.com/products/00044700008652-bologna-sliced-deli-meat"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "Almond Joy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "candy",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-almond-joy",
-        "source": "",
-        "cpm": 7.85,
-        "category": "chocolate",
-        "advertiser": "Almond Joy",
-        "headline": "Make snack time a little more joyful",
-        "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "mystery",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-hard-y-nancy-drew",
-        "source": "",
-        "cpm": 6.9,
-        "category": "television",
-        "advertiser": "Mystery Classics",
-        "headline": "Every mystery starts with a clue",
-        "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "Triscuit wafers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "crackers",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-triscuit",
-        "source": "",
-        "cpm": 7.35,
-        "category": "snacks",
-        "advertiser": "Triscuit",
-        "headline": "Put a little crunch in the moment",
-        "destination_url": "https://www.snackworks.com/brands/triscuit/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Campbell's Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "Chicken Noodle Soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-campbells-chicken-noodle",
-        "source": "",
-        "cpm": 8.1,
-        "category": "soup",
-        "advertiser": "Campbell's",
-        "headline": "Comfort in every spoonful",
-        "destination_url": "https://www.campbells.com/chicken-noodle-soup/"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "Kodak",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant camera",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "instant photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "cameras",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      },
-      {
-        "campaign": "campaign-kodak-instant-camera",
-        "source": "",
-        "cpm": 9.15,
-        "category": "photography",
-        "advertiser": "Kodak",
-        "headline": "Make the moment last instantly",
-        "destination_url": "https://kodakphotoprinter.com/collections/camera-1?srsltid=AYCX9vJhVB-ZsCJipM7fNW-VrR8YXzp9KqKJU57q1OdfCP0E8Qlnbo_q"
-      }
-    ],
-    "demo_mode": true,
-    "model_safety": "Unknown"
-  },
-  {
     "scene_id": "segment-00010",
-    "decision_id": "decision-opportunity-segment-00010",
+    "decision_id": "decision-opportunity-window-00010",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 135,
-    "opportunity_end_sec": 140,
+    "content_time_sec": 142.5,
+    "opportunity_end_sec": 147.5,
     "segment_id": "segment-00010",
-    "opportunity_id": "opportunity-segment-00010",
+    "opportunity_id": "opportunity-window-00010",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -2251,11 +1757,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2264,7 +1806,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2273,7 +1815,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2282,7 +1824,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2291,7 +1833,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2300,7 +1842,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2427,19 +1969,19 @@
   },
   {
     "scene_id": "segment-00011",
-    "decision_id": "decision-opportunity-segment-00011",
+    "decision_id": "decision-opportunity-window-00011",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 150,
-    "opportunity_end_sec": 155,
+    "content_time_sec": 157.5,
+    "opportunity_end_sec": 162.5,
     "segment_id": "segment-00011",
-    "opportunity_id": "opportunity-segment-00011",
+    "opportunity_id": "opportunity-window-00011",
     "status": "filled",
     "winner": {
       "campaign": "campaign-hard-y-nancy-drew",
       "source": "",
       "cpm": 6.9,
       "category": "mystery",
-      "advertiser": "Mystery Classics",
+      "advertiser": "Hardy Boys and Nancy Drew Mysteries",
       "headline": "Every mystery starts with a clue",
       "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
     },
@@ -2500,11 +2042,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2513,7 +2091,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2522,7 +2100,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2531,7 +2109,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2540,7 +2118,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2549,7 +2127,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2676,12 +2254,12 @@
   },
   {
     "scene_id": "segment-00012",
-    "decision_id": "decision-opportunity-segment-00012",
+    "decision_id": "decision-opportunity-window-00012",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 165,
-    "opportunity_end_sec": 170,
+    "content_time_sec": 172.5,
+    "opportunity_end_sec": 177.5,
     "segment_id": "segment-00012",
-    "opportunity_id": "opportunity-segment-00012",
+    "opportunity_id": "opportunity-window-00012",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -2740,11 +2318,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2753,7 +2367,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2762,7 +2376,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2771,7 +2385,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2780,7 +2394,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2789,7 +2403,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -2916,18 +2530,18 @@
   },
   {
     "scene_id": "segment-00013",
-    "decision_id": "decision-opportunity-segment-00013",
+    "decision_id": "decision-opportunity-window-00013",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 180,
-    "opportunity_end_sec": 185,
+    "content_time_sec": 187.5,
+    "opportunity_end_sec": 192.5,
     "segment_id": "segment-00013",
-    "opportunity_id": "opportunity-segment-00013",
+    "opportunity_id": "opportunity-window-00013",
     "status": "filled",
     "winner": {
       "campaign": "campaign-triscuit",
       "source": "",
       "cpm": 7.35,
-      "category": "snacks",
+      "category": "Triscuit wafers",
       "advertiser": "Triscuit",
       "headline": "Put a little crunch in the moment",
       "destination_url": "https://www.snackworks.com/brands/triscuit/"
@@ -2989,11 +2603,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3002,7 +2652,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3011,7 +2661,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3020,7 +2670,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3029,7 +2679,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3038,7 +2688,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3165,14 +2815,23 @@
   },
   {
     "scene_id": "segment-00014",
-    "decision_id": "decision-opportunity-segment-00014",
+    "decision_id": "decision-opportunity-window-00014",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 195,
-    "opportunity_end_sec": 200,
+    "content_time_sec": 202.5,
+    "opportunity_end_sec": 207.5,
     "segment_id": "segment-00014",
-    "opportunity_id": "opportunity-segment-00014",
-    "status": "no_fill",
-    "reason": "DEMO MODE: model safety ignored; no eligible bid",
+    "opportunity_id": "opportunity-window-00014",
+    "status": "filled",
+    "winner": {
+      "campaign": "campaign-triscuit",
+      "source": "",
+      "cpm": 7.35,
+      "category": "Triscuit wafers",
+      "advertiser": "Triscuit",
+      "headline": "Put a little crunch in the moment",
+      "destination_url": "https://www.snackworks.com/brands/triscuit/"
+    },
+    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
         "campaign": "campaign-oscar-mayer-bologna",
@@ -3229,11 +2888,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3242,7 +2937,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3251,7 +2946,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3260,7 +2955,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3269,7 +2964,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3278,7 +2973,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3405,12 +3100,12 @@
   },
   {
     "scene_id": "segment-00015",
-    "decision_id": "decision-opportunity-segment-00015",
+    "decision_id": "decision-opportunity-window-00015",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 210,
-    "opportunity_end_sec": 215,
+    "content_time_sec": 217.5,
+    "opportunity_end_sec": 222.5,
     "segment_id": "segment-00015",
-    "opportunity_id": "opportunity-segment-00015",
+    "opportunity_id": "opportunity-window-00015",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -3469,11 +3164,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3482,7 +3213,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3491,7 +3222,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3500,7 +3231,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3509,7 +3240,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3518,7 +3249,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3645,12 +3376,12 @@
   },
   {
     "scene_id": "segment-00016",
-    "decision_id": "decision-opportunity-segment-00016",
+    "decision_id": "decision-opportunity-window-00016",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 225,
-    "opportunity_end_sec": 230,
+    "content_time_sec": 232.5,
+    "opportunity_end_sec": 237.5,
     "segment_id": "segment-00016",
-    "opportunity_id": "opportunity-segment-00016",
+    "opportunity_id": "opportunity-window-00016",
     "status": "filled",
     "winner": {
       "campaign": "campaign-campbells-chicken-noodle",
@@ -3718,11 +3449,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3731,7 +3498,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3740,7 +3507,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3749,7 +3516,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3758,7 +3525,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3767,7 +3534,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3894,12 +3661,12 @@
   },
   {
     "scene_id": "segment-00017",
-    "decision_id": "decision-opportunity-segment-00017",
+    "decision_id": "decision-opportunity-window-00017",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 240,
-    "opportunity_end_sec": 245,
+    "content_time_sec": 247.5,
+    "opportunity_end_sec": 252.5,
     "segment_id": "segment-00017",
-    "opportunity_id": "opportunity-segment-00017",
+    "opportunity_id": "opportunity-window-00017",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -3958,11 +3725,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3971,7 +3774,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3980,7 +3783,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3989,7 +3792,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -3998,7 +3801,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4007,7 +3810,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4134,12 +3937,12 @@
   },
   {
     "scene_id": "segment-00018",
-    "decision_id": "decision-opportunity-segment-00018",
+    "decision_id": "decision-opportunity-window-00018",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 255,
-    "opportunity_end_sec": 260,
+    "content_time_sec": 262.5,
+    "opportunity_end_sec": 267.5,
     "segment_id": "segment-00018",
-    "opportunity_id": "opportunity-segment-00018",
+    "opportunity_id": "opportunity-window-00018",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -4198,11 +4001,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4211,7 +4050,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4220,7 +4059,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4229,7 +4068,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4238,7 +4077,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4247,7 +4086,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4374,12 +4213,12 @@
   },
   {
     "scene_id": "segment-00019",
-    "decision_id": "decision-opportunity-segment-00019",
+    "decision_id": "decision-opportunity-window-00019",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 270,
-    "opportunity_end_sec": 275,
+    "content_time_sec": 277.5,
+    "opportunity_end_sec": 282.5,
     "segment_id": "segment-00019",
-    "opportunity_id": "opportunity-segment-00019",
+    "opportunity_id": "opportunity-window-00019",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -4438,11 +4277,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4451,7 +4326,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4460,7 +4335,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4469,7 +4344,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4478,7 +4353,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4487,7 +4362,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4614,12 +4489,12 @@
   },
   {
     "scene_id": "segment-00020",
-    "decision_id": "decision-opportunity-segment-00020",
+    "decision_id": "decision-opportunity-window-00020",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 285,
-    "opportunity_end_sec": 290,
+    "content_time_sec": 292.5,
+    "opportunity_end_sec": 297.5,
     "segment_id": "segment-00020",
-    "opportunity_id": "opportunity-segment-00020",
+    "opportunity_id": "opportunity-window-00020",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -4678,11 +4553,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4691,7 +4602,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4700,7 +4611,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4709,7 +4620,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4718,7 +4629,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4727,7 +4638,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4854,12 +4765,12 @@
   },
   {
     "scene_id": "segment-00021",
-    "decision_id": "decision-opportunity-segment-00021",
+    "decision_id": "decision-opportunity-window-00021",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 300,
-    "opportunity_end_sec": 305,
+    "content_time_sec": 307.5,
+    "opportunity_end_sec": 312.5,
     "segment_id": "segment-00021",
-    "opportunity_id": "opportunity-segment-00021",
+    "opportunity_id": "opportunity-window-00021",
     "status": "filled",
     "winner": {
       "campaign": "campaign-kodak-instant-camera",
@@ -4927,11 +4838,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4940,7 +4887,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4949,7 +4896,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4958,7 +4905,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4967,7 +4914,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -4976,7 +4923,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5103,12 +5050,12 @@
   },
   {
     "scene_id": "segment-00022",
-    "decision_id": "decision-opportunity-segment-00022",
+    "decision_id": "decision-opportunity-window-00022",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 315,
-    "opportunity_end_sec": 320,
+    "content_time_sec": 322.5,
+    "opportunity_end_sec": 327.5,
     "segment_id": "segment-00022",
-    "opportunity_id": "opportunity-segment-00022",
+    "opportunity_id": "opportunity-window-00022",
     "status": "filled",
     "winner": {
       "campaign": "campaign-kodak-instant-camera",
@@ -5176,11 +5123,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5189,7 +5172,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5198,7 +5181,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5207,7 +5190,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5216,7 +5199,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5225,7 +5208,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5352,12 +5335,12 @@
   },
   {
     "scene_id": "segment-00023",
-    "decision_id": "decision-opportunity-segment-00023",
+    "decision_id": "decision-opportunity-window-00023",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 330,
-    "opportunity_end_sec": 335,
+    "content_time_sec": 337.5,
+    "opportunity_end_sec": 342.5,
     "segment_id": "segment-00023",
-    "opportunity_id": "opportunity-segment-00023",
+    "opportunity_id": "opportunity-window-00023",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -5416,11 +5399,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5429,7 +5448,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5438,7 +5457,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5447,7 +5466,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5456,7 +5475,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5465,7 +5484,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5592,12 +5611,12 @@
   },
   {
     "scene_id": "segment-00024",
-    "decision_id": "decision-opportunity-segment-00024",
+    "decision_id": "decision-opportunity-window-00024",
     "video_id": "TV_Commercials_1977",
-    "content_time_sec": 345,
-    "opportunity_end_sec": 350,
+    "content_time_sec": 352.4964835,
+    "opportunity_end_sec": 357.4964835,
     "segment_id": "segment-00024",
-    "opportunity_id": "opportunity-segment-00024",
+    "opportunity_id": "opportunity-window-00024",
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
@@ -5656,11 +5675,47 @@
         "destination_url": "https://www.hersheyland.com/almond-joy-mounds"
       },
       {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte family style corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "Del Monte Whole Kernel Corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
+        "campaign": "campaign-del-monte-corn",
+        "source": "",
+        "cpm": 7.6,
+        "category": "corn",
+        "advertiser": "Del Monte",
+        "headline": "Bring home family-style goodness",
+        "destination_url": "https://www.delmonte.com/products/vegetables"
+      },
+      {
         "campaign": "campaign-hard-y-nancy-drew",
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boys",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5669,7 +5724,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Hardy Boy",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5678,7 +5733,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5687,7 +5742,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "Nancy Drew Mysteries",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5696,7 +5751,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "mystery",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },
@@ -5705,7 +5760,7 @@
         "source": "",
         "cpm": 6.9,
         "category": "television",
-        "advertiser": "Mystery Classics",
+        "advertiser": "Hardy Boys and Nancy Drew Mysteries",
         "headline": "Every mystery starts with a clue",
         "destination_url": "https://tv.apple.com/us/show/the-hardy-boysnancy-drew-mysteries/umc.cmc.3j8kebc6bym9rij4mu9kggs67"
       },

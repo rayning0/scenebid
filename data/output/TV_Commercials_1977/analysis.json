@@ -1482,7 +1482,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00001",
+          "format": "overlay",
+          "start_sec": 7.5,
+          "end_sec": 12.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00002",
@@ -1602,7 +1612,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00002",
+          "format": "overlay",
+          "start_sec": 22.5,
+          "end_sec": 27.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00003",
@@ -1691,7 +1711,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00003",
+          "format": "overlay",
+          "start_sec": 37.5,
+          "end_sec": 42.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00004",
@@ -1794,7 +1824,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00004",
+          "format": "overlay",
+          "start_sec": 52.5,
+          "end_sec": 57.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00005",
@@ -1911,7 +1951,17 @@
           "reasons": []
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00005",
+          "format": "overlay",
+          "start_sec": 67.5,
+          "end_sec": 72.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00006",
@@ -2343,7 +2393,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00008",
+          "format": "overlay",
+          "start_sec": 112.5,
+          "end_sec": 117.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00009",
@@ -2595,7 +2655,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00010",
+          "format": "overlay",
+          "start_sec": 142.5,
+          "end_sec": 147.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00011",
@@ -2699,7 +2769,17 @@
           "reasons": []
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00011",
+          "format": "overlay",
+          "start_sec": 157.5,
+          "end_sec": 162.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00012",
@@ -2803,7 +2883,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00012",
+          "format": "overlay",
+          "start_sec": 172.5,
+          "end_sec": 177.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00013",
@@ -2949,7 +3039,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00013",
+          "format": "overlay",
+          "start_sec": 187.5,
+          "end_sec": 192.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00014",
@@ -3091,7 +3191,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00014",
+          "format": "overlay",
+          "start_sec": 202.5,
+          "end_sec": 207.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00015",
@@ -3256,7 +3366,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00015",
+          "format": "overlay",
+          "start_sec": 217.5,
+          "end_sec": 222.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00016",
@@ -3374,7 +3494,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00016",
+          "format": "overlay",
+          "start_sec": 232.5,
+          "end_sec": 237.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00017",
@@ -3474,7 +3604,17 @@
           "reasons": []
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00017",
+          "format": "overlay",
+          "start_sec": 247.5,
+          "end_sec": 252.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00018",
@@ -3619,7 +3759,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00018",
+          "format": "overlay",
+          "start_sec": 262.5,
+          "end_sec": 267.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00019",
@@ -3744,7 +3894,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00019",
+          "format": "overlay",
+          "start_sec": 277.5,
+          "end_sec": 282.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00020",
@@ -3929,7 +4089,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00020",
+          "format": "overlay",
+          "start_sec": 292.5,
+          "end_sec": 297.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00021",
@@ -4051,7 +4221,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00021",
+          "format": "overlay",
+          "start_sec": 307.5,
+          "end_sec": 312.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00022",
@@ -4171,7 +4351,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00022",
+          "format": "overlay",
+          "start_sec": 322.5,
+          "end_sec": 327.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00023",
@@ -4267,7 +4457,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00023",
+          "format": "overlay",
+          "start_sec": 337.5,
+          "end_sec": 342.5,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     },
     {
       "id": "segment-00024",
@@ -4375,7 +4575,17 @@
           ]
         }
       },
-      "ad_opportunities": []
+      "ad_opportunities": [
+        {
+          "id": "opportunity-window-00024",
+          "format": "overlay",
+          "start_sec": 352.4964835,
+          "end_sec": 357.4964835,
+          "placement_source": "timing_rule",
+          "status": "candidate",
+          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
+        }
+      ]
     }
   ],
   "errors": []

@@ -34,9 +34,26 @@
       }
     },
     {
+      "id": "campaign-del-monte-corn",
+      "name": "Del Monte Corn Campaign",
+      "advertiser": "Del Monte",
+      "target_categories": [
+        "Del Monte",
+        "Del Monte family style corn",
+        "Del Monte Whole Kernel Corn",
+        "corn"
+      ],
+      "bid_cpm_usd": 7.60,
+      "headline": "Bring home family-style goodness",
+      "destination_url": "https://www.delmonte.com/products/vegetables",
+      "creative": {
+        "format": "overlay"
+      }
+    },
+    {
       "id": "campaign-hard-y-nancy-drew",
       "name": "Hardy Boys and Nancy Drew Mysteries Campaign",
-      "advertiser": "Mystery Classics",
+      "advertiser": "Hardy Boys and Nancy Drew Mysteries",
       "target_categories": [
         "Hardy Boys",
         "Hardy Boy",
