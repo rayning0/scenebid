@@ -19,6 +19,7 @@ type Bid struct {
 	Advertiser string  `json:"advertiser,omitempty"`
 	Headline   string  `json:"headline,omitempty"`
 	URL        string  `json:"destination_url,omitempty"`
+	LogoURL    string  `json:"logo_url,omitempty"`
 }
 
 type Decision struct {

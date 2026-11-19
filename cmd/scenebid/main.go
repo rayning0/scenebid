@@ -87,7 +87,7 @@ func main() {
 				var bids []model.Bid
 				for _, c := range campaigns.Campaigns {
 					for _, cat := range c.TargetCategories {
-						bids = append(bids, model.Bid{Campaign: c.ID, CPM: c.CPM, Category: cat, Advertiser: c.Advertiser, Headline: c.Headline, URL: c.URL})
+						bids = append(bids, model.Bid{Campaign: c.ID, CPM: c.CPM, Category: cat, Advertiser: c.Advertiser, Headline: c.Headline, URL: c.URL, LogoURL: c.LogoURL})
 					}
 				}
 				d = auction.DecideDemo(scene, bids, *floor)
@@ -123,6 +123,14 @@ func main() {
 		if err := store.Read(*campaignsPath, &c); err != nil {
 			log.Fatal(err)
 		}
+		var transcript []struct {
+			StartSec float64 `json:"start_sec"`
+			EndSec   float64 `json:"end_sec"`
+			Text     string  `json:"text"`
+		}
+		if err := store.Read("data/output/TV_Commercials_1977/transcript.json", &transcript); err != nil {
+			log.Fatal(err)
+		}
 		http.Handle("/", http.FileServer(http.Dir("web")))
 		http.Handle("/media/TV_Commercials_1977.mp4", http.StripPrefix("/media/", http.FileServer(http.Dir("data/input"))))
 		http.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir("data/output/TV_Commercials_1977/hls"))))
@@ -135,6 +143,24 @@ func main() {
 				}
 			}
 			json.NewEncoder(w).Encode(opportunities)
+		})
+		http.HandleFunc("/api/context", func(w http.ResponseWriter, r *http.Request) {
+			type contextItem struct {
+				StartSec float64 `json:"start_sec"`
+				EndSec   float64 `json:"end_sec"`
+				Summary  string  `json:"summary,omitempty"`
+				Text     string  `json:"text,omitempty"`
+			}
+			items := make([]contextItem, 0, len(transcript)+len(a.Segments))
+			for _, line := range transcript {
+				items = append(items, contextItem{StartSec: line.StartSec, EndSec: line.EndSec, Text: line.Text})
+			}
+			for _, segment := range a.Segments {
+				if summary := segment.Intelligence.Summary; summary != "" {
+					items = append(items, contextItem{StartSec: segment.StartSec, EndSec: segment.EndSec, Summary: summary})
+				}
+			}
+			json.NewEncoder(w).Encode(items)
 		})
 		http.HandleFunc("/api/decision", func(w http.ResponseWriter, r *http.Request) {
 			t, _ := strconv.ParseFloat(r.URL.Query().Get("time"), 64)
@@ -160,7 +186,7 @@ func main() {
 						var bids []model.Bid
 						for _, x := range c.Campaigns {
 							for _, cat := range x.TargetCategories {
-								bids = append(bids, model.Bid{Campaign: x.ID, CPM: x.CPM, Category: cat, Advertiser: x.Advertiser, Headline: x.Headline, URL: x.URL})
+								bids = append(bids, model.Bid{Campaign: x.ID, CPM: x.CPM, Category: cat, Advertiser: x.Advertiser, Headline: x.Headline, URL: x.URL, LogoURL: x.LogoURL})
 							}
 						}
 						d := auction.DecideDemo(scene, bids, 0)
@@ -192,6 +218,7 @@ type campaign struct {
 	CPM              float64  `json:"bid_cpm_usd"`
 	Headline         string   `json:"headline"`
 	URL              string   `json:"destination_url"`
+	LogoURL          string   `json:"logo_url"`
 }
 
 func min(a, b float64) float64 {
