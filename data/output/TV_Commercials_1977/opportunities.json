@@ -186,28 +186,6 @@
   },
   {
     "categories": [
-      "food",
-      "childhood",
-      "advertising",
-      "Triscuit wafers",
-      "natural whole wheat"
-    ],
-    "end_sec": 207.5,
-    "id": "opportunity-window-00014",
-    "products": [
-      {
-        "name": "Triscuit wafers"
-      },
-      {
-        "name": "natural whole wheat"
-      }
-    ],
-    "segment_id": "segment-00014",
-    "start_sec": 202.5,
-    "summary": "child eating a Triscuit wafer"
-  },
-  {
-    "categories": [
       "man",
       "orange shirt",
       "hat",
@@ -341,24 +319,6 @@
     "segment_id": "segment-00021",
     "start_sec": 307.5,
     "summary": "A vintage advertisement for Kodak instant cameras."
-  },
-  {
-    "categories": [
-      "photography",
-      "instant camera",
-      "colorful scene",
-      "Kodak instant camera"
-    ],
-    "end_sec": 327.5,
-    "id": "opportunity-window-00022",
-    "products": [
-      {
-        "name": "Kodak instant camera"
-      }
-    ],
-    "segment_id": "segment-00022",
-    "start_sec": 322.5,
-    "summary": "A person is holding a Kodak instant camera and taking a picture of a colorful scene."
   },
   {
     "categories": [

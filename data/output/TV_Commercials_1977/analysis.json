@@ -3190,18 +3190,7 @@
             "advertising"
           ]
         }
-      },
-      "ad_opportunities": [
-        {
-          "id": "opportunity-window-00014",
-          "format": "overlay",
-          "start_sec": 202.5,
-          "end_sec": 207.5,
-          "placement_source": "timing_rule",
-          "status": "candidate",
-          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
-        }
-      ]
+      }
     },
     {
       "id": "segment-00015",
@@ -4350,18 +4339,7 @@
             "person holding camera"
           ]
         }
-      },
-      "ad_opportunities": [
-        {
-          "id": "opportunity-window-00022",
-          "format": "overlay",
-          "start_sec": 322.5,
-          "end_sec": 327.5,
-          "placement_source": "timing_rule",
-          "status": "candidate",
-          "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary"
-        }
-      ]
+      }
     },
     {
       "id": "segment-00023",
