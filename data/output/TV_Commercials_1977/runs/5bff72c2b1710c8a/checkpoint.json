@@ -2544,7 +2544,7 @@
     {
       "start_sec": 26.18,
       "end_sec": 28.98,
-      "text": "Oscar Meyer, the first name in balona."
+      "text": "Oscar Mayer, the first name in balona."
     },
     {
       "start_sec": 28.98,
@@ -2559,7 +2559,7 @@
     {
       "start_sec": 36.12,
       "end_sec": 39.08,
-      "text": "You know you're getting solid value with Oscar Meyer"
+      "text": "You know you're getting solid value with Oscar Mayer"
     },
     {
       "start_sec": 39.08,
@@ -2574,7 +2574,7 @@
     {
       "start_sec": 45.52,
       "end_sec": 47.92,
-      "text": "They only meet Oscar Meyer uses."
+      "text": "They only meet Oscar Mayer uses."
     },
     {
       "start_sec": 47.92,
@@ -2584,7 +2584,7 @@
     {
       "start_sec": 49.72,
       "end_sec": 53.64,
-      "text": "Oscar Meyer selected Oscar Meyer winners of beef flanks"
+      "text": "Oscar Mayer selected Oscar Mayer winners of beef flanks"
     },
     {
       "start_sec": 53.64,
@@ -2599,7 +2599,7 @@
     {
       "start_sec": 58.36,
       "end_sec": 61.36,
-      "text": "Oscar Meyer, America's number one."
+      "text": "Oscar Mayer, America's number one."
     },
     {
       "start_sec": 61.36,
@@ -2809,17 +2809,17 @@
     {
       "start_sec": 184.7,
       "end_sec": 186.18,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 186.18,
       "end_sec": 187.74,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 187.74,
       "end_sec": 189.66,
-      "text": "I'd like a trisket."
+      "text": "I'd like a Triscuit."
     },
     {
       "start_sec": 189.66,
@@ -2834,7 +2834,7 @@
     {
       "start_sec": 192.42,
       "end_sec": 194.06,
-      "text": "they'd like a trisket wafer."
+      "text": "they'd like a Triscuit wafer."
     },
     {
       "start_sec": 194.06,
@@ -2864,7 +2864,7 @@
     {
       "start_sec": 201.02,
       "end_sec": 201.98,
-      "text": "Trisket wafers."
+      "text": "Triscuit wafers."
     },
     {
       "start_sec": 201.98,
@@ -2879,7 +2879,7 @@
     {
       "start_sec": 205.78,
       "end_sec": 207.82,
-      "text": "A trisket, a trisket,"
+      "text": "A Triscuit, a Triscuit,"
     },
     {
       "start_sec": 207.82,
@@ -3162,15 +3162,15 @@
       "provider": "ollama"
     },
     "window-00002": {
-      "description": "child holding Oscar Meyer Bologna",
+      "description": "child holding Oscar Mayer Bologna",
       "categories": [
         "food",
         "product",
         "advertising"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
-        "Oscar Meyer Bologna"
+        "Oscar Mayer Bologna"
       ],
       "safety": "unknown",
       "confidence": 0.8,
@@ -3203,7 +3203,7 @@
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00000-01.jpg",
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00001-00.jpg"
       ],
-      "transcript_excerpt": "I love to read it every day, if you allow G and A. Oscar Meyer, the first name in balona. How's that? What's behind the brand of hot dogs you buy?",
+      "transcript_excerpt": "I love to read it every day, if you allow G and A. Oscar Mayer, the first name in balona. How's that? What's behind the brand of hot dogs you buy?",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
@@ -3240,19 +3240,19 @@
       "frame_ids_sent": [
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-00.jpg"
       ],
-      "transcript_excerpt": "What's behind the brand of hot dogs you buy? You know you're getting solid value with Oscar Meyer and quality trusted for generations. There's wholesome meat protein from solid cuts of meat.",
+      "transcript_excerpt": "What's behind the brand of hot dogs you buy? You know you're getting solid value with Oscar Mayer and quality trusted for generations. There's wholesome meat protein from solid cuts of meat.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
     "window-00004": {
-      "description": "Oscar Meyer beef flanks in handy twin bags.",
+      "description": "Oscar Mayer beef flanks in handy twin bags.",
       "categories": [
         "meat",
         "beef",
         "flanks",
-        "Oscar Meyer"
+        "Oscar Mayer"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
         "beef flanks"
       ],
@@ -3260,8 +3260,8 @@
       "confidence": 0.8,
       "unknowns": [
         "US government inspectors",
-        "Oscar Meyer selected",
-        "Oscar Meyer winners"
+        "Oscar Mayer selected",
+        "Oscar Mayer winners"
       ],
       "id": "scene-00003",
       "start_sec": 45.0,
@@ -3279,18 +3279,18 @@
       "frame_ids_sent": [
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00002-01.jpg"
       ],
-      "transcript_excerpt": "There's wholesome meat protein from solid cuts of meat. They only meet Oscar Meyer uses. US government inspectors. Oscar Meyer selected Oscar Meyer winners of beef flanks in handy twin bags. The flavors as good as the good meat itself. Oscar Meyer, America's number one.",
+      "transcript_excerpt": "There's wholesome meat protein from solid cuts of meat. They only meet Oscar Mayer uses. US government inspectors. Oscar Mayer selected Oscar Mayer winners of beef flanks in handy twin bags. The flavors as good as the good meat itself. Oscar Mayer, America's number one.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
     "window-00005": {
-      "description": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+      "description": "Oscar Mayer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
       "categories": [
         "food",
         "advertising",
         "product"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
         "Del Monte family style corn"
       ],
@@ -3321,7 +3321,7 @@
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-00.jpg",
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00003-01.jpg"
       ],
-      "transcript_excerpt": "Oscar Meyer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
+      "transcript_excerpt": "Oscar Mayer, America's number one. There is a corn lover and there's nothing more gratifying to a corn lover than to know that her mother is giving her delicious Del Monte family style corn.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
@@ -3697,7 +3697,7 @@
       ]
     },
     "window-00013": {
-      "description": "A woman is talking about her family and their love for trisket wafers.",
+      "description": "A woman is talking about her family and their love for Triscuit wafers.",
       "categories": [
         "food",
         "family",
@@ -3705,14 +3705,14 @@
       ],
       "advertiser": null,
       "products": [
-        "trisket wafers",
+        "Triscuit wafers",
         "cheese"
       ],
       "safety": "unknown",
       "confidence": 0.8,
       "unknowns": [
         "family members",
-        "specific trisket recipe",
+        "specific Triscuit recipe",
         "location"
       ],
       "id": "scene-00004",
@@ -3739,7 +3739,7 @@
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00059-01.jpg",
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00060-00.jpg"
       ],
-      "transcript_excerpt": "The hardy boy is Nancy Drew Mysteries. It's happening all around the house right about now. I'd like a trisket. I'd like a trisket. I'd like a trisket. I know my family. And when they'd like a snack, they'd like a trisket wafer. Break with cheese.",
+      "transcript_excerpt": "The hardy boy is Nancy Drew Mysteries. It's happening all around the house right about now. I'd like a Triscuit. I'd like a Triscuit. I'd like a Triscuit. I know my family. And when they'd like a snack, they'd like a Triscuit wafer. Break with cheese.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama",
       "recovery_attempts": [
@@ -3756,15 +3756,15 @@
       ]
     },
     "window-00014": {
-      "description": "child eating a trisket wafer",
+      "description": "child eating a Triscuit wafer",
       "categories": [
         "food",
         "childhood",
         "advertising"
       ],
-      "advertiser": "Trisket",
+      "advertiser": "Triscuit",
       "products": [
-        "trisket wafers",
+        "Triscuit wafers",
         "natural whole wheat"
       ],
       "safety": "unknown",
@@ -3798,7 +3798,7 @@
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-00.jpg",
         "data/output/TV_Commercials_1977/runs/5bff72c2b1710c8a/frames/shot-00066-01.jpg"
       ],
-      "transcript_excerpt": "Break with cheese. Or with a dip. Neat with jam. Or just by themselves. They really are good. Trisket wafers. They're made from 100% natural whole wheat. And that's good, too. A trisket, a trisket, baked only by the biscoe.",
+      "transcript_excerpt": "Break with cheese. Or with a dip. Neat with jam. Or just by themselves. They really are good. Triscuit wafers. They're made from 100% natural whole wheat. And that's good, too. A Triscuit, a Triscuit, baked only by the biscoe.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama",
       "recovery_attempts": [

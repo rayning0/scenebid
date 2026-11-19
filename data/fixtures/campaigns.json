@@ -2,21 +2,6 @@
   "schema_version": "1.0",
   "campaigns": [
     {
-      "id": "campaign-food",
-      "name": "Harvest Kitchen",
-      "advertiser": "Harvest Kitchen",
-      "target_categories": [
-        "food",
-        "foods"
-      ],
-      "bid_cpm_usd": 6.25,
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen",
-      "creative": {
-        "format": "overlay"
-      }
-    },
-    {
       "id": "campaign-oscar-mayer-bologna",
       "name": "Oscar Mayer Bologna Campaign",
       "advertiser": "Oscar Mayer",

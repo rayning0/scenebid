@@ -2827,7 +2827,7 @@
       "analysis_status": "completed",
       "window_id": "window-00013",
       "intelligence": {
-        "summary": "A woman is talking about her family and their love for trisket wafers.",
+        "summary": "A woman is talking about her family and their love for Triscuit wafers.",
         "categories": [
           {
             "id": "food",
@@ -2893,7 +2893,7 @@
         "entities": [
           {
             "type": "product",
-            "name": "trisket wafers",
+            "name": "Triscuit wafers",
             "source": "vision_model",
             "evidence": [
               {
@@ -2944,7 +2944,7 @@
           "method": "vision_model",
           "reasons": [
             "family members",
-            "specific trisket recipe",
+            "specific Triscuit recipe",
             "location"
           ]
         }
@@ -2969,7 +2969,7 @@
       "analysis_status": "completed",
       "window_id": "window-00014",
       "intelligence": {
-        "summary": "child eating a trisket wafer",
+        "summary": "child eating a Triscuit wafer",
         "categories": [
           {
             "id": "food",
@@ -3035,7 +3035,7 @@
         "entities": [
           {
             "type": "product",
-            "name": "trisket wafers",
+            "name": "Triscuit wafers",
             "source": "vision_model",
             "evidence": [
               {
@@ -3077,7 +3077,7 @@
           }
         ],
         "primary_advertiser": {
-          "name": "Trisket",
+          "name": "Triscuit",
           "status": "identified",
           "evidence": []
         },

@@ -10,24 +10,6 @@
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -264,36 +246,9 @@
     "opportunity_end_sec": 20,
     "segment_id": "segment-00002",
     "opportunity_id": "opportunity-segment-00002",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -531,36 +486,9 @@
     "opportunity_end_sec": 35,
     "segment_id": "segment-00003",
     "opportunity_id": "opportunity-segment-00003",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -811,24 +739,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -1065,36 +975,9 @@
     "opportunity_end_sec": 65,
     "segment_id": "segment-00005",
     "opportunity_id": "opportunity-segment-00005",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -1332,36 +1215,9 @@
     "opportunity_end_sec": 80,
     "segment_id": "segment-00006",
     "opportunity_id": "opportunity-segment-00006",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -1599,36 +1455,9 @@
     "opportunity_end_sec": 95,
     "segment_id": "segment-00007",
     "opportunity_id": "opportunity-segment-00007",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -1879,24 +1708,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -2146,24 +1957,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -2403,24 +2196,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -2671,24 +2446,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -2928,24 +2685,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -3196,24 +2935,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -3450,36 +3171,9 @@
     "opportunity_end_sec": 200,
     "segment_id": "segment-00014",
     "opportunity_id": "opportunity-segment-00014",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -3720,24 +3414,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -3988,24 +3664,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -4245,24 +3903,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -4504,24 +4144,6 @@
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -4758,36 +4380,9 @@
     "opportunity_end_sec": 275,
     "segment_id": "segment-00019",
     "opportunity_id": "opportunity-segment-00019",
-    "status": "filled",
-    "winner": {
-      "campaign": "campaign-food",
-      "source": "",
-      "cpm": 6.25,
-      "category": "food",
-      "advertiser": "Harvest Kitchen",
-      "headline": "Make tonight delicious",
-      "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-    },
-    "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
+    "status": "no_fill",
+    "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -5028,24 +4623,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
@@ -5296,24 +4873,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -5563,24 +5122,6 @@
     "reason": "DEMO MODE: model safety ignored; highest eligible simulated bid meeting floor and matching scene category",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -5821,24 +5362,6 @@
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
       {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",
         "cpm": 8.4,
@@ -6078,24 +5601,6 @@
     "status": "no_fill",
     "reason": "DEMO MODE: model safety ignored; no eligible bid",
     "candidates": [
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "food",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
-      {
-        "campaign": "campaign-food",
-        "source": "",
-        "cpm": 6.25,
-        "category": "foods",
-        "advertiser": "Harvest Kitchen",
-        "headline": "Make tonight delicious",
-        "destination_url": "https://example.invalid/scenebid/harvest-kitchen"
-      },
       {
         "campaign": "campaign-oscar-mayer-bologna",
         "source": "",

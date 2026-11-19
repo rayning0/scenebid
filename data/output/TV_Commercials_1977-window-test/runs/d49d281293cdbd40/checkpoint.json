@@ -99,7 +99,7 @@
     {
       "start_sec": 26.26,
       "end_sec": 29.26,
-      "text": "Oscar Meyer, the first name in balona."
+      "text": "Oscar Mayer, the first name in balona."
     },
     {
       "start_sec": 29.26,
@@ -109,7 +109,7 @@
     {
       "start_sec": 35.56,
       "end_sec": 41.56,
-      "text": "You know you're getting solid value with Oscar Meyer and quality trusted for generations."
+      "text": "You know you're getting solid value with Oscar Mayer and quality trusted for generations."
     },
     {
       "start_sec": 41.56,
@@ -119,7 +119,7 @@
     {
       "start_sec": 45.56,
       "end_sec": 47.56,
-      "text": "They only meet Oscar Meyer uses."
+      "text": "They only meet Oscar Mayer uses."
     },
     {
       "start_sec": 47.56,
@@ -129,12 +129,12 @@
     {
       "start_sec": 49.56,
       "end_sec": 51.56,
-      "text": "Oscar Meyer selected."
+      "text": "Oscar Mayer selected."
     },
     {
       "start_sec": 51.56,
       "end_sec": 54.56,
-      "text": "Oscar Meyer winners in beef ranks in handy twin bags."
+      "text": "Oscar Mayer winners in beef ranks in handy twin bags."
     },
     {
       "start_sec": 54.56,
@@ -144,7 +144,7 @@
     {
       "start_sec": 57.56,
       "end_sec": 59.56,
-      "text": "Oscar Meyer, America."
+      "text": "Oscar Mayer, America."
     }
   ],
   "annotations": {
@@ -183,14 +183,14 @@
       "provider": "ollama"
     },
     "window-00002": {
-      "description": "child holding Oscar Meyer Bologna",
+      "description": "child holding Oscar Mayer Bologna",
       "categories": [
         "food",
         "advertising"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
-        "Oscar Meyer Bologna"
+        "Oscar Mayer Bologna"
       ],
       "safety": "unknown",
       "confidence": 0.8,
@@ -218,20 +218,20 @@
           "window_index": 1
         }
       ],
-      "transcript_excerpt": "I love to read it every day, and if you allow G and A. Oscar Meyer, the first name in balona. What's behind the brand of hot dogs you buy?",
+      "transcript_excerpt": "I love to read it every day, and if you allow G and A. Oscar Mayer, the first name in balona. What's behind the brand of hot dogs you buy?",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
     "window-00003": {
-      "description": "Oscar Meyer hot dogs in a package.",
+      "description": "Oscar Mayer hot dogs in a package.",
       "categories": [
         "food",
         "meat",
         "packaging"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
-        "Oscar Meyer hot dogs"
+        "Oscar Mayer hot dogs"
       ],
       "safety": "unknown",
       "confidence": 0.8,
@@ -252,7 +252,7 @@
           "window_index": 2
         }
       ],
-      "transcript_excerpt": "What's behind the brand of hot dogs you buy? You know you're getting solid value with Oscar Meyer and quality trusted for generations. There's holds of meat protein from solid cuts of meat.",
+      "transcript_excerpt": "What's behind the brand of hot dogs you buy? You know you're getting solid value with Oscar Mayer and quality trusted for generations. There's holds of meat protein from solid cuts of meat.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     },
@@ -264,7 +264,7 @@
         "grill",
         "skewers"
       ],
-      "advertiser": "Oscar Meyer",
+      "advertiser": "Oscar Mayer",
       "products": [
         "meat skewers"
       ],
@@ -286,7 +286,7 @@
           "window_index": 3
         }
       ],
-      "transcript_excerpt": "There's holds of meat protein from solid cuts of meat. They only meet Oscar Meyer uses. U.S. government-inspective. Oscar Meyer selected. Oscar Meyer winners in beef ranks in handy twin bags. The flavors as good as the good meat itself. Oscar Meyer, America.",
+      "transcript_excerpt": "There's holds of meat protein from solid cuts of meat. They only meet Oscar Mayer uses. U.S. government-inspective. Oscar Mayer selected. Oscar Mayer winners in beef ranks in handy twin bags. The flavors as good as the good meat itself. Oscar Mayer, America.",
       "model": "qwen2.5vl:3b",
       "provider": "ollama"
     }

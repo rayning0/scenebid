@@ -14,7 +14,7 @@
     ],
     "segment_id": "segment-00001",
     "start_sec": 0,
-    "summary": "child holding bologna and talking"
+    "summary": "child holding a toy and talking"
   },
   {
     "categories": [
@@ -150,12 +150,12 @@
     "id": "opportunity-segment-00009",
     "products": [
       {
-        "name": "Almond Joy"
+        "name": "M\u0026M's"
       }
     ],
     "segment_id": "segment-00009",
     "start_sec": 120,
-    "summary": "A group of people are eating Almond Joy candy, with one person in the foreground holding a tube of Almond Joy and another person in the background also holding a tube. The scene is set outdoors, possibly at a park or event, with people in the background also holding Almond Joy's candy bars."
+    "summary": "A group of people are eating M\u0026M's candy, with one person in the foreground holding a tube of M\u0026M's and another person in the background also holding a tube. The scene is set outdoors, possibly at a park or event, with people in the background also holding M\u0026M's tubes."
   },
   {
     "categories": [
@@ -213,7 +213,7 @@
     "id": "opportunity-segment-00013",
     "products": [
       {
-        "name": "trisket wafers"
+        "name": "Triscuit wafers"
       },
       {
         "name": "cheese"
@@ -221,7 +221,7 @@
     ],
     "segment_id": "segment-00013",
     "start_sec": 180,
-    "summary": "A woman is talking about her family and their love for trisket wafers."
+    "summary": "A woman is talking about her family and their love for Triscuit wafers."
   },
   {
     "categories": [
