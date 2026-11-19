@@ -17,14 +17,14 @@ explains each decision.
 Relevant Go decisioning code:
 
 - [`cmd/scenebid/main.go`](cmd/scenebid/main.go): implements the `decide`
-  command and the HTTP `serve` mode, including the `/api/decision`,
-  `/api/opportunities`, and `/api/context` playback endpoints.
+command and the HTTP `serve` mode, including the `/api/decision`,
+`/api/opportunities`, and `/api/context` playback endpoints.
 - [`internal/auction/auction.go`](internal/auction/auction.go): evaluates
-  bids and selects eligible winners or returns no-fill decisions.
+bids and selects eligible winners or returns no-fill decisions.
 - [`internal/model/model.go`](internal/model/model.go): defines bids and
-  ad-decision data structures.
+ad-decision data structures.
 - [`internal/model/contract.go`](internal/model/contract.go): defines the
-  generated analysis and ad-opportunity contract consumed by decisioning.
+generated analysis and ad-opportunity contract consumed by decisioning.
 
 ## Problem
 
@@ -61,6 +61,7 @@ At 187.5 secs, see overlay ad #4, for Triscuit wafers:
 ![Triscuit overlay ad](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_ad4.png)
 
 3. In 2 cases, we see overlay ads:
+
 - If video naturally hits that ad time while playing.
 - If we click orange dot placed at the ad time.
 
@@ -351,19 +352,21 @@ flowchart TD
     P["Publisher video"] --> S["Amazon S3: source video"]
     S --> Q["EventBridge + SQS: durable jobs"]
     Q --> W["Step Functions: analysis workflow"]
-    W --> C["CPU jobs: probe, shots, frames"]
+    W --> CPU["CPU jobs: probe, shots, frames"]
     W --> G["AWS Batch GPU jobs: speech and vision"]
-    C --> G
+    CPU --> G
     G --> V["Validation and publishing"]
     V --> D["PostgreSQL: scene metadata"]
     D --> R["Redis: active scene context"]
     R --> A["Go ad decisioning service"]
-    A --> B["SSP and DSP demand"]
-    A --> C["Player: contextual overlay"]
+    A -->|bid request| B["SSP and DSP demand"]
+    B -->|bid response| A
+    PLAYER["Player: contextual overlay"] -->|opportunity request| A
+    A -->|ad decision| PLAYER
     S --> H["MediaConvert: HLS packaging"]
     H --> N["CloudFront CDN"]
-    N --> C
-    C --> E["Kafka: playback and ad events"]
+    N --> PLAYER
+    PLAYER --> E["Kafka: playback and ad events"]
 ```
 
 **Ingest and analysis.** Publishers upload videos to **Amazon S3**, which gives durable, scalable media storage. Or publishers give us MRSS feeds with links to their new MP4 videos for movies and TV episodes. We download videos and their metadata from these MRSS links to S3. S3 notifications or **Amazon EventBridge** place durable jobs on **Amazon SQS**, so ingestion can absorb bursts without losing work.
@@ -372,14 +375,16 @@ flowchart TD
 
 Use CPU workers for probing, FFmpeg, shot detection, and frame extraction. Use **AWS Batch GPU compute environments** for offline transcription and vision jobs; Batch is a simpler starting point than operating Kubernetes GPU pools. Compare managed model APIs such as **Amazon Bedrock** or **SageMaker asynchronous inference** against self-hosted open-weight models. Move to **Amazon EKS** with NVIDIA GPU nodes only when sustained utilization, custom scheduling, or model-serving requirements justify its operational cost.
 
-**Storage and serving.** Keep source video, frames, transcripts, evidence, and immutable annotation manifests in **Amazon S3**. Store searchable metadata, model versions, review state, and publication status in **Amazon Aurora PostgreSQL**; use `pgvector` or OpenSearch only if semantic search is required. Keep frequently requested live context and short-lived decision caches in **Amazon ElastiCache for Redis**. Run stateless Go API instances behind a load balancer and scale them independently of analysis workers. For linear TV channels, get RTP video/audio streams from publishers, then use **AWS Elemental MediaLive** and **MediaPackage** to make HLS renditions, with **Amazon CloudFront** caching them close to viewers.
+**Storage and serving.** Keep source video, frames, transcripts, evidence, and immutable annotation manifests in **Amazon S3**. Store searchable metadata, model versions, review state, and publication status in **Amazon Aurora PostgreSQL**; use `pgvector` or OpenSearch only if semantic search is required. Keep frequently requested live context and short-lived decision caches in **Amazon ElastiCache for Redis**. Run stateless Go API instances behind a load balancer and scale them independently of analysis workers. For VOD, use **AWS Elemental MediaConvert** to package the source asset as HLS and **Amazon CloudFront** to cache it close to viewers.
 
 **Analysis cost control.** Do not send every frame to a large multimodal model. Use a cascade: FFmpeg and shot detection first, transcription once per title, inexpensive visual classification/OCR/logo detection next, and expensive multimodal reasoning only for ambiguous, commercial, or safety-relevant segments. Cache results by content hash, model version, prompt version, and frame hash. Batch requests where possible and retain confidence, evidence, token usage, GPU-seconds, and cost for every stage.
 
 **Ad decisioning.** At an eligible playback moment, the player requests an ad decision using the title and content timestamp. The Go service retrieves the
-precomputed scene context, applies publisher and campaign rules, and queries demand partners where appropriate. **OpenRTB** can carry programmatic
-bid requests and responses; the player can render an overlay or use a supported video-ad workflow. Apply deadlines and return no-fill when context
-or demand is unavailable. Never run multimodal inference during a viewer request: one analysis of a title must serve many playback sessions.
+precomputed scene context, applies publisher and campaign rules, and queries demand partners where appropriate. Demand integrations must account for
+budget pacing, frequency caps, ad-pod constraints, bid timeouts, and no-bid responses. **OpenRTB** can carry programmatic bid requests and responses;
+the player can render an overlay. SSAI is a separate future path in which an ad server or stitching service requests the decision and modifies the stream
+or manifest before delivery. Apply deadlines and return no-fill when context or demand is unavailable. Never run multimodal inference during a viewer
+request: one analysis of a title must serve many playback sessions.
 
 **Measurement.** Publish impression, completion, click, and error events to **Apache Kafka**, then process and aggregate them with **Apache Flink**
 and store analytical results in **Amazon S3** for reporting. Kafka provides a durable event stream and replay; Flink supports streaming aggregation and
@@ -389,7 +394,7 @@ late-event handling. A selected bid is not an impression: record display events 
 
 ```mermaid
 flowchart TD
-    L["Live channel feed"] --> M["MediaLive and MediaPackage: HLS"]
+    L["Live channel feed: HLS or other publisher format"] --> M["MediaLive and MediaPackage: HLS"]
     M --> N["CloudFront CDN"]
     M --> X["Analysis worker: sample video and audio"]
     X --> K["Kafka: timestamped observations"]
@@ -403,45 +408,64 @@ flowchart TD
 ```
 
 **Ingest and inference.** **AWS Elemental MediaLive** encodes the incoming
-channel feed, and **MediaPackage** creates HLS outputs for distribution
-through CloudFront. A separate analysis service reads the channel's HLS
-segments, extracts sampled frames and audio with FFmpeg, and runs
-transcription and vision inference in short windows. Process the feed
-**once per channel**, then reuse its context for all viewers. This avoids
-multiplying AI inference cost by audience size. Preserve SCTE-35 ad markers
-where available; they identify ad breaks and do not themselves provide
-scene-level understanding.
+channel feed, which may arrive as HLS or another publisher-provided format,
+and **MediaPackage** creates HLS outputs for distribution through CloudFront.
+A separate analysis service reads the feed, extracts sampled frames and audio
+with FFmpeg, and runs transcription and vision inference in short windows.
+Process the feed **once per channel**, then reuse its context for all viewers.
+This avoids multiplying AI inference cost by audience size. Preserve SCTE-35
+ad markers where available; they identify ad breaks and do not themselves
+provide scene-level understanding.
 
-**Timing and decisions.** Publish observations to Kafka keyed by channel;
-**Flink** aligns video, transcript, and scene events using media timestamps
-and handles late or out-of-order observations. Store current and recent
-channel context in Redis with short expiration. The player or SSAI service
+**Timing and decisions.** At larger scale, publish observations to Kafka keyed
+by channel; **Flink** aligns video, transcript, and scene events using media
+timestamps and handles late or out-of-order observations. For an initial
+deployment, a simpler worker plus Redis may be sufficient. Store current and
+recent channel context in Redis with short expiration. The player or SSAI service
 sends its channel and playback timestamp to the Go decisioning service,
 which retrieves the matching context and selects eligible demand. An overlay
 can be rendered client-side. A linear video ad requires a separate ad
-decision and playback workflow, potentially using VAST and SSAI.
+decision and playback workflow, potentially using VAST and SSAI. The shared
+context contains the scene description, category, media timestamp, and
+safety signals. The session-specific decision contains campaign eligibility,
+privacy-permitted audience signals, frequency caps, pacing, and the final
+selection. A channel ID alone is insufficient because viewers may be at
+different playback positions due to buffering, DVR, or restart behavior.
+
+**Known assets and live content.** FAST channels often play assets available
+before airtime. When the source asset is known, analyze it ahead of time and
+map channel playback timestamps to the asset's stored scene timeline. Use
+real-time inference for live, newly inserted, or unmatched content. Measure
+the analysis lead at the actual feed tap: context must be ready before each
+viewer or SSAI workflow reaches the relevant moment. Shared channel context
+is reused across viewers, while campaign eligibility, frequency caps, and
+final decisions can vary by session.
 
 **Latency and reliability.** Budget time for HLS segment availability,
 inference, context publication, auction, and player delivery. Viewer HLS
 latency may give the analysis pipeline a small head start, but this is not
-guaranteed; measure it. If context arrives too late, a model fails, or a
-request exceeds its deadline, fall back to a publisher-approved generic ad
-or no-fill rather than delaying playback. Support discontinuities, channel
-restarts, and DVR/seek by mapping media timestamps to the viewer's playback
-position instead of assuming every viewer is at the live edge.
+guaranteed; measure it at the actual analysis feed tap.
+
+A viewer watching 30 seconds behind the channel's analysis point may give the pipeline a potential 30-second lead, but scene detection, inference, publication, ad selection, and delivery must all finish before that viewer reaches the opportunity. A viewer closer to live, or a pipeline consuming already-delayed HLS segments, may leave little or no lead.
+
+The current demo saw roughly 25 seconds of vision inference per 15-second window; that is not a production
+benchmark, but a serial worker at that rate would fall behind a continuous
+TV channel. Measure whether batching, smaller models, parallelism, or
+pre-analysis makes the pipeline faster than incoming video. If context arrives
+too late, a model fails, or a request exceeds its deadline, fall back to a
+publisher-approved generic ad or no-fill rather than delaying playback.
+Support discontinuities, channel restarts, and DVR/seek by mapping media
+timestamps to the viewer's playback position instead of assuming every viewer
+is at the live edge.
 
 #### Capacity and tradeoffs
 
 **Recommended rollout.**
 
-1. Start with S3, SQS, Step Functions, AWS Batch, S3 artifacts, PostgreSQL,
-   and the stateless Go API.
-2. Separate CPU and GPU queues, add checkpointed retries, batch inference,
-   content-hash caching, and dashboards for queue depth and GPU utilization.
-3. Add Bedrock or SageMaker where managed inference is cheaper or easier than
-   self-hosting.
-4. Consider EKS and a persistent model server such as vLLM only after measured
-   workload justifies GPU-pool and scheduling complexity.
+1. Start with S3, SQS, Step Functions, AWS Batch, S3 artifacts, PostgreSQL, and the stateless Go API.
+2. Separate CPU and GPU queues, add checkpointed retries, batch inference, content-hash caching, and dashboards for queue depth and GPU utilization.
+3. Add Bedrock or SageMaker where managed inference is cheaper or easier than self-hosting.
+4. Consider EKS and a persistent model server such as vLLM only after measured workload justifies GPU-pool and scheduling complexity.
 
 Track these metrics before choosing a more complex platform:
 
@@ -449,23 +473,22 @@ Track these metrics before choosing a more complex platform:
 - Input/output tokens and total analysis cost per video-hour.
 - Queue wait time, end-to-end analysis latency, and retry rate.
 - GPU utilization, cache hit rate, and percentage of segments escalated to a
-  larger model.
+larger model.
 - Annotation confidence, review rate, and false-positive/false-negative
-  rates for products, brands, and safety.
-
+rates for products, brands, and safety.
 - **VOD throughput:** As an example, 5,000 videos/day averaging 30 minutes
-  is 150,000 video-minutes/day. Required worker capacity depends on measured
-  model throughput, input length, GPU utilization, retries, and peak ingest
-  rate—not just the number of files.
+is 150,000 video-minutes/day. Required worker capacity depends on measured
+model throughput, input length, GPU utilization, retries, and peak ingest
+rate—not just the number of files.
 - **Viewer scale:** Millions of viewers **per day** does not specify
-  concurrent viewers or requests per second. Size and load-test decisioning,
-  Redis, event ingestion, and partner connections for peak concurrency and
-  ad opportunities per session. Cache shared context; keep viewer-specific
-  decisions and identity separate.
+concurrent viewers or requests per second. Size and load-test decisioning,
+Redis, event ingestion, and partner connections for peak concurrency and
+ad opportunities per session. Cache shared context; keep viewer-specific
+decisions and identity separate.
 - **Quality and cost:** Sampling fewer frames and using smaller models reduce
-  inference cost but can miss brief products or unsafe moments. Evaluate
-  accuracy against reviewed examples and retain evidence and model versions.
+inference cost but can miss brief products or unsafe moments. Evaluate
+accuracy against reviewed examples and retain evidence and model versions.
 - **Operational complexity:** Kafka, Flink, and Kubernetes add operational
-  work. Start with managed services or simpler queues where sufficient, then
-  introduce the extra components when measured scale or streaming requirements
-  justify them.
+work. Start with managed services or simpler queues where sufficient, then
+introduce the extra components when measured scale or streaming requirements
+justify them.
