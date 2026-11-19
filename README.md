@@ -1,39 +1,58 @@
 # SceneBid: AI Video Intelligence and Contextual Ad Decisioning
+
 ### by Raymond Gan
 
-SceneBid is a local proof of concept that analyzes video and audio to find
-timestamped contextual advertising opportunities. It uses a compilation of
-1977 television commercials as a sample video.
+SceneBid is a local proof of concept that analyzes video and audio to find timestamped contextual ad opportunities. It uses a compilation of [1977 television commercials](https://archive.org/details/1977TVCommercials) as a sample video.
 
-The project combines real AI-generated video intelligence with fictional
-advertiser campaigns and simulated bids. A Go decisioning service selects
-eligible ads using the generated annotations and explains each decision.
-The browser demo plays the video and displays contextual overlays,
-timestamped dialogue, scene summaries, and active ad information.
+I combine real AI-generated video intelligence with fictional ad campaigns and simulated bids:
+
+1. The Python analysis worker produces timestamped transcript and scene annotations.
+2. The Go decisioning service generates simulated ad decisions and serves playback APIs. It picks eligible ads using the generated annotations and explains each decision.
+3. The browser shows synchronized contextual information and overlay ads at the right video moments. It plays the video and shows contextual overlays, timestamped dialogue, scene summaries, and active ad info.
 
 ## Problem
 
-Streaming publishers need to understand what is happening at a particular
-moment in a video, determine whether an ad is suitable, and choose among
-advertisers interested in that context.
+Streaming video publishers must understand what's happening at a specific moment in a video, decide if an ad matches that moment, and choose among advertisers interested in that context.
 
-SceneBid explores the connection between:
+SceneBid explores the relation between:
 
-- Multimodal video and audio understanding.
+- Multimodal video and audio AI understanding.
 - Timestamped scene-level metadata.
-- Contextual targeting and brand separation.
+- Contextual ad targeting and brand separation.
 - Ad eligibility and auction decisions.
 - Video playback and contextual ad presentation.
 
-## Project Status
+## Demo
 
-The end-to-end local demo is implemented for the sample video. The analysis
-worker produces timestamped transcript and scene annotations, the Go service
-generates simulated decisions and serves playback APIs, and the browser
-renders synchronized contextual information and overlay ads.
+I finished the "P0: end-to-end" local demo for my sample video!
 
-Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids
-are still fictional.
+1. In Terminal, first run `go run ./cmd/scenebid serve`
+2. Playing my `TV_Commercials_1977.mp4` video in http://localhost:8080/ shows this:
+
+Start of video, showing Oscar Mayer bologna commercial. No overlay ad yet:
+![Start of video. Oscar Mayer commercial.](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_no_ad.png)
+
+At 22.5 secs, see overlay ad #1 at bottom of video. It's for Oscar Mayer Bologna. Clicking "Learn more" link opens Oscar Mayer site:
+![Oscar Mayer Bologna overlay ad](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_ad1.png)
+
+At 67.5 secs, see overlay ad #2, for Del Monte corn:
+![Del Monte corn overlay ad](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_ad2.png)
+
+At 157.5 secs, see overlay ad #3, for "Hardy Boys and Nancy Drew Mysteries" TV show:
+![Hardy Boys TV show overlay ad](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_ad3.png)
+
+At 187.5 secs, see overlay ad #4, for Triscuit wafers:
+![Triscuit overlay ad](https://github.com/rayning0/scenebid/blob/main/img/scenebid_demo_ad4.png)
+
+3. In 2 cases, we see overlay ads:
+- If video naturally hits that ad time while playing.
+- If we click orange dot placed at the ad time.
+
+4. Right side shows "Dialogue," which changes as video plays.
+5. Right side shows "Scene Summary," AI understanding of what's happening in each scene.
+6. As each ad pops up, right side shows "Ad Playing."
+
+Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids are still fictional.
 
 ## MVP Scope
 
@@ -44,9 +63,9 @@ are still fictional.
 - Transcribe speech with faster-whisper.
 - Analyze frames and transcript excerpts with AI models.
 - Produce timestamped scene annotations containing visual and audio
-  evidence, categories, and model metadata.
+evidence, categories, and model metadata.
 - Identify likely advertisers or products when supported by the available
-  evidence; retain unknown values when uncertain.
+evidence; retain unknown values when uncertain.
 - Optionally index embeddings for visual and transcript search.
 
 ### Simulated demand
@@ -55,7 +74,7 @@ are still fictional.
 - Evaluate campaign categories, bid floors, and configured separation rules.
 - Return the winning eligible bid or a no-fill reason.
 - Optionally exchange mock OpenRTB-style requests and responses between
-  simulated SSP and DSP components.
+simulated SSP and DSP components.
 
 ### Real playback and presentation
 
@@ -86,14 +105,17 @@ flowchart TD
 
 1. Place the source MP4 under `data/input/`.
 2. Analyze its audio and video to produce timestamped model-generated
+
    annotations.
 3. Package the video into an HLS playlist and media segments.
 4. Start the Go API and browser player.
 5. During playback, look up the current video time in the annotations.
 6. Evaluate fictional campaign bids against the current context and rules.
 7. Display the winning overlay, campaign logo, and decision reason, or show a
+
    no-fill explanation.
 8. Update the dialogue, scene summary, and active-ad panel as playback time
+
    advances.
 
 Analysis happens before playback. Ad selection and overlay presentation
@@ -120,7 +142,7 @@ happen during playback.
 ### P2: Ad-tech integration
 
 - Simulate SSP/DSP communication with mock OpenRTB-style requests and
-  responses.
+responses.
 - Add request deadlines, no-bid behavior, and decision traces.
 - Add simple playback and overlay event logging.
 
@@ -143,14 +165,13 @@ happen during playback.
 
 ## Run and Verify
 
-The first end-to-end worker can be run with (the default is a 30-second
-development range):
+The Go wrapper can run analysis, decision generation, and the local server:
 
 ```bash
 go test ./...
 go run ./cmd/scenebid analyze \
   -video data/input/TV_Commercials_1977.mp4 \
-  -at 5
+  -start 0
 go run ./cmd/scenebid decide
 ```
 
@@ -164,11 +185,11 @@ The analysis worker defaults to local Ollama:
 For an OpenAI-compatible vision service, set the provider, model, endpoint,
 and API key explicitly. The worker also supports:
 
-- `WHISPER_MODEL`, default `base`, for faster-whisper transcription.
+- `WHISPER_MODEL`, default `base`, for `faster-whisper` transcription.
 - `VISION_MAX_TOKENS` is not an environment variable; use
-  `--vision-max-tokens` when invoking the worker.
+`--vision-max-tokens` when invoking the worker.
 - `VISION_ENDPOINT` defaults to the Ollama endpoint above and can point to
-  another OpenAI-compatible chat endpoint.
+another OpenAI-compatible chat endpoint.
 
 The Go `analyze` command invokes the worker with the selected video and
 analysis range. Worker configuration is read from the environment or uses
@@ -181,11 +202,61 @@ VISION_ENDPOINT=https://api.openai.com/v1/chat/completions \
 VISION_API_KEY=... \
 go run ./cmd/scenebid analyze \
   -video data/input/TV_Commercials_1977.mp4 \
-  -at 5
+  -start 0 \
+  -end 360
 ```
 
-To run the completed six-minute analysis in the browser without re-running
-AI analysis:
+### Analysis worker command and parameters
+
+For the demo, to analyze the first 6 minutes of video, I used the worker directly:
+
+```bash
+VISION_PROVIDER=ollama \
+VISION_MODEL=qwen2.5vl:3b \
+WHISPER_MODEL=analysis-worker/models/faster-whisper-base \
+analysis-worker/.venv/bin/python analysis-worker/main.py \
+  data/input/TV_Commercials_1977.mp4 \
+  data/output/TV_Commercials_1977 \
+  --start 0 \
+  --end 360 \
+  --frames-per-shot 2 \
+  --shot-threshold 27
+```
+
+The command-line parameters accepted by `analysis-worker/main.py` are:
+
+- `video`: path to input MP4 video file.
+- `output_dir`: path for `analysis.json`, `transcript.json`,
+extracted frames, and checkpoint data.
+- `--start`: starts analyzing video from this time (seconds). `0` starts at the
+beginning.
+- `--end`: analyzes video up to this time (seconds). `360` analyzes the first six
+minutes. If omitted, analyzes the full video.
+- `--shot-threshold`: scene-change sensitivity used by shot detection.
+Default = `27`, which my demo used.
+- `--frames-per-shot`: number of frames sampled from each detected shot.
+Default = `2`, which my demo used.
+- `--vision-max-tokens`: maximum tokens requested for each vision response.
+Default = `512`.
+- `--vision-mode`: vision grouping mode, either `window` or `shot`. Default = `window`, which my demo used.
+- `--window-sec`: duration of each fixed analysis window when using window
+mode. Default = `15.0` seconds.
+- `--vision-timeout`: per-request vision client timeout (seconds). Default = `180`.
+- `--resume`: resume a compatible checkpoint instead of starting the
+checkpointed window pipeline from scratch.
+- `--whisper-model`: `faster-whisper` model name or local model directory.
+Default = `base`, but the demo used the downloaded local directory
+`analysis-worker/models/faster-whisper-base` from Hugging Face.
+- `--vision-provider`: vision backend. Default = `ollama`.
+- `--vision-model`: vision model name. Default = `qwen3-vl:8b`. My demo
+used `qwen2.5vl:3b`.
+- `--vision-endpoint`: chat endpoint for selected vision provider. Ollama default = `http://localhost:11434/api/chat`.
+- `--api-key`: optional vision API key, read by default from `VISION_API_KEY`.
+
+The demo downloaded the `faster-whisper-base` model [from Hugging Face](https://huggingface.co/Systran/faster-whisper-base) and
+passed its local directory through `WHISPER_MODEL`. The name `base` alone did not work with the installed Python transcription libraries, so using the downloaded local model directory made model resolution explicit and reproducible. Install Python dependencies from `analysis-worker/requirements.txt` inside `analysis-worker/.venv` before running the command.
+
+To run the completed six-minute analysis in the browser without re-running AI analysis:
 
 ```bash
 go test ./...
@@ -194,9 +265,9 @@ go run ./cmd/scenebid serve
 open http://localhost:8080
 ```
 
-The demo serves the locally generated HLS playlist when
-`data/output/TV_Commercials_1977/hls/index.m3u8` exists. Generate it from the
-local MP4 when needed:
+The demo serves the locally generated HLS playlist with .ts segments when
+`data/output/TV_Commercials_1977/hls/index.m3u8` exists. Create it from the
+local MP4 file when needed:
 
 ```bash
 ffmpeg -i data/input/TV_Commercials_1977.mp4 \
@@ -221,9 +292,9 @@ The server also exposes `/api/opportunities`, `/api/decision?time=...`, and
 `/api/context` for the browser demo.
 
 `analyze` runs `analysis-worker/main.py`, which detects shots and extracts
-frames from the actual MP4, transcribes with faster-whisper, and sends each
+frames from the actual MP4, transcribes with `faster-whisper`, and sends each
 shot's frames and transcript excerpt to the configured vision-language
-provider. Use `-end -1` for the full video, or invoke the worker directly for
+provider. Use `-end -1` to analyze the full video, or invoke the worker directly for
 all options. A provider/model failure exits nonzero; no fixture annotations are
 substituted.
 
@@ -235,13 +306,13 @@ and `VISION_API_KEY`; Ollama uses `VISION_PROVIDER=ollama`,
 ## MVP Limitations
 
 - Model outputs can be inaccurate; detected objects, brands, and safety
-  assessments require validation.
+assessments require validation.
 - The input is a compilation of commercials, not a normal TV episode.
 - Campaigns, bids, and demand-side participants are fictional.
 - An overlay is rendered by the browser; this does not itself demonstrate
-  server-side ad insertion.
+server-side ad insertion.
 - The project is not a production ad server or a claim of OpenRTB
-  compliance.
+compliance.
 - Source video and generated media should stay out of the repository.
 - Verify usage and redistribution rights for video and creative assets.
 
@@ -254,7 +325,7 @@ and `VISION_API_KEY`; Ollama uses `VISION_PROVIDER=ollama`,
 - **CPM:** The price per 1,000 impressions.
 - **Bid floor:** The minimum eligible bid for an opportunity.
 - **OpenRTB:** A protocol used to exchange programmatic bid requests and
-  responses.
+responses.
 - **VAST:** A standard for describing video ad creatives and tracking.
 - **SSAI:** Server-side ad insertion.
 - **Impression:** A measured ad-display event, distinct from selecting an ad.
