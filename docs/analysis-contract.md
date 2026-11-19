@@ -17,6 +17,29 @@ Unknown or unsafe `brand_safety` must produce no fill.
 
 The worker never reads campaigns, answer keys, chapter lists, or existing
 annotations. Evaluation belongs in a separate post-inference command/module.
+
+For the overlay demo, `scenebid decide` derives `data/output/TV_Commercials_1977/opportunities.json`
+from actual segment windows when the worker did not emit opportunities. These
+are timing-rule candidates, not model-selected moments or verified boundaries.
+The demo deliberately uses `DecideDemo`: it preserves and displays model
+safety while ignoring it for this fictional bid evaluation. This is not SSAI,
+OpenRTB, or a production auction.
+
+Run without re-analysis:
+
+```bash
+go test ./...
+go run ./cmd/scenebid decide
+go run ./cmd/scenebid serve
+# open http://localhost:8080
+```
+
+The server serves `/media/TV_Commercials_1977.m3u8` if an HLS playlist exists
+under `data/input`; otherwise the browser falls back to
+`/media/TV_Commercials_1977.mp4`. Generate HLS locally with:
+`ffmpeg -i data/input/TV_Commercials_1977.mp4 -c:v copy -c:a aac -hls_time 6 -hls_playlist_type vod data/input/TV_Commercials_1977.m3u8`.
+Category aliases are intentionally small and explicit: `camera` maps to
+`cameras`, and `foods` maps to `food`; matching is otherwise case-insensitive.
 The Go service reads this contract and independently reads fictional campaigns.
 
 Window mode labels segments `analysis_window`; a fixed window is not a

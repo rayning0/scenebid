@@ -76,7 +76,9 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
             compact["messages"] = [dict(payload["messages"][0])]
             compact["messages"][0]["content"] = (
                 "Return compact JSON only: description, categories, advertiser, "
-                "products, safety, confidence, unknowns. Use null or [] when unknown."
+                "products, safety, confidence, unknowns. Use null or [] when unknown. "
+                "Transcript excerpt for this same window: " +
+                transcript_excerpt(transcript["segments"], shot["start_sec"], shot["end_sec"])
             )
             request_payloads.append(compact)
         annotation = None
@@ -97,6 +99,8 @@ def analyze_frames(frames, shots, transcript, provider, model, endpoint=None,
                           "products": [], "safety": "unknown", "confidence": None,
                           "unknowns": ["all vision attempts failed"],
                           "analysis_status": "failed", "recovery_attempts": attempts}
+            annotation["status"] = "failed"
+            annotation["partial"] = True
         annotation.update({
             "id": f"scene-{index:05d}", "start_sec": shot["start_sec"],
             "end_sec": shot["end_sec"], "frame_evidence": evidence,
