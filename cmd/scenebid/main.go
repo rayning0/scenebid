@@ -73,9 +73,6 @@ func main() {
 		opportunities := make([]map[string]interface{}, 0)
 		for _, s := range a.Segments {
 			ops := s.AdOpportunities
-			if len(ops) == 0 { // derived from every analyzed window; never mutates analysis.json
-				ops = []model.ContractOpportunity{{ID: "opportunity-" + s.ID, Format: "overlay", StartSec: s.StartSec, EndSec: min(s.EndSec, s.StartSec+5), Status: "candidate"}}
-			}
 			for _, op := range ops {
 				d := model.Decision{DecisionID: "decision-" + op.ID, VideoID: a.Video.ID,
 					ContentTimeSec: op.StartSec, SegmentID: s.ID, OpportunityID: op.ID,
@@ -83,6 +80,9 @@ func main() {
 				scene := model.Scene{ID: s.ID, Safety: s.Intelligence.BrandSafety.Status}
 				for _, cat := range s.Intelligence.Categories {
 					scene.Categories = append(scene.Categories, cat.ID)
+				}
+				for _, entity := range s.Intelligence.Entities {
+					scene.Categories = append(scene.Categories, entity.Name)
 				}
 				var bids []model.Bid
 				for _, c := range campaigns.Campaigns {
@@ -126,11 +126,24 @@ func main() {
 		http.Handle("/", http.FileServer(http.Dir("web")))
 		http.Handle("/media/TV_Commercials_1977.mp4", http.StripPrefix("/media/", http.FileServer(http.Dir("data/input"))))
 		http.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir("data/output/TV_Commercials_1977/hls"))))
+		http.HandleFunc("/api/opportunities", func(w http.ResponseWriter, r *http.Request) {
+			var opportunities []map[string]interface{}
+			for _, s := range a.Segments {
+				ops := s.AdOpportunities
+				for _, op := range ops {
+					opportunities = append(opportunities, map[string]interface{}{"id": op.ID, "start_sec": op.StartSec, "end_sec": op.EndSec})
+				}
+			}
+			json.NewEncoder(w).Encode(opportunities)
+		})
 		http.HandleFunc("/api/decision", func(w http.ResponseWriter, r *http.Request) {
 			t, _ := strconv.ParseFloat(r.URL.Query().Get("time"), 64)
 			for _, s := range a.Segments {
 				if t >= s.StartSec && t < s.EndSec {
-					op := model.ContractOpportunity{ID: "opportunity-" + s.ID, StartSec: s.StartSec, EndSec: min(s.EndSec, s.StartSec+5)}
+					if len(s.AdOpportunities) == 0 {
+						continue
+					}
+					op := s.AdOpportunities[0]
 					for _, x := range s.AdOpportunities {
 						if t >= x.StartSec && t < x.EndSec {
 							op = x
@@ -141,6 +154,9 @@ func main() {
 						for _, x := range s.Intelligence.Categories {
 							scene.Categories = append(scene.Categories, x.ID)
 						}
+						for _, entity := range s.Intelligence.Entities {
+							scene.Categories = append(scene.Categories, entity.Name)
+						}
 						var bids []model.Bid
 						for _, x := range c.Campaigns {
 							for _, cat := range x.TargetCategories {
@@ -148,7 +164,12 @@ func main() {
 							}
 						}
 						d := auction.DecideDemo(scene, bids, 0)
+						d.VideoID = a.Video.ID
+						d.ContentTimeSec = op.StartSec
 						d.OpportunityEndSec = op.EndSec
+						d.SegmentID = s.ID
+						d.OpportunityID = op.ID
+						d.ModelSafety = s.Intelligence.BrandSafety.Status
 						json.NewEncoder(w).Encode(d)
 						return
 					}

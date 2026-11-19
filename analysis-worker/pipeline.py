@@ -157,7 +157,17 @@ def run(args):
                          if s["start_sec"] < window["end_sec"] and window["start_sec"] < s["end_sec"]],
             "analysis_status": status, "window_id": window["id"],
             "intelligence": intelligence_from_annotation(annotation),
-            "ad_opportunities": []
+            "ad_opportunities": [{
+                "id": f"opportunity-{window['id']}",
+                "format": "overlay",
+                "start_sec": window["start_sec"] + (window["end_sec"] - window["start_sec"]) / 2,
+                "end_sec": min(window["end_sec"],
+                               window["start_sec"] +
+                               (window["end_sec"] - window["start_sec"]) / 2 + 5.0),
+                "placement_source": "timing_rule",
+                "status": "candidate",
+                "reason": "middle-of-analysis-window rule; candidate only; window may cross a commercial boundary",
+            }]
         })
     result = {"schema_version": SCHEMA_VERSION,
               "video": {"id": os.path.splitext(os.path.basename(args.video))[0],
