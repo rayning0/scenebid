@@ -6,9 +6,25 @@ SceneBid is a local proof of concept that analyzes video and audio to find times
 
 I combine real AI-generated video intelligence with fictional ad campaigns and simulated bids:
 
-1. The Python analysis worker produces timestamped transcript and scene annotations.
+1. The [Python analysis worker](https://github.com/rayning0/scenebid/tree/main/analysis-worker) produces timestamped transcript and scene annotations.
 2. The Go decisioning service generates simulated ad decisions and serves playback APIs. It picks eligible ads using the generated annotations and explains each decision.
 3. The browser shows synchronized contextual information and overlay ads at the right video moments. It plays the video and shows contextual overlays, timestamped dialogue, scene summaries, and active ad info.
+
+The Go decisioning service generates simulated ad decisions and serves
+playback APIs. It picks eligible ads using the generated annotations and
+explains each decision.
+
+Relevant Go decisioning code:
+
+- [`cmd/scenebid/main.go`](cmd/scenebid/main.go): implements the `decide`
+  command and the HTTP `serve` mode, including the `/api/decision`,
+  `/api/opportunities`, and `/api/context` playback endpoints.
+- [`internal/auction/auction.go`](internal/auction/auction.go): evaluates
+  bids and selects eligible winners or returns no-fill decisions.
+- [`internal/model/model.go`](internal/model/model.go): defines bids and
+  ad-decision data structures.
+- [`internal/model/contract.go`](internal/model/contract.go): defines the
+  generated analysis and ad-opportunity contract consumed by decisioning.
 
 ## Problem
 
@@ -48,9 +64,9 @@ At 187.5 secs, see overlay ad #4, for Triscuit wafers:
 - If video naturally hits that ad time while playing.
 - If we click orange dot placed at the ad time.
 
-4. Right side shows "Dialogue," which changes as video plays.
-5. Right side shows "Scene Summary," AI understanding of what's happening in each scene.
-6. As each ad pops up, right side shows "Ad Playing."
+4. Right side shows **Dialogue**, which changes as video plays.
+5. Right side shows **Scene Summary**, AI understanding of what's happening in each scene.
+6. As each ad pops up, right side shows **Ad Playing**.
 
 Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids are still fictional.
 
@@ -60,13 +76,13 @@ Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids are
 
 - Read the local `TV_Commercials_1977.mp4` file.
 - Detect visual shot boundaries and extract timestamped frames.
-- Transcribe speech with faster-whisper.
+- Transcribe speech with `faster-whisper`.
 - Analyze frames and transcript excerpts with AI models.
 - Produce timestamped scene annotations containing visual and audio
 evidence, categories, and model metadata.
 - Identify likely advertisers or products when supported by the available
 evidence; retain unknown values when uncertain.
-- Optionally index embeddings for visual and transcript search.
+- Optional index embeddings for visual and transcript search.
 
 ### Simulated demand
 
@@ -104,22 +120,15 @@ flowchart TD
 ## Process Flow
 
 1. Place the source MP4 under `data/input/`.
-2. Analyze its audio and video to produce timestamped model-generated
-
-   annotations.
+2. Analyze its audio and video to produce timestamped model-generated annotations.
 3. Package the video into an HLS playlist and media segments.
 4. Start the Go API and browser player.
 5. During playback, look up the current video time in the annotations.
 6. Evaluate fictional campaign bids against the current context and rules.
-7. Display the winning overlay, campaign logo, and decision reason, or show a
+7. Display the winning overlay, campaign logo, and decision reason, or show a no-fill explanation.
+8. Update the dialogue, scene summary, and active-ad panel as playback time advances.
 
-   no-fill explanation.
-8. Update the dialogue, scene summary, and active-ad panel as playback time
-
-   advances.
-
-Analysis happens before playback. Ad selection and overlay presentation
-happen during playback.
+Analysis happens before playback. Ad selection and overlay presentation happen during playback.
 
 ## Priorities
 
