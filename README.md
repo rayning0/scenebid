@@ -101,16 +101,19 @@ Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids are
 ## Architecture
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 210}}}%%
 flowchart TD
+    classDef wide width:210px;
     V["Local MP4"] --> A["Python analysis worker"]
     A --> S["Timestamped annotations"]
     V --> H["FFmpeg HLS packaging"]
     S --> G["Go decisioning API"]
-    B["Fictional bids and campaigns"] --> G
-    G --> D["Ad decision and explanation"]
+    B["Fictional bids/campaigns"] --> G
+    G --> D["Ad decision/explanation"]
     H --> P["Browser player"]
     D --> P
     P --> O["Contextual overlay"]
+    class V,A,S,H,G,B,D,P,O wide
 ```
 
 ## Process Flow
@@ -337,25 +340,28 @@ The current demo analyzes one local video and serves a small set of simulated ca
 #### VOD: Analyze once, serve many viewers
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 270}}}%%
 flowchart TD
+    classDef wide width:270px;
     P["Publisher video"] --> S["Amazon S3: source video"]
-    S --> Q["EventBridge + SQS: durable jobs"]
+    S --> Q["EventBridge/SQS: durable jobs"]
     Q --> W["Step Functions: analysis workflow"]
     W --> CPU["CPU jobs: probe, shots, frames"]
-    W --> G["AWS Batch GPU jobs: speech and vision"]
+    W --> G["AWS Batch GPU jobs: speech/vision"]
     CPU --> G
-    G --> V["Validation and publishing"]
+    G --> V["Validation/publishing"]
     V --> D["PostgreSQL: scene metadata"]
     D --> R["Redis: active scene context"]
     R --> A["Go ad decisioning service"]
-    A -->|bid request| B["SSP and DSP demand"]
+    A -->|bid request| B["SSP/DSP demand"]
     B -->|bid response| A
     PLAYER["Player: contextual overlay"] -->|opportunity request| A
     A -->|ad decision| PLAYER
     S --> H["MediaConvert: HLS packaging"]
     H --> N["CloudFront CDN"]
     N --> PLAYER
-    PLAYER --> E["Kafka: playback and ad events"]
+    PLAYER --> E["Kafka: playback/ad events"]
+    class P,S,Q,W,CPU,G,V,D,R,A,B,PLAYER,H,N,E wide
 ```
 
 **Ingest and analysis.** Publishers upload videos to **Amazon S3**, which gives durable, scalable media storage. Or publishers give us MRSS feeds with links to their new MP4 videos for movies and TV episodes. We download videos and their metadata from these MRSS links to S3. S3 notifications or **Amazon EventBridge** place durable jobs on **Amazon SQS**, so ingestion can absorb bursts without losing work.
@@ -375,18 +381,21 @@ Use CPU workers for probing, FFmpeg, shot detection, and frame extraction. Use *
 #### Live linear TV: Analyze each channel feed continuously
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 270}}}%%
 flowchart TD
-    L["Live channel feed: HLS or other publisher format"] --> M["MediaLive and MediaPackage: HLS"]
+    classDef wide width:270px;
+    L["Live channel feed: HLS"] --> M["MediaLive/MediaPackage: HLS"]
     M --> N["CloudFront CDN"]
-    M --> X["Analysis worker: sample video and audio"]
+    M --> X["Analysis worker: video/audio"]
     X --> K["Kafka: timestamped observations"]
-    K --> F["Flink: align and aggregate"]
+    K --> F["Flink: align/aggregate"]
     F --> R["Redis: current channel context"]
     N --> P["Viewer player"]
     P --> A["Go ad decisioning"]
     R --> A
     A --> P
-    P --> E["Kafka: ad and playback events"]
+    P --> E["Kafka: ad/playback events"]
+    class L,M,N,X,K,F,R,P,A,E wide
 ```
 
 **Ingest and inference.** **AWS Elemental MediaLive** encodes the incoming channel feed, which may arrive as HLS or another publisher-provided format, and **MediaPackage** creates HLS outputs for distribution through CloudFront. A separate analysis service reads the feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 ad markers where available; they identify ad breaks and do not themselves provide scene-level understanding.
