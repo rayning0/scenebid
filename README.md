@@ -1,6 +1,6 @@
 # SceneBid: AI Video Intelligence and Contextual Ad Decisioning
 
-### by Raymond Gan
+### by Raymond Gan. See [YouTube video](https://youtu.be/xCv5L5h6D8A) of my demo.
 
 SceneBid is a local proof of concept that analyzes video and audio to find timestamped contextual ad opportunities. It uses a compilation of [1977 television commercials](https://archive.org/details/1977TVCommercials) as a sample video.
 
