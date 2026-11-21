@@ -58,40 +58,44 @@
 
 **On screen:** Show README architecture diagram. Open `analysis.json` and `transcript.json`. Point to the timestamps, scene summary, categories, and detected products.
 
-> A quick architecture tour: The Python analysis worker reads the local MP4 video, creates timestamped annotations, and writes the scene intelligence. FFmpeg packages the video for browser playback. When the browser reaches an opportunity, it asks the Go decisioning API for an ad. The Go API combines the context with fictional campaign data, returns the decision, and the browser displays the overlay ad.
+> A quick architecture tour: The Python analysis worker reads the local MP4 video, creates timestamped annotations, and writes AI scene intelligence. FFmpeg packages the video for browser playback. When the browser reaches an opportunity, it asks the Go decisioning API for an ad. The API combines the context with fictional campaign data, returns the ad decision, and the browser displays the overlay ad.
 >
-> My Python worker detects visual shot changes, extracts representative frames, and uses **faster-whisper** to transcribe the audio into `transcript.json`. Then I divide the video into 15-second windows and send sampled frames plus transcript excerpts to **Qwen 2.5 VL** through Ollama.
+> The AI worker finds shot changes, transcribes the audio with **faster-whisper** to `transcript.json`, and sends 15-second windows of sampled frames plus transcript excerpts to **Qwen 2.5 VL** (a vision-language model)[show Hugging Face page] through Ollama.
 
-> The AI model writes scene descriptions, categories, products, and possible advertisers into `analysis.json`. These windows aren't always exact commercial boundaries, and AI can misspell or misidentify products and brands, so the results still need review.
+> It writes scene descriptions, products, and possible advertisers into `analysis.json`.
 
-**On screen:** Optionally show the checkpoint directory or point to the README’s "--resume" description.
+**On screen:** Point to README’s "--resume" description, then `checkpoint.json` file.
 
-> My AI analysis failed partway through this video. Checkpointing let me keep the completed work and resume from the failed window with `--resume`, instead of starting over.
+> When AI analysis failed partly through the video, the checkpoint let me retry the failed window and continue without starting over. I used the `--resume` parameter. `checkpoint.json` stores the AI result as it moves through the video.
 
 ### 3:30–4:20 — Opportunities and simulated decisions
 
 **On screen:** Open `campaigns.json`, `opportunities.json`, then `decisions.json`.
 
-> Next, I run the Go `decide` command. It reads the AI analysis and candidate opportunities, then loads `campaigns.json`. That file is my fictional demand: advertisers, simulated bids, target categories, headlines, product images, and links. The Go decisioning code compares those campaigns with the detected context and picks the highest eligible simulated bid.
+> Next, Go’s `decide` command compares the AI context with fictional advertisers and bids in `campaigns.json`, then picks the highest CPM eligible campaign.
 >
-> `opportunities.json` is a compact index of where ads may appear, including timestamps and context. `decisions.json` records the simulated outcome: the candidate bids, the selected campaign or no-fill result, and the reason.
+> The Go `decide` command creates `opportunities.json`, which indexes where ads may appear, and `decisions.json`, which says which campaign won, or why there was no ad fill.
 >
-> In short, `analysis.json` describes the content, `opportunities.json` indexes where ads may appear, `campaigns.json` defines the fictional demand, and `decisions.json` records which campaign was selected and why.
+> So `analysis.json` describes the video content, `campaigns.json` defines the fictional demand, `opportunities.json` indexes where ads may appear, and `decisions.json` records which ad campaign got picked and why.
 
 **On screen:** Return to the browser player.
 
 > During playback, the browser requests context and an ad decision using the title and content timestamp. The Go service returns the simulated decision, and the browser displays it as a ad overlay at the right time.
 >
-> This is **demo mode**: the bids are simulated, and it ignores the model’s safety value, so I can demo these overlay ads. A production system would apply publisher and advertiser suitability rules, plus pacing and frequency caps. This prototype does not yet implement a real OpenRTB exchange or server-side ad insertion.
+> In **demo mode**, these bids are simulated, and it ignores the model’s safety value, so I can demo these ads. A production system would apply publisher and advertiser suitability rules, plus pacing and frequency caps. My prototype doesn't implement a real OpenRTB exchange or server-side ad insertion.
 
 ### 5:00–6:00 — Scaling to VOD and live FAST channels
 
 **On screen:** Show the VOD scaling diagram, then the live linear diagram.
 
-> To scale VOD, I’d analyze each title ahead of playback with queued CPU and GPU workers, then store and reuse its scene intelligence across viewers. In AWS terms, we could us S3 for video and artifacts, SQS and Step Functions for durable workflow, and AWS Batch for GPU jobs. The Go decisioning service could scale independently, so viewer requests wouldn’t wait for AI inference.
+> First, see the VOD diagram’s 2 separate paths. The AI analysis path starts with the video in S3, moves through EventBridge and SQS into Step Functions, and then runs CPU and GPU jobs. The results go through validation into PostgreSQL and Redis, where the Go decisioning service can reuse the scene context for many viewers.
 >
-> For FAST channels, I’d pre-analyze known assets and map their timelines to the live channel. For live or unmatched content, I’d analyze the feed continuously and publish context before the viewer reaches the opportunity. Shared scene context can serve many viewers, while the final campaign decision can vary by session.
+> The second VOD path is delivery: the source video goes to MediaConvert for HLS packaging, which creates the `.ts` segments. CloudFront then delivers those segments to the player. Analysis happens ahead of playback, while HLS packaging and delivery serve the finished video.
 >
-> My local prototype took roughly 25 seconds of vision inference per 15-second window. That isn’t a production benchmark, but it shows why throughput and latency matter for a continuous channel.
+> Compare that with the live linear TV diagram. The delivery path starts with the live TV channel feed, goes through MediaLive and MediaPackage to create HLS, then reaches viewers through CloudFront.
+>
+> The AI analysis path samples that HLS feed, sends output to Kafka and Flink, and keeps the current context in Redis. The Go service uses that context when the player requests an ad decision.
+>
+> For FAST channels, I’d pre-analyze known assets and map their timelines to the live channel. For truly live/unmatched content, I’d analyze continuously and publish context before the viewer reaches the opportunity. Shared scene context serves many viewers, while the final campaign decision can vary by session.
 >
 > Thanks for watching.
