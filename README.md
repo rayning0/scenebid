@@ -213,7 +213,8 @@ go run ./cmd/scenebid analyze \
 
 `go run ./cmd/scenebid analyze` is a Go convenience wrapper. It accepts `-video`, `-out`, `-start`, `-end`, and the optional `-at` probe-frame flag, then invokes the Python worker. It does not expose all worker options, so it cannot directly customize `--frames-per-shot`, `--shot-threshold`, `--vision-mode`, or the other worker-specific flags. The Go wrapper inherits worker environment variables, but use the direct Python command if you want to change more parameters.
 
-The analysis worker defaults to local Ollama:
+For this demo, I used **[Qwen2.5-VL](https://ollama.com/library/qwen2.5vl)**, an open-source vision-language model,
+running locally through Ollama. The analysis worker defaults to local Ollama:
 
 - `VISION_PROVIDER=ollama`
 - `VISION_MODEL=qwen3-vl:8b`
@@ -384,7 +385,7 @@ Use CPU workers for probing, FFmpeg, shot detection, and frame extraction. Use *
 %%{init: {"flowchart": {"wrappingWidth": 270}}}%%
 flowchart TD
     classDef wide width:270px;
-    L["Live channel feed: HLS"] --> M["MediaLive/MediaPackage: HLS"]
+    L["Live channel feed: HLS or RTP"] --> M["If RTP, use MediaLive/<br>MediaPackage: HLS"]
     M --> N["CloudFront CDN"]
     M --> X["Analysis worker: video/audio"]
     X --> K["Kafka: timestamped observations"]
@@ -398,7 +399,7 @@ flowchart TD
     class L,M,N,X,K,F,R,P,A,E wide
 ```
 
-**Ingest and inference.** **AWS Elemental MediaLive** encodes the incoming channel feed, which may arrive as HLS or another publisher-provided format, and **MediaPackage** creates HLS outputs for distribution through CloudFront. A separate analysis service reads the feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 ad markers where available; they identify ad breaks and do not themselves provide scene-level understanding.
+**Ingest and inference.** There are two valid publisher-ingest paths. If the partner provides RTP, **AWS Elemental MediaLive** and **MediaPackage** convert it into HLS for CloudFront. If the partner already provides HLS, it skips MediaLive and MediaPackage and goes directly to CloudFront. Either way, a separate analysis service reads the available feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 ad markers where available; they identify ad breaks and do not themselves provide scene-level understanding.
 
 **Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel; **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration. The player or SSAI service sends its channel and playback timestamp to the Go decisioning service, which retrieves the matching context and selects eligible demand. An overlay can be rendered client-side. A linear video ad requires a separate ad decision and playback workflow, potentially using VAST and SSAI. The shared context contains the scene description, category, media timestamp, and safety signals. The session-specific decision contains campaign eligibility, privacy-permitted audience signals, frequency caps, pacing, and the final selection. A channel ID alone is insufficient because viewers may be at different playback positions due to buffering, DVR, or restart behavior.
 
