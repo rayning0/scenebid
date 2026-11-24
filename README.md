@@ -10,8 +10,6 @@ I combine real AI-generated video intelligence with fictional ad campaigns and s
 2. The Go decisioning service generates simulated ad decisions and serves playback APIs. It picks eligible ads using the generated annotations and explains each decision.
 3. The browser shows synchronized contextual information and overlay ads at the right video moments. It plays the video and shows contextual overlays, timestamped dialogue, scene summaries, and active ad info.
 
-The Go decisioning service generates simulated ad decisions and serves playback APIs. It picks eligible ads using the generated annotations and explains each decision.
-
 Relevant Go decisioning code:
 
 - [`cmd/scenebid/main.go`](cmd/scenebid/main.go): implements the `decide` command and the HTTP `serve` mode, including the `/api/decision`, `/api/opportunities`, and `/api/context` playback endpoints.
@@ -34,6 +32,8 @@ SceneBid explores the relation between:
 ## Demo
 
 I finished the "P0: end-to-end" local demo for my sample video!
+
+Place `TV_Commercials_1977.mp4` in `data/input/` before starting the demo. You can generate HLS assets separately using the FFmpeg command in [Run and Verify](#run-and-verify). The browser falls back to the local MP4 when HLS is unavailable.
 
 1. In Terminal, first run `go run ./cmd/scenebid serve`
 2. Playing my `TV_Commercials_1977.mp4` video in http://localhost:8080/ shows this:
@@ -79,19 +79,17 @@ Mock OpenRTB exchange behavior remains exploratory; campaign demand and bids are
 - Analyze frames and transcript excerpts with AI models.
 - Produce timestamped scene annotations containing visual and audio evidence, categories, and model metadata.
 - Identify likely advertisers or products when supported by the available evidence; retain unknown values when uncertain.
-- Optional index embeddings for visual and transcript search.
 
 ### Simulated demand
 
 - Load fictional campaigns and bids from local JSON fixtures.
-- Evaluate campaign categories, bid floors, and configured separation rules.
+- Match fictional campaigns against detected categories or entities and apply a simulated bid floor of $2 CPM by default.
+- Record the model's safety assessment in the simulated decision.
 - Return the winning eligible bid or a no-fill reason.
-- Optionally exchange mock OpenRTB-style requests and responses between simulated SSP and DSP components.
 
 ### Real playback and presentation
 
-- Package the source MP4 into an HLS playlist and media segments.
-- Play the video in a browser.
+- Play HLS assets when available or fall back to the local MP4.
 - Use playback time and generated annotations to request an ad decision.
 - Display the selected fictional campaign as a bottom banner overlay.
 - Show a campaign logo from each campaign's `logo_url` fixture field.
@@ -120,14 +118,14 @@ flowchart TD
 
 1. Place the source MP4 under `data/input/`.
 2. Analyze its audio and video to produce timestamped model-generated annotations.
-3. Package the video into an HLS playlist and media segments.
+3. Optionally package the video into an HLS playlist and media segments.
 4. Start the Go API and browser player.
-5. During playback, look up the current video time in the annotations.
-6. Evaluate fictional campaign bids against the current context and rules.
+5. Load candidate timestamps from `/api/opportunities`.
+6. Evaluate fictional campaign bids against the matching context when the browser calls `/api/decision`.
 7. Display the winning overlay, campaign logo, and decision reason, or show a no-fill explanation.
 8. Update the dialogue, scene summary, and active-ad panel as playback time advances.
 
-Analysis happens before playback. Ad selection and overlay presentation happen during playback.
+Video analysis happens offline. The browser requests simulated ad decisions when loading the timeline and can refresh them during playback. It displays the selected overlays at the matching timestamps.
 
 ## Priorities
 
@@ -143,8 +141,8 @@ Analysis happens before playback. Ad selection and overlay presentation happen d
 
 - Process the full video.
 - Improve shot grouping and brand identification.
-- Add configurable brand and competitor separation.
-- Add basic safety handling and clear unknown/no-fill behavior.
+- Enforce configurable brand and competitor separation.
+- Enforce brand-safety rules and define when unknown safety results in no-fill.
 - Evaluate selected predictions against manually verified examples.
 
 ### P2: Ad-tech integration
@@ -155,7 +153,7 @@ Analysis happens before playback. Ad selection and overlay presentation happen d
 
 ### P3: Search and future extensions
 
-- Add CLIP/FAISS semantic search using ideas from In-Video Search.
+- Add embedding-based visual and transcript search with CLIP/FAISS using ideas from In-Video Search.
 - Explore linear video ads, VAST, and HLS-based SSAI separately.
 - Explore live streaming analysis and low-latency updates.
 
@@ -172,33 +170,26 @@ Analysis happens before playback. Ad selection and overlay presentation happen d
 
 ## Run and Verify
 
-The demo uses two sequential data-generation steps:
+The Python worker analyzes the MP4 and writes `analysis.json` and `transcript.json`. For browser playback, Go builds `/api/opportunities` from `analysis.json`, uses `transcript.json` for dialogue, and evaluates fictional campaigns from `campaigns.json` when the browser calls `/api/decision`.
 
-1. Analyze the MP4 video with the Python worker. This produces the timestamped video, audio, scene, transcript, and ad-opportunity data in `analysis.json` (and also writes the extracted `transcript.json`).
-2. Run the Go `decide` command. It reads the analysis contract and its candidate ad opportunities, evaluates the fictional campaigns in `campaigns.json`, and writes the flattened playback opportunities to `opportunities.json` and the simulated auction results to `decisions.json`.
+Run `go run ./cmd/scenebid decide` if you want offline exports of the candidate opportunities and simulated auction results. The `decide` command is optional for browser playback.
+
+Both `decide` and `serve` default to a bid floor of $2 CPM. Use the same `-floor` value on both commands when comparing offline decisions with the browser API at a custom floor.
 
 ### Generated analysis and decision files
-
-The three primary JSON outputs serve different purposes:
 
 - [`data/output/TV_Commercials_1977/analysis.json`](data/output/TV_Commercials_1977/analysis.json) is the complete analysis contract. It contains video metadata and duration, model/run information,
 detected shots, transcript references, grouped analysis segments, visual
 and transcript-derived categories, detected entities/products, advertiser
 identification, brand-safety assessments, and candidate overlay
 opportunities. This is the source input for decision generation.
-- [`data/output/TV_Commercials_1977/opportunities.json`](data/output/TV_Commercials_1977/opportunities.json) is a compact playback index generated by `decide`. Each record identifies an opportunity with its
+- [`data/output/TV_Commercials_1977/transcript.json`](data/output/TV_Commercials_1977/transcript.json) contains timestamped dialogue that Go includes in `/api/context` alongside scene summaries from `analysis.json`.
+- [`data/output/TV_Commercials_1977/opportunities.json`](data/output/TV_Commercials_1977/opportunities.json) is an offline opportunity index generated by `decide`. Each record identifies an opportunity with its
 ID, segment, start/end timestamps, categories, products, and scene summary.
-The browser uses this file to place timeline markers and find opportunities
-while the video plays.
-- [`data/output/TV_Commercials_1977/decisions.json`](data/output/TV_Commercials_1977/decisions.json) contains one simulated auction decision for each analyzed opportunity. Records include the
+- [`data/output/TV_Commercials_1977/decisions.json`](data/output/TV_Commercials_1977/decisions.json) is an offline export from `decide` containing one simulated auction decision per candidate opportunity. Records include the
 opportunity and segment IDs, timestamps, fill status, selected winning
 campaign, CPM, advertiser, headline, destination, candidate bids, decision
-reason, demo-mode status, and model-safety status. The browser uses these
-decisions to render contextual overlay ads.
-
-In short: `analysis.json` describes the content, `opportunities.json` indexes
-where ads may appear, and `decisions.json` records which fictional campaign
-was selected and why.
+reason, demo-mode status, and model-safety status.
 
 We have 2 ways to run AI video analysis. Run Python worker `main.py` if you want to customize every parameter. Run Go wrapper `scenebid analyze` for convenience, when its limited options are good enough:
 
@@ -242,7 +233,7 @@ go run ./cmd/scenebid analyze \
 
 ### Analysis worker command and parameters
 
-For my demo, to analyze the first 6 minutes of video, I ran the `main.py` worker directly:
+The committed demo analysis covers the first six minutes in 15-second windows. A window can cross a commercial boundary. I ran the `main.py` worker directly:
 
 ```bash
 VISION_PROVIDER=ollama \
@@ -282,14 +273,14 @@ To run the completed six-minute analysis in the browser without re-running AI an
 
 ```bash
 go test ./...
-go run ./cmd/scenebid decide
 go run ./cmd/scenebid serve
 open http://localhost:8080
 ```
 
-The demo serves the locally generated HLS playlist with .ts segments when `data/output/TV_Commercials_1977/hls/index.m3u8` exists. Create it from the local MP4 file when needed:
+The demo serves the locally generated HLS playlist with `.ts` segments when `data/output/TV_Commercials_1977/hls/index.m3u8` exists. To generate HLS assets separately from the local MP4, run:
 
 ```bash
+mkdir -p data/output/TV_Commercials_1977/hls
 ffmpeg -i data/input/TV_Commercials_1977.mp4 \
   -c:v copy -c:a aac -f hls -hls_time 6 -hls_playlist_type vod \
   -hls_segment_filename data/output/TV_Commercials_1977/hls/segment_%05d.ts \
@@ -307,7 +298,7 @@ Campaign fixtures support these key fields:
 
 The server also exposes `/api/opportunities`, `/api/decision?time=...`, and `/api/context` for the browser demo.
 
-`analyze` runs `analysis-worker/main.py`, which detects shots and extracts frames from the actual MP4, transcribes with `faster-whisper`, and sends each shot's frames and transcript excerpt to the configured vision-language provider. Use `-end -1` to analyze the full video, or invoke the worker directly for all options. A provider/model failure exits nonzero; no fixture annotations are substituted.
+`analyze` runs `analysis-worker/main.py`. The worker detects shots and transcribes the audio. In the default window mode, it sends representative frames and overlapping transcript excerpts for each fixed analysis window to the vision model. A timing rule proposes a candidate overlay near the midpoint of each window. Use `-end -1` to analyze the full video, or invoke the worker directly for all options. A provider or model failure exits nonzero.
 
 Install Python dependencies from `analysis-worker/requirements.txt` and ensure `ffmpeg` is on PATH. The OpenAI-compatible provider accepts `VISION_ENDPOINT` and `VISION_API_KEY`; Ollama uses `VISION_PROVIDER=ollama`, `VISION_ENDPOINT=http://localhost:11434/api/chat`, and a vision model.
 
@@ -336,7 +327,7 @@ Install Python dependencies from `analysis-worker/requirements.txt` and ensure `
 
 ## Scaling SceneBid: VOD and live linear TV
 
-The current demo analyzes one local video and serves a small set of simulated campaigns. Here's a possible AWS-based architecture to process thousands of new videos per day and serving contextual decisions to millions of viewers. The numbers below are design assumptions, not measured capacity.
+The current demo analyzes one local video and serves a small set of simulated campaigns. Here's a possible AWS-based architecture to process thousands of new videos per day and serve contextual decisions to millions of viewers. The numbers below are design assumptions, not measured capacity.
 
 #### VOD: Analyze once, serve many viewers
 
@@ -390,7 +381,7 @@ flowchart TD
     M --> X["Analysis worker: video/audio"]
     X --> K["Kafka: timestamped observations"]
     K --> F["Flink: align/aggregate"]
-    F --> R["Redis: current channel context"]
+    F --> R["Redis: recent channel context"]
     N --> P["Viewer player"]
     P --> A["Go ad decisioning"]
     R --> A
@@ -401,11 +392,11 @@ flowchart TD
 
 **Ingest and inference.** We have two valid publisher-ingest paths. If the content partner gives an RTP feed, **AWS Elemental MediaLive** and **MediaPackage** convert it to HLS for CloudFront. If the partner already gives HLS, skip MediaLive and MediaPackage and go directly to CloudFront. Either way, a separate analysis service reads the HLS feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 markers in the feed. Analysis runs continuously. Ad break cues can help us know which recently buffered content to analyze first, if we have time before the ad-decision deadline.
 
-**Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel; **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration. The player or SSAI service sends its channel and playback timestamp to the Go decisioning service, which retrieves the matching context and selects eligible demand. An overlay can be rendered client-side. A linear video ad requires a separate ad decision and playback workflow, potentially using VAST and SSAI. The shared context contains the scene description, category, media timestamp, and safety signals. The session-specific decision contains campaign eligibility, privacy-permitted audience signals, frequency caps, pacing, and the final selection. A channel ID alone is insufficient because viewers may be at different playback positions due to buffering, DVR, or restart behavior.
+**Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel; **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration. For an overlay, the player sends the channel and playback timestamp. For an SSAI integration, the stitcher or ad server requests a decision for a specific break, which the service maps to the channel timeline. The Go decisioning service retrieves the matching context and selects eligible demand. An overlay can be rendered client-side. A linear video ad requires a separate ad decision and playback workflow, potentially using VAST and SSAI. The shared context contains the scene description, category, media timestamp, and safety signals. The session-specific decision contains campaign eligibility, privacy-permitted audience signals, frequency caps, pacing, and the final selection. A channel ID alone is insufficient because viewers may be at different playback positions due to buffering, DVR, or restart behavior.
 
 **Known assets and live content.** FAST channels often play assets available before airtime. When the source asset is known, analyze it ahead of time and map channel playback timestamps to the asset's stored scene timeline. Use real-time inference for live, newly inserted, or unmatched content. Shared channel context is reused across viewers, while campaign eligibility, frequency caps, and final decisions can vary by session.
 
-**Latency and reliability.** Measure time between when the relevant media reaches the analysis tap and when the player, ad server, or SSAI workflow needs a decision. Reserve time for the auction and delivery, plus creative preparation and manifest generation for SSAI. A viewer may be 30 seconds behind the analysis tap while the stitcher needs the decision several seconds earlier. If fresh context misses that deadline, use the publisher-approved fallback without delaying playback.
+**Latency and reliability.** Measure the time from when the relevant media reaches the analysis tap to when the ad decision is due. Work backward from that deadline to reserve time for eligible demand, creative readiness, and delivery. A viewer may be 30 seconds behind the analysis tap while the stitcher needs the decision several seconds earlier.
 
 The current demo saw roughly 25 seconds of vision inference per 15-second window; that is not a production benchmark, but a serial worker at that rate would fall behind a continuous TV channel. Measure whether batching, smaller models, parallelism, or pre-analysis makes the pipeline faster than incoming video. If context arrives too late, a model fails, or a request exceeds its deadline, fall back to a publisher-approved generic ad or no-fill rather than delaying playback. Support discontinuities, channel restarts, and DVR/seek by mapping media timestamps to the viewer's playback position instead of assuming every viewer is at the live edge.
 

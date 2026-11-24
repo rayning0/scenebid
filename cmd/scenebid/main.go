@@ -16,6 +16,8 @@ import (
 	"strconv"
 )
 
+const defaultBidFloorUSDCPM = 2.0
+
 func main() {
 	if len(os.Args) < 2 {
 		usage()
@@ -54,7 +56,7 @@ func main() {
 		analysisPath := f.String("analysis", "data/output/TV_Commercials_1977/analysis.json", "worker analysis.json")
 		campaignsPath := f.String("campaigns", "data/fixtures/campaigns.json", "fictional campaigns")
 		out := f.String("out", "data/output/TV_Commercials_1977/decisions.json", "output JSON")
-		floor := f.Float64("floor", 2, "minimum simulated USD CPM")
+		floor := f.Float64("floor", defaultBidFloorUSDCPM, "minimum simulated USD CPM")
 		_ = f.Parse(os.Args[2:])
 		if *floor < 0 {
 			log.Fatal("floor must be nonnegative")
@@ -112,7 +114,11 @@ func main() {
 		analysisPath := f.String("analysis", "data/output/TV_Commercials_1977/analysis.json", "analysis")
 		campaignsPath := f.String("campaigns", "data/fixtures/campaigns.json", "campaigns")
 		addr := f.String("addr", ":8080", "listen address")
+		floor := f.Float64("floor", defaultBidFloorUSDCPM, "minimum simulated USD CPM")
 		_ = f.Parse(os.Args[2:])
+		if *floor < 0 {
+			log.Fatal("floor must be nonnegative")
+		}
 		var a model.Contract
 		var c struct {
 			Campaigns []campaign `json:"campaigns"`
@@ -189,7 +195,7 @@ func main() {
 								bids = append(bids, model.Bid{Campaign: x.ID, CPM: x.CPM, Category: cat, Advertiser: x.Advertiser, Headline: x.Headline, URL: x.URL, LogoURL: x.LogoURL})
 							}
 						}
-						d := auction.DecideDemo(scene, bids, 0)
+						d := auction.DecideDemo(scene, bids, *floor)
 						d.VideoID = a.Video.ID
 						d.ContentTimeSec = op.StartSec
 						d.OpportunityEndSec = op.EndSec
