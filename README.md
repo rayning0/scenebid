@@ -14,7 +14,7 @@ Relevant Go decisioning code:
 
 - [`cmd/scenebid/main.go`](cmd/scenebid/main.go): implements the `decide` command and the HTTP `serve` mode, including the `/api/decision`, `/api/opportunities`, and `/api/context` playback endpoints.
 - [`internal/auction/auction.go`](internal/auction/auction.go): evaluates bids and selects eligible winners or returns no-fill decisions.
-- [`internal/model/model.go`](internal/model/model.go): defines bids and ad-decision data structures.
+- [`internal/model/model.go`](internal/model/model.go): defines bids and ad decision data structures.
 - [`internal/model/contract.go`](internal/model/contract.go): defines the generated analysis and ad-opportunity contract consumed by decisioning.
 
 ## Problem
@@ -153,7 +153,7 @@ Video analysis happens offline. The browser requests simulated ad decisions when
 
 ### P3: Search and future extensions
 
-- Add embedding-based visual and transcript search with CLIP/FAISS using ideas from In-Video Search.
+- Add embedding-based visual and transcript search with CLIP/FAISS using ideas from [In-Video Search](https://github.com/rayning0/ivs).
 - Explore linear video ads, VAST, and HLS-based SSAI separately.
 - Explore live streaming analysis and low-latency updates.
 
@@ -191,7 +191,10 @@ opportunity and segment IDs, timestamps, fill status, selected winning
 campaign, CPM, advertiser, headline, destination, candidate bids, decision
 reason, demo-mode status, and model-safety status.
 
-We have 2 ways to run AI video analysis. Run Python worker `main.py` if you want to customize every parameter. Run Go wrapper `scenebid analyze` for convenience, when its limited options are good enough:
+We have 2 ways to run AI video analysis. Either:
+
+1. Run Python worker `main.py` if you want to customize every parameter, or
+2. Run Go wrapper `scenebid analyze` for convenience, when its limited options are good enough:
 
 ```bash
 go test ./...
@@ -390,13 +393,13 @@ flowchart TD
     class L,M,N,X,K,F,R,P,A,E wide
 ```
 
-**Ingest and inference.** We have two valid publisher-ingest paths. If the content partner gives an RTP feed, **AWS Elemental MediaLive** and **MediaPackage** convert it to HLS for CloudFront. If the partner already gives HLS, skip MediaLive and MediaPackage and go directly to CloudFront. Either way, a separate analysis service reads the HLS feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 markers in the feed. Analysis runs continuously. Ad break cues can help us know which recently buffered content to analyze first, if we have time before the ad-decision deadline.
+**Ingest and inference.** We have two valid publisher-ingest paths. If the content partner gives an RTP feed, **AWS Elemental MediaLive** and **MediaPackage** convert it to HLS for CloudFront. If the partner already gives HLS, skip MediaLive and MediaPackage and go directly to CloudFront. Either way, a separate analysis service reads the HLS feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 markers in the feed. Analysis runs continuously. Ad break cues can help us know which recently buffered content to analyze first, if we have time before the ad decision deadline.
 
 **Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel; **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration. For an overlay, the player sends the channel and playback timestamp. For an SSAI integration, the stitcher or ad server requests a decision for a specific break, which the service maps to the channel timeline. The Go decisioning service retrieves the matching context and selects eligible demand. An overlay can be rendered client-side. A linear video ad requires a separate ad decision and playback workflow, potentially using VAST and SSAI. The shared context contains the scene description, category, media timestamp, and safety signals. The session-specific decision contains campaign eligibility, privacy-permitted audience signals, frequency caps, pacing, and the final selection. A channel ID alone is insufficient because viewers may be at different playback positions due to buffering, DVR, or restart behavior.
 
 **Known assets and live content.** FAST channels often play assets available before airtime. When the source asset is known, analyze it ahead of time and map channel playback timestamps to the asset's stored scene timeline. Use real-time inference for live, newly inserted, or unmatched content. Shared channel context is reused across viewers, while campaign eligibility, frequency caps, and final decisions can vary by session.
 
-**Latency and reliability.** Measure the time from when the relevant media reaches the analysis tap to when the ad decision is due. Work backward from that deadline to reserve time for eligible demand, creative readiness, and delivery. A viewer may be 30 seconds behind the analysis tap while the stitcher needs the decision several seconds earlier.
+**Latency and reliability.** Measure time from when the relevant media reaches the analysis tap to when the ad decision is due. Work backward from that deadline to reserve time for eligible demand, creative readiness, and delivery. A viewer may be 30 seconds behind the analysis tap while the stitcher needs the decision several seconds earlier.
 
 The current demo saw roughly 25 seconds of vision inference per 15-second window; that is not a production benchmark, but a serial worker at that rate would fall behind a continuous TV channel. Measure whether batching, smaller models, parallelism, or pre-analysis makes the pipeline faster than incoming video. If context arrives too late, a model fails, or a request exceeds its deadline, fall back to a publisher-approved generic ad or no-fill rather than delaying playback. Support discontinuities, channel restarts, and DVR/seek by mapping media timestamps to the viewer's playback position instead of assuming every viewer is at the live edge.
 

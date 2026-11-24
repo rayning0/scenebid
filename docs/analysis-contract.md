@@ -6,41 +6,44 @@ timeline, `[start_sec, end_sec)`. `video.duration_sec` comes from `ffprobe`.
 
 The worker discovers shots with PySceneDetect, samples actual frames, and
 transcribes actual audio with faster-whisper. Vision annotations are evidence
-from those frames and the overlapping transcript. Adjacent shots are grouped
+from those frames and the overlapping transcript. In per-shot mode, adjacent shots are grouped
 only when model annotations share a category or advertiser; otherwise a
 shot-level `unknown` segment is retained. Group boundaries are predictions,
 and `boundary_source`/`boundary_evidence` preserve that fact.
 
-`ad_opportunities` are rule-generated candidates: the midpoint of a predicted
-commercial segment through at most five seconds. They are not model-selected.
-Unknown or unsafe `brand_safety` must produce no fill.
+The worker writes rule-generated candidates in `segments[].ad_opportunities`.
+In window mode, a candidate starts at the window midpoint and ends five
+seconds later or at the end of the window, whichever comes first.
 
 The worker never reads campaigns, answer keys, chapter lists, or existing
 annotations. Evaluation belongs in a separate post-inference command/module.
 
-For the overlay demo, `scenebid decide` derives `data/output/TV_Commercials_1977/opportunities.json`
-from actual segment windows when the worker did not emit opportunities. These
-are timing-rule candidates, not model-selected moments or verified boundaries.
-The demo deliberately uses `DecideDemo`: it preserves and displays model
-safety while ignoring it for this fictional bid evaluation. This is not SSAI,
-OpenRTB, or a production auction.
+For the overlay demo, `scenebid serve` builds `/api/opportunities` from the
+candidates in `analysis.json`, uses `transcript.json` for dialogue, and evaluates
+fictional campaigns from `campaigns.json` when the browser calls `/api/decision`.
+The optional `scenebid decide` command exports the candidates to
+`opportunities.json` and simulated auction results to `decisions.json`.
+Both Go commands default to a simulated bid floor of $2 CPM and accept
+`-floor` for overrides.
+
+Both commands use `DecideDemo`, which records the model's
+`brand_safety` assessment in the decision trace and evaluates fictional bids
+independently of that assessment. The separate `Decide` function requires
+a scene to be explicitly marked safe before it can select a winner.
 
 Run without re-analysis:
 
 ```bash
 go test ./...
-go run ./cmd/scenebid decide
 go run ./cmd/scenebid serve
 open http://localhost:8080
 ```
 
-The server serves `/media/TV_Commercials_1977.m3u8` if an HLS playlist exists
-under `data/input`; otherwise the browser falls back to
-`/media/TV_Commercials_1977.mp4`. Generate HLS locally with:
-`ffmpeg -i data/input/TV_Commercials_1977.mp4 -c:v copy -c:a aac -hls_time 6 -hls_playlist_type vod data/input/TV_Commercials_1977.m3u8`.
-Category aliases are intentionally small and explicit: `camera` maps to
-`cameras`, and `foods` maps to `food`; matching is otherwise case-insensitive.
-The Go service reads this contract and independently reads fictional campaigns.
+The browser uses `/media/index.m3u8` when HLS is available. It can fall back to
+`/media/TV_Commercials_1977.mp4` from `data/input/`. See
+[Run and Verify](../README.md#run-and-verify) for the HLS packaging command.
+Category matching is case-insensitive. The aliases map `camera` to
+`cameras` and `foods` to `food`.
 
 Window mode labels segments `analysis_window`; a fixed window is not a
 verified commercial boundary and may contain multiple commercials. Per-shot
