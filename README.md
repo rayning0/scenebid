@@ -29,6 +29,25 @@ SceneBid explores the relation between:
 - Ad eligibility and auction decisions.
 - Video playback and contextual ad presentation.
 
+## Table of Contents
+
+- [Demo](#demo)
+- [MVP Scope](#mvp-scope)
+- [Architecture](#architecture)
+- [Process Flow](#process-flow)
+- [Priorities](#priorities)
+- [Repository Layout](#repository-layout)
+- [Run and Verify](#run-and-verify)
+  - [Generated analysis and decision files](#generated-analysis-and-decision-files)
+  - [Apple Silicon GPU setup](#apple-silicon-gpu-setup)
+  - [Analysis worker command and parameters](#analysis-worker-command-and-parameters)
+- [MVP Limitations](#mvp-limitations)
+- [Ad Tech Terms](#ad-tech-terms)
+- [Scaling SceneBid: VOD and live linear TV](#scaling-scenebid-vod-and-live-linear-tv)
+  - [VOD: Analyze once, serve many viewers](#vod-analyze-once-serve-many-viewers)
+  - [Live linear TV: Analyze each channel feed continuously](#live-linear-tv-analyze-each-channel-feed-continuously)
+  - [Capacity and tradeoffs](#capacity-and-tradeoffs)
+
 ## Demo
 
 I finished the "P0: end-to-end" local demo for my sample video!
@@ -368,13 +387,13 @@ Install Python dependencies from `analysis-worker/requirements.txt` and ensure `
 
 - **Publisher / supply:** The party providing an advertising opportunity.
 - **Advertiser / demand:** The buyer seeking to show an advertisement.
-- **SSP:** A platform representing or enabling publisher-side supply.
-- **DSP:** A platform that evaluates opportunities for advertisers.
+- **[SSP](https://advertising.amazon.com/library/guides/supply-side-platform):** A platform representing or enabling publisher-side supply.
+- **[DSP](https://advertising.amazon.com/library/guides/demand-side-platform):** A platform that evaluates opportunities for advertisers.
 - **CPM:** The price per 1,000 impressions.
 - **Bid floor:** The minimum eligible bid for an opportunity.
-- **OpenRTB:** A protocol used to exchange programmatic bid requests and responses.
-- **VAST:** A standard for describing video ad creatives and tracking.
-- **SSAI:** Server-side ad insertion.
+- **[OpenRTB](https://bidscube.com/blog/what-is-openrtb-and-how-does-it-power-programmatic-advertising/):** A protocol used to exchange programmatic bid requests and responses.
+- **[VAST](https://developers.broadpeak.io/docs/the-vast-protocol):** A standard for describing video ad creatives and tracking.
+- **[SSAI](https://bitmovin.com/blog/ssai-server-side-ad-insertion/):** Server-side ad insertion.
 - **Impression:** A measured ad-display event, distinct from selecting an ad.
 
 ## Scaling SceneBid: VOD and live linear TV
@@ -408,19 +427,19 @@ flowchart TD
     class P,S,Q,W,CPU,G,V,D,R,A,B,PLAYER,H,N,E wide
 ```
 
-**Ingest and analysis.** Publishers upload videos to **Amazon S3**, which gives durable, scalable media storage. Or publishers give us MRSS feeds with links to their new MP4 videos for movies and TV episodes. We download videos and their metadata from these MRSS links to S3. S3 notifications or **Amazon EventBridge** place durable jobs on **Amazon SQS**, so ingestion can absorb bursts without losing work.
+**Ingest and analysis.** Publishers upload videos to **[Amazon S3](https://aws.amazon.com/s3/)**, which gives durable, scalable media storage. Or publishers give us [MRSS feeds](https://videonest.co/resources/mrss/) with links to their new MP4 videos for movies and TV episodes. We download videos and their metadata from these MRSS links to S3. S3 notifications or **[Amazon EventBridge](https://aws.amazon.com/eventbridge/)** place durable jobs on **[Amazon SQS](https://aws.amazon.com/sqs/)**, so ingestion can absorb bursts without losing work.
 
-**AWS Step Functions** coordinate probe, shot detection, frame extraction, transcription, multimodal analysis, validation, and publishing. Each stage writes a versioned artifact to S3 and can be retried independently.
+**[AWS Step Functions](https://aws.amazon.com/step-functions/)** coordinate probe, shot detection, frame extraction, transcription, multimodal analysis, validation, and publishing. Each stage writes a versioned artifact to S3 and can be retried independently.
 
-Use CPU workers for probing, FFmpeg, shot detection, and frame extraction. Use **AWS Batch GPU compute environments** for offline transcription and vision jobs; Batch is a simpler starting point than operating Kubernetes GPU pools. Compare managed model APIs such as **Amazon Bedrock** or **SageMaker asynchronous inference** against self-hosted open-weight models. Move to **Amazon EKS** with NVIDIA GPU nodes only when sustained utilization, custom scheduling, or model-serving requirements justify its operational cost.
+Use CPU workers for probing, [FFmpeg](https://www.ffmpeg.org/about.html), shot detection, and frame extraction. Use **[AWS Batch](https://aws.amazon.com/batch/) GPU compute environments** for offline transcription and vision jobs; Batch is a simpler starting point than operating Kubernetes GPU pools. Compare managed model APIs such as **[Amazon Bedrock](https://aws.amazon.com/bedrock/)** or **[SageMaker asynchronous inference](https://aws.amazon.com/sagemaker/ai/)** against self-hosted open-weight models. Move to **[Amazon EKS](https://aws.amazon.com/eks/)** with NVIDIA GPU nodes only when sustained utilization, custom scheduling, or model-serving requirements justify its operational cost.
 
-**Storage and serving.** Keep source video, frames, transcripts, evidence, and immutable annotation manifests in **Amazon S3**. Store searchable metadata, model versions, review state, and publication status in **Amazon Aurora PostgreSQL**; use `pgvector` or OpenSearch only if semantic search is required. Keep frequently requested live context and short-lived decision caches in **Amazon ElastiCache for Redis**. Run stateless Go API instances behind a load balancer and scale them independently of analysis workers. For VOD, use **AWS Elemental MediaConvert** to package the source asset as HLS and **Amazon CloudFront** to cache it close to viewers.
+**Storage and serving.** Keep source video, frames, transcripts, evidence, and immutable annotation manifests in **Amazon S3**. Store searchable metadata, model versions, review state, and publication status in **[Amazon Aurora](https://aws.amazon.com/rds/aurora/) PostgreSQL**; use [pgvector](https://cloud.google.com/discover/what-is-pgvector) or [OpenSearch](https://opensearch.org/faq/) only if semantic search is required. Keep frequently requested live context and short-lived decision caches in **[Amazon ElastiCache](https://aws.amazon.com/elasticache/) for Redis**. Run stateless Go API instances behind a load balancer and scale them independently of analysis workers. For VOD, use **[AWS Elemental MediaConvert](https://aws.amazon.com/mediaconvert/)** to package the source asset as HLS and **[Amazon CloudFront](https://aws.amazon.com/cloudfront/)** to cache it close to viewers.
 
 **Analysis cost control.** Do not send every frame to a large multimodal model. Use a cascade: FFmpeg and shot detection first, transcription once per title, inexpensive visual classification/OCR/logo detection next, and expensive multimodal reasoning only for ambiguous, commercial, or safety-relevant segments. Cache results by content hash, model version, prompt version, and frame hash. Batch requests where possible and retain confidence, evidence, token usage, GPU-seconds, and cost for every stage.
 
 **Ad decisioning.** At an eligible playback moment, the player requests an ad decision using the title and content timestamp. The Go service retrieves the precomputed scene context, applies publisher and campaign rules, and queries demand partners where appropriate. Demand integrations must account for budget pacing, frequency caps, ad-pod constraints, bid timeouts, and no-bid responses. **OpenRTB** can carry programmatic bid requests and responses; the player can render an overlay. SSAI is a separate future path in which an ad server or stitching service requests the decision and modifies the stream or manifest before delivery. Apply deadlines and return no-fill when context or demand is unavailable. Never run multimodal inference during a viewer request: one analysis of a title must serve many playback sessions.
 
-**Measurement.** Publish impression, completion, click, and error events to **Apache Kafka**, then process and aggregate them with **Apache Flink** and store analytical results in **Amazon S3** for reporting. Kafka provides a durable event stream and replay; Flink supports streaming aggregation and late-event handling. A selected bid is not an impression: record display events separately and account for duplicate or delayed delivery.
+**Measurement.** Publish impression, completion, click, and error events to **[Apache Kafka](https://kafka.apache.org/intro/)**, then process and aggregate them with **[Apache Flink](https://flink.apache.org/)** and store analytical results in **Amazon S3** for reporting. Kafka provides a durable event stream and replay; Flink supports streaming aggregation and late-event handling. A selected bid is not an impression: record display events separately and account for duplicate or delayed delivery.
 
 #### Live linear TV: Analyze each channel feed continuously
 
@@ -442,7 +461,7 @@ flowchart TD
     class L,M,N,X,K,F,R,P,A,E wide
 ```
 
-**Ingest and inference.** We have two valid publisher-ingest paths. If the content partner gives an RTP feed, **AWS Elemental MediaLive** and **MediaPackage** convert it to HLS for CloudFront. If the partner already gives HLS, skip MediaLive and MediaPackage and go directly to CloudFront. Either way, a separate analysis service reads the HLS feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 markers in the feed. Analysis runs continuously. Ad break cues can help us know which recently buffered content to analyze first, if we have time before the ad decision deadline.
+**Ingest and inference.** We have two valid publisher-ingest paths. If the content partner gives an [RTP feed](https://getstream.io/glossary/real-time-transport-protocol-rtp/), **[AWS Elemental MediaLive](https://aws.amazon.com/medialive/features/)** and **[MediaPackage](https://aws.amazon.com/mediapackage/features/)** convert it to HLS for CloudFront. If the partner already gives HLS, skip MediaLive and MediaPackage and go directly to CloudFront. Either way, a separate analysis service reads the HLS feed, extracts sampled frames and audio with FFmpeg, and runs transcription and vision inference in short windows. Process the feed **once per channel**, then reuse its context for all viewers. This avoids multiplying AI inference cost by audience size. Preserve SCTE-35 markers in the feed. Analysis runs continuously. Ad break cues can help us know which recently buffered content to analyze first, if we have time before the ad decision deadline.
 
 **Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel; **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration. For an overlay, the player sends the channel and playback timestamp. For an SSAI integration, the stitcher or ad server requests a decision for a specific break, which the service maps to the channel timeline. The Go decisioning service retrieves the matching context and selects eligible demand. An overlay can be rendered client-side. A linear video ad requires a separate ad decision and playback workflow, potentially using VAST and SSAI. The shared context contains the scene description, category, media timestamp, and safety signals. The session-specific decision contains campaign eligibility, privacy-permitted audience signals, frequency caps, pacing, and the final selection. A channel ID alone is insufficient because viewers may be at different playback positions due to buffering, DVR, or restart behavior.
 
