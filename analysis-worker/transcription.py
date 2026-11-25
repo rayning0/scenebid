@@ -17,8 +17,10 @@ def decode_audio(video_path, start=None, end=None):
     return np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
 
 
-def transcribe(video_path, model_name="base", device="cpu", compute_type="int8",
+def transcribe(video_path, model_name="base", device="cpu", compute_type=None,
                start=None, end=None):
+    if compute_type is None:
+        compute_type = "float32" if device == "mps" else "int8"
     model = WhisperModel(model_name, device=device, compute_type=compute_type)
     audio = decode_audio(video_path, start, end)
     segments, info = model.transcribe(audio, vad_filter=True)

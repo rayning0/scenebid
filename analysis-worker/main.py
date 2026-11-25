@@ -37,18 +37,23 @@ def main():
                         help="per-request client timeout in seconds")
     parser.add_argument("--resume", action="store_true",
                         help="resume a compatible checkpoint")
+    parser.add_argument("--whisper-device", choices=("cpu", "mps"),
+                        default=os.getenv("WHISPER_DEVICE", "cpu"),
+                        help="run transcription on CPU or the Apple Metal GPU")
     parser.add_argument("--whisper-model",
                         default=os.getenv("WHISPER_MODEL", "base"))
     parser.add_argument("--vision-provider",
                         default=os.getenv("VISION_PROVIDER", "ollama"))
     parser.add_argument("--vision-model",
-                        default=os.getenv("VISION_MODEL", "qwen3-vl:8b"))
+                        default=os.getenv("VISION_MODEL", "qwen3-vl:2b-instruct"))
     parser.add_argument("--vision-endpoint",
                         default=os.getenv("VISION_ENDPOINT",
                                         "http://localhost:11434/api/chat"))
     parser.add_argument("--api-key",
                         default=os.getenv("VISION_API_KEY"))
     args = parser.parse_args()
+    if args.whisper_device not in ("cpu", "mps"):
+        parser.error("WHISPER_DEVICE must be cpu or mps")
     if not os.path.isfile(args.video):
         parser.error(f"input video does not exist: {args.video}")
     if args.start is not None and args.start < 0:
@@ -71,7 +76,8 @@ def main():
         print(f"frame extraction completed: {len(frames)} frames in "
               f"{time.monotonic() - stage_started:.1f}s", flush=True)
         stage_started = time.monotonic()
-        transcript = transcribe(args.video, args.whisper_model, start=args.start, end=args.end)
+        transcript = transcribe(args.video, args.whisper_model, device=args.whisper_device,
+                                start=args.start, end=args.end)
         print(f"transcription completed: {len(transcript['segments'])} segments in "
               f"{time.monotonic() - stage_started:.1f}s", flush=True)
         vision_units = shots
@@ -147,7 +153,9 @@ def main():
                             "timeline_unit": TIMELINE_UNIT},
                   "analysis": {"run_id": f"run-{int(__import__('time').time())}",
                                "status": "completed",
-                               "models": {"speech": {"provider": "faster-whisper", "model": args.whisper_model},
+                               "models": {"speech": {"provider": "faster-whisper",
+                                                     "model": args.whisper_model,
+                                                     "device": args.whisper_device},
                                           "vision": {"provider": args.vision_provider, "model": args.vision_model}}},
                   "shots": shots,
                   "transcript": [{"id": f"speech-{i+1:05d}", **s}

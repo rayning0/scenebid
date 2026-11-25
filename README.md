@@ -207,13 +207,21 @@ go run ./cmd/scenebid analyze \
 
 `go run ./cmd/scenebid analyze` is a Go convenience wrapper. It accepts `-video`, `-out`, `-start`, `-end`, and the optional `-at` probe-frame flag, then invokes the Python worker. It does not expose all worker options, so it cannot directly customize `--frames-per-shot`, `--shot-threshold`, `--vision-mode`, or the other worker-specific flags. The Go wrapper inherits worker environment variables, but use the direct Python command if you want to change more parameters.
 
-For this demo, I used **[Qwen2.5-VL](https://ollama.com/library/qwen2.5vl)**, an open-source vision-language model,
-running locally through Ollama. The analysis worker defaults to local Ollama:
+The analysis worker defaults to **[Qwen3-VL 2B Instruct](https://ollama.com/library/qwen3-vl:2b-instruct)** (an open-source vision-language model) through local Ollama. With Ollama running, install the model with `ollama pull qwen3-vl:2b-instruct`.
 
 - `VISION_PROVIDER=ollama`
-- `VISION_MODEL=qwen3-vl:8b`
+- `VISION_MODEL=qwen3-vl:2b-instruct`
 - `VISION_ENDPOINT=http://localhost:11434/api/chat`
 - `VISION_API_KEY` is optional for Ollama.
+
+An explicit `--vision-model` takes precedence over `VISION_MODEL`. Run `unset VISION_MODEL` to use the built-in default if your shell exports another model.
+
+On an M4 MacBook Air with 24 GB of unified memory, both models processed the same first 60 seconds of the demo MP4 with four 15-second windows and CPU Whisper. Qwen3-VL 2B Instruct spent 22–31% less time in the vision stage across the two run orders.
+
+| Run order | `qwen2.5vl:3b` vision | `qwen3-vl:2b-instruct` vision |
+| --- | ---: | ---: |
+| Qwen2.5-VL first | 83.2 s | 57.1 s |
+| Qwen3-VL first | 79.0 s | 61.4 s |
 
 For an OpenAI-compatible vision service, set the provider, model, endpoint, and API key explicitly. The worker also supports:
 
@@ -234,13 +242,53 @@ go run ./cmd/scenebid analyze \
   -end 360
 ```
 
+### Apple Silicon GPU setup
+
+Run the worker with native arm64 macOS Python. SceneBid's local Ollama vision
+provider uses Metal automatically when Ollama runs on macOS. Run `ollama ps`
+while an analysis request is active and check the `PROCESSOR` column.
+A remote vision endpoint runs inference on the remote host.
+
+CPU is the default for `faster-whisper` transcription. On the M4 MacBook Air,
+the local Whisper `base` model produced these transcription-stage timings for
+the first 60 seconds of `TV_Commercials_1977.mp4`:
+
+| Run order | CPU (INT8) | MPS (FP32) |
+| --- | ---: | ---: |
+| CPU first | 4.9 s | 6.2 s |
+| MPS first | 4.3 s | 4.4 s |
+
+CPU INT8 was slightly faster in one order and 1.3 seconds faster in the other.
+That makes CPU the better default for this clip and model. These measurements
+compare SceneBid's device and precision settings together. The timing comes
+from the worker's transcription stage and includes model loading and audio
+extraction. Ollama vision runs independently on Metal, so total analysis time
+also reflects changes in vision inference time.
+
+To also run Whisper transcription on Metal, use an arm64 CTranslate2 build
+with MPS support (verified with CTranslate2 4.9.0). From the repository root:
+
+```sh
+analysis-worker/.venv/bin/python -c 'import platform, ctranslate2 as c; print(platform.machine(), c.__version__, c.get_supported_compute_types("mps"))'
+WHISPER_MODEL=analysis-worker/models/faster-whisper-base \
+analysis-worker/.venv/bin/python analysis-worker/main.py \
+  data/input/TV_Commercials_1977.mp4 /tmp/scenebid-mps \
+  --end 60 --whisper-device mps
+```
+
+Use `WHISPER_DEVICE=mps` for the Go launcher, with the worker's virtualenv on
+`PATH`. The MPS backend is experimental and SceneBid uses float32 with it.
+Compare the logged transcription time with `--whisper-device cpu` using the
+same clip and model and a separate output directory without `--resume`.
+Shot detection and FFmpeg frame extraction are separate from model inference.
+
 ### Analysis worker command and parameters
 
-The committed demo analysis covers the first six minutes in 15-second windows. A window can cross a commercial boundary. I ran the `main.py` worker directly:
+The committed demo analysis used `qwen3-vl:2b-instruct` for the first six minutes in 15-second windows. A window can cross a commercial boundary. The following command reproduces that model configuration:
 
 ```bash
 VISION_PROVIDER=ollama \
-VISION_MODEL=qwen2.5vl:3b \
+VISION_MODEL=qwen3-vl:2b-instruct \
 WHISPER_MODEL=analysis-worker/models/faster-whisper-base \
 analysis-worker/.venv/bin/python analysis-worker/main.py \
   data/input/TV_Commercials_1977.mp4 \
@@ -264,9 +312,10 @@ Command-line parameters accepted by `analysis-worker/main.py`:
 - `--window-sec`: duration of each fixed analysis window when using window mode. Default = `15.0` seconds.
 - `--vision-timeout`: per-request vision client timeout (seconds). Default = `180`.
 - `--resume`: **If video AI analysis crashes, run same** `main.py` **command again with** `--resume`**. This continues analysis from a compatible checkpoint, from time where video crashed.** It does not restart analysis from start of video.
+- `--whisper-device`: transcription device, `cpu` (default) or `mps`. Can also be set via `WHISPER_DEVICE`.
 - `--whisper-model`: `faster-whisper` model name or local model directory. Default = `base`, but the demo used the downloaded local directory `analysis-worker/models/faster-whisper-base` from Hugging Face.
 - `--vision-provider`: vision backend. Default = `ollama`.
-- `--vision-model`: vision model name. Default = `qwen3-vl:8b`. My demo used `qwen2.5vl:3b`.
+- `--vision-model`: vision model name. Defaults to `VISION_MODEL` when set, or `qwen3-vl:2b-instruct`.
 - `--vision-endpoint`: chat endpoint for selected vision provider. Ollama default = `http://localhost:11434/api/chat`.
 - `--api-key`: optional vision API key, read by default from `VISION_API_KEY`.
 

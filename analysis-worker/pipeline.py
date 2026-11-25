@@ -61,6 +61,9 @@ def _cache_key(video, args):
         "vision_timeout": args.vision_timeout,
         "api_key_configured": bool(args.api_key),
     }
+    # Preserve existing CPU checkpoints. GPU transcripts use a separate key.
+    if args.whisper_device != "cpu":
+        settings["whisper_device"] = args.whisper_device
     return hashlib.sha256((identity + json.dumps(settings, sort_keys=True)).encode()).hexdigest()[:16]
 
 def _source_duration(video):
@@ -87,8 +90,12 @@ def run(args):
             raise RuntimeError("checkpoint cache mismatch; use a new run or compatible settings")
         print(f"resuming compatible checkpoint {key}", flush=True)
 
-    if "shots" not in state:
+    if not state.get("shots"):
         state["shots"] = detect_shots(args.video, args.shot_threshold, args.start, args.end)
+        if not state["shots"]:
+            raise RuntimeError("no video frames decoded in the requested range")
+        # Older checkpoints may have saved an empty frame list for a cut-free range.
+        state.pop("frames", None)
         _write(checkpoint, state)
         print(f"checkpointed {len(state['shots'])} shots", flush=True)
     shots = state["shots"]
@@ -103,10 +110,13 @@ def run(args):
         _write(checkpoint, state)
         print(f"checkpointed {len(frames)} frames", flush=True)
     if "transcript" not in state:
+        stage_started = time.monotonic()
         state["transcript"] = transcribe(args.video, args.whisper_model,
+                                         device=args.whisper_device,
                                          start=args.start, end=args.end)["segments"]
         _write(checkpoint, state)
-        print(f"checkpointed {len(state['transcript'])} transcript segments", flush=True)
+        print(f"checkpointed {len(state['transcript'])} transcript segments on "
+              f"{args.whisper_device} in {time.monotonic() - stage_started:.1f}s", flush=True)
 
     start = shots[0]["start_sec"]
     end = shots[-1]["end_sec"]
@@ -179,7 +189,9 @@ def run(args):
               "analysis": {"run_id": state["run_id"], "status": "completed",
                            "vision_mode": "window", "cache_key": key,
                            "effective_settings": settings,
-                           "models": {"speech": {"provider": "faster-whisper", "model": args.whisper_model},
+                           "models": {"speech": {"provider": "faster-whisper",
+                                                 "model": args.whisper_model,
+                                                 "device": args.whisper_device},
                                       "vision": {"provider": args.vision_provider, "model": args.vision_model}}},
               "shots": shots, "transcript": state["transcript"],
               "segments": segments, "errors": state["errors"]}

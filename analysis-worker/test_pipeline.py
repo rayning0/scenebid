@@ -12,10 +12,14 @@ class PipelineMappingTests(unittest.TestCase):
             common = dict(vision_provider="ollama", vision_endpoint="http://x",
                           vision_model="model", vision_mode="window",
                           window_sec=15, shot_threshold=27, frames_per_shot=2,
-                          start=0, end=60, whisper_model="base",
+                          start=0, end=60, whisper_model="base", whisper_device="cpu",
                           vision_max_tokens=512, vision_timeout=180,
                           api_key=None)
             one_minute = _cache_key(video.name, SimpleNamespace(**common))
+            common["whisper_device"] = "mps"
+            gpu = _cache_key(video.name, SimpleNamespace(**common))
+            self.assertNotEqual(one_minute, gpu)
+            common["whisper_device"] = "cpu"
             common["end"] = None
             full_video = _cache_key(video.name, SimpleNamespace(**common))
             self.assertNotEqual(one_minute, full_video)

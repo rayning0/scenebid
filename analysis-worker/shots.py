@@ -16,10 +16,16 @@ def detect_shots(video_path: str, threshold: float = 27.0,
             video.seek(start)
         detector.detect_scenes(frame_source=video, end_time=end)
         scenes = detector.get_scene_list()
+        boundary_source = "shot_detector"
+        if not scenes:
+            scenes = detector.get_scene_list(start_in_scene=True)
+            boundary_source = "continuous_range"
     finally:
         video.close()
     return [{"id": f"shot-{i+1:05d}", "start_sec": float(s.get_seconds()),
-             "end_sec": float(e.get_seconds()), "boundary_source": "shot_detector"}
+             "end_sec": min(float(e.get_seconds()), end)
+             if boundary_source == "continuous_range" and end is not None else float(e.get_seconds()),
+             "boundary_source": boundary_source}
             for i, (s, e) in enumerate(scenes)]
 
 
