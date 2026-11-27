@@ -46,6 +46,7 @@ SceneBid explores the relation between:
 - [Scaling SceneBid: VOD and live linear TV](#scaling-scenebid-vod-and-live-linear-tv)
   - [VOD: Analyze once, serve many viewers](#vod-analyze-once-serve-many-viewers)
   - [Live linear TV: Analyze each channel feed continuously](#live-linear-tv-analyze-each-channel-feed-continuously)
+  - [OpenRTB bid flow for CTV](#openrtb-bid-flow-for-ctv)
   - [Capacity and tradeoffs](#capacity-and-tradeoffs)
 
 ## Demo
@@ -391,7 +392,7 @@ Install Python dependencies from `analysis-worker/requirements.txt` and ensure `
 - **[DSP](https://advertising.amazon.com/library/guides/demand-side-platform):** A platform that evaluates opportunities for advertisers.
 - **CPM:** The price per 1,000 impressions.
 - **Bid floor:** The minimum eligible bid for an opportunity.
-- **[OpenRTB](https://bidscube.com/blog/what-is-openrtb-and-how-does-it-power-programmatic-advertising/):** A protocol used to exchange programmatic bid requests and responses.
+- **[OpenRTB](https://bidscube.com/blog/what-is-openrtb-and-how-does-it-power-programmatic-advertising/):** Protocol used to exchange programmatic ad bid requests and responses.
 - **[VAST](https://developers.broadpeak.io/docs/the-vast-protocol):** A standard for describing video ad creatives and tracking.
 - **[SSAI](https://bitmovin.com/blog/ssai-server-side-ad-insertion/):** Server-side ad insertion.
 - **Impression:** A measured ad-display event, distinct from selecting an ad.
@@ -405,7 +406,7 @@ Assume publishers control both their own SSAI services and video players. We cou
 1. Publisher players (through SDKs) may call our Go ad decisioning service to get contextual ad overlay opportunities/ad decisions to show in their players.
 2. Publisher SSAI services may also call our Go ad decisioning service to get video ads to stitch into a publisher's HLS manifest. For VOD, it's for cue points preset by the publisher. For live linear TV, it's for SCTE-35 ad breaks.
 
-#### VOD: Analyze once, serve many viewers
+### VOD: Analyze once, serve many viewers
 
 ```mermaid
 %%{init: {"flowchart": {"wrappingWidth": 180}}}%%
@@ -440,6 +441,9 @@ flowchart TD
     classDef publisher fill:#b91c1c,stroke:#b91c1c,color:#fff;
     class P,ORIGIN,SSAI,PLAYER publisher
     linkStyle 0,12,13,14,15,16,17,18 stroke:#b91c1c
+    classDef demand fill:#1d4ed8,stroke:#1d4ed8,color:#fff;
+    class B demand
+    linkStyle 10,11 stroke:#1d4ed8
 ```
 
 **Ingest and analysis.** Analyze VOD assets long before playback. Publishers upload videos to our **[Amazon S3](https://aws.amazon.com/s3/)**, which gives durable, scalable media storage. Or publishers give us [MRSS feeds](https://videonest.co/resources/mrss/) with links to their new MP4 videos for movies and TV episodes. We'd regularly download their videos and metadata from their MRSS links to S3. [S3 notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html) or **[Amazon EventBridge](https://aws.amazon.com/eventbridge/)** place durable jobs on **[Amazon SQS](https://aws.amazon.com/sqs/)**, so ingestion can absorb bursts without losing work.
@@ -458,7 +462,7 @@ For both requests, the Go decisioning service looks up precomputed scene context
 
 **Measurement.** Publish impression, completion, click, and error events to **[Apache Kafka](https://kafka.apache.org/intro/)**, then process and aggregate them with **[Apache Flink](https://flink.apache.org/)** and store analytical results in **Amazon S3** for reporting. Kafka provides a durable event stream and replay; Flink supports streaming aggregation and late-event handling. A selected bid is not an impression: record display events separately and account for duplicate or delayed delivery.
 
-#### Live linear TV: Analyze each channel feed continuously
+### Live linear TV: Analyze each channel feed continuously
 
 ```mermaid
 %%{init: {"flowchart": {"wrappingWidth": 180}}}%%
@@ -488,9 +492,12 @@ flowchart TD
     classDef publisher fill:#b91c1c,stroke:#b91c1c,color:#fff;
     class L,SSAI,P publisher
     linkStyle 0,4,5,6,7,8,9 stroke:#b91c1c
+    classDef demand fill:#1d4ed8,stroke:#1d4ed8,color:#fff;
+    class B demand
+    linkStyle 11,12 stroke:#1d4ed8
 ```
 
-**Ingest and inference.** The analysis service continuously reads the publisher’s live HLS feed, samples frames and audio with FFmpeg, and runs transcription and vision inference in short windows. It processes each feed once per channel and reuses timestamped observations across viewers. The publisher’s SSAI service uses SCTE-35 cues in the feed to identify live ad breaks.
+**Ingest and inference.** The analysis service continuously reads the publisher’s live HLS feed, samples frames and audio with FFmpeg, and runs transcription and vision inference in short windows. It processes each feed once per channel and reuses timestamped observations across viewers. The publisher’s SSAI service uses SCTE-35 cues in the publisher live HLS feed to identify live ad breaks.
 
 **Timing and decisions.** At larger scale, publish observations to Kafka keyed by channel. **Flink** aligns video, transcript, and scene events using media timestamps and handles late or out-of-order observations. For an initial deployment, a simpler worker plus Redis may be sufficient. Store current and recent channel context in Redis with short expiration.
 
@@ -503,6 +510,85 @@ Shared context contains the scene description, category, media timestamp, and sa
 **Latency and reliability.** For a live overlay ad, relevant media must reach the analysis service far enough before viewer’s playback position to analyze the scene, make the ad decision, and give the publisher player SDK time to prepare the creative before the overlay is due. Measure this lead time against each viewer’s playback timeline. For live stitched video ads, work backward from the publisher’s SSAI manifest deadline for the signaled ad break to budget time for context lookup, bidding, and creative readiness.
 
 The SceneBid demo took about 15 seconds (61.4/4 for `qwen3-vl:2b-instruct` model) of vision inference to analyze each 15-second video window. A serial worker at that rate is too slow for a continuous TV channel. Measure whether batching, smaller models, parallelism, or pre-analysis makes the pipeline faster than incoming video. If context arrives too late, a model fails, or a request exceeds its deadline, fall back to a publisher-approved generic ad or no-fill rather than delaying playback. Support discontinuities, channel restarts, and DVR/seek by mapping media timestamps to the viewer's playback position instead of assuming every viewer is at the live edge.
+
+### OpenRTB bid flow for CTV
+
+The blue bid request and bid response arrows in both diagrams show the proposed exchange between Go ad decisioning and SSP/DSP demand. [IAB Tech Lab OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md)
+
+![OpenRTB Reference Model - Request Sequence](img/openrtb_request_sequence.png)
+
+![BidsCube illustration of a bid request flowing from the seller through an SSP to DSPs, with bids returning for an auction](img/openrtb_transaction_flow.png)
+
+- **Identify the video ad break.** The publisher's SSAI asks Go ad decisioning for video ads at a VOD cue point or an SCTE-35-signaled live break.
+- **Send the bid request.** Go ad decisioning sends the video opportunity and relevant content context to the supply-side platform (SSP). The SSP offers the publisher's inventory to eligible demand-side platforms (DSPs).
+- **Bid or pass.** A DSP checks campaign targeting, pacing, frequency caps, and whether its creative fits. If it bids, it returns a CPM and creative details before the bid deadline.
+- **Run the auction and fill the pod.** The SSP filters bids by price floors, deal terms, and creative rules. It selects eligible bids that fit the break and determines the clearing prices under its auction rules. With a direct DSP connection, Go ad decisioning evaluates the buyer's bid itself.
+- **Return the decision and stitch the ad.** Go ad decisioning returns the selected ads or no-fill by the publisher's deadline. The publisher's SSAI stitches the selected ads into its HLS manifest.
+- **Measure playback.** Track auction wins separately from playback and billable events. A winning ad later in the pod may never play if the viewer leaves during the break.
+
+[BidsCube transaction overview and illustrations](https://bidscube.com/blog/what-is-openrtb-and-how-does-it-power-programmatic-advertising/)
+
+![BidsCube illustration of common OpenRTB bid request fields](img/openrtb_bid_request.png)
+
+**[Bid request](https://rtblint.org/docs/openrtb/bid-request/):** A cooking show offers a 120-second ad pod for up to four 15–30 second ads. The open-auction floor is $12.50 CPM, and an eligible private marketplace deal has an $18.00 CPM floor. Bids are due in 300 ms. [Full sample CTV pod request](https://rtblint.org/docs/openrtb-examples/ctv-pod-bid-request/)
+
+- `id` identifies the request, and `tmax` sets the bid deadline in milliseconds.
+- `imp` lists the opportunities. Each `imp.id` identifies an opportunity, and `imp.bidfloor` sets its minimum CPM. A private deal can set its own floor in `imp.pmp.deals`.
+- `imp.video` lists accepted media types and creative protocols, allowed ad durations, and pod limits. `poddur` is the available time in seconds, and `maxseq` is the maximum number of ads.
+- `app.content` and `device` identify the programming and playback environment.
+
+```json
+{
+  "id": "9d2f3a7e-ctv-pod",
+  "tmax": 300,
+  "app": { "bundle": "com.streambox.tv", "content": { "title": "Chef's Table" } },
+  "device": { "devicetype": 3 },
+  "imp": [
+    {
+      "id": "1",
+      "bidfloor": 12.5,
+      "video": {
+        "mimes": ["video/mp4"],
+        "protocols": [8],
+        "minduration": 15,
+        "maxduration": 30,
+        "poddur": 120,
+        "maxseq": 4
+      },
+      "pmp": { "deals": [{ "id": "deal-777", "bidfloor": 18 }] }
+    }
+  ]
+}
+```
+
+**[Bid response](https://rtblint.org/docs/openrtb/bid-response/):** A DSP offers a 30-second video ad at $21.50 CPM for `deal-777`, above the $18.00 deal floor.
+
+- The response `id` matches the request, and `seatbid` groups bids by buyer seat.
+- Each bid has its own `id`. Its `impid` matches the opportunity, `price` gives the offered CPM, and `dealid` identifies the deal when applicable.
+- `dur` gives the ad length in seconds. `adm` can carry VAST XML that tells SSAI where to get the video creative.
+
+```json
+{
+  "id": "9d2f3a7e-ctv-pod",
+  "seatbid": [
+    {
+      "seat": "seat-cookware-dsp",
+      "bid": [
+        {
+          "id": "bid-9901-30s",
+          "impid": "1",
+          "price": 21.5,
+          "dealid": "deal-777",
+          "dur": 30,
+          "adm": "<VAST version='4.2'><Ad><Wrapper><AdSystem>ExampleDSP</AdSystem><VASTAdTagURI>https://ads.example.com/vast/5510</VASTAdTagURI><Impression>https://ads.example.com/impression/5510</Impression><Creatives><Creative><Linear/></Creative></Creatives></Wrapper></Ad></VAST>"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Pacing and frequency capping.** Pacing controls how quickly a campaign spends its budget or delivers impressions over time. A DSP that is ahead of its spending plan can bid on fewer eligible requests. Frequency capping limits repeated exposure (example: up to 3 impressions/day per identifiable household) where allowed. The DSP can enforce advertiser caps using the identity signals and impression history it has. A publisher or SSP can also enforce its own limits, such as avoiding repeat creatives in a pod. Cross-device or cross-publisher caps depend on the identity/measurement coverage available to the party enforcing them.
 
 #### Capacity and tradeoffs
 
