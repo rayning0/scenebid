@@ -47,6 +47,9 @@ SceneBid explores the relation between:
   - [VOD: Analyze once, serve many viewers](#vod-analyze-once-serve-many-viewers)
   - [Live linear TV: Analyze each channel feed continuously](#live-linear-tv-analyze-each-channel-feed-continuously)
   - [OpenRTB bid flow for CTV](#openrtb-bid-flow-for-ctv)
+    - [Bid Request](#bid-request)
+    - [Bid Response](#bid-response)
+    - [VAST Response](#vast-response)
   - [Capacity and tradeoffs](#capacity-and-tradeoffs)
 
 ## Demo
@@ -522,7 +525,7 @@ The blue bid request and bid response arrows in both diagrams show the proposed 
 - **Identify the video ad break.** The publisher's SSAI asks Go ad decisioning for video ads at a VOD cue point or an SCTE-35-signaled live break.
 - **Send the bid request.** Go ad decisioning sends the video opportunity and relevant content context to the supply-side platform (SSP). The SSP offers the publisher's inventory to eligible demand-side platforms (DSPs).
 - **Bid or pass.** A DSP checks campaign targeting, pacing, frequency caps, and whether its creative fits. If it bids, it returns a CPM and creative details before the bid deadline.
-- **Run the auction and fill the pod.** The SSP filters bids by price floors, deal terms, and creative rules. It selects eligible bids that fit the break and determines the clearing prices under its auction rules. With a direct DSP connection, Go ad decisioning evaluates the buyer's bid itself.
+- **Run the auction and fill the pod.** The SSP filters bids by price floors, deal terms, and creative rules. In this example, the SSP selects eligible bids that fit the break under its auction and podding rules. Depending on the integration, the publisher's ad server or SSAI workflow may handle some or all pod assembly. With a direct DSP connection, Go ad decisioning evaluates the buyer's bid itself.
 - **Return the decision and stitch the ad.** Go ad decisioning returns the selected ads or no-fill by the publisher's deadline. The publisher's SSAI stitches the selected ads into its HLS manifest.
 - **Measure playback.** Track auction wins separately from playback and billable events. A winning ad later in the pod may never play if the viewer leaves during the break.
 
@@ -530,18 +533,29 @@ The blue bid request and bid response arrows in both diagrams show the proposed 
 
 ![BidsCube illustration of common OpenRTB bid request fields](img/openrtb_bid_request.png)
 
-**[Bid request](https://rtblint.org/docs/openrtb/bid-request/):** A cooking show offers a 120-second ad pod for up to four 15–30 second ads. The open-auction floor is $12.50 CPM, and an eligible private marketplace deal has an $18.00 CPM floor. Bids are due in 300 ms. [Full sample CTV pod request](https://rtblint.org/docs/openrtb-examples/ctv-pod-bid-request/)
+#### [Bid Request](https://rtblint.org/docs/openrtb/bid-request/)
+
+A cooking show offers a 120-second ad pod for up to four 15–30 second ads. The open-auction floor is $12.50 CPM, and an eligible private marketplace deal has an $18.00 CPM floor. Bids are due in 300 ms. [Full sample CTV pod request](https://rtblint.org/docs/openrtb-examples/ctv-pod-bid-request/)
 
 - `id` identifies the request, and `tmax` sets the bid deadline in milliseconds.
 - `imp` lists the opportunities. Each `imp.id` identifies an opportunity, and `imp.bidfloor` sets its minimum CPM. A private deal can set its own floor in `imp.pmp.deals`.
 - `imp.video` lists accepted media types and creative protocols, allowed ad durations, and pod limits. `poddur` is the available time in seconds, and `maxseq` is the maximum number of ads.
-- `app.content` and `device` identify the programming and playback environment.
+- `app.content` identifies the program and carries the analyzed scene’s topic. Here, `cat` contains Cooking (`216`) from IAB Content Taxonomy 3.1 (`cattax: 9`). The keywords describe what is visible in the scene. The optional `ext.scenebid.scene_id` is an example of a field that partners would agree to support. `device` identifies the playback environment. [IAB Content Taxonomy 3.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%203.1.tsv)
 
 ```json
 {
   "id": "9d2f3a7e-ctv-pod",
   "tmax": 300,
-  "app": { "bundle": "com.streambox.tv", "content": { "title": "Chef's Table" } },
+  "app": {
+    "bundle": "com.streambox.tv",
+    "content": {
+      "title": "Chef's Table",
+      "cat": ["216"],
+      "cattax": 9,
+      "keywords": "cooking,cast-iron skillet,searing vegetables",
+      "ext": { "scenebid": { "scene_id": "ep-2201-scene-14" } }
+    }
+  },
   "device": { "devicetype": 3 },
   "imp": [
     {
@@ -549,7 +563,7 @@ The blue bid request and bid response arrows in both diagrams show the proposed 
       "bidfloor": 12.5,
       "video": {
         "mimes": ["video/mp4"],
-        "protocols": [8],
+        "protocols": [14],
         "minduration": 15,
         "maxduration": 30,
         "poddur": 120,
@@ -561,18 +575,21 @@ The blue bid request and bid response arrows in both diagrams show the proposed 
 }
 ```
 
-**[Bid response](https://rtblint.org/docs/openrtb/bid-response/):** A DSP offers a 30-second video ad at $21.50 CPM for `deal-777`, above the $18.00 deal floor.
+#### [Bid Response](https://rtblint.org/docs/openrtb/bid-response/)
+
+A DSP uses the cooking scene to choose a 30-second meal-kit ad and bids $21.50 CPM for `deal-777`, above the $18.00 deal floor.
 
 - The response `id` matches the request, and `seatbid` groups bids by buyer seat.
 - Each bid has its own `id`. Its `impid` matches the opportunity, `price` gives the offered CPM, and `dealid` identifies the deal when applicable.
-- `dur` gives the ad length in seconds. `adm` can carry VAST XML that tells SSAI where to get the video creative.
+- The bid’s `cat` and `cattax` describe the advertised product. Here, Meal Kits (`1201`) uses IAB Ad Product Taxonomy 2.0 (`cattax: 8`). `adomain` identifies the advertiser for seller checks. [IAB Ad Product Taxonomy 2.0](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Ad%20Product%20Taxonomies/Ad%20Product%20Taxonomy%202.0.tsv)
+- `protocol: 14` matches the requested VAST 4.2 Wrapper. `dur` gives the ad length in seconds. `adm` can carry VAST XML that tells SSAI where to get the video creative.
 
 ```json
 {
   "id": "9d2f3a7e-ctv-pod",
   "seatbid": [
     {
-      "seat": "seat-cookware-dsp",
+      "seat": "seat-meal-kit-dsp",
       "bid": [
         {
           "id": "bid-9901-30s",
@@ -580,12 +597,64 @@ The blue bid request and bid response arrows in both diagrams show the proposed 
           "price": 21.5,
           "dealid": "deal-777",
           "dur": 30,
-          "adm": "<VAST version='4.2'><Ad><Wrapper><AdSystem>ExampleDSP</AdSystem><VASTAdTagURI>https://ads.example.com/vast/5510</VASTAdTagURI><Impression>https://ads.example.com/impression/5510</Impression><Creatives><Creative><Linear/></Creative></Creatives></Wrapper></Ad></VAST>"
+          "protocol": 14,
+          "adomain": ["meal-kits.example"],
+          "cat": ["1201"],
+          "cattax": 8,
+          "adm": "<VAST version='4.2'><Ad id=\"meal-kit-5510\"><Wrapper><AdSystem>ExampleDSP</AdSystem><VASTAdTagURI>https://ads.example.com/vast/5510</VASTAdTagURI><Impression>https://ads.example.com/impression/5510</Impression><Creatives><Creative><Linear><TrackingEvents><Tracking event=\"start\">https://ads.example.com/track/5510/start</Tracking><Tracking event=\"complete\">https://ads.example.com/track/5510/complete</Tracking></TrackingEvents></Linear></Creative></Creatives></Wrapper></Ad></VAST>"
         }
       ]
     }
   ]
 }
+```
+
+#### [VAST Response](https://developers.broadpeak.io/docs/the-vast-protocol)
+
+The VAST 4.2 Wrapper in `adm` points to a second VAST document at `VASTAdTagURI`. The destination serves the InLine ad with the actual media URLs. This example shows one 30-second meal-kit ad with a high-quality `Mezzanine` source, two ready-to-play MP4 renditions, and an optional companion image. The publisher’s SSAI workflow or its designated transcoder can use the mezzanine to produce renditions that match the stream. The `Impression` and `TrackingEvents` URLs are measurement beacons. The player or SSAI workflow calls them according to the integration as playback reaches each event. All URLs are placeholders. [IAB Tech Lab VAST 4.2 schema](https://github.com/InteractiveAdvertisingBureau/vast/blob/master/vast_4.2.xsd)
+
+```xml
+<VAST version="4.2">
+  <Ad id="meal-kit-5510">
+    <InLine>
+      <AdSystem>ExampleDSP</AdSystem>
+      <AdTitle>Weeknight Meal Kit</AdTitle>
+      <Impression>https://ads.example.com/impression/5510/inline</Impression>
+      <Creatives>
+        <Creative id="meal-kit-30s">
+          <Linear>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://ads.example.com/track/5510/inline/start]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://ads.example.com/track/5510/inline/firstQuartile]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://ads.example.com/track/5510/inline/midpoint]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://ads.example.com/track/5510/inline/thirdQuartile]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://ads.example.com/track/5510/inline/complete]]></Tracking>
+            </TrackingEvents>
+            <Duration>00:00:30</Duration>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="1920" height="1080" bitrate="6000">
+                https://cdn.example.com/ads/meal-kit-30s-1080p.mp4
+              </MediaFile>
+              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720" bitrate="3000">
+                https://cdn.example.com/ads/meal-kit-30s-720p.mp4
+              </MediaFile>
+              <Mezzanine delivery="progressive" type="video/mp4" width="1920" height="1080">
+                <![CDATA[https://cdn.example.com/ads/meal-kit-30s-master.mp4]]>
+              </Mezzanine>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+        <Creative id="meal-kit-companion">
+          <CompanionAds>
+            <Companion width="300" height="250">
+              <StaticResource creativeType="image/png">https://cdn.example.com/ads/meal-kit-companion.png</StaticResource>
+            </Companion>
+          </CompanionAds>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
 ```
 
 **Pacing and frequency capping.** Pacing controls how quickly a campaign spends its budget or delivers impressions over time. A DSP that is ahead of its spending plan can bid on fewer eligible requests. Frequency capping limits repeated exposure (example: up to 3 impressions/day per identifiable household) where allowed. The DSP can enforce advertiser caps using the identity signals and impression history it has. A publisher or SSP can also enforce its own limits, such as avoiding repeat creatives in a pod. Cross-device or cross-publisher caps depend on the identity/measurement coverage available to the party enforcing them.
